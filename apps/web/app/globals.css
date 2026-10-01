@@ -1,0 +1,430 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   SRM Enterprises — design tokens
+   LIGHT ONLY. No dark theme, no dark backgrounds, no dark mode.
+   Accent tokens are updated at runtime by the Color Mood switcher and by the
+   per-category accent system, so any element bound to them repaints smoothly.
+   ========================================================================== */
+
+:root {
+  /* Brand */
+  --brand-blue: #1e6fff;
+  --brand-green: #19b26b;
+  --brand-yellow: #ffc93c;
+
+  /* Surfaces (all light, alternating) */
+  --surface-white: #ffffff;
+  --surface-sky: #f3f9ff;
+  --surface-cream: #fff9f0;
+
+  /* Text — channel variables keep Tailwind's opacity modifiers (text-navy/70) working
+     with CSS-variable colours. */
+  --navy: #12294a;
+  --navy-rgb: 18 41 74;
+  --navy-soft: #3d5a80;
+  --navy-soft-rgb: 61 90 128;
+  --navy-muted: #5a7396;
+
+  /* Runtime accent (mood switcher / category context) */
+  --accent: #1e6fff;
+  --accent-rgb: 30 111 255;
+  --accent-soft: #e8f1ff;
+  --accent-soft-rgb: 232 241 255;
+  --accent-contrast: #ffffff;
+  --accent-contrast-rgb: 255 255 255;
+  --accent-secondary: #19b26b;
+  --accent-secondary-rgb: 25 178 107;
+  --accent-highlight: #ffc93c;
+  --accent-highlight-rgb: 255 201 60;
+  --accent-deep: #0f47ad;
+  --accent-deep-rgb: 15 71 173;
+  --accent-shadow: rgba(30, 111, 255, 0.45);
+
+  /* Category ownership (stable regardless of mood) */
+  --cat-corrugated: #ff8a2b;
+  --cat-epe: #19c3e6;
+  --cat-bubble: #8b5cf6;
+  --cat-poly: #10b981;
+  --cat-accessories: #ff5c8a;
+
+  /* Shape + motion */
+  --radius-card: 24px;
+  --radius-pill: 999px;
+  --transition-theme: 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  --scroll-progress: 0;
+}
+
+/* Color Mood palettes — all four are LIGHT.
+   Applied to <html data-mood="…"> by the mood provider. */
+html[data-mood="citrus"] {
+  --accent: #ff7a18;
+  --accent-rgb: 255 122 24;
+  --accent-soft: #fff1e3;
+  --accent-soft-rgb: 255 241 227;
+  --accent-secondary: #ffb020;
+  --accent-secondary-rgb: 255 176 32;
+  --accent-highlight: #ffe066;
+  --accent-highlight-rgb: 255 224 102;
+  --accent-deep: #c2560a;
+  --accent-deep-rgb: 194 86 10;
+  --accent-shadow: rgba(255, 122, 24, 0.42);
+}
+
+html[data-mood="meadow"] {
+  --accent: #0fa968;
+  --accent-rgb: 15 169 104;
+  --accent-soft: #e6faf1;
+  --accent-soft-rgb: 230 250 241;
+  --accent-secondary: #19c3e6;
+  --accent-secondary-rgb: 25 195 230;
+  --accent-highlight: #ffd84d;
+  --accent-highlight-rgb: 255 216 77;
+  --accent-deep: #0a7b4c;
+  --accent-deep-rgb: 10 123 76;
+  --accent-shadow: rgba(15, 169, 104, 0.42);
+}
+
+html[data-mood="berry"] {
+  --accent: #7c3aed;
+  --accent-rgb: 124 58 237;
+  --accent-soft: #f3ecff;
+  --accent-soft-rgb: 243 236 255;
+  --accent-secondary: #ff5c8a;
+  --accent-secondary-rgb: 255 92 138;
+  --accent-highlight: #ffc93c;
+  --accent-highlight-rgb: 255 201 60;
+  --accent-deep: #5b21b6;
+  --accent-deep-rgb: 91 33 182;
+  --accent-shadow: rgba(124, 58, 237, 0.42);
+}
+
+/* Category-scoped accents: any subtree with data-category adopts that colour. */
+[data-category="corrugated-packaging"] {
+  --accent: var(--cat-corrugated);
+  --accent-rgb: 255 138 43;
+  --accent-deep: #c2620f;
+  --accent-deep-rgb: 194 98 15;
+  --accent-shadow: rgba(255, 138, 43, 0.42);
+}
+[data-category="epe-foam-packaging"] {
+  --accent: var(--cat-epe);
+  --accent-rgb: 25 195 230;
+  --accent-deep: #0f8ba6;
+  --accent-deep-rgb: 15 139 166;
+  --accent-shadow: rgba(25, 195, 230, 0.4);
+}
+[data-category="bubble-protective-packaging"] {
+  --accent: var(--cat-bubble);
+  --accent-rgb: 139 92 246;
+  --accent-deep: #6d28d9;
+  --accent-deep-rgb: 109 40 217;
+  --accent-shadow: rgba(139, 92, 246, 0.4);
+}
+[data-category="poly-bags-films"] {
+  --accent: var(--cat-poly);
+  --accent-rgb: 16 185 129;
+  --accent-deep: #0b7f5c;
+  --accent-deep-rgb: 11 127 92;
+  --accent-shadow: rgba(16, 185, 129, 0.4);
+}
+[data-category="packaging-accessories"] {
+  --accent: var(--cat-accessories);
+  --accent-rgb: 255 92 138;
+  --accent-deep: #d63c69;
+  --accent-deep-rgb: 214 60 105;
+  --accent-shadow: rgba(255, 92, 138, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   Base
+   -------------------------------------------------------------------------- */
+@layer base {
+  * {
+    border-color: rgba(18, 41, 74, 0.1);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--surface-white);
+    color: var(--navy);
+    font-feature-settings: "cv11", "ss01";
+    text-rendering: optimizeLegibility;
+    /* `clip` (not `hidden`) so it never becomes a scroll container: sticky navbars and
+       scroll-driven accents keep working, while 3D-tilt overflow still cannot create a
+       horizontal scrollbar. */
+    overflow-x: clip;
+    transition:
+      background-color var(--transition-theme),
+      color var(--transition-theme);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-space-grotesk), var(--font-inter), sans-serif;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Visible, high-contrast focus ring for keyboard users only. */
+  :focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  ::selection {
+    background: var(--accent-soft);
+    color: var(--navy);
+  }
+
+  /* Scrollbar — light, brand-tinted. */
+  ::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f3f9ff;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--accent), var(--accent-secondary));
+    border-radius: 999px;
+    border: 3px solid #f3f9ff;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Components / utilities
+   -------------------------------------------------------------------------- */
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-wide {
+    @apply mx-auto w-full max-w-[1560px] px-4 sm:px-6 lg:px-10;
+  }
+
+  .section-pad {
+    @apply py-14 sm:py-20 lg:py-24;
+  }
+
+  .section-pad-sm {
+    @apply py-10 sm:py-14 lg:py-16;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent-soft px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-accent-deep;
+  }
+
+  .surface-card {
+    @apply rounded-2xl border border-navy/10 bg-white shadow-soft;
+    transition:
+      transform 420ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 420ms cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 420ms ease,
+      background-color 420ms ease;
+  }
+
+  .surface-card-hover {
+    @apply hover:-translate-y-1.5 hover:shadow-lift;
+  }
+
+  .btn {
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide;
+    transition:
+      transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 260ms ease,
+      background-color 360ms ease,
+      color 260ms ease,
+      border-color 360ms ease;
+  }
+
+  .btn:active {
+    transform: translateY(1px) scale(0.985);
+  }
+
+  .btn-primary {
+    @apply btn bg-accent text-accent-contrast shadow-accent hover:brightness-[1.06];
+  }
+
+  .btn-outline {
+    @apply btn border-2 border-accent/30 bg-white/80 text-accent-deep hover:border-accent hover:bg-accent-soft;
+  }
+
+  .btn-ghost {
+    @apply btn text-navy hover:bg-navy/5;
+  }
+
+  .btn-white {
+    @apply btn bg-white text-navy shadow-card hover:-translate-y-0.5;
+  }
+
+  .btn-glass {
+    @apply btn border border-white/45 bg-white/15 text-white backdrop-blur-md hover:bg-white/25;
+  }
+
+  .link-accent {
+    @apply font-semibold text-accent-deep underline-offset-4 hover:underline;
+  }
+
+  .divider-wavy {
+    @apply pointer-events-none block h-10 w-full;
+  }
+
+  .marquee-mask {
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  }
+
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+  }
+
+  .text-gradient-animated {
+    background-image: linear-gradient(
+      100deg,
+      var(--accent) 0%,
+      var(--accent-secondary) 32%,
+      var(--accent-highlight) 58%,
+      var(--accent) 100%
+    );
+    background-size: 260% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-pan 11s ease-in-out infinite;
+  }
+
+  .underline-grow {
+    position: relative;
+  }
+
+  .underline-grow::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 3px;
+    width: 0;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+    transition: width 320ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .underline-grow:hover::after,
+  .underline-grow[data-active="true"]::after {
+    width: 100%;
+  }
+
+  .mask-reveal {
+    clip-path: inset(0 0 0 0 round 24px);
+  }
+
+  .grid-mesh {
+    background-image:
+      linear-gradient(to right, rgba(18, 41, 74, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(18, 41, 74, 0.05) 1px, transparent 1px);
+    background-size: 46px 46px;
+  }
+
+  /* Section rhythm helpers keep every page visually consistent. */
+  .band-white {
+    background-color: var(--surface-white);
+  }
+  .band-sky {
+    background-color: var(--surface-sky);
+  }
+  .band-cream {
+    background-color: var(--surface-cream);
+  }
+  .band-mesh {
+    background-color: var(--surface-white);
+    background-image: var(--tw-gradient-mesh, none);
+    background-image:
+      radial-gradient(at 10% 15%, var(--accent-soft) 0px, transparent 52%),
+      radial-gradient(at 92% 10%, #fff9f0 0px, transparent 48%),
+      radial-gradient(at 65% 95%, #eafbf4 0px, transparent 52%);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .will-transform {
+    will-change: transform, opacity;
+  }
+
+  .sr-only-focusable:not(:focus) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Reduced motion — animations collapse to instant, non-moving states.
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .text-gradient-animated {
+    animation: none !important;
+    background-image: linear-gradient(100deg, var(--accent), var(--accent-secondary));
+  }
+}
+
+/* Print: keep it readable and light. */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+  }
+}

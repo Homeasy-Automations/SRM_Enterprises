@@ -1,0 +1,37 @@
+{
+  "name": "srm-enterprises",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SRM Enterprises — industrial packaging material supplier website (Next.js frontend + Express API + MongoDB Atlas + Resend email).",
+  "workspaces": [
+    "apps/*",
+    "services/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "scripts": {
+    "dev": "concurrently -n web,api -c blue,green \"npm:dev:web\" \"npm:dev:api\"",
+    "dev:web": "npm run dev --workspace @srm/web",
+    "dev:api": "npm run dev --workspace @srm/api",
+    "build": "npm run build --workspace @srm/api && npm run build --workspace @srm/web",
+    "build:web": "npm run build --workspace @srm/web",
+    "build:api": "npm run build --workspace @srm/api",
+    "start:api": "npm run start --workspace @srm/api",
+    "start:web": "npm run start --workspace @srm/web",
+    "lint": "npm run lint --workspace @srm/api && npm run lint --workspace @srm/web",
+    "lint:web": "npm run lint --workspace @srm/web",
+    "lint:api": "npm run lint --workspace @srm/api",
+    "typecheck": "npm run typecheck --workspace @srm/shared && npm run typecheck --workspace @srm/api && npm run typecheck --workspace @srm/web",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,css}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,css}\"",
+    "clean": "rimraf \"**/node_modules\" \"**/.next\" \"**/dist\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.8",
+    "rimraf": "^6.0.1"
+  }
+}

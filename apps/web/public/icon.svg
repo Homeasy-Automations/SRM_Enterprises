@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="SRM Enterprises">
+  <defs>
+    <linearGradient id="srm-icon-left" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E6FFF"/>
+      <stop offset="100%" stop-color="#0F47AD"/>
+    </linearGradient>
+    <linearGradient id="srm-icon-right" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#19B26B"/>
+      <stop offset="100%" stop-color="#1E6FFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#F3F9FF"/>
+  <path d="M14 24 L32 15 L50 24 L50 44 L32 53 L14 44 Z" fill="url(#srm-icon-left)"/>
+  <path d="M14 24 L32 33 L50 24 L50 44 L32 53 L14 44 Z" fill="url(#srm-icon-right)" opacity="0.92"/>
+  <path d="M14 24 L32 33 L50 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M32 33 L32 53" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" opacity="0.85"/>
+  <rect x="28" y="15" width="8" height="8" rx="2" fill="#FFC93C"/>
+</svg>
