@@ -35,8 +35,8 @@ export function Footer(): JSX.Element {
               <Logo tone="light" />
               <p className="text-sm leading-relaxed text-white/90">{BRAND.footerLine}.</p>
               <p className="text-sm leading-relaxed text-white/80">
-                Trading, manufacturing and custom packaging for industrial buyers — corrugated, EPE
-                foam, bubble & protective packaging, poly bags & films and accessories.
+                Trading, manufacturing and custom packaging for industrial buyers — corrugated boxes, EPE
+                Foam Packaging, LDPE Bubble & Protective Packaging, poly bags & films and packaging accessories.
               </p>
               <p className="inline-flex items-center gap-2 text-sm font-semibold text-white">
                 <MapPin className="h-4 w-4" aria-hidden="true" />

@@ -30,13 +30,13 @@ export function PackageCategorySection({ product, index }: PackageCategorySectio
         <div className={cn("flex flex-col gap-5", flipped && "lg:order-2")}>
           <Reveal variant="fade-up">
             <span className="eyebrow">
-              Category {String(index + 1).padStart(2, "0")} • {product.colorName}
+              {product.name} • {product.colorName}
             </span>
           </Reveal>
 
           <Reveal variant="fade-up" delay={0.05}>
             <h2 id={`${product.slug}-heading`} className="font-display text-2xl font-bold text-navy sm:text-3xl">
-              {product.name}
+              {product.tagline}
             </h2>
           </Reveal>
 
@@ -79,7 +79,7 @@ export function PackageCategorySection({ product, index }: PackageCategorySectio
                 className="btn text-white transition-transform duration-300 hover:-translate-y-0.5"
                 style={{ background: product.color }}
               >
-                Category details
+                View details
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
               <Link

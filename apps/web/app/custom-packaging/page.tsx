@@ -22,7 +22,7 @@ export const metadata: Metadata = buildMetadata({
     "custom packaging supplier",
     "custom corrugated boxes",
     "custom EPE foam fitments",
-    "printed packaging boxes NCR",
+    "printed packaging boxes",
   ],
 });
 
@@ -129,15 +129,15 @@ export default function CustomPackagingPage(): JSX.Element {
           <SectionHeading
             eyebrow="Step 02"
             title="Material selection"
-            description="The material follows the protection requirement: corrugated for structure, EPE foam for cushioning, bubble for surface and impact protection, films for sealing and bundling, accessories to finish the job."
+            description="The material follows the protection requirement: corrugated for structure, EPE Foam Packaging for cushioning, LDPE Bubble & Protective Packaging for surface and impact protection, films for sealing and bundling, accessories to finish the job."
             className="max-w-3xl"
           />
 
           <StaggerGroup className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {[
               { name: "Corrugated", body: "Ply and grade matched to load and handling.", color: "#FF8A2B" },
-              { name: "EPE Foam", body: "Thickness and density matched to cushioning need.", color: "#19C3E6" },
-              { name: "Bubble & Protective", body: "Surface, impact, dust and handling protection.", color: "#8B5CF6" },
+              { name: "EPE Foam Packaging", body: "Thickness and density matched to cushioning need.", color: "#19C3E6" },
+              { name: "LDPE Bubble & Protective", body: "Surface, impact, dust and handling protection.", color: "#8B5CF6" },
               { name: "Poly & Films", body: "Sealing, bundling and load stability.", color: "#10B981" },
               { name: "Accessories", body: "Closing, securing, edge and specialist protection.", color: "#FF5C8A" },
             ].map((item) => (
@@ -283,7 +283,7 @@ export default function CustomPackagingPage(): JSX.Element {
           },
           {
             title: "Dispatch planning",
-            description: "Reliable dispatch scheduling for industrial customers across NCR and nearby clusters.",
+            description: "Reliable dispatch scheduling for industrial customers across Pan India.",
             icon: "truck",
             color: "#FF8A2B",
           },

@@ -18,9 +18,9 @@ import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Contact SRM Enterprises — Request a Packaging Quote",
   description:
-    "Send your packaging requirement to SRM Enterprises: share size, material, quantity and application for corrugated, EPE foam, bubble, poly films and accessories. Serving Gurugram, Manesar, Bhiwadi and NCR.",
+    "Send your packaging requirement to SRM Enterprises: share size, material, quantity and application for corrugated boxes, EPE Foam Packaging, LDPE Bubble & Protective Packaging, poly films and accessories. Pan India supply and dispatch.",
   path: "/contact",
-  keywords: ["packaging quote NCR", "contact packaging supplier Gurugram", "packaging enquiry Manesar"],
+  keywords: ["packaging quote Pan India", "contact packaging supplier India", "packaging enquiry", "bulk industrial packaging supplier"],
 });
 
 const breadcrumbs = [{ name: "Contact", path: "/contact" }];

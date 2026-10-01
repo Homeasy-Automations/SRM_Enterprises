@@ -27,7 +27,7 @@ import { industries } from "@/data/industries";
 export const metadata: Metadata = buildMetadata({
   title: "About SRM Enterprises — Packaging Supply Built Around Your Business",
   description:
-    "SRM Enterprises manufactures and trades industrial packaging materials — customized sizes, thicknesses and ply, consistent quality with competitive commercial pricing, and bulk supply across NCR and nearby industrial clusters.",
+    "SRM Enterprises manufactures and trades industrial packaging materials — customized sizes, thicknesses and ply, consistent quality with competitive commercial pricing, and bulk supply across Pan India.",
   path: "/about",
   keywords: ["about SRM Enterprises", "industrial packaging supplier", "packaging manufacturer and trader"],
 });

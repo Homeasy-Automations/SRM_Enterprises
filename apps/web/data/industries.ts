@@ -285,7 +285,7 @@ export const industries: Industry[] = [
     ],
     supplyNotes: [
       "Regular dispatch planning for continuous consumption",
-      "Bulk supply across NCR and nearby industrial clusters",
+      "Bulk supply across Pan India and nearby industrial clusters",
       "Buffer stock guidance for high-usage items",
     ],
     color: INDUSTRY_COLORS["food-fmcg"],

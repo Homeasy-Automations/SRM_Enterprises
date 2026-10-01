@@ -24,7 +24,7 @@ export const metadata: Metadata = buildMetadata({
     "engineering packaging supplier",
     "electronics ESD packaging",
     "pharma packaging supplier",
-    "e-commerce packaging supplier NCR",
+    "e-commerce packaging supplier India",
   ],
 });
 

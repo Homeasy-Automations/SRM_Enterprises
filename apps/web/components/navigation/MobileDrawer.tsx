@@ -199,7 +199,7 @@ export function MobileDrawer({ open, onClose }: MobileDrawerProps): JSX.Element 
               ) : null}
 
               <p className="text-center text-[0.7rem] leading-snug text-navy-soft">
-                Gurugram • Manesar • Bhiwadi • NCR
+                Pan India Supply &amp; Dispatch
               </p>
             </div>
           </motion.aside>

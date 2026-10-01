@@ -67,7 +67,7 @@ export function organizationJsonLd(): Record<string, unknown> {
     knowsAbout: [
       "Corrugated Packaging",
       "EPE Foam Packaging",
-      "Bubble & Protective Packaging",
+      "LDPE Bubble & Protective Packaging",
       "Poly Bags and Films",
       "Packaging Accessories",
       "Custom Packaging",

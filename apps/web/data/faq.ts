@@ -30,7 +30,7 @@ export const contactFaq: AccordionItemData[] = [
     id: "delivery-area",
     question: "Which areas do you supply to?",
     answer:
-      "Bulk supply across NCR and nearby industrial clusters, with our Gurugram, Manesar and Bhiwadi network. Share your delivery location and we will confirm dispatch planning.",
+      "Bulk supply across Pan India and major industrial clusters. Share your delivery location and requirements, and our team will confirm dispatch planning.",
   },
   {
     id: "samples",

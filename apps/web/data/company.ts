@@ -31,7 +31,7 @@ export const CONTACT_PLACEHOLDERS: ContactPlaceholders = {
   email: "info@your-domain.com",
   phoneDisplay: "+91 XXXXX XXXXX",
   whatsappDisplay: "+91 XXXXX XXXXX",
-  addressLine: "Gurugram, Haryana — dispatches across NCR and nearby industrial clusters",
+  addressLine: "Pan India supply & dispatch across all major industrial clusters",
 };
 
 const PHONE_PLACEHOLDER = "+91 XXXXX XXXXX";
@@ -104,8 +104,8 @@ export function getProductWhatsAppMessage(productName: string): string {
 export const ORGANISATION_PROFILE = {
   legalName: BRAND.name,
   description:
-    "SRM Enterprises is an industrial packaging material supplier offering trading, manufacturing and custom packaging — corrugated boxes, EPE foam, bubble and protective packaging, poly bags & films and packaging accessories.",
-  areaServed: ["Gurugram", "Manesar", "Bhiwadi", "NCR"],
+    "SRM Enterprises is an industrial packaging material supplier offering trading, manufacturing and custom packaging — corrugated boxes, EPE Foam Packaging, LDPE Bubble & Protective Packaging, poly bags & films and packaging accessories with Pan India supply.",
+  areaServed: ["Pan India"],
   contactEmail: CONTACT_PLACEHOLDERS.email,
   contactPhone: PHONE_PLACEHOLDER,
 } as const;

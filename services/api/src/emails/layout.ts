@@ -8,7 +8,7 @@ export const EMAIL_BRAND = {
   name: "SRM ENTERPRISES",
   tagline: "Trading • Manufacturing • Custom Packaging",
   footerLine: "Your Complete Packaging Material Partner",
-  locations: "Gurugram • Manesar • Bhiwadi • NCR",
+  locations: "Pan India",
   blue: "#1E6FFF",
   green: "#19B26B",
   yellow: "#FFC93C",

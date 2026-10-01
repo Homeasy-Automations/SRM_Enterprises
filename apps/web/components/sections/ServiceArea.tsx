@@ -5,37 +5,59 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { StaggerGroup, StaggerItem, Reveal } from "@/components/animations/Reveal";
 import { TruckArt } from "@/components/ui/art";
 
-const LOCATION_DETAIL: Record<string, string> = {
-  Gurugram: "Primary industrial and commercial supply base",
-  Manesar: "Manufacturing and dispatch support for auto & engineering buyers",
-  Bhiwadi: "Supply coverage for the Rajasthan-side industrial belt",
-  NCR: "Regular dispatch across the wider National Capital Region",
-};
+interface SupplyPillar {
+  title: string;
+  description: string;
+  color: string;
+}
 
-/** Supply / service-area section — the only location names used anywhere on the site. */
+const PAN_INDIA_PILLARS: SupplyPillar[] = [
+  {
+    title: "Nationwide Dispatch",
+    description: "Reliable logistics and delivery network covering manufacturing facilities and warehouses across India.",
+    color: "#1E6FFF",
+  },
+  {
+    title: "Industrial Corridors",
+    description: "Supply coverage for automotive, engineering, electronics, pharma and FMCG hubs across all zones.",
+    color: "#19B26B",
+  },
+  {
+    title: "Bulk Supply Logistics",
+    description: "Full truckload and standing dispatch schedules planned for continuous consumption without downtime.",
+    color: "#FF8A2B",
+  },
+  {
+    title: "Transit-Tested Protection",
+    description: "Packaging engineered to withstand multi-modal handling and long-distance inter-state transit.",
+    color: "#8B5CF6",
+  },
+];
+
+/** Supply / service-area section — Pan India reach and nationwide dispatch. */
 export function ServiceArea(): JSX.Element {
   return (
     <section className="band-sky section-pad relative" aria-labelledby="service-area-heading">
       <div className="container-page">
         <SectionHeading
           eyebrow="Service Area"
-          title="Bulk supply across NCR and nearby industrial clusters"
+          title="Bulk packaging supply &amp; dispatch across Pan India"
           description={SERVICE_AREA_NOTE}
           className="max-w-3xl"
         />
 
         <StaggerGroup className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {BRAND.locations.map((location, index) => (
-            <StaggerItem key={location} className="h-full">
+          {PAN_INDIA_PILLARS.map((pillar) => (
+            <StaggerItem key={pillar.title} className="h-full">
               <article
                 className="surface-card group flex h-full flex-col gap-3 p-6 hover:-translate-y-1.5 hover:shadow-lift"
-                style={{ ["--accent" as string]: ["#1E6FFF", "#19B26B", "#FF8A2B", "#8B5CF6"][index] ?? "#1E6FFF" }}
+                style={{ ["--accent" as string]: pillar.color }}
               >
                 <span className="grid h-11 w-11 place-items-center rounded-2xl bg-accent-soft text-accent-deep transition-transform duration-500 group-hover:scale-110">
                   <MapPin className="h-5 w-5" aria-hidden="true" />
                 </span>
-                <h3 className="font-display text-lg font-bold text-navy">{location}</h3>
-                <p className="text-sm leading-relaxed text-navy-soft">{LOCATION_DETAIL[location] ?? ""}</p>
+                <h3 className="font-display text-lg font-bold text-navy">{pillar.title}</h3>
+                <p className="text-sm leading-relaxed text-navy-soft">{pillar.description}</p>
               </article>
             </StaggerItem>
           ))}

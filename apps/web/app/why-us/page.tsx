@@ -19,7 +19,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Why businesses choose SRM Enterprises: consistent material and dimensional control, customisation across size, thickness, printing and packing, competitive pricing for regular and bulk requirements, and reliable dispatch planning for industrial customers.",
   path: "/why-us",
-  keywords: ["packaging supplier quality", "custom packaging value", "reliable packaging supply NCR"],
+  keywords: ["packaging supplier quality", "custom packaging value", "reliable packaging supply Pan India"],
 });
 
 const breadcrumbs = [{ name: "Why Us", path: "/why-us" }];

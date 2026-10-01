@@ -37,7 +37,7 @@ export default function ProductsPage(): JSX.Element {
       <PageHero
         eyebrow="Product Range"
         title="Five packaging categories. One supply source."
-        description="Corrugated, EPE foam, bubble & protective packaging, poly bags & films and accessories — supplied as standard material or built to your specification, in trial quantities or bulk."
+        description="Corrugated boxes, EPE Foam Packaging, LDPE Bubble & Protective Packaging, poly bags & films and packaging accessories — supplied as standard material or built to your specification, in trial quantities or bulk."
         breadcrumbs={breadcrumbs}
         accentColor="#1E6FFF"
       >
@@ -154,10 +154,10 @@ export default function ProductsPage(): JSX.Element {
       {/* 6 — Requirement CTA */}
       <CtaBanner
         title="Found what you need? Send the requirement."
-        description="Share your size, material, quantity and application. Bulk supply across NCR and nearby industrial clusters."
+        description="Share your size, material, quantity and application. Bulk supply across Pan India with reliable dispatch logistics."
         primaryLabel="Get a Quote"
         primaryHref="/contact"
-        footnote={`Dispatch support from our ${BRAND.locations.join(", ")} network.`}
+        footnote={`Dispatch support across ${BRAND.locations.join(", ")}.`}
       />
 
       <JsonLd

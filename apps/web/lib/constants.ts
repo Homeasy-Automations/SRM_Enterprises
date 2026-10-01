@@ -12,7 +12,7 @@ export const SITE = {
   defaultTitle:
     "SRM Enterprises — Complete Packaging Solutions Under One Roof | Industrial Packaging Supplier",
   defaultDescription:
-    "SRM Enterprises supplies industrial packaging material — corrugated boxes, EPE foam, bubble & protective packaging, poly bags & films and packaging accessories. Trading, manufacturing and custom packaging for Gurugram, Manesar, Bhiwadi and NCR.",
+    "SRM Enterprises supplies industrial packaging material — corrugated boxes, EPE Foam Packaging, LDPE Bubble & Protective Packaging, poly bags & films and packaging accessories. Trading, manufacturing and custom packaging with Pan India supply & dispatch.",
   themeColor: "#1E6FFF",
   twitterCard: "summary_large_image" as const,
 } as const;
@@ -96,7 +96,7 @@ export const ABOUT_POINTS = [
   "Customized sizes, thicknesses, ply and specifications",
   "Consistent quality with competitive commercial pricing",
   "Suitable for automotive, engineering, electronics, e-commerce and general industry",
-  "Bulk supply across NCR and nearby industrial clusters",
+  "Bulk supply across Pan India",
 ] as const;
 
 export const ABOUT_INTRO =
@@ -130,7 +130,7 @@ export const WHAT_WE_PROVIDE = [
   {
     title: "Bulk Supply",
     description:
-      "Bulk supply planned for regular consumption across NCR and nearby industrial clusters.",
+      "Bulk supply planned for regular consumption across Pan India.",
     icon: "truck",
     color: "#8B5CF6",
   },
@@ -193,4 +193,4 @@ export const FORM_SUCCESS_MESSAGE =
   "Inquiry submitted successfully. Our team will get back to you with material options and pricing.";
 
 export const SERVICE_AREA_NOTE =
-  "Bulk supply across NCR and nearby industrial clusters, dispatched from our Gurugram, Manesar and Bhiwadi network.";
+  "Bulk supply across Pan India, dispatched through our nationwide industrial supply network.";

@@ -83,7 +83,7 @@ export function HomeHero(): JSX.Element {
             transition={{ duration: reducedMotion ? 0.001 : 0.6, delay: 0.45 }}
             className="mt-6 max-w-2xl text-base leading-relaxed text-navy-soft sm:text-lg"
           >
-            Corrugated boxes, EPE foam, bubble &amp; protective packaging, poly bags &amp; films and
+            Corrugated boxes, EPE Foam Packaging, LDPE Bubble &amp; Protective Packaging, poly bags &amp; films and
             packaging accessories — supplied as standard material or built to your specification.
             Bulk supply {BRAND.bulkSupplyLine}.
           </motion.p>
@@ -140,7 +140,7 @@ export function HomeHero(): JSX.Element {
           </motion.div>
 
           <p className="mt-6 text-xs font-medium uppercase tracking-[0.18em] text-navy-soft sm:text-sm">
-            Gurugram • Manesar • Bhiwadi • NCR
+            Pan India Supply &amp; Dispatch
           </p>
         </div>
       </div>

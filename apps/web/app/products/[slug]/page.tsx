@@ -42,7 +42,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 
   return buildMetadata({
     title: `${product.name} — ${product.tagline}`,
-    description: `${product.description}${product.note ? ` ${product.note}.` : ""} Custom sizes, thicknesses and bulk quantities from SRM Enterprises — bulk supply across NCR and nearby industrial clusters.`,
+    description: `${product.description}${product.note ? ` ${product.note}.` : ""} Custom sizes, thicknesses and bulk quantities from SRM Enterprises — bulk supply across Pan India.`,
     path: `/products/${product.slug}`,
     keywords: [product.name, ...product.items.slice(0, 3)],
   });
@@ -63,7 +63,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
     <div data-category={product.slug}>
       {/* 1 — Hero in the category colour */}
       <PageHero
-        eyebrow={`${product.colorName} • Packaging Category`}
+        eyebrow={`${product.colorName} • Industrial Packaging`}
         title={product.name}
         description={
           <>

@@ -14,15 +14,16 @@ import { industries } from "@/data/industries";
 import { BRAND } from "@srm/config";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Industrial Packaging Material Supplier in Gurugram, Manesar, Bhiwadi & NCR",
+  title: "Industrial Packaging Material Supplier | Pan India",
   description:
-    "SRM Enterprises supplies corrugated packaging, EPE foam, LDPE bubble & protective packaging, poly bags & films and packaging accessories — trading, manufacturing and custom packaging under one roof. Bulk supply across NCR and nearby industrial clusters.",
+    "SRM Enterprises supplies corrugated packaging, EPE Foam Packaging, LDPE Bubble & Protective Packaging, poly bags & films and packaging accessories — trading, manufacturing and custom packaging under one roof. Bulk supply across Pan India.",
   path: "/",
   keywords: [
-    "packaging material supplier NCR",
-    "corrugated box supplier Gurugram",
-    "EPE foam supplier Manesar",
-    "bubble wrap supplier Bhiwadi",
+    "industrial packaging material supplier",
+    "packaging material supplier Pan India",
+    "corrugated box supplier",
+    "EPE foam packaging supplier",
+    "bubble packaging supplier",
     "custom packaging supplier",
   ],
 });

@@ -77,9 +77,9 @@ export function ProductShowcase(): JSX.Element {
                     className="eyebrow"
                     style={{ ["--accent" as string]: showcase.product.color }}
                   >
-                    Category {String(index + 1).padStart(2, "0")}
+                    {showcase.product.name}
                   </span>
-                  <h3 className="font-display text-2xl font-bold text-navy">{showcase.product.name}</h3>
+                  <h3 className="font-display text-2xl font-bold text-navy">{showcase.product.tagline}</h3>
                   <p className="text-sm leading-relaxed text-navy-soft sm:text-base">
                     {showcase.product.description}
                   </p>

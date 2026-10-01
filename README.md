@@ -39,7 +39,7 @@ reviewed directly in MongoDB Atlas.
 ## 1. Overview
 
 SRM Enterprises manufactures and trades industrial packaging materials and supplies them
-across **Gurugram, Manesar, Bhiwadi and NCR**. This project is the public website plus the small
+across **Pan India**. This project is the public website plus the small
 backend it genuinely needs:
 
 - **Five product categories** — Corrugated Packaging, EPE Foam Packaging, LDPE Bubble &

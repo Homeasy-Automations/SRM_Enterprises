@@ -12,8 +12,8 @@ export const BRAND = {
   footerLine: "Your Complete Packaging Material Partner",
   positioning:
     "Industrial packaging material supplier — trading, manufacturing and custom packaging.",
-  bulkSupplyLine: "across NCR and nearby industrial clusters",
-  locations: ["Gurugram", "Manesar", "Bhiwadi", "NCR"],
+  bulkSupplyLine: "across Pan India with reliable dispatch logistics",
+  locations: ["Pan India"],
 } as const;
 
 export const ROUTES = {

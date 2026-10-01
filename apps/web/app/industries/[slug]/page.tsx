@@ -40,9 +40,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 
   return buildMetadata({
     title: `${industry.name} Packaging Solutions — ${industry.tagline}`,
-    description: `${industry.description} Packaging solutions designed around product protection and supply-chain needs. Bulk supply across NCR and nearby industrial clusters.`,
+    description: `${industry.description} Packaging solutions designed around product protection and supply-chain needs. Bulk supply across Pan India.`,
     path: `/industries/${industry.slug}`,
-    keywords: [`${industry.name} packaging`, "industrial packaging supplier NCR"],
+    keywords: [`${industry.name} packaging`, "industrial packaging supplier India", "packaging supplier Pan India"],
   });
 }
 
