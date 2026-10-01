@@ -30,7 +30,7 @@ export function PackageCategorySection({ product, index }: PackageCategorySectio
         <div className={cn("flex flex-col gap-5", flipped && "lg:order-2")}>
           <Reveal variant="fade-up">
             <span className="eyebrow">
-              {product.name} • {product.colorName}
+              {product.name} • {product.badge}
             </span>
           </Reveal>
 

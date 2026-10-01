@@ -1,5 +1,4 @@
 import { MapPin, Truck } from "lucide-react";
-import { BRAND } from "@srm/config";
 import { SERVICE_AREA_NOTE } from "@/lib/constants";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { StaggerGroup, StaggerItem, Reveal } from "@/components/animations/Reveal";

@@ -66,22 +66,24 @@ export default function ProductsPage(): JSX.Element {
               <StaggerItem key={product.slug} className="h-full">
                 <Link
                   href={`/products/${product.slug}`}
-                  className="group flex h-full flex-col gap-3 rounded-[24px] border border-navy/10 bg-white p-5 shadow-soft transition-all duration-500 hover:-translate-y-1.5 hover:shadow-lift"
+                  className="group flex h-full min-h-[260px] flex-col justify-between gap-4 rounded-[24px] border border-navy/10 bg-white p-5 shadow-soft transition-all duration-500 hover:-translate-y-1.5 hover:shadow-lift"
                   style={{ ["--overview-color" as string]: product.color }}
                 >
-                  <span
-                    className="grid h-14 w-14 place-items-center rounded-2xl transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6"
-                    style={{ background: `${product.color}1F` }}
-                  >
-                    <ProductArt
-                      iconKey={product.icon}
-                      accent={product.color}
-                      className="h-12 w-12"
-                      title={`${product.name} illustration`}
-                    />
-                  </span>
-                  <h3 className="font-display text-base font-bold text-navy">{product.name}</h3>
-                  <p className="text-xs leading-relaxed text-navy-soft">{product.tagline}</p>
+                  <div className="flex flex-col gap-3">
+                    <span
+                      className="grid h-14 w-14 place-items-center rounded-2xl transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6"
+                      style={{ background: `${product.color}1F` }}
+                    >
+                      <ProductArt
+                        iconKey={product.icon}
+                        accent={product.color}
+                        className="h-12 w-12"
+                        title={`${product.name} illustration`}
+                      />
+                    </span>
+                    <h3 className="font-display text-base font-bold text-navy">{product.name}</h3>
+                    <p className="text-xs leading-relaxed text-navy-soft">{product.tagline}</p>
+                  </div>
                   <span
                     className="mt-auto inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide"
                     style={{ color: product.color }}

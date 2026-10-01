@@ -37,6 +37,7 @@ export interface ProductCategory {
   industries: IndustrySlug[];
   color: string;
   colorName: string;
+  badge: string;
   icon: ProductIconKey;
   /** Key into lib/image-config.ts — lets real photos replace the illustrations later. */
   imageKey: string;
@@ -96,6 +97,7 @@ export const products: ProductCategory[] = [
     industries: ["automotive", "engineering", "electronics", "food-fmcg", "ecommerce-logistics"],
     color: CATEGORY_COLORS["corrugated-packaging"],
     colorName: "Kraft Orange",
+    badge: "Heavy-Duty Transit",
     icon: "box",
     imageKey: "corrugated",
   },
@@ -151,6 +153,7 @@ export const products: ProductCategory[] = [
     industries: ["automotive", "electronics", "engineering", "pharmaceuticals", "food-fmcg"],
     color: CATEGORY_COLORS["epe-foam-packaging"],
     colorName: "Foam Aqua",
+    badge: "Cushioning & Protection",
     icon: "foam",
     imageKey: "epeFoam",
   },
@@ -206,6 +209,7 @@ export const products: ProductCategory[] = [
     industries: ["automotive", "electronics", "engineering", "ecommerce-logistics"],
     color: CATEGORY_COLORS["bubble-protective-packaging"],
     colorName: "Protective Violet",
+    badge: "Surface & Impact Guard",
     icon: "bubble",
     imageKey: "bubble",
   },
@@ -214,6 +218,7 @@ export const products: ProductCategory[] = [
     name: "Poly Bags, Films & Flexible Packaging",
     shortName: "Poly Bags & Films",
     tagline: "Flexible packaging for storage, protection and dispatch",
+    note: "Custom sizes • Standard gauges • Bulk supply",
     description:
       "LDPE, HM/HDPE, stretch and shrink films plus clear and printed bags for daily packing lines.",
     intro:
@@ -260,6 +265,7 @@ export const products: ProductCategory[] = [
     industries: ["automotive", "engineering", "electronics", "food-fmcg", "ecommerce-logistics"],
     color: CATEGORY_COLORS["poly-bags-films"],
     colorName: "Film Emerald",
+    badge: "Flexible Packaging",
     icon: "film",
     imageKey: "polyFilm",
   },
@@ -268,6 +274,7 @@ export const products: ProductCategory[] = [
     name: "Packaging Accessories",
     shortName: "Accessories",
     tagline: "Complete your packaging requirement from one source",
+    note: "Full range of packing tapes, strapping & edge protectors",
     description:
       "Tapes, strapping, edge protection, VCI and ESD materials that finish the packing job.",
     intro:
@@ -314,6 +321,7 @@ export const products: ProductCategory[] = [
     industries: ["automotive", "engineering", "electronics", "pharmaceuticals", "food-fmcg"],
     color: CATEGORY_COLORS["packaging-accessories"],
     colorName: "Coral Pink",
+    badge: "Packaging Consumables",
     icon: "accessories",
     imageKey: "accessories",
   },

@@ -63,7 +63,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
     <div data-category={product.slug}>
       {/* 1 — Hero in the category colour */}
       <PageHero
-        eyebrow={`${product.colorName} • Industrial Packaging`}
+        eyebrow={`${product.badge} • Industrial Packaging`}
         title={product.name}
         description={
           <>
@@ -191,7 +191,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
           description: point.description,
           icon: "shield",
           color: product.color,
-          tag: product.colorName,
+          tag: product.badge,
         }))}
       />
 

@@ -54,36 +54,33 @@ export function ProductShowcase(): JSX.Element {
 
         <div className="mt-12 flex flex-col gap-8 lg:gap-10">
           {productShowcases.map((showcase, index) => {
-            const isWide = index % 3 === 0;
             return (
               <div
                 key={showcase.product.slug}
                 id={`showcase-${showcase.product.slug}`}
                 data-category={showcase.product.slug}
-                className={cn(
-                  "scroll-mt-28 grid items-stretch gap-6",
-                  isWide ? "lg:grid-cols-[1.15fr_1fr]" : "lg:grid-cols-[1fr_1.15fr]",
-                )}
+                className="scroll-mt-28 grid items-stretch gap-6 lg:grid-cols-2"
               >
-                {/* Asymmetry: the intro panel and the card swap sides down the page. */}
                 <Reveal
                   variant={index % 2 === 0 ? "slide-right" : "slide-left"}
                   className={cn(
-                    "order-2 flex flex-col justify-center gap-4 rounded-[26px] border border-navy/10 bg-white p-7 shadow-soft lg:order-1",
-                    isWide && "lg:order-2",
+                    "flex h-full flex-col justify-between gap-6 rounded-[26px] border border-navy/10 bg-white p-6 sm:p-7 shadow-soft min-h-[460px] lg:min-h-[480px]",
+                    index % 2 === 1 && "lg:order-2",
                   )}
                 >
-                  <span
-                    className="eyebrow"
-                    style={{ ["--accent" as string]: showcase.product.color }}
-                  >
-                    {showcase.product.name}
-                  </span>
-                  <h3 className="font-display text-2xl font-bold text-navy">{showcase.product.tagline}</h3>
-                  <p className="text-sm leading-relaxed text-navy-soft sm:text-base">
-                    {showcase.product.description}
-                  </p>
-                  <ul className="flex flex-wrap gap-2">
+                  <div className="flex flex-col gap-4">
+                    <span
+                      className="eyebrow"
+                      style={{ ["--accent" as string]: showcase.product.color }}
+                    >
+                      {showcase.product.name}
+                    </span>
+                    <h3 className="font-display text-2xl font-bold text-navy">{showcase.product.tagline}</h3>
+                    <p className="text-sm leading-relaxed text-navy-soft sm:text-base">
+                      {showcase.product.description}
+                    </p>
+                  </div>
+                  <ul className="flex flex-wrap gap-2 pt-2">
                     {showcase.product.items.map((item) => (
                       <li
                         key={item}
@@ -103,9 +100,9 @@ export function ProductShowcase(): JSX.Element {
                 <Reveal
                   variant={index % 2 === 0 ? "slide-left" : "slide-right"}
                   delay={0.08}
-                  className={cn("order-1 lg:order-2", isWide && "lg:order-1")}
+                  className={cn("h-full", index % 2 === 1 && "lg:order-1")}
                 >
-                  <ProductCard showcase={showcase} className="h-full" />
+                  <ProductCard showcase={showcase} className="h-full min-h-[460px] lg:min-h-[480px]" />
                 </Reveal>
               </div>
             );
