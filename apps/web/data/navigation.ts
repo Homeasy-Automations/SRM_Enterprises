@@ -34,7 +34,6 @@ export const industryMenu: NavChild[] = industries.map((industry) => ({
 }));
 
 export const primaryNav: NavItem[] = [
-  { label: "Home", href: ROUTES.home, ariaLabel: "Go to the SRM Enterprises home page" },
   { label: "About", href: ROUTES.about, ariaLabel: "About SRM Enterprises" },
   {
     label: "Products",
@@ -84,7 +83,6 @@ export const primaryNav: NavItem[] = [
     ariaLabel: "Custom packaging process",
   },
   { label: "Why Us", href: ROUTES.whyUs, ariaLabel: "Why businesses choose SRM Enterprises" },
-  { label: "Contact", href: ROUTES.contact, ariaLabel: "Contact SRM Enterprises" },
 ];
 
 export const footerNav = {
