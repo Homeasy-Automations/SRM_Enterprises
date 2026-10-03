@@ -4,9 +4,9 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
-const TAGLINES = ["Trading", "Manufacturing", "Custom Packaging"] as const;
+const TAGLINES = ["Industrial Packaging", "Protective Solutions", "Custom Dimensions"] as const;
 
-/** Rotating brand tagline: Trading → Manufacturing → Custom Packaging. */
+/** Rotating brand features: Industrial Packaging → Protective Solutions → Custom Dimensions. */
 export function RotatingTagline({ className }: { className?: string }): JSX.Element {
   const [index, setIndex] = useState(0);
   const reducedMotion = useReducedMotion();

@@ -11,17 +11,46 @@ interface FloatingIllustrationsProps {
 }
 
 const ITEMS = [
-  { key: "box", Art: BoxArt, color: "#FF8A2B", className: "left-[2%] top-[6%] h-24 w-24 sm:h-32 sm:w-32", duration: 8 },
-  { key: "foam", Art: FoamArt, color: "#19C3E6", className: "right-[4%] top-[2%] h-24 w-24 sm:h-36 sm:w-36", duration: 10 },
-  { key: "bubble", Art: BubbleArt, color: "#8B5CF6", className: "left-[6%] bottom-[6%] h-20 w-20 sm:h-28 sm:w-28", duration: 9 },
-  { key: "film", Art: FilmArt, color: "#10B981", className: "right-[8%] bottom-[10%] h-20 w-20 sm:h-32 sm:w-32", duration: 11 },
-  { key: "tape", Art: AccessoryArt, color: "#FF5C8A", className: "left-[44%] top-[-2%] hidden h-20 w-20 lg:block", duration: 12 },
+  {
+    key: "box",
+    Art: BoxArt,
+    color: "#FF8A2B",
+    className: "left-[2%] sm:left-[3%] top-[7%] sm:top-[8%] h-28 w-28 sm:h-36 sm:w-36 lg:h-40 lg:w-40",
+    duration: 8,
+  },
+  {
+    key: "foam",
+    Art: FoamArt,
+    color: "#19C3E6",
+    className: "right-[6%] sm:right-[8%] top-[7%] sm:top-[8%] h-28 w-28 sm:h-28 sm:w-28 lg:h-28 lg:w-28",
+    duration: 10,
+  },
+  {
+    key: "bubble",
+    Art: BubbleArt,
+    color: "#8B5CF6",
+    className: "left-[3%] sm:left-[5%] bottom-[20%] sm:bottom-[22%] lg:bottom-[24%] h-26 w-26 sm:h-32 sm:w-32 lg:h-32 lg:w-32",
+    duration: 9,
+  },
+  {
+    key: "film",
+    Art: FilmArt,
+    color: "#10B981",
+    className: "right-[10%] sm:right-[8%] bottom-[20%] sm:bottom-[22%] lg:bottom-[24%] h-26 w-26 sm:h-32 sm:w-32 lg:h-32 lg:w-32",
+    duration: 11,
+  },
+  {
+    key: "tape",
+    Art: AccessoryArt,
+    color: "#FF5C8A",
+    className: "left-[45%] top-[2.5%] sm:top-[3.5%] hidden h-24 w-24 lg:block lg:h-28 lg:w-28",
+    duration: 12,
+  },
 ] as const;
 
 /**
  * Slowly floating SVG packaging illustrations behind the hero copy.
- * Marked aria-hidden (decorative) and kept light: transform-only animation, hidden on the
- * smallest screens to protect the reading experience, static under reduced motion.
+ * Positioned cleanly within the hero frame, fully visible without boundary clipping.
  */
 export function FloatingIllustrations({ className, accent }: FloatingIllustrationsProps): JSX.Element {
   const reducedMotion = useReducedMotion();
@@ -36,9 +65,9 @@ export function FloatingIllustrations({ className, accent }: FloatingIllustratio
             reducedMotion
               ? undefined
               : {
-                  y: [0, index % 2 === 0 ? -18 : 16, 0],
-                  rotate: [0, index % 2 === 0 ? 6 : -6, 0],
-                }
+                y: [0, index % 2 === 0 ? -12 : 12, 0],
+                rotate: [0, index % 2 === 0 ? 5 : -5, 0],
+              }
           }
           transition={{
             duration: item.duration,
@@ -47,7 +76,10 @@ export function FloatingIllustrations({ className, accent }: FloatingIllustratio
             delay: index * 0.4,
           }}
         >
-          <item.Art accent={index === 0 && accent ? accent : item.color} className="h-full w-full drop-shadow-[0_18px_30px_rgba(18,41,74,0.16)]" />
+          <item.Art
+            accent={index === 0 && accent ? accent : item.color}
+            className="h-full w-full drop-shadow-[0_18px_30px_rgba(18,41,74,0.16)]"
+          />
         </motion.div>
       ))}
     </div>

@@ -1,6 +1,6 @@
 # SRM ENTERPRISES — Industrial Packaging Materials Website
 
-**Complete Packaging Solutions Under One Roof** — Trading • Manufacturing • Custom Packaging
+**Complete Packaging Solutions Under One Roof**
 *Your Complete Packaging Material Partner*
 
 A production-ready monorepo: a Next.js 14 (App Router) marketing site, an Express + TypeScript

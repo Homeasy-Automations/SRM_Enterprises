@@ -104,7 +104,7 @@ export function getProductWhatsAppMessage(productName: string): string {
 export const ORGANISATION_PROFILE = {
   legalName: BRAND.name,
   description:
-    "SRM Enterprises is an industrial packaging material supplier offering trading, manufacturing and custom packaging — corrugated boxes, EPE Foam Packaging, LDPE Bubble & Protective Packaging, poly bags & films and packaging accessories with Pan India supply.",
+    "SRM Enterprises is an industrial packaging material supplier offering complete packaging solutions — corrugated boxes, EPE Foam Packaging, LDPE Bubble & Protective Packaging, poly bags & films and packaging accessories with Pan India supply.",
   areaServed: ["Pan India"],
   contactEmail: CONTACT_PLACEHOLDERS.email,
   contactPhone: PHONE_PLACEHOLDER,

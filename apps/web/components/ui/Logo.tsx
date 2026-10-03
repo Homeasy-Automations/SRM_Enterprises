@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BRAND } from "@srm/config";
 import { cn } from "@/lib/utils";
 
 interface LogoProps {
@@ -64,7 +65,7 @@ export function Logo({
               tone === "light" ? "text-white/85" : "text-navy-soft",
             )}
           >
-            Trading • Manufacturing • Custom Packaging
+            {BRAND.tagline}
           </span>
         ) : null}
       </span>

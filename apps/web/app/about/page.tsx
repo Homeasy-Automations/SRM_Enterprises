@@ -41,7 +41,7 @@ export default function AboutPage(): JSX.Element {
       <PageHero
         eyebrow="About SRM Enterprises"
         title="Packaging Supply Built Around Your Business"
-        description="One partner for manufacturing, trading and custom packaging — so you can stop coordinating five suppliers and start planning one packing line."
+        description="One partner for all your industrial packaging needs — so you can stop coordinating five suppliers and start planning one packing line."
         breadcrumbs={breadcrumbs}
         accentColor="#1E6FFF"
       >

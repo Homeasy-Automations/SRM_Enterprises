@@ -58,7 +58,7 @@ export function CtaBanner({
           <Reveal variant="kinetic-pop">
             <span className="badge-interactive cursor-default inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/15 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-white shadow-sm backdrop-blur-sm transition-all duration-300 hover:bg-white/25 hover:scale-105">
               <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
-              Trading • Manufacturing • Custom Packaging
+              {BRAND.tagline}
             </span>
           </Reveal>
 

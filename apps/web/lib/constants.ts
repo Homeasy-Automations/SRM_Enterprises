@@ -12,7 +12,7 @@ export const SITE = {
   defaultTitle:
     "SRM Enterprises — Complete Packaging Solutions Under One Roof | Industrial Packaging Supplier",
   defaultDescription:
-    "SRM Enterprises supplies industrial packaging material — corrugated boxes, EPE Foam Packaging, LDPE Bubble & Protective Packaging, poly bags & films and packaging accessories. Trading, manufacturing and custom packaging with Pan India supply & dispatch.",
+    "SRM Enterprises supplies industrial packaging material — corrugated boxes, EPE Foam Packaging, LDPE Bubble & Protective Packaging, poly bags & films and packaging accessories. Complete packaging solutions with Pan India supply & dispatch.",
   themeColor: "#1E6FFF",
   twitterCard: "summary_large_image" as const,
 } as const;

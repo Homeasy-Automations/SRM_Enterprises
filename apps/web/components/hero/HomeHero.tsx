@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion, type Variants } from "framer-motion";
-import { ArrowRight, MessageCircle, Package, Sparkles } from "lucide-react";
+import { ArrowRight, MessageCircle, Package } from "lucide-react";
 import { BRAND } from "@srm/config";
 import { getWhatsAppLink } from "@/data/company";
 import { Blobs } from "@/components/ui/Blobs";
@@ -45,7 +45,7 @@ export function HomeHero(): JSX.Element {
 
       <div className="container-page relative z-10 pb-14 sm:pb-20 lg:pb-24">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-          <motion.span
+          {/* <motion.span
             initial={reducedMotion ? { opacity: 1 } : { opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: false, amount: 0.1, margin: "0px 0px -40px 0px" }}
@@ -54,7 +54,7 @@ export function HomeHero(): JSX.Element {
           >
             <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
             {BRAND.tagline}
-          </motion.span>
+          </motion.span> */}
 
           <motion.h1
             id="hero-heading"
@@ -62,7 +62,7 @@ export function HomeHero(): JSX.Element {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.1, margin: "0px 0px -40px 0px" }}
-            className="mt-6 font-display text-[2rem] font-extrabold leading-[1.1] text-navy sm:text-5xl lg:text-6xl xl:text-[4.2rem]"
+            className="mt-24 font-display text-[2rem] font-extrabold leading-[1.1] text-navy sm:text-5xl lg:text-6xl xl:text-[4.2rem]"
           >
             {words.map((item, index) => (
               <motion.span
@@ -98,7 +98,7 @@ export function HomeHero(): JSX.Element {
             transition={{ duration: reducedMotion ? 0.001 : 0.85, delay: 0.55 }}
             className="mt-8 flex flex-col items-center gap-3 sm:flex-row"
           >
-            <span className="text-sm text-navy-soft sm:text-base">We do</span>
+            <span className="text-sm text-navy-soft sm:text-base">We supply</span>
             <RotatingTagline className="text-lg sm:text-xl" />
           </motion.div>
 

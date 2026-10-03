@@ -58,7 +58,7 @@ export function ProcessTimeline({ compact = false }: ProcessTimelineProps): JSX.
 
       <div className="container-page relative z-10">
         <SectionHeading
-          eyebrow="Custom Packaging Process"
+          eyebrow="Packaging Process"
           title="Six steps from requirement to dispatch"
           description="A clear, structured sequence designed for industrial transparency — so you always know what comes next and what we need from you."
           align="center"
@@ -66,14 +66,14 @@ export function ProcessTimeline({ compact = false }: ProcessTimelineProps): JSX.
         />
 
         {/* 1. Quick Navigation Stepper Strip (Desktop / Tablet) */}
-        <div className="mt-10 hidden overflow-x-auto pb-2 md:block">
-          <div className="mx-auto flex max-w-5xl items-center justify-between rounded-2xl border border-navy/10 bg-slate-50/80 p-2 backdrop-blur-sm">
+        <div className="mt-10 hidden overflow-x-auto pb-3 pt-1 md:block">
+          <div className="mx-auto flex w-full max-w-6xl min-w-max items-center justify-between gap-1 rounded-2xl border border-navy/10 bg-slate-50/90 p-2 sm:p-2.5 backdrop-blur-md shadow-xs">
             {CUSTOM_PROCESS_STEPS.map((step, idx) => {
               const isCurrent = activeStepId === step.id;
               const Icon = STEP_ICONS[idx] ?? PackageSearch;
 
               return (
-                <div key={`nav-${step.id}`} className="flex items-center">
+                <div key={`nav-${step.id}`} className="flex items-center shrink-0">
                   <button
                     type="button"
                     onClick={() => {
@@ -85,17 +85,17 @@ export function ProcessTimeline({ compact = false }: ProcessTimelineProps): JSX.
                       }
                     }}
                     className={cn(
-                      "flex items-center gap-2 rounded-xl px-3.5 py-2 text-xs font-semibold transition-all duration-300",
+                      "flex items-center gap-1.5 sm:gap-2 rounded-xl px-2.5 py-1.5 lg:px-3 lg:py-2 text-[0.72rem] lg:text-xs font-semibold transition-all duration-300",
                       isCurrent
-                        ? "bg-white text-navy shadow-sm ring-1 ring-navy/10"
-                        : "text-navy-soft hover:bg-white/60 hover:text-navy",
+                        ? "bg-white text-navy shadow-sm ring-1 ring-navy/10 scale-102"
+                        : "text-navy-soft hover:bg-white/70 hover:text-navy",
                     )}
                   >
                     <span
-                      className="grid h-6 w-6 place-items-center rounded-lg text-white"
+                      className="grid h-5 w-5 lg:h-6 lg:w-6 place-items-center rounded-lg text-white shrink-0"
                       style={{ background: step.color }}
                     >
-                      <Icon className="h-3.5 w-3.5" aria-hidden="true" />
+                      <Icon className="h-3 w-3 lg:h-3.5 lg:w-3.5" aria-hidden="true" />
                     </span>
                     <span className="whitespace-nowrap">
                       {idx + 1}. {step.title}
@@ -103,7 +103,7 @@ export function ProcessTimeline({ compact = false }: ProcessTimelineProps): JSX.
                   </button>
 
                   {idx < CUSTOM_PROCESS_STEPS.length - 1 ? (
-                    <span className="px-1.5 text-navy/20">→</span>
+                    <span className="px-1 text-navy/25 text-xs select-none shrink-0" aria-hidden="true">→</span>
                   ) : null}
                 </div>
               );

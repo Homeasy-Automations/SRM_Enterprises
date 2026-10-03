@@ -16,7 +16,7 @@ import { BRAND } from "@srm/config";
 export const metadata: Metadata = buildMetadata({
   title: "Industrial Packaging Material Supplier | Pan India",
   description:
-    "SRM Enterprises supplies corrugated packaging, EPE Foam Packaging, LDPE Bubble & Protective Packaging, poly bags & films and packaging accessories — trading, manufacturing and custom packaging under one roof. Bulk supply across Pan India.",
+    "SRM Enterprises supplies corrugated packaging, EPE Foam Packaging, LDPE Bubble & Protective Packaging, poly bags & films and packaging accessories — complete packaging solutions under one roof. Bulk supply across Pan India.",
   path: "/",
   keywords: [
     "industrial packaging material supplier",

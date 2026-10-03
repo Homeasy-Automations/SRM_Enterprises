@@ -7,11 +7,11 @@ import type { ColorMoodId, IndustrySlug, ProductCategorySlug } from "@srm/types"
 export const BRAND = {
   name: "SRM ENTERPRISES",
   nameShort: "SRM",
-  tagline: "Trading • Manufacturing • Custom Packaging",
+  tagline: "Complete Packaging Solutions",
   heroHeadline: "Complete Packaging Solutions Under One Roof",
   footerLine: "Your Complete Packaging Material Partner",
   positioning:
-    "Industrial packaging material supplier — trading, manufacturing and custom packaging.",
+    "Industrial packaging material supplier with reliable Pan India supply & dispatch.",
   bulkSupplyLine: "across Pan India with reliable dispatch logistics",
   locations: ["Pan India"],
 } as const;
