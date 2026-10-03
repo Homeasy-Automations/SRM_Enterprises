@@ -48,7 +48,7 @@ export default function WhyUsPage(): JSX.Element {
       <section className="band-white section-pad" aria-labelledby="why-quality-heading">
         <div className="container-page">
           <div className="grid items-center gap-12 lg:grid-cols-2">
-            <div className="flex flex-col gap-5">
+            <Reveal variant="split-left" className="flex flex-col gap-5">
               <SectionHeading
                 eyebrow="Quality"
                 title="Consistent material and dimensional control"
@@ -61,7 +61,7 @@ export default function WhyUsPage(): JSX.Element {
                   "Dimensions held consistent across repeat orders",
                   "Any change to material or format discussed before it happens",
                 ].map((item) => (
-                  <StaggerItem as="li" key={item} variant="slide-right" className="flex items-start gap-3">
+                  <StaggerItem as="li" key={item} variant="kinetic-pop" className="flex items-start gap-3">
                     <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-accent-soft text-accent-deep">
                       <Check className="h-3.5 w-3.5" aria-hidden="true" />
                     </span>
@@ -69,9 +69,9 @@ export default function WhyUsPage(): JSX.Element {
                   </StaggerItem>
                 ))}
               </StaggerGroup>
-            </div>
+            </Reveal>
 
-            <Reveal variant="clip">
+            <Reveal variant="iris-clip">
               <MediaPanel imageKey="aboutFacility" accent="#1E6FFF" aspect="video">
                 <WarehouseArt accent="#1E6FFF" className="h-full w-full" title="Warehouse and dispatch illustration" />
               </MediaPanel>
@@ -119,7 +119,7 @@ export default function WhyUsPage(): JSX.Element {
               </MediaPanel>
             </Reveal>
 
-            <div className="flex flex-col gap-5 lg:order-1">
+            <Reveal variant="split-right" className="flex flex-col gap-5 lg:order-1">
               <SectionHeading
                 eyebrow="Competitive Value"
                 title="Priced for regular and bulk requirements"
@@ -132,7 +132,7 @@ export default function WhyUsPage(): JSX.Element {
                   "Bulk quantities planned so freight and handling stay sensible",
                   "Mixed requirements quoted together to reduce admin and coordination",
                 ].map((item) => (
-                  <StaggerItem as="li" key={item} variant="slide-right" className="flex items-start gap-3">
+                  <StaggerItem as="li" key={item} variant="kinetic-pop" className="flex items-start gap-3">
                     <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-accent-soft text-accent-deep">
                       <Check className="h-3.5 w-3.5" aria-hidden="true" />
                     </span>
@@ -140,7 +140,7 @@ export default function WhyUsPage(): JSX.Element {
                   </StaggerItem>
                 ))}
               </StaggerGroup>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -149,7 +149,7 @@ export default function WhyUsPage(): JSX.Element {
       <section className="band-cream section-pad" aria-labelledby="why-supply-heading">
         <div className="container-page">
           <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_1fr]">
-            <div className="flex flex-col gap-5">
+            <Reveal variant="split-left" className="flex flex-col gap-5">
               <SectionHeading
                 eyebrow="Supply Reliability"
                 title="Reliable dispatch planning for industrial customers"
@@ -164,7 +164,7 @@ export default function WhyUsPage(): JSX.Element {
                 ].map((item, index) => (
                   <Reveal
                     key={item.title}
-                    variant="fade-up"
+                    variant="depth-zoom"
                     delay={index * 0.06}
                     className="rounded-2xl border border-navy/10 bg-white p-5 shadow-soft"
                   >
@@ -174,9 +174,9 @@ export default function WhyUsPage(): JSX.Element {
                   </Reveal>
                 ))}
               </div>
-            </div>
+            </Reveal>
 
-            <Reveal variant="clip" className="lg:order-2">
+            <Reveal variant="iris-clip" className="lg:order-2">
               <MediaPanel imageKey="industryLogistics" accent="#FF8A2B" aspect="video">
                 <TruckArt accent="#FF8A2B" className="h-full w-full" title="Dispatch and supply illustration" />
               </MediaPanel>
@@ -226,7 +226,7 @@ export default function WhyUsPage(): JSX.Element {
 
           <StaggerGroup className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {WHY_CHOOSE_US.map((reason) => (
-              <StaggerItem key={reason.key} className="h-full">
+              <StaggerItem key={reason.key} variant="flip-up" className="h-full">
                 <article
                   className="surface-card group flex h-full flex-col gap-2 p-6 hover:-translate-y-1.5 hover:shadow-lift"
                   style={{ ["--accent" as string]: reason.color }}
@@ -242,7 +242,7 @@ export default function WhyUsPage(): JSX.Element {
             ))}
           </StaggerGroup>
 
-          <Reveal variant="fade-up" delay={0.1} className="mt-10">
+          <Reveal variant="depth-zoom" delay={0.1} className="mt-10">
             <div className="flex flex-col items-start gap-4 rounded-[26px] border border-navy/10 bg-white p-6 shadow-soft sm:flex-row sm:items-center sm:justify-between">
               <p className="max-w-3xl text-sm font-semibold leading-relaxed text-navy sm:text-base">
                 {WHY_CHOOSE_CLOSING_LINE}

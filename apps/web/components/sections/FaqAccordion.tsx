@@ -23,7 +23,7 @@ export function FaqAccordion({
   return (
     <section className={className} aria-labelledby="faq-heading">
       <SectionHeading eyebrow={eyebrow} title={title} description={description} className="max-w-3xl" />
-      <Reveal variant="fade-up" delay={0.08} className="mt-8">
+      <Reveal variant="flip-up" delay={0.08} className="mt-8">
         <Accordion items={items} allowMultiple accentColor={accentColor} />
       </Reveal>
     </section>

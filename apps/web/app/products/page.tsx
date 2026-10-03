@@ -63,7 +63,7 @@ export default function ProductsPage(): JSX.Element {
 
           <StaggerGroup className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {products.map((product) => (
-              <StaggerItem key={product.slug} className="h-full">
+              <StaggerItem key={product.slug} variant="kinetic-pop" className="h-full">
                 <Link
                   href={`/products/${product.slug}`}
                   className="group flex h-full min-h-[260px] flex-col justify-between gap-4 rounded-[24px] border border-navy/10 bg-white p-5 shadow-soft transition-all duration-500 hover:-translate-y-1.5 hover:shadow-lift"
@@ -118,7 +118,7 @@ export default function ProductsPage(): JSX.Element {
                 description="Size, thickness, ply, printing and packing format — all developed around your product, then confirmed with a sample before bulk supply."
                 underline={false}
               />
-              <Reveal variant="fade-up">
+              <Reveal variant="split-left">
                 <div className="flex flex-wrap gap-3">
                   <Link href="/custom-packaging" className="btn-primary">
                     Custom packaging process
@@ -131,7 +131,7 @@ export default function ProductsPage(): JSX.Element {
               </Reveal>
             </div>
 
-            <Reveal variant="clip" className="rounded-[26px] border border-navy/10 bg-white p-6 shadow-soft">
+            <Reveal variant="iris-clip" className="rounded-[26px] border border-navy/10 bg-white p-6 shadow-soft">
               <ul className="grid gap-3 sm:grid-cols-2">
                 {["Dimensions", "Ply", "Thickness", "Material", "Printing", "Packing format"].map((item, index) => (
                   <li

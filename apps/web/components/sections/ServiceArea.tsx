@@ -47,7 +47,7 @@ export function ServiceArea(): JSX.Element {
 
         <StaggerGroup className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {PAN_INDIA_PILLARS.map((pillar) => (
-            <StaggerItem key={pillar.title} className="h-full">
+            <StaggerItem key={pillar.title} variant="kinetic-pop" className="h-full">
               <article
                 className="surface-card group flex h-full flex-col gap-3 p-6 hover:-translate-y-1.5 hover:shadow-lift"
                 style={{ ["--accent" as string]: pillar.color }}
@@ -62,7 +62,7 @@ export function ServiceArea(): JSX.Element {
           ))}
         </StaggerGroup>
 
-        <Reveal variant="fade-up" delay={0.1} className="mt-10">
+        <Reveal variant="depth-zoom" delay={0.1} className="mt-10">
           <div className="flex flex-col items-center gap-6 rounded-[26px] border border-navy/10 bg-white p-6 shadow-soft sm:flex-row sm:justify-between sm:p-8">
             <div className="flex items-start gap-4">
               <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-accent text-accent-contrast">

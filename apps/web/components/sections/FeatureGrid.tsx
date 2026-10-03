@@ -77,7 +77,7 @@ export function FeatureGrid({
           {items.map((item, index) => {
             const color = item.color ?? ["#1E6FFF", "#19B26B", "#FFC93C", "#8B5CF6", "#FF8A2B"][index % 5] ?? "#1E6FFF";
             return (
-              <StaggerItem key={`${item.title}-${index}`} className="h-full">
+              <StaggerItem key={`${item.title}-${index}`} variant="flip-up" className="h-full">
                 <TiltCard accentColor={color} className="h-full">
                   <div className="flex h-full flex-col gap-3 p-6">
                     <span

@@ -62,14 +62,14 @@ export function PageHero({
 
         <div className={cn("flex max-w-4xl flex-col gap-5", align === "center" && "mx-auto items-center text-center")}>
           {eyebrow ? (
-            <Reveal variant="fade-up" duration={0.45}>
+            <Reveal variant="kinetic-pop" duration={0.45}>
               <span className="eyebrow badge-interactive cursor-default shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md">
                 {eyebrow}
               </span>
             </Reveal>
           ) : null}
 
-          <Reveal variant="fade-up" delay={0.05}>
+          <Reveal variant="depth-zoom" delay={0.05}>
             <h1
               id="page-hero-heading"
               className="heading-shimmer-hover font-display text-[1.9rem] font-extrabold leading-[1.12] text-navy transition-all duration-300 sm:text-4xl lg:text-[3.1rem]"
@@ -78,7 +78,7 @@ export function PageHero({
             </h1>
           </Reveal>
 
-          <Reveal variant="slide-right" delay={0.1} duration={0.5}>
+          <Reveal variant="split-left" delay={0.1} duration={0.5}>
             <span
               aria-hidden="true"
               className="block h-1.5 w-28 rounded-full bg-gradient-to-r from-accent to-accent-secondary transition-all duration-500 hover:w-44"
@@ -99,7 +99,7 @@ export function PageHero({
           ) : null}
 
           {children ? (
-            <Reveal variant="fade-up" delay={0.2} className="mt-2 w-full">
+            <Reveal variant="flip-up" delay={0.2} className="mt-2 w-full">
               {children}
             </Reveal>
           ) : null}

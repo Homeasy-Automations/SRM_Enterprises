@@ -52,7 +52,7 @@ export function ContactInfoPanel(): JSX.Element {
 
   return (
     <div className="flex flex-col gap-4">
-      <Reveal variant="fade-up">
+      <Reveal variant="split-left">
         <div className="rounded-[26px] border border-navy/10 bg-white p-6 shadow-soft">
           <h2 className="font-display text-xl font-bold text-navy">Contact Details</h2>
           <p className="mt-2 text-sm leading-relaxed text-navy-soft">

@@ -19,7 +19,7 @@ export function WhyChooseUs(): JSX.Element {
 
         <StaggerGroup className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" stagger={0.1}>
           {WHY_CHOOSE_US.map((reason) => (
-            <StaggerItem key={reason.key} className="h-full">
+            <StaggerItem key={reason.key} variant="kinetic-pop" className="h-full">
               <TiltCard accentColor={reason.color} className="card-interactive h-full">
                 <div className="flex h-full flex-col gap-4 p-6">
                   <span
@@ -56,7 +56,7 @@ export function WhyChooseUs(): JSX.Element {
           ))}
         </StaggerGroup>
 
-        <Reveal variant="fade-up" delay={0.1} className="mt-10">
+        <Reveal variant="depth-zoom" delay={0.1} className="mt-10">
           <p className="card-interactive mx-auto max-w-3xl rounded-2xl border border-navy/10 bg-white px-6 py-5 text-center text-sm font-semibold leading-relaxed text-navy shadow-soft sm:text-base hover:border-accent/40">
             {WHY_CHOOSE_CLOSING_LINE}
           </p>

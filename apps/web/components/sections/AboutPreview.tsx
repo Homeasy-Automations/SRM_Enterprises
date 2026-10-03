@@ -13,7 +13,7 @@ export function AboutPreview(): JSX.Element {
     <section className="band-white section-pad relative" aria-labelledby="about-preview-heading">
       <div className="container-page">
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          <div className="flex flex-col gap-6">
+          <Reveal variant="split-left" className="flex flex-col gap-6">
             <SectionHeading
               eyebrow="About SRM Enterprises"
               title={ABOUT_INTRO}
@@ -43,9 +43,9 @@ export function AboutPreview(): JSX.Element {
                 </Link>
               </div>
             </Reveal>
-          </div>
+          </Reveal>
 
-          <Reveal variant="clip" className="relative">
+          <Reveal variant="iris-clip" className="relative">
             <MediaPanel imageKey="aboutFacility" accent="#1E6FFF" aspect="video" pattern>
               <div className="grid h-full grid-cols-2 items-end gap-3">
                 <FactoryArt accent="#1E6FFF" className="h-full w-full" title="Manufacturing and trading illustration" />

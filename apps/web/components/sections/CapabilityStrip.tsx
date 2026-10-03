@@ -17,7 +17,7 @@ export function CapabilityStrip(): JSX.Element {
       <div className="container-page">
         <StaggerGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {CAPABILITIES.map((capability) => (
-            <StaggerItem key={capability.title} className="h-full">
+            <StaggerItem key={capability.title} variant="flip-up" className="h-full">
               <article
                 className="card-interactive group h-full rounded-2xl border border-navy/10 bg-white p-6 shadow-soft transition-all duration-300 hover:border-accent/40"
                 style={{ ["--accent" as string]: capability.color }}

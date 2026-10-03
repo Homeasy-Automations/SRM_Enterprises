@@ -24,7 +24,7 @@ export function HomeHero(): JSX.Element {
   const container: Variants = {
     hidden: {},
     visible: {
-      transition: { staggerChildren: reducedMotion ? 0 : 0.09, delayChildren: 0.1 },
+      transition: { staggerChildren: reducedMotion ? 0 : 0.12, delayChildren: 0.18 },
     },
   };
 
@@ -34,7 +34,7 @@ export function HomeHero(): JSX.Element {
       opacity: 1,
       y: 0,
       rotateX: 0,
-      transition: { duration: reducedMotion ? 0.001 : 0.7, ease: [0.22, 1, 0.36, 1] },
+      transition: { duration: reducedMotion ? 0.001 : 0.95, ease: [0.16, 1, 0.3, 1] },
     },
   };
 
@@ -47,8 +47,9 @@ export function HomeHero(): JSX.Element {
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
           <motion.span
             initial={reducedMotion ? { opacity: 1 } : { opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: reducedMotion ? 0.001 : 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: false, amount: 0.28, margin: "-60px 0px -60px 0px" }}
+            transition={{ duration: reducedMotion ? 0.001 : 0.8 }}
             className="eyebrow badge-interactive cursor-default shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md"
           >
             <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
@@ -59,7 +60,8 @@ export function HomeHero(): JSX.Element {
             id="hero-heading"
             variants={container}
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.28, margin: "-60px 0px -60px 0px" }}
             className="mt-6 font-display text-[2rem] font-extrabold leading-[1.1] text-navy sm:text-5xl lg:text-6xl xl:text-[4.2rem]"
           >
             {words.map((item, index) => (
@@ -79,8 +81,9 @@ export function HomeHero(): JSX.Element {
 
           <motion.p
             initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: reducedMotion ? 0.001 : 0.6, delay: 0.45 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.28, margin: "-60px 0px -60px 0px" }}
+            transition={{ duration: reducedMotion ? 0.001 : 0.85, delay: 0.4 }}
             className="mt-6 max-w-2xl text-base leading-relaxed text-navy-soft sm:text-lg"
           >
             Corrugated boxes, EPE Foam Packaging, LDPE Bubble &amp; Protective Packaging, poly bags &amp; films and
@@ -90,8 +93,9 @@ export function HomeHero(): JSX.Element {
 
           <motion.div
             initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: reducedMotion ? 0.001 : 0.6, delay: 0.55 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.28, margin: "-60px 0px -60px 0px" }}
+            transition={{ duration: reducedMotion ? 0.001 : 0.85, delay: 0.55 }}
             className="mt-8 flex flex-col items-center gap-3 sm:flex-row"
           >
             <span className="text-sm text-navy-soft sm:text-base">We do</span>
@@ -100,8 +104,9 @@ export function HomeHero(): JSX.Element {
 
           <motion.div
             initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: reducedMotion ? 0.001 : 0.6, delay: 0.65 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.28, margin: "-60px 0px -60px 0px" }}
+            transition={{ duration: reducedMotion ? 0.001 : 0.85, delay: 0.7 }}
             className="mt-9 flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center"
           >
             <MagneticButton

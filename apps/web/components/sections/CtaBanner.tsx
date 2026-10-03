@@ -55,14 +55,14 @@ export function CtaBanner({
 
       <div className="container-page relative pt-14 pb-28 sm:pt-16 sm:pb-36 lg:pt-20 lg:pb-44">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-          <Reveal variant="scale-in">
+          <Reveal variant="kinetic-pop">
             <span className="badge-interactive cursor-default inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/15 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-white shadow-sm backdrop-blur-sm transition-all duration-300 hover:bg-white/25 hover:scale-105">
               <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
               Trading • Manufacturing • Custom Packaging
             </span>
           </Reveal>
 
-          <Reveal variant="fade-up" delay={0.06}>
+          <Reveal variant="depth-zoom" delay={0.06}>
             <h2
               id="cta-heading"
               className="mt-5 font-display text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl"
@@ -75,7 +75,7 @@ export function CtaBanner({
             <p className="mt-4 text-base leading-relaxed text-white/95 sm:text-lg">{description}</p>
           </Reveal>
 
-          <Reveal variant="fade-up" delay={0.18}>
+          <Reveal variant="flip-up" delay={0.18}>
             <div className="mt-8 flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center">
               <MagneticButton href={primaryHref} variant="white" className="w-full sm:w-auto shadow-lg hover:shadow-xl">
                 {primaryLabel}
@@ -91,7 +91,7 @@ export function CtaBanner({
             </div>
           </Reveal>
 
-          <Reveal variant="fade-in" delay={0.24}>
+          <Reveal variant="split-right" delay={0.24}>
             <p className="badge-interactive cursor-default mt-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-semibold text-white/95 backdrop-blur-sm transition-all duration-300 hover:bg-white/20">
               <MapPin className="h-4 w-4" aria-hidden="true" />
               {BRAND.locations.join(" • ")}

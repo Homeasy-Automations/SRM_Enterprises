@@ -58,7 +58,7 @@ export default function AboutPage(): JSX.Element {
       <section className="band-white section-pad" aria-labelledby="about-intro-heading">
         <div className="container-page">
           <div className="grid items-center gap-12 lg:grid-cols-2">
-            <div className="flex flex-col gap-6">
+            <Reveal variant="split-left" className="flex flex-col gap-6">
               <SectionHeading
                 eyebrow="Who We Are"
                 title={ABOUT_INTRO}
@@ -67,7 +67,7 @@ export default function AboutPage(): JSX.Element {
 
               <StaggerGroup as="ul" className="flex flex-col gap-3">
                 {ABOUT_POINTS.map((point) => (
-                  <StaggerItem as="li" key={point} variant="slide-right" className="flex items-start gap-3">
+                  <StaggerItem as="li" key={point} variant="kinetic-pop" className="flex items-start gap-3">
                     <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-accent-soft text-accent-deep">
                       <CircleCheck className="h-4 w-4" aria-hidden="true" />
                     </span>
@@ -75,9 +75,9 @@ export default function AboutPage(): JSX.Element {
                   </StaggerItem>
                 ))}
               </StaggerGroup>
-            </div>
+            </Reveal>
 
-            <Reveal variant="clip">
+            <Reveal variant="iris-clip">
               <MediaPanel imageKey="aboutFacility" accent="#19B26B" aspect="video">
                 <div className="grid h-full grid-cols-2 items-end gap-3">
                   <FactoryArt accent="#1E6FFF" className="h-full w-full" />
@@ -119,7 +119,7 @@ export default function AboutPage(): JSX.Element {
 
           <StaggerGroup className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {CAPABILITY_MATRIX.map((item, index) => (
-              <StaggerItem key={item.title} className="h-full">
+              <StaggerItem key={item.title} variant="flip-up" className="h-full">
                 <article
                   className="surface-card group h-full p-6 hover:-translate-y-1.5 hover:shadow-lift"
                   style={{ ["--accent" as string]: ["#1E6FFF", "#19B26B", "#FFC93C", "#FF8A2B", "#8B5CF6", "#19C3E6"][index] ?? "#1E6FFF" }}
@@ -222,7 +222,7 @@ export default function AboutPage(): JSX.Element {
                 color: "#FF8A2B",
               },
             ].map((item, index) => (
-              <Reveal key={item.title} variant="fade-up" delay={index * 0.07} className="h-full">
+              <Reveal key={item.title} variant="depth-zoom" delay={index * 0.07} className="h-full">
                 <article
                   className="surface-card group flex h-full flex-col gap-3 p-6 hover:-translate-y-1.5 hover:shadow-lift"
                   style={{ ["--accent" as string]: item.color }}

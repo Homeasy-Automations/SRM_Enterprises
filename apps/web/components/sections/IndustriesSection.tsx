@@ -49,7 +49,7 @@ export function IndustriesSection(): JSX.Element {
       <div className="container-page mt-10 hidden lg:block">
         <StaggerGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {industries.map((industry) => (
-            <StaggerItem key={industry.slug} className="h-full">
+            <StaggerItem key={industry.slug} variant="flip-up" className="h-full">
               <IndustryCard industry={industry} className="h-full" />
             </StaggerItem>
           ))}

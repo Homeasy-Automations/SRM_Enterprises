@@ -50,7 +50,7 @@ export default function ContactPage(): JSX.Element {
           <div className="grid gap-8 lg:grid-cols-[1fr_1.35fr] lg:gap-10">
             <ContactInfoPanel />
 
-            <div className="flex flex-col gap-4">
+            <Reveal variant="split-right" className="flex flex-col gap-4">
               {/*
                 The form reads ?product=<slug> to pre-select the category, so it must sit
                 inside a Suspense boundary on this statically rendered route.
@@ -64,7 +64,7 @@ export default function ContactPage(): JSX.Element {
               >
                 <QuoteForm />
               </Suspense>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -72,23 +72,25 @@ export default function ContactPage(): JSX.Element {
       {/* 3 — WhatsApp CTA */}
       <section className="band-sky section-pad-sm" aria-labelledby="whatsapp-cta-heading">
         <div className="container-page">
-          <div className="flex flex-col items-start gap-5 rounded-[28px] border border-[#25D366]/25 bg-[#EAFBF4] p-7 sm:p-9 lg:flex-row lg:items-center lg:justify-between">
-            <div className="flex items-start gap-4">
-              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-[#25D366] text-white">
-                <MessageCircle className="h-6 w-6" aria-hidden="true" />
-              </span>
-              <div>
-                <h2 id="whatsapp-cta-heading" className="font-display text-xl font-bold text-navy sm:text-2xl">
-                  Prefer to send the requirement on WhatsApp?
-                </h2>
-                <p className="mt-2 max-w-2xl text-sm leading-relaxed text-navy-soft sm:text-base">
-                  Send photographs, drawings or dimensions directly — often the quickest way to get a
-                  material suggestion back.
-                </p>
+          <Reveal variant="depth-zoom">
+            <div className="flex flex-col items-start gap-5 rounded-[28px] border border-[#25D366]/25 bg-[#EAFBF4] p-7 sm:p-9 lg:flex-row lg:items-center lg:justify-between">
+              <div className="flex items-start gap-4">
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-[#25D366] text-white">
+                  <MessageCircle className="h-6 w-6" aria-hidden="true" />
+                </span>
+                <div>
+                  <h2 id="whatsapp-cta-heading" className="font-display text-xl font-bold text-navy sm:text-2xl">
+                    Prefer to send the requirement on WhatsApp?
+                  </h2>
+                  <p className="mt-2 max-w-2xl text-sm leading-relaxed text-navy-soft sm:text-base">
+                    Send photographs, drawings or dimensions directly — often the quickest way to get a
+                    material suggestion back.
+                  </p>
+                </div>
               </div>
+              <WhatsAppCta location="contact-page" label="Chat on WhatsApp" />
             </div>
-            <WhatsAppCta location="contact-page" label="Chat on WhatsApp" />
-          </div>
+          </Reveal>
 
           {/*
             If NEXT_PUBLIC_WHATSAPP_NUMBER / NEXT_PUBLIC_PHONE_NUMBER are empty, the WhatsApp

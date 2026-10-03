@@ -5,7 +5,7 @@ import { useMemo } from "react";
 import { productShowcases, products } from "@/data/products";
 import { ProductCard } from "@/components/products/ProductCard";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Reveal } from "@/components/animations/Reveal";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/animations/Reveal";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 import { useActiveSection } from "@/hooks/use-active-section";
 import { cn } from "@/lib/utils";
@@ -62,7 +62,7 @@ export function ProductShowcase(): JSX.Element {
                 className="scroll-mt-28 grid items-stretch gap-6 lg:grid-cols-2"
               >
                 <Reveal
-                  variant={index % 2 === 0 ? "slide-right" : "slide-left"}
+                  variant={index % 2 === 0 ? "split-left" : "split-right"}
                   className={cn(
                     "group card-interactive flex h-full flex-col justify-between gap-6 rounded-[26px] border border-navy/10 bg-white p-6 sm:p-7 shadow-soft min-h-[460px] lg:min-h-[480px]",
                     index % 2 === 1 && "lg:order-2",
@@ -82,10 +82,12 @@ export function ProductShowcase(): JSX.Element {
                       {showcase.product.description}
                     </p>
                   </div>
-                  <ul className="flex flex-wrap gap-2 pt-2">
+                  <StaggerGroup as="ul" className="flex flex-wrap gap-2 pt-2" stagger={0.1} delayChildren={0.12}>
                     {showcase.product.items.map((item) => (
-                      <li
+                      <StaggerItem
                         key={item}
+                        variant="kinetic-pop"
+                        as="li"
                         className="badge-interactive cursor-default rounded-full border px-3 py-1 text-xs font-semibold"
                         style={{
                           borderColor: `${showcase.product.color}44`,
@@ -94,13 +96,13 @@ export function ProductShowcase(): JSX.Element {
                         }}
                       >
                         {item}
-                      </li>
+                      </StaggerItem>
                     ))}
-                  </ul>
+                  </StaggerGroup>
                 </Reveal>
 
                 <Reveal
-                  variant={index % 2 === 0 ? "slide-left" : "slide-right"}
+                  variant={index % 2 === 0 ? "split-right" : "split-left"}
                   delay={0.08}
                   className={cn("h-full", index % 2 === 1 && "lg:order-1")}
                 >
