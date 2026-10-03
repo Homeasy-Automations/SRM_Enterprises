@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, MapPin, Clock, CheckCircle2, Globe, Truck, ShieldCheck, Warehouse } from "lucide-react";
+import { ArrowRight, CheckCircle2, Clock, Globe, Truck } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/animations/Reveal";
 

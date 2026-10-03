@@ -3,18 +3,12 @@
 import Link from "next/link";
 import { ArrowRight, FileText, Sparkles } from "lucide-react";
 import { Reveal } from "@/components/animations/Reveal";
-import { QuoteForm } from "@/components/forms/QuoteForm";
-
 /**
  * Sections 15 & 16: Final Lead Generation Section & B2B Quote Form.
  * Headline: "Tell Us What You're Packing. We'll Help You Find the Right Packaging."
- * Integrated B2B quote request form for instant conversion.
+ * Direct contact and sample request actions for instant conversion.
  */
 export function HomeLeadSection(): JSX.Element {
-  const scrollToForm = () => {
-    const el = document.getElementById("quote-form-section");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <section id="quote-section" className="band-cream section-pad relative overflow-hidden" aria-labelledby="lead-heading">
@@ -53,14 +47,13 @@ export function HomeLeadSection(): JSX.Element {
 
           <Reveal variant="fade-up" delay={0.15}>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-              <button
-                type="button"
-                onClick={scrollToForm}
+              <Link
+                href="/contact"
                 className="btn-primary min-h-[48px] px-8 text-sm font-bold shadow-md hover:scale-105"
               >
                 <span>Get a Custom Quote</span>
                 <ArrowRight className="h-4 w-4 icon-arrow-spring" aria-hidden="true" />
-              </button>
+              </Link>
 
               <Link
                 href="/contact?type=sample"

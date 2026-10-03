@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { ArrowRight, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
-import { BRAND, ROUTES } from "@srm/config";
+import { ROUTES } from "@srm/config";
 import { CONTACT, getMailtoLink, getTelLink, getWhatsAppLink } from "@/data/company";
 import { footerNav } from "@/data/navigation";
 import { Logo } from "@/components/ui/Logo";
