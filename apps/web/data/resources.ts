@@ -38,9 +38,9 @@ export const caseStudies: CaseStudy[] = [
     industry: "Automotive & Auto Components",
     title: "Zero-Scratch Transit Packaging for Machined Transmission Gears",
     requirement:
-      "A Tier-1 automotive component manufacturer in IMT Manesar needed to pack precision-machined pinion and crown gears for daily OEM plant transit.",
+      "A Tier-1 automotive component manufacturer in a major industrial hub needed to pack precision-machined pinion and crown gears for daily OEM plant transit.",
     challenge:
-      "Vibration during intra-city freight caused parts to collide inside standard boxes, leading to micro-dents on gear teeth and reject rates of over 3.2%.",
+      "Vibration during inter-facility freight caused parts to collide inside standard boxes, leading to micro-dents on gear teeth and reject rates of over 3.2%.",
     solution:
       "SRM engineered custom 10mm high-density EPE foam interlocking matrix trays housed inside heavy-duty 5-ply corrugated outer boxes with reinforced corner posts.",
     specification:
@@ -55,7 +55,7 @@ export const caseStudies: CaseStudy[] = [
     industry: "Engineering & Industrial",
     title: "High-Compression Heavy-Duty Packaging for 85kg Cast Iron Pump Assemblies",
     requirement:
-      "A Bhiwadi-based industrial pump fabricator needed to ship heavy cast iron housings across India with multi-tier container stacking.",
+      "A large-scale industrial pump fabricator needed to ship heavy cast iron housings across India with multi-tier container stacking.",
     challenge:
       "Conventional packaging suffered box bulging, bottom tear-out, and humidity damage during prolonged monsoon transit in standard trucks.",
     solution:
@@ -72,7 +72,7 @@ export const caseStudies: CaseStudy[] = [
     industry: "E-Commerce & Logistics",
     title: "Rapid Pack-Out Optimization for a Multi-Node 3PL Fulfilment Centre",
     requirement:
-      "A Gurugram 3PL logistics provider handling over 14,000 packages daily required an integrated supply of boxes, tapes, and cushioning.",
+      "A high-volume national 3PL logistics provider handling over 14,000 packages daily required an integrated supply of boxes, tapes, and cushioning.",
     challenge:
       "Coordinating six different suppliers caused tape shortages, box dimension mismatches, and bottleneck delays during peak sale dispatches.",
     solution:
@@ -135,13 +135,13 @@ export const packagingGuides: PackagingGuide[] = [
 
 export const blogPosts: BlogPost[] = [
   {
-    id: "automotive-packaging-trends-ncr",
-    slug: "automotive-packaging-trends-ncr",
-    title: "Sustainable Packaging Trends in NCR's Automotive Component Supply Chain",
+    id: "automotive-packaging-trends-india",
+    slug: "automotive-packaging-trends-india",
+    title: "Sustainable Packaging Trends in India's Automotive Component Supply Chain",
     date: "March 2026",
     category: "Industry Insights",
     excerpt:
-      "How automotive OEMs in Manesar and Gurugram are transitioning from single-use plastics to closed-loop recyclable EPE fitments and high-strength corrugated systems.",
+      "How automotive OEMs across India's industrial corridors are transitioning from single-use plastics to closed-loop recyclable EPE fitments and high-strength corrugated systems.",
     readTime: "4 min read",
   },
   {

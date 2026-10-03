@@ -30,7 +30,7 @@ const TRUST_CAPABILITIES = [
   },
   {
     title: "Pan-India Supply",
-    description: "Fast daily routes across Gurugram, Manesar, Bhiwadi, NCR and nationwide logistics.",
+    description: "Scheduled bulk supply, planned container loads, and reliable freight across Pan India.",
     icon: Truck,
     color: "#0FA47F",
   },

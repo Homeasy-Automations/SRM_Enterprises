@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { HomeHero } from "@/components/hero/HomeHero";
 import { CapabilityStrip } from "@/components/sections/CapabilityStrip";
-import { ProductShowcase } from "@/components/sections/ProductShowcase";
+// import { ProductShowcase } from "@/components/sections/ProductShowcase";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { CustomPackagingHomeSection } from "@/components/sections/CustomPackagingHomeSection";
 import { IndustriesSection } from "@/components/sections/IndustriesSection";
-import { ManufacturingCapabilitySection } from "@/components/sections/ManufacturingCapabilitySection";
+import { PackagingSolutionsSection } from "@/components/sections/PackagingSolutionsSection";
 import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
 import { FeaturedProductsSection } from "@/components/sections/FeaturedProductsSection";
 import { SolutionsHomeSection } from "@/components/sections/SolutionsHomeSection";
@@ -21,21 +21,21 @@ import { industries } from "@/data/industries";
 import { solutions } from "@/data/solutions";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Packaging Material Supplier in Gurugram | SRM Enterprises",
+  title: "Industrial Packaging Material Supplier India | SRM Enterprises",
   description:
-    "SRM Enterprises supplies corrugated boxes, EPE foam, bubble packaging, poly bags, films and packaging accessories across Gurugram, Manesar, Bhiwadi and NCR.",
+    "SRM Enterprises supplies corrugated boxes, EPE foam, bubble packaging, poly bags, films and packaging accessories with reliable bulk supply across Pan India.",
   path: "/",
   keywords: [
-    "packaging material supplier in Gurugram",
-    "packaging material supplier in Manesar",
-    "packaging material supplier in Bhiwadi",
+    "industrial packaging material supplier India",
+    "pan India packaging supplier",
+    "bulk packaging supplier India",
     "industrial packaging supplier",
-    "corrugated box supplier",
+    "corrugated box supplier India",
     "EPE foam packaging supplier",
     "bubble packaging supplier",
-    "poly bag supplier",
+    "poly bag supplier India",
     "stretch film supplier",
-    "packaging materials NCR",
+    "packaging materials pan India",
     "custom packaging solutions",
   ],
 });
@@ -48,7 +48,7 @@ export const metadata: Metadata = buildMetadata({
  * 4. Why SRM
  * 5. Custom Packaging
  * 6. Industries We Serve
- * 7. Manufacturing & Supply Capability
+ * 7. Complete Packaging Solutions
  * 8. Our Packaging Process
  * 9. Featured Products
  * 10. Packaging Applications / Solutions
@@ -68,7 +68,7 @@ export default function HomePage(): JSX.Element {
       <CapabilityStrip />
 
       {/* 3 — Packaging Categories */}
-      <ProductShowcase />
+      {/* <ProductShowcase /> */}
 
       {/* 4 — Why SRM */}
       <WhyChooseUs />
@@ -79,8 +79,8 @@ export default function HomePage(): JSX.Element {
       {/* 6 — Industries We Serve */}
       <IndustriesSection />
 
-      {/* 7 — Manufacturing & Supply Capability */}
-      <ManufacturingCapabilitySection />
+      {/* 7 — Complete Packaging Solutions */}
+      <PackagingSolutionsSection />
 
       {/* 8 — Our Packaging Process */}
       <ProcessTimeline />

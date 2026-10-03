@@ -8,14 +8,14 @@ import { FactoryArt } from "@/components/ui/art";
 
 const CAPABILITY_HIGHLIGHTS = [
   {
-    title: "Manufacturing",
-    description: "Customized packaging products manufactured based on your required dimensional and ply specifications.",
+    title: "Custom Production",
+    description: "Engineered packaging solutions crafted to your exact dimensional, ply and load-bearing requirements.",
     icon: Factory,
     color: "#1E6FFF",
   },
   {
-    title: "Trading & Sourcing",
-    description: "A broader packaging material range through reliable, verified supply channels under one purchase order.",
+    title: "Full-Range Supply",
+    description: "Single-source procurement across every industrial packaging material category under one purchase order.",
     icon: Repeat,
     color: "#E86620",
   },
@@ -33,8 +33,8 @@ const CAPABILITY_HIGHLIGHTS = [
   },
 ];
 
-/** Section 6: Manufacturing & Supply Capability — Manufacturing, Trading & Custom Packaging. */
-export function ManufacturingCapabilitySection(): JSX.Element {
+/** Section 6: Comprehensive Packaging Solutions & Supply Capability. */
+export function PackagingSolutionsSection(): JSX.Element {
   return (
     <section className="band-cream section-pad relative overflow-hidden" aria-labelledby="capability-heading">
       <div className="container-page relative z-10">
@@ -49,11 +49,11 @@ export function ManufacturingCapabilitySection(): JSX.Element {
                 Integrated Supply Infrastructure
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-navy-soft">
-                Planned buffer stocks, automated slitters and daily dispatch lines serving Gurugram, Manesar,
-                Bhiwadi and the wider NCR manufacturing corridor.
+                Planned buffer stocks, automated conversion lines and coordinated dispatch lines supporting
+                industrial facilities and OEM clusters across Pan India.
               </p>
               <div className="mt-6 rounded-2xl bg-slate-50 p-4">
-                <FactoryArt accent="#1E6FFF" className="h-32 w-full" title="Manufacturing facility illustration" />
+                <FactoryArt accent="#1E6FFF" className="h-32 w-full" title="Packaging facility illustration" />
               </div>
             </div>
           </div>
@@ -62,8 +62,8 @@ export function ManufacturingCapabilitySection(): JSX.Element {
           <div className="flex flex-col gap-6 lg:col-span-7">
             <SectionHeading
               eyebrow="CAPABILITY"
-              title="Manufacturing, Trading & Custom Packaging"
-              description="SRM Enterprises combines manufacturing, trading and customized packaging capabilities to support diverse packaging requirements. Our approach is focused on providing the right packaging material and specification for each application, while supporting bulk requirements and planned supply across Gurugram, Manesar, Bhiwadi and the wider NCR region."
+              title="Complete Packaging Solutions for Every Requirement"
+              description="SRM Enterprises delivers comprehensive packaging solutions across every category in our catalog — from engineered corrugated boxes and fabricated EPE foam to bubble rolls, poly films, and specialized industrial accessories. Built to your exact specifications with planned supply across Pan India."
             />
 
             <StaggerGroup className="grid gap-4 sm:grid-cols-2 pt-2" stagger={0.08}>

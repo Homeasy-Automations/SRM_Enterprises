@@ -10,16 +10,16 @@ import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { GalleryInteractiveGrid } from "@/components/sections/GalleryInteractiveGrid";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Packaging Gallery & Manufacturing Proof | SRM Enterprises",
+  title: "Packaging Gallery & Production Proof | SRM Enterprises",
   description:
-    "Explore our visual proof of packaging manufacturing, custom EPE foam fitments, heavy-duty corrugated cartons, infrastructure, and finished client consignments.",
+    "Explore our visual proof of custom packaging solutions, fabricated EPE foam fitments, heavy-duty corrugated cartons, infrastructure, and finished client consignments.",
   path: "/gallery",
   keywords: [
     "packaging gallery",
-    "manufacturing proof",
+    "production proof",
     "corrugated boxes photos",
     "EPE foam fitments gallery",
-    "packaging warehouse Gurugram",
+    "packaging infrastructure",
   ],
 });
 
@@ -49,7 +49,7 @@ export default function GalleryPage(): JSX.Element {
       <section className="band-white pattern-weave section-pad" aria-labelledby="gallery-main-heading">
         <div className="container-page">
           <SectionHeading
-            eyebrow="Manufacturing & Product Portfolio"
+            eyebrow="Packaging & Product Portfolio"
             title="Real Packaging Built for Real Industrial Demands"
             description="Filter through our operational categories to inspect raw materials, die-cut foam fabrications, automated corrugation, and warehouse dispatch staging."
             className="max-w-3xl"
@@ -61,7 +61,7 @@ export default function GalleryPage(): JSX.Element {
         </div>
       </section>
 
-      {/* 3 — Manufacturing Verification Pillars */}
+      {/* 3 — Packaging Quality Verification Pillars */}
       <section className="band-sky pattern-grid section-pad border-t border-navy/10" aria-labelledby="capabilities-proof">
         <div className="container-page">
           <SectionHeading
@@ -120,7 +120,7 @@ export default function GalleryPage(): JSX.Element {
       {/* 4 — CTA Banner */}
       <CtaBanner
         title="Need to inspect material quality in person?"
-        description="Request a physical sample or schedule a visit to our facility across Gurugram, Manesar, or NCR."
+        description="Request physical product samples dispatched to your plant anywhere in India, or connect with our technical packaging team."
         primaryLabel="Request a Sample"
         primaryHref="/contact?tab=sample"
       />

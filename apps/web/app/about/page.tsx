@@ -17,15 +17,15 @@ import {
 } from "@/lib/constants";
 
 export const metadata: Metadata = buildMetadata({
-  title: "About SRM Enterprises — Industrial Packaging Partner in NCR",
+  title: "About SRM Enterprises — Industrial Packaging Partner across Pan India",
   description:
-    "SRM Enterprises provides complete packaging material solutions across Gurugram, Manesar, Bhiwadi and NCR. Learn about our company overview, manufacturing capabilities, quality assurance, verified certifications, and 6-step supply process.",
+    "SRM Enterprises provides complete industrial packaging material solutions across Pan India. Learn about our company overview, packaging production capabilities, quality assurance, verified certifications, and 6-step supply process.",
   path: "/about",
   keywords: [
     "about SRM Enterprises",
-    "packaging supplier Gurugram",
-    "packaging manufacturer Manesar",
-    "corrugated boxes supplier NCR",
+    "industrial packaging supplier India",
+    "packaging solutions supplier India",
+    "corrugated boxes supplier India",
     "EPE foam packaging infrastructure",
   ],
 });
@@ -64,7 +64,7 @@ export default function AboutPage(): JSX.Element {
               />
 
               <p className="text-sm leading-relaxed text-navy-soft sm:text-base">
-                SRM Enterprises combines manufacturing, trading, and customized packaging capabilities to support diverse packaging requirements. Our approach focuses on delivering the exact packaging material, thickness, and configuration suited to your application while maintaining scheduled bulk dispatches across Gurugram, Manesar, Bhiwadi, and Delhi NCR.
+                SRM Enterprises delivers complete packaging solutions that make every kind of packaging mentioned across our portfolio. Our approach focuses on engineering the exact packaging material, thickness, and configuration suited to your application while maintaining scheduled bulk dispatches across all major industrial clusters throughout Pan India.
               </p>
 
               <StaggerGroup as="ul" className="flex flex-col gap-3">
@@ -94,27 +94,27 @@ export default function AboutPage(): JSX.Element {
         </div>
       </section>
 
-      {/* 3 — Manufacturing & Infrastructure (#infrastructure) */}
-      <section id="infrastructure" className="band-sky pattern-grid section-pad scroll-mt-24" aria-labelledby="infrastructure-heading">
+      {/* 3 — Production & Infrastructure (#infrastructure) */}
+      <section id="infrastructure" className="band-sky pattern-grid section-pad scroll-mt-28" aria-labelledby="infrastructure-heading">
         <div className="container-page">
           <SectionHeading
-            eyebrow="Manufacturing & Infrastructure"
+            eyebrow="Production & Infrastructure"
             title="Production Capability, Storage & Planned Dispatch"
-            description="Our manufacturing setup and warehousing facilities are built to support both bespoke prototype runs and high-volume recurring packaging orders."
+            description="Our production setup and warehousing facilities are built to support both bespoke prototype runs and high-volume recurring packaging orders."
             className="max-w-3xl"
           />
 
           <StaggerGroup className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
-                title: "Custom Manufacturing",
+                title: "Custom Production",
                 desc: "Precision corrugated box slotting, die-cutting, and custom thermal EPE foam fitment fabrication tailored to component CAD designs.",
                 icon: Factory,
                 color: "#1E6FFF",
               },
               {
-                title: "Sourcing & Trading",
-                desc: "Direct mill relationships for kraft paper, virgin LDPE granules, stretch films, and strapping to guarantee raw material consistency.",
+                title: "Integrated Material Supply",
+                desc: "Direct partnerships for kraft paper, virgin LDPE polymers, stretch films, and strapping to guarantee consistent raw material quality.",
                 icon: Cpu,
                 color: "#19B26B",
               },
@@ -125,8 +125,8 @@ export default function AboutPage(): JSX.Element {
                 color: "#FF8A2B",
               },
               {
-                title: "Dedicated Dispatch Fleet",
-                desc: "Systematic route planning across Gurugram, Manesar, Bhiwadi, and Delhi NCR for JIT (Just-In-Time) plant deliveries.",
+                title: "Pan-India Dispatch Network",
+                desc: "Systematic route planning and freight logistics across all major industrial corridors for JIT (Just-In-Time) plant deliveries.",
                 icon: Truck,
                 color: "#8438FF",
               },
@@ -274,7 +274,7 @@ export default function AboutPage(): JSX.Element {
               },
               {
                 title: "RoHS & Anti-Static Compliance",
-                desc: "ESD-safe pink/black conductive foam and antistatic bubble bags manufactured to surface resistivity specifications (10^9 to 10^11 ohms/sq).",
+                desc: "ESD-safe pink/black conductive foam and antistatic bubble bags produced to surface resistivity specifications (10^9 to 10^11 ohms/sq).",
                 icon: ShieldCheck,
                 color: "#19B26B",
               },
@@ -313,7 +313,7 @@ export default function AboutPage(): JSX.Element {
       </section>
 
       {/* 6 — Our Process (#process) */}
-      <section id="process" className="band-white pattern-cad section-pad scroll-mt-24" aria-labelledby="about-process-heading">
+      <section id="process" className="band-white pattern-cad section-pad scroll-mt-28" aria-labelledby="about-process-heading">
         <div className="container-page">
           <SectionHeading
             eyebrow="Our Process"
@@ -361,9 +361,9 @@ export default function AboutPage(): JSX.Element {
               },
               {
                 step: "06",
-                title: "Scheduled NCR Dispatch",
+                title: "Scheduled Pan-India Dispatch",
                 gate: "Gate 6: Delivery Handover",
-                desc: "Fleet dispatches operate on scheduled routes across Gurugram, Manesar, Bhiwadi, and NCR with signed delivery checklists.",
+                desc: "Consignments dispatch on scheduled routes across industrial corridors nationwide with signed delivery checklists.",
                 color: "#E86620",
               },
             ].map((stg) => (

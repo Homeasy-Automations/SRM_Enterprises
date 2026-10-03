@@ -17,7 +17,7 @@ export function IndustriesSection(): JSX.Element {
           <SectionHeading
             eyebrow="INDUSTRIES"
             title="Packaging for Different Industries. Built for Different Requirements."
-            description="Our packaging materials support businesses across manufacturing, industrial, commercial and logistics environments where product protection, handling and reliable supply are essential."
+            description="Our packaging materials support businesses across industrial, automotive, electronics, and commercial logistics environments where product protection, handling and reliable supply are essential."
             className="max-w-3xl"
           />
 

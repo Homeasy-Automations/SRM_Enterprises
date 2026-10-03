@@ -48,7 +48,7 @@ export function AboutPreview(): JSX.Element {
           <Reveal variant="iris-clip" className="relative">
             <MediaPanel imageKey="aboutFacility" accent="#1E6FFF" aspect="video" pattern>
               <div className="grid h-full grid-cols-2 items-end gap-3">
-                <FactoryArt accent="#1E6FFF" className="h-full w-full" title="Manufacturing and trading illustration" />
+                <FactoryArt accent="#1E6FFF" className="h-full w-full" title="Industrial packaging facility illustration" />
                 <WarehouseArt accent="#19B26B" className="h-full w-full" title="Warehouse and dispatch illustration" />
               </div>
             </MediaPanel>

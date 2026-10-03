@@ -35,7 +35,7 @@ export function ContactInfoPanel(): JSX.Element {
     },
     {
       icon: <MapPin className="h-5 w-5" aria-hidden="true" />,
-      label: "Locations",
+      label: "Coverage",
       value: BRAND.locations.join(" • "),
     },
     {

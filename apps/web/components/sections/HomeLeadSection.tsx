@@ -30,7 +30,7 @@ export function HomeLeadSection(): JSX.Element {
           <Reveal variant="kinetic-pop">
             <span className="eyebrow badge-interactive inline-flex items-center gap-2 rounded-full border border-navy/10 bg-white/80 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-accent shadow-xs mb-4">
               <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
-              DIRECT MANUFACTURER &amp; TRADING SUPPLY
+              COMPLETE INDUSTRIAL PACKAGING SOLUTIONS
             </span>
           </Reveal>
 
@@ -78,7 +78,7 @@ export function HomeLeadSection(): JSX.Element {
         </div>
 
         {/* Section 16: B2B Quote Form Card */}
-        <div id="quote-form-section" className="mx-auto mt-16 max-w-4xl scroll-mt-28">
+        {/* <div id="quote-form-section" className="mx-auto mt-16 max-w-4xl scroll-mt-28">
           <Reveal variant="depth-zoom" delay={0.1}>
             <div className="card-home-vivid overflow-hidden rounded-3xl border border-navy/10 bg-white p-6 sm:p-10 shadow-xl">
               <div className="border-b border-navy/10 pb-6 mb-8 text-center sm:text-left">
@@ -96,7 +96,7 @@ export function HomeLeadSection(): JSX.Element {
               <QuoteForm />
             </div>
           </Reveal>
-        </div>
+        </div> */}
       </div>
     </section>
   );

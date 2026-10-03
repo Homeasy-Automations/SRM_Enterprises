@@ -30,8 +30,8 @@ export function TruckArt({ accent = "#1E6FFF", className, title = "Dispatch and 
   );
 }
 
-/** Factory skyline — manufacturing & trading capability. */
-export function FactoryArt({ accent = "#19B26B", className, title = "Manufacturing and trading illustration" }: ArtProps): JSX.Element {
+/** Factory skyline — packaging facility & production capability. */
+export function FactoryArt({ accent = "#19B26B", className, title = "Packaging facility illustration" }: ArtProps): JSX.Element {
   const id = `factory-${accent.replace("#", "")}`;
   return (
     <svg viewBox="0 0 240 160" className={className} role="img" aria-label={title} xmlns="http://www.w3.org/2000/svg">

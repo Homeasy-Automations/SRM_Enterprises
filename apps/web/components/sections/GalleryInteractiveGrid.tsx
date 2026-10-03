@@ -193,7 +193,7 @@ export function GalleryInteractiveGrid(): JSX.Element {
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
-                  <span>Bulk delivery across Gurugram, Manesar, Bhiwadi, and Delhi NCR.</span>
+                  <span>Bulk delivery across all major industrial clusters and corridors throughout India.</span>
                 </li>
               </ul>
             </div>

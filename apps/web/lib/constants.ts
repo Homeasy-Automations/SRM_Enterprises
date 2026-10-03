@@ -19,9 +19,9 @@ export const SITE = {
 
 export const CAPABILITIES = [
   {
-    title: "Manufacturing & Trading",
+    title: "Complete Packaging Solutions",
     description:
-      "Packaging material manufactured and traded under one roof, so one supplier can cover the whole requirement.",
+      "Every type of industrial packaging solution under one roof, so one partner covers your entire requirement.",
     icon: "factory",
     color: "#1E6FFF",
   },
@@ -92,7 +92,7 @@ export const WHY_CHOOSE_CLOSING_LINE =
   "From standard packaging to customized industrial solutions — SRM Enterprises can support your complete requirement.";
 
 export const ABOUT_POINTS = [
-  "Manufacturing and trading of industrial packaging materials",
+  "Complete end-to-end industrial packaging solutions",
   "Customized sizes, thicknesses, ply and specifications",
   "Consistent quality with competitive commercial pricing",
   "Suitable for automotive, engineering, electronics, e-commerce and general industry",
@@ -103,20 +103,20 @@ export const ABOUT_INTRO =
   "One Partner. Multiple Packaging Solutions.";
 
 export const ABOUT_DESCRIPTION =
-  "SRM Enterprises works with industrial buyers who would rather deal with one dependable packaging partner than juggle five suppliers. Corrugated, foam, bubble, films and accessories are manufactured and traded under a single roof, in standard formats or built to your specification.";
+  "SRM Enterprises works with industrial buyers who would rather deal with one dependable packaging partner than juggle five suppliers. Corrugated, foam, bubble, films and accessories are engineered and delivered under a single roof, in standard formats or custom-built to your exact specification.";
 
 export const WHAT_WE_PROVIDE = [
   {
-    title: "Manufacturing",
+    title: "Custom Production",
     description:
-      "Manufacturing of industrial packaging material to agreed dimensions, ply and thickness.",
+      "Precision engineering and conversion of packaging material to agreed dimensions, ply and thickness.",
     icon: "factory",
     color: "#1E6FFF",
   },
   {
-    title: "Trading",
+    title: "Full Material Range",
     description:
-      "Trading supply of the wider packaging range so a single order can cover everything on your list.",
+      "Comprehensive supply across the wider packaging spectrum so a single order covers everything on your list.",
     icon: "package",
     color: "#19B26B",
   },

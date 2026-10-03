@@ -18,7 +18,7 @@ export const homepageFaq: AccordionItemData[] = [
     id: "bulk-supply",
     question: "Do you supply packaging materials in bulk?",
     answer:
-      "Yes. SRM Enterprises supports bulk packaging requirements for industrial, commercial, logistics and recurring plant operations across NCR and India.",
+      "Yes. SRM Enterprises specializes in high-volume, bulk industrial packaging supplies with scheduled deliveries for industrial assembly plants and logistics hubs across Pan India.",
   },
   {
     id: "industries-served",
@@ -36,7 +36,7 @@ export const homepageFaq: AccordionItemData[] = [
     id: "locations-served",
     question: "Which locations do you serve?",
     answer:
-      "SRM Enterprises serves businesses across Gurugram, Manesar, Bhiwadi, the wider Delhi NCR region, and scheduled bulk dispatch across Pan India.",
+      "SRM Enterprises provides nationwide packaging supply across Pan India, including Northern, Western, Southern, and Eastern industrial corridors with scheduled bulk dispatches.",
   },
   {
     id: "get-quote",

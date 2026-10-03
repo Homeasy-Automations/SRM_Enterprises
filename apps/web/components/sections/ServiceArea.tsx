@@ -13,7 +13,7 @@ interface SupplyPillar {
 const PAN_INDIA_PILLARS: SupplyPillar[] = [
   {
     title: "Nationwide Dispatch",
-    description: "Reliable logistics and delivery network covering manufacturing facilities and warehouses across India.",
+    description: "Reliable logistics and delivery network covering industrial facilities and warehouses across India.",
     color: "#1E6FFF",
   },
   {

@@ -115,7 +115,7 @@ export default function WhyUsPage(): JSX.Element {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <Reveal variant="clip" className="lg:order-2">
               <MediaPanel imageKey="customPackaging" accent="#19B26B" aspect="video">
-                <FactoryArt accent="#19B26B" className="h-full w-full" title="Manufacturing and trading illustration" />
+                <FactoryArt accent="#19B26B" className="h-full w-full" title="Packaging solutions illustration" />
               </MediaPanel>
             </Reveal>
 
@@ -123,7 +123,7 @@ export default function WhyUsPage(): JSX.Element {
               <SectionHeading
                 eyebrow="Competitive Value"
                 title="Priced for regular and bulk requirements"
-                description="Because we both manufacture and trade, material options can be matched to the application instead of over-specified — which is where most packaging cost quietly hides."
+                description="Because we provide end-to-end packaging solutions across all materials, options can be matched to the application instead of over-specified — which is where most packaging cost quietly hides."
               />
               <StaggerGroup as="ul" className="flex flex-col gap-3">
                 {[
@@ -186,31 +186,31 @@ export default function WhyUsPage(): JSX.Element {
         </div>
       </section>
 
-      {/* 6 — Manufacturing and trading */}
+      {/* 6 — Complete Packaging Solutions */}
       <FeatureGrid
         band="white"
-        eyebrow="Manufacturing & Trading"
-        title="One source for the whole list"
-        description="Manufacturing covers the made-to-specification items; trading covers the everyday consumables around them. Together they mean one inquiry instead of five."
+        eyebrow="Complete Packaging Solutions"
+        title="One source for every type of packaging"
+        description="SRM Enterprises delivers comprehensive packaging solutions that make every kind of packaging required by modern industry — from custom-engineered cartons and tailored foam fitments to protective films and accessories. Together they mean one inquiry instead of five."
         columns={2}
         items={[
           {
-            title: "Manufacturing",
+            title: "Custom Engineered Packaging",
             description:
               "Made-to-specification packaging built to agreed dimensions, ply and thickness, with samples approved before bulk production.",
             icon: "factory",
             color: "#1E6FFF",
             detail:
-              "Custom dimensions, ply, printing and formats are developed with your team and locked into a specification that repeat orders follow.",
+              "Custom dimensions, ply, printing and formats are engineered with your team and locked into a specification that repeat orders follow.",
           },
           {
-            title: "Trading",
+            title: "Comprehensive Packaging Supplies",
             description:
-              "The wider packaging range supplied alongside — films, tapes, strapping, protective materials and accessory items.",
+              "The complete packaging material range supplied alongside — films, tapes, strapping, bubble cushioning and accessory items.",
             icon: "package",
             color: "#19B26B",
             detail:
-              "Consumables are supplied together with primary packaging, so a single order covers boxes, protective material and closing accessories.",
+              "Consumables are supplied together with primary packaging, so a single order covers boxes, protective fitments and closing accessories.",
           },
         ]}
       />

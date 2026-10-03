@@ -53,7 +53,22 @@ export function DropdownMenu({ item, onSelect, onHoverColor }: DropdownMenuProps
               <Link
                 href={child.href}
                 role="menuitem"
-                onClick={onSelect}
+                onClick={(e) => {
+                  onSelect();
+                  if (child.href.includes("#")) {
+                    const [targetPath, hash] = child.href.split("#");
+                    const currentPath = window.location.pathname.replace(/\/$/, "");
+                    const normTarget = (targetPath || currentPath).replace(/\/$/, "");
+                    if (currentPath === normTarget && hash) {
+                      const el = document.getElementById(hash);
+                      if (el) {
+                        e.preventDefault();
+                        window.history.pushState(null, "", `#${hash}`);
+                        el.scrollIntoView({ behavior: "smooth", block: "start" });
+                      }
+                    }
+                  }
+                }}
                 onMouseEnter={() => onHoverColor?.(child.color ?? null)}
                 onFocus={() => onHoverColor?.(child.color ?? null)}
                 onMouseLeave={() => onHoverColor?.(null)}

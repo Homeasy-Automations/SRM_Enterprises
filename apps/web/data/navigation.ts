@@ -3,7 +3,6 @@ import { ROUTES } from "@srm/config";
 import { industries } from "./industries";
 import { products } from "./products";
 import { solutions } from "./solutions";
-import { locations } from "./locations";
 
 export interface NavChild {
   label: string;
@@ -42,12 +41,7 @@ export const solutionMenu: NavChild[] = solutions.slice(0, 8).map((sol) => ({
   color: sol.color,
 }));
 
-export const locationMenu: NavChild[] = locations.map((loc) => ({
-  label: loc.name,
-  href: ROUTES.locations,
-  description: loc.headline,
-  color: loc.color,
-}));
+
 
 export const resourcesMenu: NavChild[] = [
   {
@@ -84,9 +78,9 @@ export const aboutMenu: NavChild[] = [
     color: "#1E6FFF",
   },
   {
-    label: "Manufacturing & Infrastructure",
+    label: "Production & Infrastructure",
     href: `${ROUTES.about}#infrastructure`,
-    description: "Facility, machinery, production capability & dispatch",
+    description: "Facility, equipment, converting capacity & dispatch",
     color: "#E86620",
   },
   {
@@ -97,7 +91,7 @@ export const aboutMenu: NavChild[] = [
   },
   {
     label: "Our Process",
-    href: ROUTES.customPackaging,
+    href: `${ROUTES.about}#process`,
     description: "Requirement → Material → Design → Sample → Production → Dispatch",
     color: "#8438FF",
   },
@@ -147,12 +141,7 @@ export const primaryNav: NavItem[] = [
     ariaLabel: "Packaging applications and solutions",
     children: solutionMenu,
   },
-  // {
-  //   label: "Locations",
-  //   href: ROUTES.locations,
-  //   ariaLabel: "Service hubs across NCR",
-  //   children: locationMenu,
-  // },
+
   {
     label: "Resources",
     href: ROUTES.resources,
@@ -175,17 +164,18 @@ export const footerNav = {
     label: sol.name,
     href: ROUTES.solutions,
   })),
-  locations: locations.map((loc) => ({
-    label: loc.name,
-    href: ROUTES.locations,
-  })),
+  panIndia: [
+    { label: "Northern Industrial Corridor", href: ROUTES.contact },
+    { label: "Western Industrial Belts", href: ROUTES.contact },
+    { label: "Southern Auto & Electronics", href: ROUTES.contact },
+    { label: "Eastern & National Freight", href: ROUTES.contact },
+  ],
   quickLinks: [
     { label: "Home", href: ROUTES.home },
     { label: "About Us", href: ROUTES.about },
     { label: "Products", href: ROUTES.products },
     { label: "Industries", href: ROUTES.industries },
     { label: "Solutions", href: ROUTES.solutions },
-    { label: "Locations", href: ROUTES.locations },
     { label: "Resources", href: ROUTES.resources },
     { label: "Gallery", href: ROUTES.gallery },
     { label: "Contact", href: ROUTES.contact },
@@ -195,7 +185,6 @@ export const footerNav = {
     { label: "All Products", href: ROUTES.products },
     { label: "Industries", href: ROUTES.industries },
     { label: "Solutions", href: ROUTES.solutions },
-    { label: "Locations", href: ROUTES.locations },
     { label: "Resources", href: ROUTES.resources },
     { label: "Gallery", href: ROUTES.gallery },
     { label: "Contact", href: ROUTES.contact },

@@ -54,7 +54,7 @@ export default function SolutionsPage(): JSX.Element {
           <SectionHeading
             eyebrow="APPLICATION CATALOGUE"
             title="Complete Problem-Solving Packaging Matrix"
-            description="Explore our specialized packaging solutions designed for precision manufacturing, transit logistics, and high-value equipment."
+            description="Explore our specialized packaging solutions designed for precision engineering, transit logistics, and high-value equipment."
             className="max-w-3xl"
           />
 

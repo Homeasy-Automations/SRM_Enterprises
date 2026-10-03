@@ -28,11 +28,11 @@ export function Footer(): JSX.Element {
             </p>
             <p className="text-xs leading-relaxed text-white/75">
               Corrugated Boxes • EPE Foam • LDPE Bubble • Poly Bags • Films • Packaging Accessories.
-              Engineered and supplied to specification for industrial and commercial operations across NCR.
+              Engineered and supplied to specification with reliable bulk dispatch across Pan India.
             </p>
             <p className="inline-flex items-center gap-1.5 text-xs font-semibold text-white/90">
               <MapPin className="h-4 w-4 text-accent-soft shrink-0" aria-hidden="true" />
-              <span>{BRAND.locations.join(" • ")}</span>
+              <span>Pan-India Supply &amp; Dispatch</span>
             </p>
           </StaggerItem>
 
@@ -99,13 +99,13 @@ export function Footer(): JSX.Element {
             </nav>
           </StaggerItem>
 
-          {/* Col 5: Locations & Contact */}
+          {/* Col 5: Pan-India Supply & Contact */}
           <StaggerItem variant="split-right" className="flex flex-col gap-3">
             <h2 className="font-display text-xs font-bold uppercase tracking-[0.16em] text-white/90">
-              Locations &amp; Contact
+              Pan-India Supply &amp; Contact
             </h2>
             <div className="flex flex-wrap gap-1.5 pb-2">
-              {footerNav.locations.map((loc) => (
+              {footerNav.panIndia.map((loc) => (
                 <Link
                   key={loc.label}
                   href={loc.href}

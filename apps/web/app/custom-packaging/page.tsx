@@ -265,7 +265,7 @@ export default function CustomPackagingPage(): JSX.Element {
         band="white"
         eyebrow="Step 06"
         title="Production and bulk supply"
-        description="With the sample approved, the requirement moves into production and organised trading supply, planned around your schedule."
+        description="With the sample approved, the requirement moves into full-scale production and scheduled supply, planned around your consumption schedule."
         columns={3}
         items={[
           {

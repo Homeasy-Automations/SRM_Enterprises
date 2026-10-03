@@ -59,7 +59,7 @@ const CUSTOM_POINTS = [
     step: "07",
     label: "Bulk Quantity Requirements",
     tag: "Scalable Supply",
-    desc: "Scalable batch manufacturing from small pilot trial runs to scheduled recurring OEM truckload deliveries.",
+    desc: "Scalable batch production from small pilot trial runs to scheduled recurring OEM truckload deliveries.",
     icon: Truck,
     color: "#3D5A80",
   },
@@ -209,7 +209,7 @@ export function CustomPackagingHomeSection(): JSX.Element {
                 Have specific drawings, CAD files, or product dimensions?
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-navy-soft">
-                Send your physical samples or dimensional parameters. Our packaging specialists verify fitment clearances, bursting factor requirements, and cushioning resistance before any bulk manufacturing begins.
+                Send your physical samples or dimensional parameters. Our packaging specialists verify fitment clearances, bursting factor requirements, and cushioning resistance before any bulk production begins.
               </p>
 
               <div className="mt-5 grid gap-3 sm:grid-cols-3">
@@ -223,7 +223,7 @@ export function CustomPackagingHomeSection(): JSX.Element {
                 </div>
                 <div className="flex items-center gap-2 text-xs font-semibold text-navy">
                   <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
-                  <span>Daily Dispatch in NCR</span>
+                  <span>Pan-India Supply & Dispatch</span>
                 </div>
               </div>
 

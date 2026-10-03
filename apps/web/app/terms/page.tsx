@@ -57,7 +57,7 @@ const sections: LegalSection[] = [
     id: "custom-orders",
     heading: "6. Custom packaging and samples",
     paragraphs: [
-      "For customised packaging, a prototype or sample is prepared for your approval. Production follows the approved sample specification. Minor variation in shade, print position or material batch is inherent to manufacturing and is not treated as a defect.",
+      "For customised packaging, a prototype or sample is prepared for your approval. Production follows the approved sample specification. Minor variation in shade, print position or material batch is inherent to packaging production processes and is not treated as a defect.",
       "Because customised material is produced specifically for your requirement, cancellation after production begins may not be possible; any cancellation terms will be stated in the quotation.",
     ],
   },

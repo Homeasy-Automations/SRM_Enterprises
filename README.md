@@ -38,7 +38,7 @@ reviewed directly in MongoDB Atlas.
 
 ## 1. Overview
 
-SRM Enterprises manufactures and trades industrial packaging materials and supplies them
+SRM Enterprises provides complete industrial packaging solutions and supplies them
 across **Pan India**. This project is the public website plus the small
 backend it genuinely needs:
 
@@ -69,7 +69,7 @@ be used for decoration, this site uses illustration and layout instead.
 | `/industries` | Industry grid + one section per industry (challenges, solutions, links to categories) + approach + CTA |
 | `/industries/[slug]` | One template for all six industries: challenges, recommended packaging, category links, protection & supply approach, custom packaging, CTA |
 | `/custom-packaging` | "Packaging Designed for Your Product": why custom, requirement assessment, material selection, dimensions & thickness, printing & branding, sample approval, production & bulk supply, interactive timeline, CTA |
-| `/why-us` | Quality, customisation, competitive value, supply reliability, manufacturing & trading, industrial support, CTA |
+| `/why-us` | Quality, customisation, competitive value, supply reliability, complete packaging solutions, industrial support, CTA |
 | `/contact` | Hero with live API status, contact details, quote form, service area, WhatsApp CTA, FAQ accordion |
 | `/privacy`, `/terms` | Complete template policies marked for legal review |
 | `not-found.tsx`, `error.tsx`, `loading.tsx` | 404, error boundary and route skeleton |

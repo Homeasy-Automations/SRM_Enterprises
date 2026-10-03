@@ -13,7 +13,7 @@ export const BRAND = {
   positioning:
     "Industrial packaging material supplier with reliable Pan India supply & dispatch.",
   bulkSupplyLine: "across Pan India with reliable dispatch logistics",
-  locations: ["Gurugram", "Manesar", "Bhiwadi", "Delhi NCR"],
+  locations: ["Pan-India Supply & Dispatch"],
 } as const;
 
 export const ROUTES = {
@@ -25,8 +25,6 @@ export const ROUTES = {
   industry: (slug: string) => `/industries/${slug}`,
   solutions: "/solutions",
   solution: (slug: string) => `/solutions/${slug}`,
-  locations: "/locations",
-  location: (slug: string) => `/locations/${slug}`,
   resources: "/resources",
   resource: (slug: string) => `/resources/${slug}`,
   gallery: "/gallery",
@@ -227,9 +225,9 @@ export const CUSTOM_PROCESS_STEPS = [
   {
     id: "production",
     title: "Production",
-    summary: "Bulk manufacturing and trading supply as per the approved specification.",
+    summary: "Bulk production and packaging supply as per the approved specification.",
     detail:
-      "Once the sample is approved, the requirement moves into production and/or organised trading supply, with quantities planned around your schedule.",
+      "Once the sample is approved, the requirement moves into full-scale production and scheduled bulk supply, with quantities planned around your schedule.",
     color: "#8B5CF6",
   },
   {

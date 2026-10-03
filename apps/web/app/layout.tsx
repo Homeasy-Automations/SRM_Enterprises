@@ -11,6 +11,7 @@ import { Analytics } from "@/components/layout/Analytics";
 import { LazyFloatingActions, LazyLoadingScreen } from "@/components/layout/LazyOverlays";
 import { ScrollProgressBar } from "@/components/ui/ScrollProgressBar";
 import { ColorMoodProvider } from "@/components/providers/ColorMoodProvider";
+import { HashScrollHandler } from "@/components/navigation/HashScrollHandler";
 import { JsonLd } from "@/components/sections/JsonLd";
 
 /**
@@ -87,6 +88,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
     <html lang="en-IN" data-mood="ocean" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body className="font-sans antialiased">
         <ColorMoodProvider>
+          <HashScrollHandler />
           <SkipToContent />
           <LazyLoadingScreen />
           <ScrollProgressBar />

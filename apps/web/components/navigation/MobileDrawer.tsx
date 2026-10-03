@@ -124,7 +124,22 @@ export function MobileDrawer({ open, onClose }: MobileDrawerProps): JSX.Element 
                               <li key={child.href}>
                                 <Link
                                   href={child.href}
-                                  onClick={onClose}
+                                  onClick={(e) => {
+                                    onClose();
+                                    if (child.href.includes("#")) {
+                                      const [targetPath, hash] = child.href.split("#");
+                                      const currentPath = window.location.pathname.replace(/\/$/, "");
+                                      const normTarget = (targetPath || currentPath).replace(/\/$/, "");
+                                      if (currentPath === normTarget && hash) {
+                                        const el = document.getElementById(hash);
+                                        if (el) {
+                                          e.preventDefault();
+                                          window.history.pushState(null, "", `#${hash}`);
+                                          el.scrollIntoView({ behavior: "smooth", block: "start" });
+                                        }
+                                      }
+                                    }
+                                  }}
                                   className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-navy-soft transition-colors hover:bg-[color:var(--child-color)]/10 hover:text-navy"
                                   style={{ ["--child-color" as string]: child.color ?? "var(--accent)" }}
                                 >
