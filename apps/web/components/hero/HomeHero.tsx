@@ -49,7 +49,7 @@ export function HomeHero(): JSX.Element {
             initial={reducedMotion ? { opacity: 1 } : { opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: reducedMotion ? 0.001 : 0.5 }}
-            className="eyebrow"
+            className="eyebrow badge-interactive cursor-default shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md"
           >
             <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
             {BRAND.tagline}
@@ -108,11 +108,11 @@ export function HomeHero(): JSX.Element {
               href="/contact"
               variant="primary"
               ariaLabel="Go to the quote request form"
-              className="w-full sm:w-auto"
+              className="w-full sm:w-auto shadow-md"
               onClick={() => analytics.ctaClick("Get a Quote", "hero")}
             >
               Get a Quote
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              <ArrowRight className="h-4 w-4 icon-arrow-spring" aria-hidden="true" />
             </MagneticButton>
 
             <MagneticButton
@@ -121,7 +121,7 @@ export function HomeHero(): JSX.Element {
               className="w-full sm:w-auto"
               onClick={() => analytics.ctaClick("Explore Products", "hero")}
             >
-              <Package className="h-4 w-4" aria-hidden="true" />
+              <Package className="h-4 w-4 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6" aria-hidden="true" />
               Explore Products
             </MagneticButton>
 
@@ -133,7 +133,7 @@ export function HomeHero(): JSX.Element {
                 className="w-full border border-navy/10 sm:w-auto"
                 onClick={() => analytics.whatsappClick("hero")}
               >
-                <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                <MessageCircle className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" aria-hidden="true" />
                 WhatsApp Us
               </MagneticButton>
             ) : null}

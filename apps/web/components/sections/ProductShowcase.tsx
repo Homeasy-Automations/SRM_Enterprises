@@ -64,18 +64,20 @@ export function ProductShowcase(): JSX.Element {
                 <Reveal
                   variant={index % 2 === 0 ? "slide-right" : "slide-left"}
                   className={cn(
-                    "flex h-full flex-col justify-between gap-6 rounded-[26px] border border-navy/10 bg-white p-6 sm:p-7 shadow-soft min-h-[460px] lg:min-h-[480px]",
+                    "group card-interactive flex h-full flex-col justify-between gap-6 rounded-[26px] border border-navy/10 bg-white p-6 sm:p-7 shadow-soft min-h-[460px] lg:min-h-[480px]",
                     index % 2 === 1 && "lg:order-2",
                   )}
                 >
                   <div className="flex flex-col gap-4">
                     <span
-                      className="eyebrow"
+                      className="eyebrow badge-interactive w-fit"
                       style={{ ["--accent" as string]: showcase.product.color }}
                     >
                       {showcase.product.name}
                     </span>
-                    <h3 className="font-display text-2xl font-bold text-navy">{showcase.product.tagline}</h3>
+                    <h3 className="heading-shimmer-hover font-display text-2xl font-bold text-navy transition-transform duration-300 group-hover:translate-x-1 sm:text-3xl">
+                      {showcase.product.tagline}
+                    </h3>
                     <p className="text-sm leading-relaxed text-navy-soft sm:text-base">
                       {showcase.product.description}
                     </p>
@@ -84,11 +86,11 @@ export function ProductShowcase(): JSX.Element {
                     {showcase.product.items.map((item) => (
                       <li
                         key={item}
-                        className="rounded-full border px-3 py-1 text-xs font-medium"
+                        className="badge-interactive cursor-default rounded-full border px-3 py-1 text-xs font-semibold"
                         style={{
                           borderColor: `${showcase.product.color}44`,
                           color: "#12294A",
-                          background: `${showcase.product.color}12`,
+                          background: `${showcase.product.color}14`,
                         }}
                       >
                         {item}

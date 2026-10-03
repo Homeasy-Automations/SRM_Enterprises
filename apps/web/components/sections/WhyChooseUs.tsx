@@ -20,7 +20,7 @@ export function WhyChooseUs(): JSX.Element {
         <StaggerGroup className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" stagger={0.1}>
           {WHY_CHOOSE_US.map((reason) => (
             <StaggerItem key={reason.key} className="h-full">
-              <TiltCard accentColor={reason.color} className="h-full">
+              <TiltCard accentColor={reason.color} className="card-interactive h-full">
                 <div className="flex h-full flex-col gap-4 p-6">
                   <span
                     className="grid h-14 w-14 place-items-center rounded-2xl text-white shadow-accent transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6"
@@ -29,7 +29,9 @@ export function WhyChooseUs(): JSX.Element {
                     <CategoryIcon name={reason.icon} className="h-7 w-7" color="#FFFFFF" />
                   </span>
 
-                  <h3 className="font-display text-xl font-bold text-navy">{reason.title}</h3>
+                  <h3 className="font-display text-xl font-bold text-navy transition-all duration-300 group-hover:text-accent group-hover:translate-x-1">
+                    {reason.title}
+                  </h3>
                   <p className="text-sm leading-relaxed text-navy-soft">{reason.description}</p>
 
                   <details className="group/detail mt-auto">
@@ -45,8 +47,8 @@ export function WhyChooseUs(): JSX.Element {
 
                   <span
                     aria-hidden="true"
-                    className="mt-2 block h-1.5 w-full rounded-full transition-all duration-500 group-hover:w-full"
-                    style={{ background: `linear-gradient(90deg, ${reason.color}, ${reason.color}22)` }}
+                    className="mt-2 block h-1.5 w-12 rounded-full transition-all duration-500 group-hover:w-full"
+                    style={{ background: `linear-gradient(90deg, ${reason.color}, ${reason.color}44)` }}
                   />
                 </div>
               </TiltCard>
@@ -55,7 +57,7 @@ export function WhyChooseUs(): JSX.Element {
         </StaggerGroup>
 
         <Reveal variant="fade-up" delay={0.1} className="mt-10">
-          <p className="mx-auto max-w-3xl rounded-2xl border border-navy/10 bg-white px-6 py-5 text-center text-sm font-semibold leading-relaxed text-navy shadow-soft sm:text-base">
+          <p className="card-interactive mx-auto max-w-3xl rounded-2xl border border-navy/10 bg-white px-6 py-5 text-center text-sm font-semibold leading-relaxed text-navy shadow-soft sm:text-base hover:border-accent/40">
             {WHY_CHOOSE_CLOSING_LINE}
           </p>
         </Reveal>

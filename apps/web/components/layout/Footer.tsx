@@ -5,30 +5,52 @@ import { CONTACT, getMailtoLink, getTelLink, getWhatsAppLink } from "@/data/comp
 import { footerNav } from "@/data/navigation";
 import { Logo } from "@/components/ui/Logo";
 import { Reveal } from "@/components/animations/Reveal";
-import { WavyDivider } from "@/components/animations/WavyDivider";
 
 /**
  * Footer — bright vivid gradient (blue → green), white text, four columns.
- * Contains no newsletter or subscriber form by design. WhatsApp/phone rows only appear
- * when a usable number is configured.
+ * Top wavy edge overlaps the preceding section seamlessly with a vibrant color transition.
  */
 export function Footer(): JSX.Element {
   const whatsappLink = getWhatsAppLink();
   const telLink = getTelLink();
 
   return (
-    <footer className="relative overflow-hidden text-white">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#1E6FFF] via-[#1E9BE0] to-[#19B26B]" />
-      <div aria-hidden="true" className="absolute inset-0 -z-10 opacity-25">
-        <span className="absolute -left-16 top-10 h-56 w-56 rounded-full bg-white/30 blur-3xl" />
-        <span className="absolute right-0 top-24 h-72 w-72 rounded-full bg-[#FFC93C]/40 blur-3xl" />
-        <span className="absolute bottom-0 left-1/3 h-48 w-48 rounded-full bg-white/20 blur-3xl" />
+    <footer className="relative text-white z-20">
+      {/* Wavy transition that overlaps the upper section seamlessly with a blended ocean crest */}
+      <div
+        className="pointer-events-none relative -mt-[48px] sm:-mt-[66px] lg:-mt-[82px] -mb-px w-full overflow-hidden leading-[0] z-10"
+        aria-hidden="true"
+      >
+        <svg
+          viewBox="0 0 1440 120"
+          preserveAspectRatio="none"
+          className="h-[52px] w-full sm:h-[70px] lg:h-[86px] block"
+          role="presentation"
+          focusable="false"
+        >
+          {/* Subtle translucent crest that softly blends the upper section into the wave */}
+          <path
+            d="M0,64 C180,116 320,8 520,44 C700,76 820,124 1020,86 C1200,52 1320,20 1440,58 L1440,120 L0,120 Z"
+            fill="#1E6FFF"
+            opacity="0.32"
+          />
+          {/* Main solid wave matching the footer body 100% with zero seam */}
+          <path
+            d="M0,80 C160,32 320,120 480,84 C640,48 780,12 960,52 C1140,92 1300,116 1440,72 L1440,120 L0,120 Z"
+            fill="#1E6FFF"
+          />
+        </svg>
       </div>
 
-      {/* Wavy top edge in page white so the footer reads as one continuous shape. */}
-      <WavyDivider color="#FFFFFF" flip className="relative -mb-1" />
+      {/* Main footer body with seamless top edge matching wave (#1E6FFF) */}
+      <div className="relative overflow-hidden bg-gradient-to-b from-[#1E6FFF] via-[#1760E8] to-[#0E42A8] -mt-1 pb-10 pt-4 sm:pb-12 sm:pt-6">
+        <div aria-hidden="true" className="absolute inset-0 -z-10 opacity-25">
+          <span className="absolute -left-16 top-16 h-56 w-56 rounded-full bg-white/25 blur-3xl" />
+          <span className="absolute right-0 top-32 h-72 w-72 rounded-full bg-[#1E9BE0]/35 blur-3xl" />
+          <span className="absolute bottom-0 left-1/3 h-48 w-48 rounded-full bg-white/15 blur-3xl" />
+        </div>
 
-      <div className="container-wide relative pb-10 pt-8">
+        <div className="container-wide relative">
         <Reveal variant="fade-up">
           <div className="grid gap-10 lg:grid-cols-4">
             <div className="flex flex-col gap-4">
@@ -53,7 +75,7 @@ export function Footer(): JSX.Element {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="inline-flex min-h-[36px] items-center text-sm text-white/90 transition-colors hover:text-white hover:underline"
+                      className="footer-link-interactive inline-flex min-h-[36px] items-center text-sm text-white/90"
                     >
                       {item.label}
                     </Link>
@@ -71,7 +93,7 @@ export function Footer(): JSX.Element {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="inline-flex min-h-[36px] items-center text-sm text-white/90 transition-colors hover:text-white hover:underline"
+                      className="footer-link-interactive inline-flex min-h-[36px] items-center text-sm text-white/90"
                     >
                       {item.label}
                     </Link>
@@ -91,14 +113,14 @@ export function Footer(): JSX.Element {
                 </li>
                 <li className="flex items-start gap-2">
                   <Mail className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
-                  <a href={getMailtoLink("Packaging requirement")} className="hover:underline">
+                  <a href={getMailtoLink("Packaging requirement")} className="footer-link-interactive">
                     {CONTACT.email}
                   </a>
                 </li>
                 {telLink ? (
                   <li className="flex items-start gap-2">
                     <Phone className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
-                    <a href={telLink} className="hover:underline">
+                    <a href={telLink} className="footer-link-interactive">
                       {CONTACT.phoneDisplay}
                     </a>
                   </li>
@@ -115,7 +137,7 @@ export function Footer(): JSX.Element {
                       href={whatsappLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:underline"
+                      className="footer-link-interactive"
                     >
                       WhatsApp us
                     </a>
@@ -125,7 +147,7 @@ export function Footer(): JSX.Element {
 
               <Link
                 href="/contact"
-                className="btn-white mt-1 w-full sm:w-auto"
+                className="btn-white btn-shimmer mt-2 w-full sm:w-auto shadow-md"
                 aria-label="Go to the quote request form"
               >
                 Request a Quote
@@ -160,7 +182,7 @@ export function Footer(): JSX.Element {
           <ul className="flex items-center gap-5">
             {footerNav.legal.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="inline-flex min-h-[36px] items-center hover:underline">
+                <Link href={item.href} className="footer-link-interactive inline-flex min-h-[36px] items-center hover:underline">
                   {item.label}
                 </Link>
               </li>
@@ -168,6 +190,7 @@ export function Footer(): JSX.Element {
           </ul>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
   );
 }

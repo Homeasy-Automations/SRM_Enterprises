@@ -39,7 +39,7 @@ export function ProductCard({ showcase, className, compact = false }: ProductCar
           <div className="flex items-start justify-between gap-4">
             <div className="flex flex-col gap-2">
               <span
-                className="inline-flex w-fit items-center gap-2 rounded-full px-3 py-1 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-white"
+                className="badge-interactive inline-flex w-fit items-center gap-2 rounded-full px-3 py-1 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-white shadow-sm"
                 style={{ background: product.color }}
               >
                 {product.badge}
@@ -49,14 +49,14 @@ export function ProductCard({ showcase, className, compact = false }: ProductCar
                 onClick={(event) => event.stopPropagation()}
                 className="focus-visible:outline-none"
               >
-                <h3 className="font-display text-xl font-bold text-navy transition-colors hover:text-accent sm:text-2xl">
+                <h3 className="font-display text-xl font-bold text-navy transition-all duration-300 group-hover:text-accent group-hover:translate-x-1 sm:text-2xl">
                   {product.name}
                 </h3>
               </Link>
             </div>
 
             <span
-              className="relative grid h-16 w-16 shrink-0 place-items-center rounded-2xl transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6"
+              className="media-zoom relative grid h-16 w-16 shrink-0 place-items-center rounded-2xl transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6 shadow-sm"
               style={{ background: `${product.color}1F` }}
             >
               <ProductArt iconKey={product.icon} accent={product.color} className="h-14 w-14" title={`${product.name} illustration`} />
@@ -68,8 +68,8 @@ export function ProductCard({ showcase, className, compact = false }: ProductCar
           {!compact ? (
             <ul className="flex flex-col gap-1.5 pt-1">
               {items.map((item) => (
-                <li key={item} className="flex items-center gap-2 text-sm text-navy-soft">
-                  <span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: product.color }} />
+                <li key={item} className="flex items-center gap-2 text-sm text-navy-soft transition-transform duration-200 group-hover:translate-x-1">
+                  <span className="h-1.5 w-1.5 shrink-0 rounded-full transition-transform duration-300 group-hover:scale-125" style={{ background: product.color }} />
                   <span>{item}</span>
                 </li>
               ))}
@@ -90,12 +90,12 @@ export function ProductCard({ showcase, className, compact = false }: ProductCar
           <Link
             href={`/products/${product.slug}`}
             onClick={(event) => event.stopPropagation()}
-            className="inline-flex items-center gap-2 text-sm font-bold transition-colors duration-300"
+            className="inline-flex items-center gap-2 text-sm font-bold transition-all duration-300 group-hover:translate-x-1"
             style={{ color: product.color }}
           >
-            View details
+            <span className="underline-grow">View details</span>
             <ArrowRight
-              className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5"
+              className="h-4 w-4 icon-arrow-spring transition-transform duration-300"
               aria-hidden="true"
             />
           </Link>

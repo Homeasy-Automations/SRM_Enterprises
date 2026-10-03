@@ -126,7 +126,7 @@ export default function ContactPage(): JSX.Element {
       </section>
 
       {/* 6 — Closing line */}
-      <section className="band-cream section-pad-sm" aria-label="Summary">
+      <section className="band-cream pt-10 pb-24 sm:pt-14 sm:pb-32 lg:pt-16 lg:pb-36" aria-label="Summary">
         <div className="container-page">
           <SectionHeading
             eyebrow="Reminder"

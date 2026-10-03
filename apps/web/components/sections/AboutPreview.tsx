@@ -23,8 +23,8 @@ export function AboutPreview(): JSX.Element {
 
             <StaggerGroup as="ul" className="flex flex-col gap-3">
               {ABOUT_POINTS.map((point) => (
-                <StaggerItem as="li" key={point} variant="slide-right" className="flex items-start gap-3">
-                  <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-accent-soft text-accent-deep">
+                <StaggerItem as="li" key={point} variant="slide-right" className="group flex items-start gap-3 transition-transform duration-200 hover:translate-x-1.5">
+                  <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-accent-soft text-accent-deep transition-transform duration-300 group-hover:scale-125 group-hover:bg-accent group-hover:text-white shadow-sm">
                     <CircleCheck className="h-4 w-4" aria-hidden="true" />
                   </span>
                   <span className="text-sm leading-relaxed text-navy-soft sm:text-base">{point}</span>
@@ -36,9 +36,9 @@ export function AboutPreview(): JSX.Element {
               <div className="flex flex-wrap items-center gap-3">
                 <MagneticButton href="/about" variant="primary">
                   More About Us
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  <ArrowRight className="h-4 w-4 icon-arrow-spring" aria-hidden="true" />
                 </MagneticButton>
-                <Link href="/custom-packaging" className="link-accent inline-flex min-h-[44px] items-center">
+                <Link href="/custom-packaging" className="link-accent underline-grow inline-flex min-h-[44px] items-center">
                   See the custom packaging process
                 </Link>
               </div>
@@ -59,7 +59,7 @@ export function AboutPreview(): JSX.Element {
                   key={label}
                   variant="scale-in"
                   delay={0.06 * index}
-                  className="rounded-2xl border border-navy/10 bg-white px-3 py-3 text-center text-xs font-semibold text-navy-soft shadow-soft"
+                  className="badge-interactive cursor-default rounded-2xl border border-navy/10 bg-white px-3 py-3 text-center text-xs font-semibold text-navy-soft shadow-soft transition-all duration-300 hover:border-accent hover:text-accent-deep hover:shadow-md"
                 >
                   {label}
                 </Reveal>

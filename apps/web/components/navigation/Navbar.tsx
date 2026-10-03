@@ -98,8 +98,8 @@ export function Navbar(): JSX.Element {
                       aria-expanded={hasChildren ? menuOpen : undefined}
                       onClick={() => setOpenMenu(null)}
                       className={cn(
-                        "underline-grow inline-flex min-h-[44px] items-center rounded-full px-3.5 text-sm font-semibold transition-colors duration-300",
-                        active ? "text-navy" : "text-navy-soft hover:text-navy",
+                        "underline-grow inline-flex min-h-[44px] items-center rounded-full px-3.5 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:bg-navy/5",
+                        active ? "text-navy bg-navy/5" : "text-navy-soft hover:text-navy",
                       )}
                       data-active={active}
                       style={{ ["--accent" as string]: "var(--nav-accent)" }}
@@ -118,7 +118,7 @@ export function Navbar(): JSX.Element {
                 href={telLink}
                 onClick={() => analytics.phoneClick("navbar")}
                 aria-label={`Call SRM Enterprises on ${CONTACT.phoneDisplay}`}
-                className="hidden min-h-[44px] items-center gap-2 rounded-full border border-navy/10 px-4 text-sm font-semibold text-navy-soft transition-colors hover:border-accent hover:text-accent-deep xl:inline-flex"
+                className="hidden min-h-[44px] items-center gap-2 rounded-full border border-navy/10 px-4 text-sm font-semibold text-navy-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-accent hover:text-accent-deep hover:shadow-soft hover:bg-accent-soft/30 xl:inline-flex"
               >
                 <Phone className="h-4 w-4" aria-hidden="true" />
                 <span className="hidden 2xl:inline">{CONTACT.phoneDisplay}</span>
@@ -140,7 +140,7 @@ export function Navbar(): JSX.Element {
               onClick={() => setDrawerOpen(true)}
               aria-label="Open navigation menu"
               aria-expanded={drawerOpen}
-              className="grid h-11 w-11 place-items-center rounded-full border border-navy/10 bg-white/70 text-navy transition-colors hover:bg-white lg:hidden"
+              className="grid h-11 w-11 place-items-center rounded-full border border-navy/10 bg-white/70 text-navy transition-all duration-300 hover:bg-white hover:border-accent/40 hover:scale-105 hover:shadow-soft lg:hidden"
             >
               <Menu className="h-5 w-5" aria-hidden="true" />
             </button>

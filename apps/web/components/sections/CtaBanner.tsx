@@ -42,7 +42,7 @@ export function CtaBanner({
       />
       <div aria-hidden="true" className="absolute inset-0 -z-10 opacity-30">
         <span className="absolute -left-10 top-6 h-52 w-52 rounded-full bg-white/40 blur-3xl" />
-        <span className="absolute right-4 bottom-0 h-64 w-64 rounded-full bg-white/25 blur-3xl" />
+        <span className="absolute right-4 bottom-12 h-64 w-64 rounded-full bg-white/25 blur-3xl" />
       </div>
 
       <WavyDivider color="#FFFFFF" flip className="-mb-1" />
@@ -53,10 +53,10 @@ export function CtaBanner({
         </div>
       ) : null}
 
-      <div className="container-page relative py-14 sm:py-16 lg:py-20">
+      <div className="container-page relative pt-14 pb-28 sm:pt-16 sm:pb-36 lg:pt-20 lg:pb-44">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
           <Reveal variant="scale-in">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/15 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-white">
+            <span className="badge-interactive cursor-default inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/15 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-white shadow-sm backdrop-blur-sm transition-all duration-300 hover:bg-white/25 hover:scale-105">
               <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
               Trading • Manufacturing • Custom Packaging
             </span>
@@ -77,14 +77,14 @@ export function CtaBanner({
 
           <Reveal variant="fade-up" delay={0.18}>
             <div className="mt-8 flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center">
-              <MagneticButton href={primaryHref} variant="white" className="w-full sm:w-auto">
+              <MagneticButton href={primaryHref} variant="white" className="w-full sm:w-auto shadow-lg hover:shadow-xl">
                 {primaryLabel}
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                <ArrowRight className="h-4 w-4 icon-arrow-spring" aria-hidden="true" />
               </MagneticButton>
 
               <a
                 href={getMailtoLink("Packaging requirement — SRM Enterprises")}
-                className="btn-glass w-full sm:w-auto"
+                className="btn-glass w-full sm:w-auto shadow-md"
               >
                 {CONTACT.email}
               </a>
@@ -92,7 +92,7 @@ export function CtaBanner({
           </Reveal>
 
           <Reveal variant="fade-in" delay={0.24}>
-            <p className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white/95">
+            <p className="badge-interactive cursor-default mt-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-semibold text-white/95 backdrop-blur-sm transition-all duration-300 hover:bg-white/20">
               <MapPin className="h-4 w-4" aria-hidden="true" />
               {BRAND.locations.join(" • ")}
             </p>

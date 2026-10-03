@@ -129,8 +129,8 @@ export function ProcessTimeline({ compact = false }: ProcessTimelineProps): JSX.
                 transition={{ duration: reducedMotion ? 0.001 : 0.45, delay: index * 0.07 }}
                 onClick={() => setActiveStepId(step.id)}
                 className={cn(
-                  "group relative flex flex-col justify-between overflow-hidden rounded-3xl border bg-white p-6 sm:p-7",
-                  "transition-all duration-300 hover:-translate-y-1 hover:shadow-xl",
+                  "group card-interactive relative flex flex-col justify-between overflow-hidden rounded-3xl border bg-white p-6 sm:p-7",
+                  "transition-all duration-300",
                   isSelected
                     ? "border-accent ring-2 ring-accent/20 shadow-lg"
                     : "border-navy/10 hover:border-navy/25 shadow-soft",
@@ -143,7 +143,7 @@ export function ProcessTimeline({ compact = false }: ProcessTimelineProps): JSX.
                 {/* Large Background Step Number Watermark */}
                 <span
                   aria-hidden="true"
-                  className="pointer-events-none absolute right-4 top-2 select-none font-display text-7xl font-black opacity-[0.06] transition-opacity duration-300 group-hover:opacity-[0.14]"
+                  className="pointer-events-none absolute right-4 top-2 select-none font-display text-7xl font-black opacity-[0.06] transition-all duration-500 group-hover:scale-110 group-hover:opacity-[0.16]"
                   style={{ color: step.color }}
                 >
                   0{index + 1}
@@ -153,14 +153,14 @@ export function ProcessTimeline({ compact = false }: ProcessTimelineProps): JSX.
                   {/* Step Header: Icon + Badge */}
                   <div className="flex items-center justify-between gap-3">
                     <span
-                      className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl text-white shadow-md transition-transform duration-300 group-hover:scale-110"
+                      className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl text-white shadow-md transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6"
                       style={{ background: step.color }}
                     >
                       <Icon className="h-6 w-6" aria-hidden="true" />
                     </span>
 
                     <span
-                      className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[0.7rem] font-bold uppercase tracking-wider"
+                      className="badge-interactive inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[0.7rem] font-bold uppercase tracking-wider shadow-sm"
                       style={{
                         background: `${step.color}15`,
                         color: step.color,
@@ -171,7 +171,7 @@ export function ProcessTimeline({ compact = false }: ProcessTimelineProps): JSX.
                   </div>
 
                   {/* Title & Summary */}
-                  <h3 className="mt-5 font-display text-xl font-bold text-navy sm:text-2xl">
+                  <h3 className="mt-5 font-display text-xl font-bold text-navy transition-all duration-300 group-hover:text-accent group-hover:translate-x-1 sm:text-2xl">
                     {step.title}
                   </h3>
 

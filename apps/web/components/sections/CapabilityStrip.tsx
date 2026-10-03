@@ -19,7 +19,7 @@ export function CapabilityStrip(): JSX.Element {
           {CAPABILITIES.map((capability) => (
             <StaggerItem key={capability.title} className="h-full">
               <article
-                className="surface-card group h-full p-6 hover:-translate-y-1.5 hover:shadow-lift"
+                className="card-interactive group h-full rounded-2xl border border-navy/10 bg-white p-6 shadow-soft transition-all duration-300 hover:border-accent/40"
                 style={{ ["--accent" as string]: capability.color }}
               >
                 <span
@@ -28,10 +28,12 @@ export function CapabilityStrip(): JSX.Element {
                 >
                   <CategoryIcon name={capability.icon} className="h-6 w-6" color="#FFFFFF" />
                 </span>
-                <h2 className="mt-4 font-display text-lg font-bold text-navy">{capability.title}</h2>
+                <h2 className="mt-4 font-display text-lg font-bold text-navy transition-all duration-300 group-hover:text-accent-deep group-hover:translate-x-1">
+                  {capability.title}
+                </h2>
                 <p className="mt-2 text-sm leading-relaxed text-navy-soft">{capability.description}</p>
                 {/* Small illustrated flourish — swaps in per capability */}
-                <div className="mt-4 opacity-80 transition-opacity duration-500 group-hover:opacity-100">
+                <div className="media-zoom mt-4 opacity-80 transition-all duration-500 group-hover:opacity-100">
                   {ART_BY_ICON[capability.icon] ?? (
                     <div className="h-1.5 w-full rounded-full" style={{ background: `${capability.color}33` }} />
                   )}

@@ -60,7 +60,7 @@ export function LegalPageContent({
         </div>
       </PageHero>
 
-      <section className="band-white section-pad-sm" aria-labelledby="legal-content-heading">
+      <section className="band-white pt-10 pb-24 sm:pt-14 sm:pb-32 lg:pt-16 lg:pb-36" aria-labelledby="legal-content-heading">
         <div className="container-page">
           <p className="text-sm text-navy-soft">
             Last updated: <span className="font-semibold text-navy">{lastUpdated}</span>
