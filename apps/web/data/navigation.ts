@@ -147,12 +147,12 @@ export const primaryNav: NavItem[] = [
     ariaLabel: "Packaging applications and solutions",
     children: solutionMenu,
   },
-  {
-    label: "Locations",
-    href: ROUTES.locations,
-    ariaLabel: "Service hubs across NCR",
-    children: locationMenu,
-  },
+  // {
+  //   label: "Locations",
+  //   href: ROUTES.locations,
+  //   ariaLabel: "Service hubs across NCR",
+  //   children: locationMenu,
+  // },
   {
     label: "Resources",
     href: ROUTES.resources,
