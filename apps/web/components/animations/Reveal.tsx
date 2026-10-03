@@ -25,6 +25,7 @@ interface RevealProps {
   delay?: number;
   duration?: number;
   className?: string;
+  style?: CSSProperties;
   /** How much of the element must be visible before animating. */
   amount?: number;
   /** Whether the animation should only play once. Defaults to false for recurring scroll animations. */
@@ -117,6 +118,7 @@ export function Reveal({
   delay = 0.08,
   duration = 0.9,
   className,
+  style,
   amount = 0.28,
   once = false,
   margin = "-60px 0px -60px 0px",
@@ -132,6 +134,7 @@ export function Reveal({
   return (
     <Component
       className={cn(className)}
+      style={style}
       variants={variants}
       initial="hidden"
       whileInView="visible"

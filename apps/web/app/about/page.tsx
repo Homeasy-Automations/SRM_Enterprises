@@ -152,19 +152,50 @@ export default function AboutPage(): JSX.Element {
 
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
             <div className="flex flex-col gap-4">
-              <h3 className="font-display text-lg font-bold text-navy">Quality</h3>
+              <h3 className="heading-shimmer-hover font-display text-lg font-bold text-navy transition-transform duration-300 hover:translate-x-1 cursor-default inline-block w-fit">
+                Quality
+              </h3>
               {QUALITY_PHILOSOPHY.map((item, index) => (
                 <Reveal
                   key={item.title}
                   variant="slide-right"
-                  delay={index * 0.06}
-                  className="rounded-2xl border border-navy/10 bg-white p-5 shadow-soft"
+                  delay={index * 0.08}
+                  className="group/philosophy relative overflow-hidden rounded-2xl border border-navy/10 bg-white p-5 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift cursor-default hover:border-navy/20"
+                  style={{ ["--card-accent" as string]: item.color }}
                 >
-                  <div className="flex items-start gap-3">
-                    <span className="mt-1 h-3 w-3 shrink-0 rounded-full" style={{ background: item.color }} aria-hidden="true" />
+                  {/* Soft ambient color glow on hover */}
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover/philosophy:opacity-25"
+                    style={{ background: item.color }}
+                  />
+
+                  {/* Left accent indicator line on hover */}
+                  <span
+                    aria-hidden="true"
+                    className="absolute inset-y-0 left-0 w-1 scale-y-0 rounded-l-2xl transition-transform duration-300 origin-center group-hover/philosophy:scale-y-100"
+                    style={{ background: item.color }}
+                  />
+
+                  <div className="relative z-10 flex items-start gap-3.5">
+                    <span className="relative mt-1 flex h-4 w-4 shrink-0 items-center justify-center">
+                      <span
+                        className="absolute inset-0 rounded-full opacity-0 transition-all duration-300 group-hover/philosophy:scale-150 group-hover/philosophy:opacity-35"
+                        style={{ background: item.color }}
+                      />
+                      <span
+                        className="relative h-3 w-3 rounded-full transition-all duration-300 group-hover/philosophy:scale-125 group-hover/philosophy:shadow-sm"
+                        style={{ background: item.color }}
+                        aria-hidden="true"
+                      />
+                    </span>
                     <div>
-                      <h4 className="font-semibold text-navy">{item.title}</h4>
-                      <p className="mt-1 text-sm leading-relaxed text-navy-soft">{item.description}</p>
+                      <h4 className="font-semibold text-navy transition-all duration-300 group-hover/philosophy:translate-x-1">
+                        {item.title}
+                      </h4>
+                      <p className="mt-1 text-sm leading-relaxed text-navy-soft transition-colors duration-300 group-hover/philosophy:text-navy/85">
+                        {item.description}
+                      </p>
                     </div>
                   </div>
                 </Reveal>
@@ -172,19 +203,50 @@ export default function AboutPage(): JSX.Element {
             </div>
 
             <div className="flex flex-col gap-4">
-              <h3 className="font-display text-lg font-bold text-navy">Supply</h3>
+              <h3 className="heading-shimmer-hover font-display text-lg font-bold text-navy transition-transform duration-300 hover:translate-x-1 cursor-default inline-block w-fit">
+                Supply
+              </h3>
               {SUPPLY_PHILOSOPHY.map((item, index) => (
                 <Reveal
                   key={item.title}
                   variant="slide-left"
-                  delay={index * 0.06}
-                  className="rounded-2xl border border-navy/10 bg-white p-5 shadow-soft"
+                  delay={index * 0.08}
+                  className="group/philosophy relative overflow-hidden rounded-2xl border border-navy/10 bg-white p-5 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift cursor-default hover:border-navy/20"
+                  style={{ ["--card-accent" as string]: item.color }}
                 >
-                  <div className="flex items-start gap-3">
-                    <span className="mt-1 h-3 w-3 shrink-0 rounded-full" style={{ background: item.color }} aria-hidden="true" />
+                  {/* Soft ambient color glow on hover */}
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover/philosophy:opacity-25"
+                    style={{ background: item.color }}
+                  />
+
+                  {/* Left accent indicator line on hover */}
+                  <span
+                    aria-hidden="true"
+                    className="absolute inset-y-0 left-0 w-1 scale-y-0 rounded-l-2xl transition-transform duration-300 origin-center group-hover/philosophy:scale-y-100"
+                    style={{ background: item.color }}
+                  />
+
+                  <div className="relative z-10 flex items-start gap-3.5">
+                    <span className="relative mt-1 flex h-4 w-4 shrink-0 items-center justify-center">
+                      <span
+                        className="absolute inset-0 rounded-full opacity-0 transition-all duration-300 group-hover/philosophy:scale-150 group-hover/philosophy:opacity-35"
+                        style={{ background: item.color }}
+                      />
+                      <span
+                        className="relative h-3 w-3 rounded-full transition-all duration-300 group-hover/philosophy:scale-125 group-hover/philosophy:shadow-sm"
+                        style={{ background: item.color }}
+                        aria-hidden="true"
+                      />
+                    </span>
                     <div>
-                      <h4 className="font-semibold text-navy">{item.title}</h4>
-                      <p className="mt-1 text-sm leading-relaxed text-navy-soft">{item.description}</p>
+                      <h4 className="font-semibold text-navy transition-all duration-300 group-hover/philosophy:translate-x-1">
+                        {item.title}
+                      </h4>
+                      <p className="mt-1 text-sm leading-relaxed text-navy-soft transition-colors duration-300 group-hover/philosophy:text-navy/85">
+                        {item.description}
+                      </p>
                     </div>
                   </div>
                 </Reveal>
