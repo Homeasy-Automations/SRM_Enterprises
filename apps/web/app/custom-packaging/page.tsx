@@ -84,7 +84,7 @@ export default function CustomPackagingPage(): JSX.Element {
       />
 
       {/* 3 — Requirement assessment */}
-      <section className="band-sky section-pad" aria-labelledby="assessment-heading">
+      <section className="band-sky pattern-cad section-pad" aria-labelledby="assessment-heading">
         <div className="container-page">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="flex flex-col gap-5">
@@ -124,7 +124,7 @@ export default function CustomPackagingPage(): JSX.Element {
       </section>
 
       {/* 4 — Material selection */}
-      <section className="band-white section-pad" aria-labelledby="material-heading">
+      <section className="band-white pattern-cad section-pad" aria-labelledby="material-heading">
         <div className="container-page">
           <SectionHeading
             eyebrow="Step 02"
@@ -143,7 +143,7 @@ export default function CustomPackagingPage(): JSX.Element {
             ].map((item) => (
               <StaggerItem key={item.name} className="h-full">
                 <article
-                  className="surface-card group flex h-full flex-col gap-2 p-5 hover:-translate-y-1.5 hover:shadow-lift"
+                  className="card-cad-studio group flex h-full flex-col gap-2 p-5 transition-all duration-300"
                   style={{ ["--accent" as string]: item.color }}
                 >
                   <span className="h-2 w-10 rounded-full transition-all duration-500 group-hover:w-full" style={{ background: item.color }} aria-hidden="true" />
@@ -186,10 +186,10 @@ export default function CustomPackagingPage(): JSX.Element {
       />
 
       {/* 6 — Printing and branding */}
-      <section className="band-white section-pad" aria-labelledby="printing-heading">
+      <section className="band-white pattern-cad section-pad" aria-labelledby="printing-heading">
         <div className="container-page">
           <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.1fr]">
-            <Reveal variant="slide-right" className="rounded-[26px] border border-navy/10 bg-white p-7 shadow-soft">
+            <Reveal variant="slide-right" className="card-cad-studio p-7">
               <h3 className="font-display text-xl font-bold text-navy">Printing options we work with</h3>
               <ul className="mt-4 grid gap-3 sm:grid-cols-2">
                 {[
@@ -236,9 +236,9 @@ export default function CustomPackagingPage(): JSX.Element {
       </section>
 
       {/* 7 — Prototype / sample */}
-      <section className="band-sky section-pad" aria-labelledby="sample-heading">
+      <section className="band-sky pattern-cad section-pad" aria-labelledby="sample-heading">
         <div className="container-page">
-          <div className="flex flex-col items-start gap-6 rounded-[28px] border border-navy/10 bg-white p-7 shadow-card sm:p-9 lg:flex-row lg:items-center lg:justify-between">
+          <div className="card-cad-studio flex flex-col items-start gap-6 p-7 sm:p-9 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex items-start gap-4">
               <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-accent text-accent-contrast">
                 <ShieldCheck className="h-6 w-6" aria-hidden="true" />

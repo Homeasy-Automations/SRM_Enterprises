@@ -119,9 +119,9 @@ export function Reveal({
   duration = 0.9,
   className,
   style,
-  amount = 0.28,
+  amount = 0.15,
   once = false,
-  margin = "-60px 0px -60px 0px",
+  margin = "0px 0px -50px 0px",
   as = "div",
 }: RevealProps): JSX.Element {
   const reducedMotion = useReducedMotion();
@@ -169,9 +169,9 @@ export function StaggerGroup({
   style,
   stagger = 0.16,
   delayChildren = 0.15,
-  amount = 0.26,
+  amount = 0.15,
   once = false,
-  margin = "-60px 0px -60px 0px",
+  margin = "0px 0px -50px 0px",
   as = "div",
 }: StaggerGroupProps): JSX.Element {
   const reducedMotion = useReducedMotion();

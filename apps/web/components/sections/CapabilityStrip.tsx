@@ -13,13 +13,13 @@ const ART_BY_ICON: Record<string, JSX.Element> = {
 /** Four-up capability strip directly under the hero. */
 export function CapabilityStrip(): JSX.Element {
   return (
-    <section className="band-sky section-pad-sm relative" aria-label="What SRM Enterprises does">
+    <section className="band-sky pattern-dots section-pad-sm relative" aria-label="What SRM Enterprises does">
       <div className="container-page">
         <StaggerGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {CAPABILITIES.map((capability) => (
             <StaggerItem key={capability.title} variant="flip-up" className="h-full">
               <article
-                className="card-interactive group h-full rounded-2xl border border-navy/10 bg-white p-6 shadow-soft transition-all duration-300 hover:border-accent/40"
+                className="card-home-vivid group h-full p-6 transition-all duration-300"
                 style={{ ["--accent" as string]: capability.color }}
               >
                 <span

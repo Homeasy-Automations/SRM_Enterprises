@@ -28,7 +28,8 @@ export function ProductCard({ showcase, className, compact = false }: ProductCar
     <TiltCard
       accentColor={product.color}
       ariaLabel={`${product.name} — open category page`}
-      className={cn("cursor-pointer", className)}
+      className={cn("card-tech-blueprint cursor-pointer", className)}
+      style={{ ["--card-accent" as string]: product.color }}
       onActivate={() => {
         analytics.productView(product.name, product.slug);
         router.push(`/products/${product.slug}`);

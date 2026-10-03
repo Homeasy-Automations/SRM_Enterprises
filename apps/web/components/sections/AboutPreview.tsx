@@ -10,7 +10,7 @@ import { FactoryArt, WarehouseArt } from "@/components/ui/art";
 /** Homepage about preview — "One Partner. Multiple Packaging Solutions." */
 export function AboutPreview(): JSX.Element {
   return (
-    <section className="band-white section-pad relative" aria-labelledby="about-preview-heading">
+    <section className="band-white section-pad relative pattern-dots" aria-labelledby="about-preview-heading">
       <div className="container-page">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <Reveal variant="split-left" className="flex flex-col gap-6">

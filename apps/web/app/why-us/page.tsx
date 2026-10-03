@@ -45,7 +45,7 @@ export default function WhyUsPage(): JSX.Element {
       </PageHero>
 
       {/* 2 — Quality */}
-      <section className="band-white section-pad" aria-labelledby="why-quality-heading">
+      <section className="band-white pattern-circuit section-pad" aria-labelledby="why-quality-heading">
         <div className="container-page">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <Reveal variant="split-left" className="flex flex-col gap-5">
@@ -110,7 +110,7 @@ export default function WhyUsPage(): JSX.Element {
       />
 
       {/* 4 — Competitive value */}
-      <section className="band-white section-pad" aria-labelledby="why-value-heading">
+      <section className="band-white pattern-circuit section-pad" aria-labelledby="why-value-heading">
         <div className="container-page">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <Reveal variant="clip" className="lg:order-2">
@@ -146,7 +146,7 @@ export default function WhyUsPage(): JSX.Element {
       </section>
 
       {/* 5 — Supply reliability */}
-      <section className="band-cream section-pad" aria-labelledby="why-supply-heading">
+      <section className="band-cream pattern-circuit section-pad" aria-labelledby="why-supply-heading">
         <div className="container-page">
           <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_1fr]">
             <Reveal variant="split-left" className="flex flex-col gap-5">
@@ -166,7 +166,8 @@ export default function WhyUsPage(): JSX.Element {
                     key={item.title}
                     variant="depth-zoom"
                     delay={index * 0.06}
-                    className="rounded-2xl border border-navy/10 bg-white p-5 shadow-soft"
+                    className="card-benchmark-trust group p-5 transition-all duration-300"
+                    style={{ ["--accent" as string]: item.color }}
                   >
                     <span className="block h-1.5 w-10 rounded-full" style={{ background: item.color }} aria-hidden="true" />
                     <h3 className="mt-3 font-display text-base font-bold text-navy">{item.title}</h3>
@@ -215,7 +216,7 @@ export default function WhyUsPage(): JSX.Element {
       />
 
       {/* 7 — Industrial support + summary */}
-      <section className="band-sky section-pad" aria-labelledby="why-support-heading">
+      <section className="band-sky pattern-circuit section-pad" aria-labelledby="why-support-heading">
         <div className="container-page">
           <SectionHeading
             eyebrow="Industrial Support"
@@ -228,7 +229,7 @@ export default function WhyUsPage(): JSX.Element {
             {WHY_CHOOSE_US.map((reason) => (
               <StaggerItem key={reason.key} variant="flip-up" className="h-full">
                 <article
-                  className="surface-card group flex h-full flex-col gap-2 p-6 hover:-translate-y-1.5 hover:shadow-lift"
+                  className="card-benchmark-trust group flex h-full flex-col gap-2 p-6 transition-all duration-300"
                   style={{ ["--accent" as string]: reason.color }}
                 >
                   <h3 className="font-display text-lg font-bold text-navy">{reason.title}</h3>

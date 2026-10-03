@@ -125,7 +125,7 @@ export function ProcessTimeline({ compact = false }: ProcessTimelineProps): JSX.
                 id={`step-card-${step.id}`}
                 initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 26, scale: 0.96 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: false, amount: 0.28, margin: "-60px 0px -60px 0px" }}
+                viewport={{ once: false, amount: 0.15, margin: "0px 0px -40px 0px" }}
                 transition={{
                   duration: reducedMotion ? 0.001 : 0.88,
                   delay: index * 0.15,

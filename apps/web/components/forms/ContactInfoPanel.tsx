@@ -53,7 +53,7 @@ export function ContactInfoPanel(): JSX.Element {
   return (
     <div className="flex flex-col gap-4">
       <Reveal variant="split-left">
-        <div className="rounded-[26px] border border-navy/10 bg-white p-6 shadow-soft">
+        <div className="card-portal-glass p-6 sm:p-8">
           <h2 className="font-display text-xl font-bold text-navy">Contact Details</h2>
           <p className="mt-2 text-sm leading-relaxed text-navy-soft">
             Replace the placeholder email, phone and WhatsApp values in{" "}
@@ -97,7 +97,7 @@ export function ContactInfoPanel(): JSX.Element {
       </Reveal>
 
       <Reveal variant="fade-up" delay={0.08}>
-        <div className="rounded-[26px] border border-navy/10 bg-gradient-to-br from-accent-soft via-white to-[#FFF9F0] p-6 shadow-soft">
+        <div className="card-portal-glass bg-gradient-to-br from-accent-soft/40 via-white/80 to-[#FFF9F0]/70 p-6 sm:p-7">
           <h3 className="font-display text-lg font-bold text-navy">What to include in your inquiry</h3>
           <ul className="mt-3 flex flex-col gap-2 text-sm text-navy-soft">
             {[

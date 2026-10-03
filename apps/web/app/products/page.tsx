@@ -51,7 +51,7 @@ export default function ProductsPage(): JSX.Element {
       </PageHero>
 
       {/* 2 — Category overview */}
-      <section className="band-sky section-pad-sm" aria-labelledby="category-overview-heading">
+      <section className="band-sky pattern-blueprint section-pad-sm" aria-labelledby="category-overview-heading">
         <div className="container-page">
           <SectionHeading
             eyebrow="At a Glance"
@@ -66,26 +66,28 @@ export default function ProductsPage(): JSX.Element {
               <StaggerItem key={product.slug} variant="kinetic-pop" className="h-full">
                 <Link
                   href={`/products/${product.slug}`}
-                  className="group flex h-full min-h-[260px] flex-col justify-between gap-4 rounded-[24px] border border-navy/10 bg-white p-5 shadow-soft transition-all duration-500 hover:-translate-y-1.5 hover:shadow-lift"
-                  style={{ ["--overview-color" as string]: product.color }}
+                  className="card-tech-blueprint group flex h-full min-h-[260px] flex-col justify-between gap-4 p-5 transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-xl"
+                  style={{ ["--card-accent" as string]: product.color }}
                 >
                   <div className="flex flex-col gap-3">
                     <span
-                      className="grid h-14 w-14 place-items-center rounded-2xl transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6"
+                      className="grid h-14 w-14 place-items-center rounded-2xl transition-all duration-500 group-hover:scale-115 group-hover:-rotate-6 group-hover:shadow-md"
                       style={{ background: `${product.color}1F` }}
                     >
                       <ProductArt
                         iconKey={product.icon}
                         accent={product.color}
-                        className="h-12 w-12"
+                        className="h-12 w-12 transition-transform duration-500 group-hover:scale-110"
                         title={`${product.name} illustration`}
                       />
                     </span>
-                    <h3 className="font-display text-base font-bold text-navy">{product.name}</h3>
+                    <h3 className="font-display text-base font-bold text-navy transition-colors duration-300 group-hover:text-accent">
+                      {product.name}
+                    </h3>
                     <p className="text-xs leading-relaxed text-navy-soft">{product.tagline}</p>
                   </div>
                   <span
-                    className="mt-auto inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide"
+                    className="mt-auto inline-flex items-center gap-1.5 font-mono text-xs font-bold uppercase tracking-wider transition-all duration-300 group-hover:translate-x-1.5"
                     style={{ color: product.color }}
                   >
                     Details
@@ -99,7 +101,7 @@ export default function ProductsPage(): JSX.Element {
       </section>
 
       {/* 3 — One section per category */}
-      <div className="band-white">
+      <div className="band-white pattern-blueprint">
         <div className="container-page">
           {products.map((product, index) => (
             <PackageCategorySection key={product.slug} product={product} index={index} />
@@ -120,23 +122,23 @@ export default function ProductsPage(): JSX.Element {
               />
               <Reveal variant="split-left">
                 <div className="flex flex-wrap gap-3">
-                  <Link href="/custom-packaging" className="btn-primary">
+                  <Link href="/custom-packaging" className="btn-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:scale-102">
                     Custom packaging process
-                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    <ArrowRight className="h-4 w-4 icon-arrow-spring" aria-hidden="true" />
                   </Link>
-                  <Link href="/contact" className="btn-outline">
+                  <Link href="/contact" className="btn-outline transition-all duration-300 hover:-translate-y-1 hover:shadow-xs hover:scale-102">
                     Discuss your requirement
                   </Link>
                 </div>
               </Reveal>
             </div>
 
-            <Reveal variant="iris-clip" className="rounded-[26px] border border-navy/10 bg-white p-6 shadow-soft">
+            <Reveal variant="iris-clip" className="rounded-[26px] border border-navy/10 bg-white p-6 shadow-soft transition-all duration-500 hover:shadow-xl hover:border-accent/40">
               <ul className="grid gap-3 sm:grid-cols-2">
                 {["Dimensions", "Ply", "Thickness", "Material", "Printing", "Packing format"].map((item, index) => (
                   <li
                     key={item}
-                    className="rounded-2xl px-4 py-3 text-sm font-semibold text-navy"
+                    className="rounded-2xl px-4 py-3 text-sm font-semibold text-navy transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-md cursor-default border border-transparent hover:border-navy/10"
                     style={{
                       background: ["#E8F1FF", "#EAFBF4", "#FFF1E3", "#F3ECFF", "#FDF3D8", "#E6F8FB"][index] ?? "#E8F1FF",
                     }}

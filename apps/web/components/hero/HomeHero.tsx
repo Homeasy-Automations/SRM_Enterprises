@@ -48,7 +48,7 @@ export function HomeHero(): JSX.Element {
           <motion.span
             initial={reducedMotion ? { opacity: 1 } : { opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: false, amount: 0.28, margin: "-60px 0px -60px 0px" }}
+            viewport={{ once: false, amount: 0.1, margin: "0px 0px -40px 0px" }}
             transition={{ duration: reducedMotion ? 0.001 : 0.8 }}
             className="eyebrow badge-interactive cursor-default shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md"
           >
@@ -61,7 +61,7 @@ export function HomeHero(): JSX.Element {
             variants={container}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.28, margin: "-60px 0px -60px 0px" }}
+            viewport={{ once: false, amount: 0.1, margin: "0px 0px -40px 0px" }}
             className="mt-6 font-display text-[2rem] font-extrabold leading-[1.1] text-navy sm:text-5xl lg:text-6xl xl:text-[4.2rem]"
           >
             {words.map((item, index) => (
@@ -82,7 +82,7 @@ export function HomeHero(): JSX.Element {
           <motion.p
             initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.28, margin: "-60px 0px -60px 0px" }}
+            viewport={{ once: false, amount: 0.1, margin: "0px 0px -40px 0px" }}
             transition={{ duration: reducedMotion ? 0.001 : 0.85, delay: 0.4 }}
             className="mt-6 max-w-2xl text-base leading-relaxed text-navy-soft sm:text-lg"
           >
@@ -94,7 +94,7 @@ export function HomeHero(): JSX.Element {
           <motion.div
             initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.28, margin: "-60px 0px -60px 0px" }}
+            viewport={{ once: false, amount: 0.1, margin: "0px 0px -40px 0px" }}
             transition={{ duration: reducedMotion ? 0.001 : 0.85, delay: 0.55 }}
             className="mt-8 flex flex-col items-center gap-3 sm:flex-row"
           >
@@ -105,7 +105,7 @@ export function HomeHero(): JSX.Element {
           <motion.div
             initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.28, margin: "-60px 0px -60px 0px" }}
+            viewport={{ once: false, amount: 0.1, margin: "0px 0px -40px 0px" }}
             transition={{ duration: reducedMotion ? 0.001 : 0.85, delay: 0.7 }}
             className="mt-9 flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center"
           >

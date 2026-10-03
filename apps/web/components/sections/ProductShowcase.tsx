@@ -27,7 +27,7 @@ export function ProductShowcase(): JSX.Element {
   return (
     <section
       id="home-products"
-      className="band-cream section-pad relative"
+      className="band-cream pattern-dots section-pad relative"
       aria-labelledby="showcase-heading"
       style={{ ["--accent" as string]: activeProduct?.color ?? "var(--accent)" }}
     >
@@ -64,9 +64,10 @@ export function ProductShowcase(): JSX.Element {
                 <Reveal
                   variant={index % 2 === 0 ? "split-left" : "split-right"}
                   className={cn(
-                    "group card-interactive flex h-full flex-col justify-between gap-6 rounded-[26px] border border-navy/10 bg-white p-6 sm:p-7 shadow-soft min-h-[460px] lg:min-h-[480px]",
+                    "card-home-vivid group flex h-full flex-col justify-between gap-6 p-6 sm:p-7 min-h-[460px] lg:min-h-[480px]",
                     index % 2 === 1 && "lg:order-2",
                   )}
+                  style={{ ["--accent" as string]: showcase.product.color }}
                 >
                   <div className="flex flex-col gap-4">
                     <span

@@ -7,7 +7,7 @@ import { TiltCard } from "@/components/animations/TiltCard";
 /** Four qualitative reasons — no statistics, no invented claims anywhere. */
 export function WhyChooseUs(): JSX.Element {
   return (
-    <section className="band-sky section-pad relative" aria-labelledby="why-choose-heading">
+    <section className="band-sky section-pad relative pattern-dots" aria-labelledby="why-choose-heading">
       <div className="container-page">
         <SectionHeading
           eyebrow="Why Choose Us"
@@ -20,7 +20,7 @@ export function WhyChooseUs(): JSX.Element {
         <StaggerGroup className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" stagger={0.1}>
           {WHY_CHOOSE_US.map((reason) => (
             <StaggerItem key={reason.key} variant="kinetic-pop" className="h-full">
-              <TiltCard accentColor={reason.color} className="card-interactive h-full">
+              <TiltCard accentColor={reason.color} className="card-home-vivid h-full">
                 <div className="flex h-full flex-col gap-4 p-6">
                   <span
                     className="grid h-14 w-14 place-items-center rounded-2xl text-white shadow-accent transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6"

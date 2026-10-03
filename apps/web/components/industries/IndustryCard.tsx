@@ -25,7 +25,7 @@ export function IndustryCard({ industry, className, rail = false }: IndustryCard
       href={`/industries/${industry.slug}`}
       accentColor={industry.color}
       ariaLabel={`${industry.name} — packaging approach`}
-      className={cn("card-interactive", rail && "w-[280px] shrink-0 snap-start sm:w-[320px]", className)}
+      className={cn("card-sector-hex group overflow-hidden", rail && "w-[280px] shrink-0 snap-start sm:w-[320px]", className)}
       onActivate={() => analytics.ctaClick(industry.name, "industries")}
     >
       <div className="flex h-full flex-col gap-4 p-6">

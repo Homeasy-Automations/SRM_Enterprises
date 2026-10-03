@@ -46,20 +46,20 @@ export function PackageCategorySection({ product, index }: PackageCategorySectio
 
           <StaggerGroup as="ul" className="grid gap-2 sm:grid-cols-2">
             {product.items.map((item) => (
-              <StaggerItem as="li" key={item} variant="kinetic-pop" className="flex items-start gap-2">
+              <StaggerItem as="li" key={item} variant="kinetic-pop" className="group flex items-start gap-2 rounded-xl p-1.5 transition-all duration-300 hover:bg-slate-50 hover:translate-x-1.5 cursor-default">
                 <span
-                  className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-white"
+                  className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-white transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 shadow-xs"
                   style={{ background: product.color }}
                 >
                   <Check className="h-3 w-3" aria-hidden="true" />
                 </span>
-                <span className="text-sm text-navy-soft">{item}</span>
+                <span className="text-sm text-navy-soft transition-colors duration-300 group-hover:text-navy group-hover:font-medium">{item}</span>
               </StaggerItem>
             ))}
           </StaggerGroup>
 
           {product.note ? (
-            <p className="rounded-2xl border border-navy/10 bg-white px-4 py-3 text-xs font-semibold uppercase tracking-wide text-navy-soft">
+            <p className="rounded-2xl border border-navy/10 bg-white px-4 py-3 text-xs font-semibold uppercase tracking-wide text-navy-soft shadow-xs transition-all duration-300 hover:border-accent hover:shadow-md hover:-translate-y-0.5">
               {product.note}
             </p>
           ) : null}
@@ -67,15 +67,15 @@ export function PackageCategorySection({ product, index }: PackageCategorySectio
           <div className="flex flex-wrap items-center gap-3">
             <Link
               href={`/products/${product.slug}`}
-              className="btn text-white transition-transform duration-300 hover:-translate-y-0.5"
+              className="btn text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:scale-102"
               style={{ background: product.color }}
             >
               View details
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              <ArrowRight className="h-4 w-4 icon-arrow-spring" aria-hidden="true" />
             </Link>
             <Link
               href={`/contact?product=${product.slug}`}
-              className="btn-outline"
+              className="btn-outline transition-all duration-300 hover:-translate-y-1 hover:shadow-xs hover:scale-102"
               aria-label={`Request a quote for ${product.name}`}
             >
               Request Quote
@@ -83,12 +83,12 @@ export function PackageCategorySection({ product, index }: PackageCategorySectio
           </div>
         </Reveal>
 
-        <Reveal variant="iris-clip" delay={0.06} className={cn(flipped && "lg:order-1")}>
+        <Reveal variant="iris-clip" delay={0.06} className={cn("group/media overflow-hidden transition-all duration-500 hover:shadow-2xl hover:scale-[1.015] rounded-3xl", flipped && "lg:order-1")}>
           <MediaPanel imageKey={product.imageKey} accent={product.color} aspect="video">
             <ProductArt
               iconKey={product.icon}
               accent={product.color}
-              className="h-full w-full"
+              className="media-zoom h-full w-full transition-transform duration-700 group-hover/media:scale-110"
               title={`${product.name} illustration`}
             />
           </MediaPanel>

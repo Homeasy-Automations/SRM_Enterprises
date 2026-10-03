@@ -41,7 +41,7 @@ export default function ContactPage(): JSX.Element {
       </PageHero>
 
       {/* 2 — Contact info + form */}
-      <section className="band-white section-pad-sm" aria-labelledby="contact-details-heading">
+      <section className="band-white section-pad-sm pattern-topography" aria-labelledby="contact-details-heading">
         <div className="container-page">
           <h2 id="contact-details-heading" className="sr-only">
             Contact details and quote request form
@@ -70,7 +70,7 @@ export default function ContactPage(): JSX.Element {
       </section>
 
       {/* 3 — WhatsApp CTA */}
-      <section className="band-sky section-pad-sm" aria-labelledby="whatsapp-cta-heading">
+      <section className="band-sky section-pad-sm pattern-topography" aria-labelledby="whatsapp-cta-heading">
         <div className="container-page">
           <Reveal variant="depth-zoom">
             <div className="flex flex-col items-start gap-5 rounded-[28px] border border-[#25D366]/25 bg-[#EAFBF4] p-7 sm:p-9 lg:flex-row lg:items-center lg:justify-between">
@@ -121,7 +121,7 @@ export default function ContactPage(): JSX.Element {
       <ServiceArea />
 
       {/* 5 — FAQ */}
-      <section className="band-white section-pad" aria-labelledby="faq-heading">
+      <section className="band-white section-pad pattern-topography" aria-labelledby="faq-heading">
         <div className="container-page">
           <FaqAccordion items={contactFaq} accentColor="#19B26B" />
         </div>

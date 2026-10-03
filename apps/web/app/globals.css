@@ -470,6 +470,244 @@ html[data-mood="berry"] {
       radial-gradient(at 92% 10%, #fff9f0 0px, transparent 48%),
       radial-gradient(at 65% 95%, #eafbf4 0px, transparent 52%);
   }
+
+  /* --------------------------------------------------------------------------
+     Page-Specific Visual Background Patterns
+     -------------------------------------------------------------------------- */
+  .pattern-dots {
+    background-image: radial-gradient(rgba(18, 41, 74, 0.08) 1.25px, transparent 1.25px);
+    background-size: 24px 24px;
+  }
+  .pattern-blueprint {
+    background-image:
+      linear-gradient(to right, rgba(30, 111, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(30, 111, 255, 0.05) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  .pattern-weave {
+    background-image:
+      repeating-linear-gradient(45deg, rgba(25, 178, 107, 0.035) 0, rgba(25, 178, 107, 0.035) 1px, transparent 0, transparent 50%),
+      repeating-linear-gradient(-45deg, rgba(30, 111, 255, 0.035) 0, rgba(30, 111, 255, 0.035) 1px, transparent 0, transparent 50%);
+    background-size: 26px 26px;
+  }
+  .pattern-circuit {
+    background-image:
+      radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.05) 0%, transparent 65%),
+      linear-gradient(90deg, rgba(139, 92, 246, 0.03) 1px, transparent 1px),
+      linear-gradient(0deg, rgba(139, 92, 246, 0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 36px 36px, 36px 36px;
+  }
+  .pattern-cad {
+    background-image:
+      radial-gradient(rgba(255, 138, 43, 0.12) 1.5px, transparent 1.5px),
+      linear-gradient(to right, rgba(18, 41, 74, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(18, 41, 74, 0.03) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .pattern-hex {
+    background-color: transparent;
+    background-image:
+      radial-gradient(circle at 50% 50%, rgba(25, 195, 230, 0.1) 1.5px, transparent 2px),
+      linear-gradient(60deg, rgba(25, 195, 230, 0.045) 1px, transparent 1px),
+      linear-gradient(-60deg, rgba(25, 195, 230, 0.045) 1px, transparent 1px),
+      linear-gradient(0deg, rgba(30, 111, 255, 0.035) 1px, transparent 1px);
+    background-size: 48px 83.14px;
+  }
+  .pattern-topography {
+    background-image:
+      radial-gradient(ellipse at 85% 15%, rgba(30, 111, 255, 0.07) 0%, transparent 55%),
+      radial-gradient(ellipse at 15% 85%, rgba(25, 178, 107, 0.06) 0%, transparent 55%),
+      radial-gradient(circle at 50% 50%, rgba(255, 201, 60, 0.04) 0%, transparent 60%);
+  }
+
+  /* --------------------------------------------------------------------------
+     Page-Specific Signature Card Architecture
+     -------------------------------------------------------------------------- */
+  /* 1. Home — Asymmetric Vivid Cards */
+  .card-home-vivid {
+    border-radius: 28px;
+    border: 1px solid rgba(18, 41, 74, 0.1);
+    background-color: #ffffff;
+    box-shadow: 0 10px 30px -10px rgba(18, 41, 74, 0.07);
+    transition:
+      transform 380ms cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 380ms cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 380ms ease;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .card-home-vivid:hover {
+      transform: translateY(-8px) scale(1.012);
+      box-shadow:
+        0 24px 48px -12px var(--accent-shadow, rgba(30, 111, 255, 0.22)),
+        0 0 0 1.5px rgba(var(--accent-rgb, 30 111 255) / 0.35);
+      border-color: transparent;
+    }
+  }
+
+  /* 2. Products — Blueprint & Technical Spec Catalog Cards */
+  .card-tech-blueprint {
+    position: relative;
+    border-radius: 18px;
+    border: 1px solid rgba(30, 111, 255, 0.16);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 8px 24px -8px rgba(18, 41, 74, 0.06);
+    backdrop-filter: blur(8px);
+    overflow: hidden;
+    transition:
+      transform 340ms cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 340ms ease,
+      border-color 340ms ease;
+  }
+  .card-tech-blueprint::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--card-accent, var(--accent, #1E6FFF));
+    opacity: 0.9;
+    transition: height 240ms ease, opacity 240ms ease;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .card-tech-blueprint:hover {
+      transform: translateY(-6px);
+      border-color: var(--card-accent, var(--accent, #1E6FFF));
+      box-shadow: 0 18px 38px -10px rgba(30, 111, 255, 0.2);
+    }
+    .card-tech-blueprint:hover::before {
+      height: 6px;
+      opacity: 1;
+    }
+  }
+
+  /* 3. About — Heritage Pedestal Cards */
+  .card-heritage-pedestal {
+    position: relative;
+    border-radius: 22px;
+    border: 1px solid rgba(18, 41, 74, 0.1);
+    background: #ffffff;
+    box-shadow: 0 12px 28px -10px rgba(18, 41, 74, 0.08);
+    outline: 1px solid rgba(18, 41, 74, 0.03);
+    outline-offset: -3px;
+    overflow: hidden;
+    transition:
+      transform 360ms cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 360ms ease,
+      border-color 360ms ease;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .card-heritage-pedestal:hover {
+      transform: translateY(-7px);
+      border-color: rgba(25, 178, 107, 0.35);
+      box-shadow: 0 20px 42px -12px rgba(25, 178, 107, 0.18);
+    }
+  }
+
+  /* 4. Why Us — Benchmark Trust Cards */
+  .card-benchmark-trust {
+    border-radius: 24px;
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    background: linear-gradient(180deg, #ffffff 0%, #FAF8FF 100%);
+    box-shadow: 0 10px 28px -10px rgba(139, 92, 246, 0.1);
+    transition:
+      transform 360ms cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 360ms ease,
+      border-color 360ms ease;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .card-benchmark-trust:hover {
+      transform: translateY(-8px) scale(1.01);
+      border-color: rgba(139, 92, 246, 0.45);
+      box-shadow: 0 22px 46px -12px rgba(139, 92, 246, 0.25);
+    }
+  }
+
+  /* 5. Custom Packaging — CAD Studio Drafting Cards */
+  .card-cad-studio {
+    position: relative;
+    border-radius: 20px;
+    border: 1.5px dashed rgba(255, 138, 43, 0.32);
+    background: #ffffff;
+    box-shadow: 0 8px 24px -8px rgba(255, 138, 43, 0.08);
+    transition:
+      transform 340ms cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 340ms ease,
+      border-color 340ms ease;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .card-cad-studio:hover {
+      transform: translateY(-6px);
+      border-style: solid;
+      border-color: rgba(255, 138, 43, 0.65);
+      box-shadow: 0 20px 40px -10px rgba(255, 138, 43, 0.22);
+    }
+  }
+
+  /* 6. Industries — Sectoral Acrylic Tiles & Cockpits */
+  .card-sector-hex {
+    position: relative;
+    border-radius: 24px;
+    border: 1px solid rgba(25, 195, 230, 0.22);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(246, 252, 255, 0.92) 100%);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 12px 32px -10px rgba(18, 41, 74, 0.08);
+    transition:
+      transform 380ms cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 380ms ease,
+      border-color 380ms ease;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .card-sector-hex:hover {
+      transform: translateY(-8px) scale(1.012);
+      border-color: rgba(25, 195, 230, 0.6);
+      box-shadow:
+        0 24px 48px -12px rgba(25, 195, 230, 0.25),
+        0 0 0 1.5px rgba(25, 195, 230, 0.2);
+    }
+  }
+
+  .sector-cockpit-card {
+    position: relative;
+    border-radius: 32px;
+    border: 1.5px solid rgba(18, 41, 74, 0.08);
+    background: linear-gradient(180deg, #ffffff 0%, #FAFCFF 100%);
+    box-shadow: 0 18px 45px -12px rgba(18, 41, 74, 0.08);
+    overflow: hidden;
+    transition:
+      transform 400ms cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 400ms ease,
+      border-color 400ms ease;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .sector-cockpit-card:hover {
+      border-color: var(--accent, rgba(30, 111, 255, 0.4));
+      box-shadow:
+        0 26px 54px -14px rgba(18, 41, 74, 0.12),
+        0 0 0 1.5px var(--accent, rgba(30, 111, 255, 0.2));
+    }
+  }
+
+  /* 7. Contact — Precision Portal Glass Cards */
+  .card-portal-glass {
+    position: relative;
+    border-radius: 28px;
+    border: 1px solid rgba(18, 41, 74, 0.12);
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 16px 40px -12px rgba(18, 41, 74, 0.1);
+    transition:
+      transform 360ms cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 360ms ease,
+      border-color 360ms ease;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .card-portal-glass:hover {
+      transform: translateY(-6px);
+      border-color: rgba(25, 178, 107, 0.45);
+      box-shadow: 0 24px 48px -12px rgba(25, 178, 107, 0.2);
+    }
+  }
 }
 
 @layer utilities {

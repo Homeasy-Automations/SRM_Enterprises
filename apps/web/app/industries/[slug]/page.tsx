@@ -121,7 +121,7 @@ export default function IndustryDetailPage({ params }: { params: { slug: string 
       </section>
 
       {/* 3 — Recommended packaging (linked to product categories) */}
-      <section className="band-sky section-pad" aria-labelledby="recommended-heading">
+      <section className="band-sky section-pad pattern-hex" aria-labelledby="recommended-heading">
         <div className="container-page">
           <SectionHeading
             eyebrow="Recommended Packaging"
@@ -133,7 +133,7 @@ export default function IndustryDetailPage({ params }: { params: { slug: string 
           <StaggerGroup className="mt-10 grid gap-5 sm:grid-cols-2">
             {recommended.map(({ entry, product }) => (
               <StaggerItem key={product.slug} className="h-full">
-                <TiltCard href={`/products/${product.slug}`} accentColor={product.color} className="h-full">
+                <TiltCard href={`/products/${product.slug}`} accentColor={product.color} className="card-sector-hex h-full">
                   <div className="flex h-full flex-col gap-3 p-6">
                     <div className="flex items-center gap-3">
                       <span

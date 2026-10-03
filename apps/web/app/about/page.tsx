@@ -55,7 +55,7 @@ export default function AboutPage(): JSX.Element {
       </PageHero>
 
       {/* 2 — Introduction */}
-      <section className="band-white section-pad" aria-labelledby="about-intro-heading">
+      <section className="band-white pattern-weave section-pad" aria-labelledby="about-intro-heading">
         <div className="container-page">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <Reveal variant="split-left" className="flex flex-col gap-6">
@@ -108,7 +108,7 @@ export default function AboutPage(): JSX.Element {
       />
 
       {/* 4 — Capabilities */}
-      <section className="band-white section-pad" aria-labelledby="capabilities-heading">
+      <section className="band-white pattern-weave section-pad" aria-labelledby="capabilities-heading">
         <div className="container-page">
           <SectionHeading
             eyebrow="Capabilities"
@@ -121,7 +121,7 @@ export default function AboutPage(): JSX.Element {
             {CAPABILITY_MATRIX.map((item, index) => (
               <StaggerItem key={item.title} variant="flip-up" className="h-full">
                 <article
-                  className="surface-card group h-full p-6 hover:-translate-y-1.5 hover:shadow-lift"
+                  className="card-heritage-pedestal group h-full p-6 transition-all duration-300"
                   style={{ ["--accent" as string]: ["#1E6FFF", "#19B26B", "#FFC93C", "#FF8A2B", "#8B5CF6", "#19C3E6"][index] ?? "#1E6FFF" }}
                 >
                   <h3 className="font-display text-lg font-bold text-navy">{item.title}</h3>
@@ -141,7 +141,7 @@ export default function AboutPage(): JSX.Element {
       <IndustriesSection />
 
       {/* 6 — Quality and supply philosophy */}
-      <section className="band-sky section-pad" aria-labelledby="philosophy-heading">
+      <section className="band-sky pattern-weave section-pad" aria-labelledby="philosophy-heading">
         <div className="container-page">
           <SectionHeading
             eyebrow="Quality & Supply Philosophy"
@@ -257,7 +257,7 @@ export default function AboutPage(): JSX.Element {
       </section>
 
       {/* 7 — Why businesses choose SRM */}
-      <section className="band-cream section-pad" aria-labelledby="choose-srm-heading">
+      <section className="band-cream pattern-weave section-pad" aria-labelledby="choose-srm-heading">
         <div className="container-page">
           <SectionHeading
             eyebrow="Why Businesses Choose SRM"
@@ -286,7 +286,7 @@ export default function AboutPage(): JSX.Element {
             ].map((item, index) => (
               <Reveal key={item.title} variant="depth-zoom" delay={index * 0.07} className="h-full">
                 <article
-                  className="surface-card group flex h-full flex-col gap-3 p-6 hover:-translate-y-1.5 hover:shadow-lift"
+                  className="card-heritage-pedestal group flex h-full flex-col gap-3 p-6 transition-all duration-300"
                   style={{ ["--accent" as string]: item.color }}
                 >
                   <h3 className="font-display text-lg font-bold text-navy">{item.title}</h3>

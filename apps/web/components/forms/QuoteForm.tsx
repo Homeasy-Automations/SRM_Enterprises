@@ -175,7 +175,7 @@ export function QuoteForm(): JSX.Element {
         onSubmit={handleSubmit(onSubmit)}
         onFocusCapture={onFirstInteraction}
         noValidate
-        className="relative scroll-mt-28 rounded-[28px] border border-navy/10 bg-white p-5 shadow-card sm:p-7 lg:p-8"
+        className="relative scroll-mt-28 card-portal-glass p-5 sm:p-7 lg:p-8"
         aria-labelledby="quote-form-heading"
       >
         <div className="flex flex-col gap-2">

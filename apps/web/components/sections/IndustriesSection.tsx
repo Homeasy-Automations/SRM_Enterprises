@@ -14,7 +14,7 @@ const INDUSTRY_MARQUEE = industries.map((industry) => industry.name);
  */
 export function IndustriesSection(): JSX.Element {
   return (
-    <section className="band-white section-pad relative" aria-labelledby="industries-heading">
+    <section className="band-white section-pad relative pattern-hex" aria-labelledby="industries-heading">
       <div className="container-page">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading
