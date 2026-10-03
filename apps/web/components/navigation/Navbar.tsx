@@ -3,12 +3,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { Menu, Phone } from "lucide-react";
+import { ChevronDown, Menu, MessageCircle, Phone } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { primaryNav } from "@/data/navigation";
-import { CONTACT, getTelLink } from "@/data/company";
+import { CONTACT, getTelLink, getWhatsAppLink } from "@/data/company";
 import { Logo } from "@/components/ui/Logo";
 import { MegaMenu } from "./MegaMenu";
+import { DropdownMenu } from "./DropdownMenu";
 import { MobileDrawer } from "./MobileDrawer";
 import { useScrollProgress } from "@/hooks/use-scroll-progress";
 import { useActiveSection } from "@/hooks/use-active-section";
@@ -24,11 +25,11 @@ const SHOWCASE_SECTION_IDS: readonly string[] = products.map(
 /**
  * Site navigation.
  *
- * States: transparent over a hero, frosted white glass once scrolled. The active page
- * gets a coloured underline; the accent of the whole bar (underline + CTA) shifts as you
- * move through the homepage product showcase or hover a category in the mega menu.
- * Fully keyboard accessible: mega menu opens on focus/hover, Escape closes it, and every
- * control has an aria label.
+ * Desktop Header:
+ * SRM ENTERPRISES Logo
+ * Home | About ▾ | Products ▾ | Industries ▾ | Solutions ▾ | Locations ▾ | Resources ▾ | Gallery
+ * Secondary Utility:
+ * WhatsApp | Call | Get a Quote
  */
 export function Navbar(): JSX.Element {
   const pathname = usePathname();
@@ -48,7 +49,7 @@ export function Navbar(): JSX.Element {
   const navAccent = hoverColor ?? showcaseColor ?? "var(--accent)";
   const solid = pastThreshold || drawerOpen;
 
-  // Close the mega menu on any route change.
+  // Close menus on route change.
   useEffect(() => {
     setOpenMenu(null);
     setDrawerOpen(false);
@@ -63,6 +64,7 @@ export function Navbar(): JSX.Element {
   }, []);
 
   const telLink = getTelLink();
+  const whatsappLink = getWhatsAppLink();
 
   return (
     <>
@@ -74,7 +76,7 @@ export function Navbar(): JSX.Element {
         style={{ ["--nav-accent" as string]: navAccent }}
         onMouseLeave={() => setOpenMenu(null)}
       >
-        <div className="container-wide flex h-[76px] items-center justify-between gap-4">
+        <div className="container-wide flex h-[76px] items-center justify-between gap-3">
           <Logo />
 
           <nav aria-label="Primary navigation" className="hidden items-center gap-1 lg:flex">
@@ -98,38 +100,72 @@ export function Navbar(): JSX.Element {
                       aria-expanded={hasChildren ? menuOpen : undefined}
                       onClick={() => setOpenMenu(null)}
                       className={cn(
-                        "underline-grow inline-flex min-h-[44px] items-center rounded-full px-3.5 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:bg-navy/5",
+                        "underline-grow inline-flex min-h-[42px] items-center gap-1 rounded-full px-2.5 xl:px-3 text-xs xl:text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:bg-navy/5",
                         active ? "text-navy bg-navy/5" : "text-navy-soft hover:text-navy",
                       )}
                       data-active={active}
                       style={{ ["--accent" as string]: "var(--nav-accent)" }}
                     >
-                      {item.label}
+                      <span>{item.label}</span>
+                      {hasChildren ? (
+                        <ChevronDown
+                          className={cn(
+                            "h-3 w-3 text-navy/40 transition-transform duration-300",
+                            menuOpen && "rotate-180 text-navy",
+                          )}
+                          aria-hidden="true"
+                        />
+                      ) : null}
                     </Link>
+
+                    {/* Floating Dropdown for categories with children (not full mega-groups) */}
+                    <AnimatePresence>
+                      {menuOpen && hasChildren && !item.groups ? (
+                        <DropdownMenu
+                          item={item}
+                          onSelect={() => setOpenMenu(null)}
+                          onHoverColor={setHoverColor}
+                        />
+                      ) : null}
+                    </AnimatePresence>
                   </li>
                 );
               })}
             </ul>
           </nav>
 
+          {/* Secondary Utility Area: WhatsApp | Call | Get a Quote */}
           <div className="flex items-center gap-2">
+            {whatsappLink ? (
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => analytics.whatsappClick("navbar")}
+                aria-label="Chat with SRM Enterprises on WhatsApp"
+                className="hidden min-h-[38px] items-center gap-1.5 rounded-full border border-emerald-600/20 bg-emerald-50/80 px-3 text-xs font-semibold text-emerald-700 transition-all duration-300 hover:-translate-y-0.5 hover:bg-emerald-100 hover:shadow-xs md:inline-flex"
+              >
+                <MessageCircle className="h-3.5 w-3.5 text-emerald-600" aria-hidden="true" />
+                <span>WhatsApp</span>
+              </a>
+            ) : null}
+
             {telLink ? (
               <a
                 href={telLink}
                 onClick={() => analytics.phoneClick("navbar")}
                 aria-label={`Call SRM Enterprises on ${CONTACT.phoneDisplay}`}
-                className="hidden min-h-[44px] items-center gap-2 rounded-full border border-navy/10 px-4 text-sm font-semibold text-navy-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-accent hover:text-accent-deep hover:shadow-soft hover:bg-accent-soft/30 xl:inline-flex"
+                className="hidden min-h-[38px] items-center gap-1.5 rounded-full border border-navy/10 px-3 text-xs font-semibold text-navy-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-accent hover:text-accent-deep hover:shadow-xs hover:bg-accent-soft/30 xl:inline-flex"
               >
-                <Phone className="h-4 w-4" aria-hidden="true" />
-                <span className="hidden 2xl:inline">{CONTACT.phoneDisplay}</span>
-                <span className="2xl:hidden">Call</span>
+                <Phone className="h-3.5 w-3.5" aria-hidden="true" />
+                <span>Call</span>
               </a>
             ) : null}
 
             <Link
               href="/contact"
               onClick={() => analytics.ctaClick("Get a Quote", "navbar")}
-              className="btn-primary hidden min-h-[46px] px-5 text-sm sm:inline-flex"
+              className="btn-primary hidden min-h-[40px] px-4 text-xs font-bold sm:inline-flex"
               style={{ ["--accent" as string]: "var(--nav-accent)" }}
             >
               Get a Quote
@@ -140,13 +176,14 @@ export function Navbar(): JSX.Element {
               onClick={() => setDrawerOpen(true)}
               aria-label="Open navigation menu"
               aria-expanded={drawerOpen}
-              className="grid h-11 w-11 place-items-center rounded-full border border-navy/10 bg-white/70 text-navy transition-all duration-300 hover:bg-white hover:border-accent/40 hover:scale-105 hover:shadow-soft lg:hidden"
+              className="grid h-10 w-10 place-items-center rounded-full border border-navy/10 bg-white/70 text-navy transition-all duration-300 hover:bg-white hover:border-accent/40 hover:scale-105 hover:shadow-soft lg:hidden"
             >
               <Menu className="h-5 w-5" aria-hidden="true" />
             </button>
           </div>
         </div>
 
+        {/* Full-width Mega Menu for grouped items (Products) */}
         <AnimatePresence>
           {primaryNav
             .filter((item) => item.label === openMenu && item.groups)

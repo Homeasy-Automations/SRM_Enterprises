@@ -56,12 +56,13 @@ export const products: ProductCategory[] = [
     intro:
       "Corrugated packaging is the workhorse of industrial dispatch — used for transit boxes, storage cartons and component packing. Ply, grade, dimensions and printing are chosen around the load the box has to carry and how it is handled through the supply chain.",
     items: [
-      "3-Ply / 5-Ply / 7-Ply Corrugated Boxes",
+      "3-Ply Corrugated Boxes",
+      "5-Ply Corrugated Boxes",
+      "7-Ply Corrugated Boxes",
+      "Heavy-Duty Corrugated Boxes",
+      "Die-Cut Boxes",
       "Corrugated Sheets & Rolls",
       "Partitions & Dividers",
-      "Die-Cut Boxes",
-      "Heavy-Duty Industrial Boxes",
-      "Printed & Customized Boxes",
     ],
     applications: [
       "Industrial and logistics dispatch packing",
@@ -168,12 +169,11 @@ export const products: ProductCategory[] = [
     intro:
       "Bubble and laminated protective packaging creates a cushioned barrier between your product and everything else — other cartons, pallets, vehicle walls and handling equipment.",
     items: [
-      "LDPE Air Bubble Bags",
-      "Air Bubble Rolls & Sheets",
+      "Air Bubble Bags",
+      "Bubble Rolls & Sheets",
       "Bubble Pouches",
-      "Foam + Bubble Laminated Bags",
+      "Foam + Bubble Bags",
       "Surface Protection Films",
-      "Customized Protective Packaging",
     ],
     applications: [
       "Auto parts and precision components",
@@ -224,12 +224,11 @@ export const products: ProductCategory[] = [
     intro:
       "Flexible packaging covers the everyday requirement: keeping products clean, bundled, stabilised and ready for dispatch, in the format that suits your packing line.",
     items: [
-      "LDPE / LLDPE Poly Bags",
+      "LDPE / LLDPE Bags",
       "HM / HDPE Bags",
-      "Clear & Printed Bags",
+      "Printed & Clear Bags",
       "Stretch Film",
       "Shrink Film",
-      "Garbage / Industrial Utility Bags",
     ],
     applications: [
       "Component and hardware packing",

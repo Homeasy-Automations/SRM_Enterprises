@@ -1,0 +1,149 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight, Shield, Box, Truck, Layers, Hammer, Globe, Cpu, Droplet, Sparkles, CheckCircle } from "lucide-react";
+import { PageHero } from "@/components/hero/PageHero";
+import { HeroActions } from "@/components/sections/HeroActions";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { CtaBanner } from "@/components/sections/CtaBanner";
+import { StaggerGroup, StaggerItem } from "@/components/animations/Reveal";
+import { buildMetadata } from "@/lib/seo";
+import { solutions } from "@/data/solutions";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Industrial Packaging Solutions & Applications | SRM Enterprises",
+  description:
+    "Tailored industrial packaging solutions: custom dimensions, transit packaging, component protection, surface guarding, heavy-duty boxes, export packaging, anti-static and corrosion protection.",
+  path: "/solutions",
+});
+
+const breadcrumbs = [{ name: "Solutions", path: "/solutions" }];
+
+const ICON_MAP: Record<string, typeof Shield> = {
+  box: Box,
+  truck: Truck,
+  shield: Shield,
+  layers: Layers,
+  hammer: Hammer,
+  globe: Globe,
+  cpu: Cpu,
+  droplet: Droplet,
+  package: Sparkles,
+};
+
+export default function SolutionsPage(): JSX.Element {
+  return (
+    <>
+      <PageHero
+        eyebrow="PACKAGING SOLUTIONS"
+        title="Engineered Around How Your Product Needs to Be Protected"
+        description="Products answer what we supply. Solutions answer what problem we solve — from preventing transit vibration micro-dents and surface scratches to heavy-duty export freight and moisture-barrier preservation."
+        breadcrumbs={breadcrumbs}
+        accentColor="#1E6FFF"
+      >
+        <HeroActions
+          primaryLabel="Discuss Your Requirement"
+          primaryHref="/contact"
+          secondaryLabel="View 6-Step Process"
+          secondaryHref="/custom-packaging"
+          location="solutions-hero"
+        />
+      </PageHero>
+
+      <section className="band-cream pattern-dots section-pad" aria-labelledby="all-solutions-heading">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="APPLICATION CATALOGUE"
+            title="Complete Problem-Solving Packaging Matrix"
+            description="Explore our specialized packaging solutions designed for precision manufacturing, transit logistics, and high-value equipment."
+            className="max-w-3xl"
+          />
+
+          <StaggerGroup className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3" stagger={0.07}>
+            {solutions.map((sol) => {
+              const Icon = ICON_MAP[sol.icon] ?? Shield;
+              return (
+                <StaggerItem key={sol.id} variant="kinetic-pop" className="h-full">
+                  <article
+                    className="card-home-vivid group flex h-full flex-col justify-between rounded-3xl border border-navy/10 bg-white p-6 sm:p-7 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl"
+                    style={{ ["--accent" as string]: sol.color }}
+                  >
+                    <div className="flex flex-col gap-4">
+                      <div className="flex items-center justify-between">
+                        <span
+                          className="grid h-13 w-13 place-items-center rounded-2xl text-white shadow-xs transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6"
+                          style={{ background: sol.color }}
+                        >
+                          <Icon className="h-6 w-6" aria-hidden="true" />
+                        </span>
+                        <span
+                          className="rounded-full px-3 py-1 text-[0.68rem] font-bold uppercase tracking-wider"
+                          style={{ background: `${sol.color}15`, color: sol.color }}
+                        >
+                          Industrial Grade
+                        </span>
+                      </div>
+
+                      <h2 className="font-display text-xl font-bold text-navy transition-colors duration-200 group-hover:text-accent">
+                        {sol.name}
+                      </h2>
+                      <p className="text-xs font-semibold" style={{ color: sol.color }}>
+                        {sol.tagline}
+                      </p>
+                      <p className="text-xs leading-relaxed text-navy-soft">{sol.description}</p>
+
+                      <div className="pt-3 border-t border-navy/5">
+                        <span className="text-[0.68rem] font-bold uppercase tracking-wider text-navy-soft/80 block mb-2">
+                          Common Applications:
+                        </span>
+                        <div className="flex flex-wrap gap-1.5">
+                          {sol.applications.map((app) => (
+                            <span
+                              key={app}
+                              className="rounded-full border border-navy/10 bg-slate-50 px-2.5 py-0.5 text-[0.7rem] font-medium text-navy"
+                            >
+                              {app}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="pt-2">
+                        <span className="text-[0.68rem] font-bold uppercase tracking-wider text-navy-soft/80 block mb-1.5">
+                          Materials Used:
+                        </span>
+                        <ul className="flex flex-col gap-1">
+                          {sol.materialsUsed.map((mat) => (
+                            <li key={mat} className="text-xs text-navy-soft flex items-center gap-1.5">
+                              <CheckCircle className="h-3 w-3 shrink-0" style={{ color: sol.color }} />
+                              <span>{mat}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="mt-6 pt-4 border-t border-navy/5">
+                      <Link
+                        href={`/contact?material=${encodeURIComponent(sol.name)}`}
+                        className="inline-flex w-full items-center justify-center gap-2 rounded-full py-2.5 text-xs font-bold text-white shadow-xs transition-all duration-300 hover:shadow-md hover:brightness-105"
+                        style={{ background: sol.color }}
+                      >
+                        <span>Inquire This Solution</span>
+                        <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                      </Link>
+                    </div>
+                  </article>
+                </StaggerItem>
+              );
+            })}
+          </StaggerGroup>
+        </div>
+      </section>
+
+      <CtaBanner
+        title="Need a Custom Engineered Solution for Your Parts?"
+        description="Share your component drawings, weight, and transit conditions. Our packaging engineers will configure the right combination of boxes, foam fitments, and protective wraps."
+      />
+    </>
+  );
+}

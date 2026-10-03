@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Check, Ruler, ShieldCheck, Sparkles } from "lucide-react";
 import { PageHero } from "@/components/hero/PageHero";
 import { HeroActions } from "@/components/sections/HeroActions";
-import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
 import { FeatureGrid } from "@/components/sections/FeatureGrid";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { JsonLd } from "@/components/sections/JsonLd";
@@ -290,8 +289,6 @@ export default function CustomPackagingPage(): JSX.Element {
         ]}
       />
 
-      {/* 9 — Interactive timeline */}
-      <ProcessTimeline />
 
       {/* 10 — CTA */}
       <CtaBanner

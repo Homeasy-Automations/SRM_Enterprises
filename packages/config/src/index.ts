@@ -13,7 +13,7 @@ export const BRAND = {
   positioning:
     "Industrial packaging material supplier with reliable Pan India supply & dispatch.",
   bulkSupplyLine: "across Pan India with reliable dispatch logistics",
-  locations: ["Pan India"],
+  locations: ["Gurugram", "Manesar", "Bhiwadi", "Delhi NCR"],
 } as const;
 
 export const ROUTES = {
@@ -23,10 +23,18 @@ export const ROUTES = {
   product: (slug: string) => `/products/${slug}`,
   industries: "/industries",
   industry: (slug: string) => `/industries/${slug}`,
+  solutions: "/solutions",
+  solution: (slug: string) => `/solutions/${slug}`,
+  locations: "/locations",
+  location: (slug: string) => `/locations/${slug}`,
+  resources: "/resources",
+  resource: (slug: string) => `/resources/${slug}`,
+  gallery: "/gallery",
   customPackaging: "/custom-packaging",
   whyUs: "/why-us",
   contact: "/contact",
   quote: "/contact",
+  sample: "/contact?type=sample",
   quoteForProduct: (slug: string) => `/contact?product=${slug}`,
   privacy: "/privacy",
   terms: "/terms",

@@ -23,6 +23,9 @@ const STEP_ICONS = [PackageSearch, Layers, PencilRuler, Hammer, PackageCheck, Tr
 
 interface ProcessTimelineProps {
   compact?: boolean;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
 }
 
 /**
@@ -30,7 +33,12 @@ interface ProcessTimelineProps {
  * Fully responsive 3x2 grid with connected flow, interactive step selection,
  * expandable activity details, and rich hover states.
  */
-export function ProcessTimeline({ compact = false }: ProcessTimelineProps): JSX.Element {
+export function ProcessTimeline({
+  compact = false,
+  eyebrow = "HOW WE WORK",
+  title = "From Requirement to Reliable Supply",
+  description = "We follow a straightforward process to understand your requirement and deliver packaging material suited to your application.",
+}: ProcessTimelineProps): JSX.Element {
   const reducedMotion = useReducedMotion();
   const [activeStepId, setActiveStepId] = useState<string>(CUSTOM_PROCESS_STEPS[0]?.id ?? "requirement");
   const [expandedSteps, setExpandedSteps] = useState<Record<string, boolean>>({
@@ -58,9 +66,9 @@ export function ProcessTimeline({ compact = false }: ProcessTimelineProps): JSX.
 
       <div className="container-page relative z-10">
         <SectionHeading
-          eyebrow="Packaging Process"
-          title="Six steps from requirement to dispatch"
-          description="A clear, structured sequence designed for industrial transparency — so you always know what comes next and what we need from you."
+          eyebrow={eyebrow}
+          title={title}
+          description={description}
           align="center"
           className="mx-auto max-w-3xl"
         />

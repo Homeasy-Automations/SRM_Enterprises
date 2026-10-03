@@ -1,57 +1,112 @@
 import type { Metadata } from "next";
 import { HomeHero } from "@/components/hero/HomeHero";
 import { CapabilityStrip } from "@/components/sections/CapabilityStrip";
-import { AboutPreview } from "@/components/sections/AboutPreview";
 import { ProductShowcase } from "@/components/sections/ProductShowcase";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
+import { CustomPackagingHomeSection } from "@/components/sections/CustomPackagingHomeSection";
 import { IndustriesSection } from "@/components/sections/IndustriesSection";
+import { ManufacturingCapabilitySection } from "@/components/sections/ManufacturingCapabilitySection";
 import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
-import { CtaBanner } from "@/components/sections/CtaBanner";
+import { FeaturedProductsSection } from "@/components/sections/FeaturedProductsSection";
+import { SolutionsHomeSection } from "@/components/sections/SolutionsHomeSection";
+import { QualityFocusSection } from "@/components/sections/QualityFocusSection";
+import { LocationsHomeSection } from "@/components/sections/LocationsHomeSection";
+import { CaseStudiesSection } from "@/components/sections/CaseStudiesSection";
+import { GalleryHomeSection } from "@/components/sections/GalleryHomeSection";
+import { HomeLeadSection } from "@/components/sections/HomeLeadSection";
 import { JsonLd } from "@/components/sections/JsonLd";
 import { buildMetadata, itemListJsonLd } from "@/lib/seo";
 import { products } from "@/data/products";
 import { industries } from "@/data/industries";
-import { BRAND } from "@srm/config";
+import { solutions } from "@/data/solutions";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Industrial Packaging Material Supplier | Pan India",
+  title: "Packaging Material Supplier in Gurugram | SRM Enterprises",
   description:
-    "SRM Enterprises supplies corrugated packaging, EPE Foam Packaging, LDPE Bubble & Protective Packaging, poly bags & films and packaging accessories — complete packaging solutions under one roof. Bulk supply across Pan India.",
+    "SRM Enterprises supplies corrugated boxes, EPE foam, bubble packaging, poly bags, films and packaging accessories across Gurugram, Manesar, Bhiwadi and NCR.",
   path: "/",
   keywords: [
-    "industrial packaging material supplier",
-    "packaging material supplier Pan India",
+    "packaging material supplier in Gurugram",
+    "packaging material supplier in Manesar",
+    "packaging material supplier in Bhiwadi",
+    "industrial packaging supplier",
     "corrugated box supplier",
     "EPE foam packaging supplier",
     "bubble packaging supplier",
-    "custom packaging supplier",
+    "poly bag supplier",
+    "stretch film supplier",
+    "packaging materials NCR",
+    "custom packaging solutions",
   ],
 });
 
+/**
+ * SRM Enterprises Primary Sales Homepage:
+ * 1. Hero
+ * 2. Trust/Capability Bar
+ * 3. Packaging Categories
+ * 4. Why SRM
+ * 5. Custom Packaging
+ * 6. Industries We Serve
+ * 7. Manufacturing & Supply Capability
+ * 8. Our Packaging Process
+ * 9. Featured Products
+ * 10. Packaging Applications / Solutions
+ * 11. Quality Focus
+ * 12. Locations
+ * 13. Case Studies / Customer Applications
+ * 14. Gallery Proof
+ * 15. Final Lead Generation & B2B Quote Form
+ */
 export default function HomePage(): JSX.Element {
   return (
     <>
       {/* 1 — Hero */}
       <HomeHero />
-      {/* 2 — Capability strip */}
-      <CapabilityStrip />
-      {/* 3 — About preview */}
-      <AboutPreview />
-      {/* 4 — Product showcase (5 asymmetric colourful cards) */}
-      <ProductShowcase />
-      {/* 5 — Why choose us */}
-      <WhyChooseUs />
-      {/* 6 — Industries */}
-      <IndustriesSection />
-      {/* 7 — Custom packaging process */}
-      <ProcessTimeline />
-      {/* 8 — Vivid gradient CTA */}
-      <CtaBanner
-        title="Need Packaging Material? Let's Get in Touch."
-        description="Share your size, material, quantity and application — and we will come back with the right material and a commercial offer."
-        footnote={`Bulk supply ${BRAND.bulkSupplyLine}.`}
-      />
 
+      {/* 2 — Trust / Capability Bar */}
+      <CapabilityStrip />
+
+      {/* 3 — Packaging Categories */}
+      <ProductShowcase />
+
+      {/* 4 — Why SRM */}
+      <WhyChooseUs />
+
+      {/* 5 — Custom Packaging */}
+      <CustomPackagingHomeSection />
+
+      {/* 6 — Industries We Serve */}
+      <IndustriesSection />
+
+      {/* 7 — Manufacturing & Supply Capability */}
+      <ManufacturingCapabilitySection />
+
+      {/* 8 — Our Packaging Process */}
+      <ProcessTimeline />
+
+      {/* 9 — Featured Products */}
+      <FeaturedProductsSection />
+
+      {/* 10 — Packaging Applications & Solutions */}
+      <SolutionsHomeSection />
+
+      {/* 11 — Quality Focus */}
+      <QualityFocusSection />
+
+      {/* 12 — Locations */}
+      <LocationsHomeSection />
+
+      {/* 13 — Case Studies / Customer Applications */}
+      <CaseStudiesSection />
+
+      {/* 14 — Gallery Proof */}
+      <GalleryHomeSection />
+
+      {/* 15 — Final Lead Generation & B2B Quote Form */}
+      <HomeLeadSection />
+
+      {/* Structured Schema Data */}
       <JsonLd
         id="home-itemlist-jsonld"
         data={[
@@ -70,6 +125,14 @@ export default function HomePage(): JSX.Element {
               description: industry.tagline,
             })),
             "Industries supported by SRM Enterprises",
+          ),
+          itemListJsonLd(
+            solutions.map((sol) => ({
+              name: sol.name,
+              path: "/solutions",
+              description: sol.description,
+            })),
+            "Packaging solutions and applications by SRM Enterprises",
           ),
         ]}
       />

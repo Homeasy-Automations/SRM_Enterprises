@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import { industries, industryTagline } from "@/data/industries";
+import { industries } from "@/data/industries";
 import { IndustryCard } from "@/components/industries/IndustryCard";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/animations/Reveal";
@@ -8,25 +8,22 @@ import { Marquee } from "@/components/animations/Marquee";
 
 const INDUSTRY_MARQUEE = industries.map((industry) => industry.name);
 
-/**
- * Six industry cards. On phones the row becomes a swipeable horizontal rail
- * (scroll-snap, no horizontal page overflow); from `lg` up it lays out as a grid.
- */
+/** Section 5: Industries We Serve — Packaging for Different Industries. Built for Different Requirements. */
 export function IndustriesSection(): JSX.Element {
   return (
     <section className="band-white section-pad relative pattern-hex" aria-labelledby="industries-heading">
       <div className="container-page">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading
-            eyebrow="Industries We Support"
-            title="Packaging built around the way your product moves"
-            description={industryTagline}
+            eyebrow="INDUSTRIES"
+            title="Packaging for Different Industries. Built for Different Requirements."
+            description="Our packaging materials support businesses across manufacturing, industrial, commercial and logistics environments where product protection, handling and reliable supply are essential."
             className="max-w-3xl"
           />
 
           <Reveal variant="fade-up" className="shrink-0">
             <MagneticButton href="/industries" variant="outline">
-              Industry Solutions
+              View All Industries
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </MagneticButton>
           </Reveal>
@@ -47,7 +44,7 @@ export function IndustriesSection(): JSX.Element {
       </div>
 
       <div className="container-page mt-10 hidden lg:block">
-        <StaggerGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <StaggerGroup className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" stagger={0.08}>
           {industries.map((industry) => (
             <StaggerItem key={industry.slug} variant="flip-up" className="h-full">
               <IndustryCard industry={industry} className="h-full" />
