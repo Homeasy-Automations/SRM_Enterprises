@@ -75,6 +75,8 @@ export function PackageCategorySection({ product, index }: PackageCategorySectio
             </Link>
             <Link
               href={`/contact?product=${product.slug}`}
+              data-open-quote-modal="true"
+              data-product={product.slug}
               className="btn-outline transition-all duration-300 hover:-translate-y-1 hover:shadow-xs hover:scale-102"
               aria-label={`Request a quote for ${product.name}`}
             >

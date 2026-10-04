@@ -103,6 +103,8 @@ export function ProductCard({ showcase, className, compact = false }: ProductCar
 
           <Link
             href={`/contact?product=${product.slug}`}
+            data-open-quote-modal="true"
+            data-product={product.slug}
             onClick={(event) => event.stopPropagation()}
             className="btn mt-1 w-full text-white transition-transform duration-300 hover:-translate-y-0.5"
             style={{ background: product.color }}

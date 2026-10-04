@@ -47,19 +47,55 @@ export const homepageFaq: AccordionItemData[] = [
 ];
 
 export const contactFaq: AccordionItemData[] = [
-  ...homepageFaq,
   {
-    id: "how-fast",
-    question: "How soon will I get a response to my inquiry?",
+    id: "response-time",
+    question: "How soon will I get a response?",
     answer:
-      "Your inquiry reaches our sales team immediately upon submission. We review the specification and respond promptly with material options and pricing.",
+      "Inquiries submitted through our website or WhatsApp are routed straight to our packaging sales team. For standard specifications, our team usually responds within 2 to 4 business hours. Complex custom fitments, multi-material kits or high-volume custom die-cuts typically receive initial technical feedback within the same business day.",
   },
   {
-    id: "mixed-order",
-    question: "Can I order different packaging items together?",
+    id: "quote-information",
+    question: "What information should I provide for an accurate quote?",
     answer:
-      "Yes. Corrugated boxes, protective foam, bubble rolls, stretch films and strapping can be consolidated into a single PO and delivered together.",
+      "To help us quote quickly and accurately, sharing your product dimensions (Length × Width × Height), preferred material (corrugated ply, EPE foam density, bubble wrap GSM, or film thickness), estimated quantity, and application (transit, export, heavy-duty storage) is most helpful. If you have CAD drawings, photos, or component weights, you can also share them directly via WhatsApp.",
+  },
+  {
+    id: "custom-specifications",
+    question: "Can you provide custom sizes and specifications?",
+    answer:
+      "Yes. Most industrial requirements are customized to component dimensions and weight. We engineer custom corrugated carton sizes, custom CNC/die-cut EPE foam cavities, anti-static (ESD) grades, custom printed cartons, perforated bubble sheets, and tailored poly bag gauges specifically for your production line.",
+  },
+  {
+    id: "moq",
+    question: "Is there a minimum order quantity?",
+    answer:
+      "Minimum order quantities depend on the product category and tooling requirements. For standard catalog items like bubble rolls, foam rolls, and stretch films, small-batch commercial quantities are supported. For custom printed or die-cut corrugated boxes and specialized fabricated foam fitments, MOQs are set to keep per-unit costs economical. We also support trial quantities for initial qualification.",
+  },
+  {
+    id: "pan-india-supply",
+    question: "Do you supply across India?",
+    answer:
+      "Yes. SRM Enterprises provides scheduled supply and dispatch across all major industrial clusters and corridors in India, including Northern, Western, Southern, and Eastern industrial belts. We handle dedicated Full Truckload (FTL) as well as scheduled Part Truckload (PTL) dispatches to keep your assembly lines supplied without downtime.",
+  },
+  {
+    id: "sample-request",
+    question: "Can I request a sample before placing a bulk order?",
+    answer:
+      "Yes. For custom packaging, prototyping and sample fitment evaluation is a standard part of our workflow. Once preliminary specifications and commercials are aligned, sample boxes or foam fitments can be evaluated on your physical components before commencing bulk production.",
+  },
+  {
+    id: "multiple-products",
+    question: "Can I order multiple packaging products together?",
+    answer:
+      "Yes, absolutely. One of SRM Enterprises' key strengths is serving as a complete packaging material partner under one roof. You can consolidate corrugated boxes, EPE foam sheets, air bubble rolls, poly bags, stretch film, and box strapping under a single purchase order and single scheduled delivery.",
+  },
+  {
+    id: "data-handling",
+    question: "How is my inquiry information handled?",
+    answer:
+      "Your inquiry and technical details are stored securely and used solely to prepare your technical recommendation and commercial proposal. We treat component drawings, CAD files, and proprietary product dimensions with strict commercial confidentiality.",
   },
 ];
 
 export const generalFaq: AccordionItemData[] = homepageFaq;
+

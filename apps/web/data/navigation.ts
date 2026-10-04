@@ -99,11 +99,6 @@ export const aboutMenu: NavChild[] = [
 
 export const primaryNav: NavItem[] = [
   {
-    label: "Home",
-    href: ROUTES.home,
-    ariaLabel: "SRM Enterprises Home",
-  },
-  {
     label: "About",
     href: ROUTES.about,
     ariaLabel: "About SRM Enterprises",
@@ -141,7 +136,6 @@ export const primaryNav: NavItem[] = [
     ariaLabel: "Packaging applications and solutions",
     children: solutionMenu,
   },
-
   {
     label: "Resources",
     href: ROUTES.resources,
@@ -152,6 +146,11 @@ export const primaryNav: NavItem[] = [
     label: "Gallery",
     href: ROUTES.gallery,
     ariaLabel: "Factory, products and process gallery",
+  },
+  {
+    label: "Contact",
+    href: ROUTES.contact,
+    ariaLabel: "Contact SRM Enterprises and B2B Inquiries",
   },
 ];
 

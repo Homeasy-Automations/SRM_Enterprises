@@ -12,6 +12,7 @@ import { Logo } from "@/components/ui/Logo";
 import { CategoryIcon } from "@/components/ui/CategoryIcon";
 import { analytics } from "@/lib/analytics";
 import { cn, isActivePath } from "@/lib/utils";
+import { useQuoteModal } from "@/hooks/use-quote-modal";
 
 interface MobileDrawerProps {
   open: boolean;
@@ -25,6 +26,7 @@ interface MobileDrawerProps {
  */
 export function MobileDrawer({ open, onClose }: MobileDrawerProps): JSX.Element {
   const pathname = usePathname();
+  const { openQuoteModal } = useQuoteModal();
   const [expanded, setExpanded] = useState<string | null>("Products");
   const reducedMotion = useReducedMotion();
   useBodyScrollLock(open);
@@ -179,9 +181,16 @@ export function MobileDrawer({ open, onClose }: MobileDrawerProps): JSX.Element 
             </nav>
 
             <div className="flex flex-col gap-3 border-t border-navy/10 px-4 py-5">
-              <Link href="/contact" onClick={onClose} className="btn-primary w-full">
+              <button
+                type="button"
+                onClick={() => {
+                  onClose();
+                  openQuoteModal();
+                }}
+                className="btn-primary w-full text-center"
+              >
                 Get a Quote
-              </Link>
+              </button>
 
               {whatsappLink ? (
                 <a

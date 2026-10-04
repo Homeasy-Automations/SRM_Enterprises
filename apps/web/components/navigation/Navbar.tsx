@@ -17,6 +17,8 @@ import { cn, isActivePath } from "@/lib/utils";
 import { analytics } from "@/lib/analytics";
 import { products } from "@/data/products";
 
+import { useQuoteModal } from "@/hooks/use-quote-modal";
+
 /** Section ids the homepage showcase scroll-spy watches (see ProductShowcase). */
 const SHOWCASE_SECTION_IDS: readonly string[] = products.map(
   (product) => `showcase-${product.slug}`,
@@ -33,6 +35,7 @@ const SHOWCASE_SECTION_IDS: readonly string[] = products.map(
  */
 export function Navbar(): JSX.Element {
   const pathname = usePathname();
+  const { openQuoteModal } = useQuoteModal();
   const { pastThreshold } = useScrollProgress(24);
   const reducedMotion = useReducedMotion();
   const [openMenu, setOpenMenu] = useState<string | null>(null);
@@ -162,14 +165,17 @@ export function Navbar(): JSX.Element {
               </a>
             ) : null}
 
-            <Link
-              href="/contact"
-              onClick={() => analytics.ctaClick("Get a Quote", "navbar")}
-              className="btn-primary hidden min-h-[40px] px-4 text-xs font-bold sm:inline-flex"
+            <button
+              type="button"
+              onClick={() => {
+                analytics.ctaClick("Get a Quote", "navbar");
+                openQuoteModal();
+              }}
+              className="btn-primary hidden min-h-[40px] px-4 text-xs font-bold sm:inline-flex items-center"
               style={{ ["--accent" as string]: "var(--nav-accent)" }}
             >
               Get a Quote
-            </Link>
+            </button>
 
             <button
               type="button"

@@ -83,24 +83,28 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
+import { QuoteModalProvider } from "@/components/providers/QuoteModalProvider";
+
 export default function RootLayout({ children }: { children: React.ReactNode }): JSX.Element {
   return (
     <html lang="en-IN" data-mood="ocean" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body className="font-sans antialiased">
         <ColorMoodProvider>
-          <HashScrollHandler />
-          <SkipToContent />
-          <LazyLoadingScreen />
-          <ScrollProgressBar />
-          <Navbar />
+          <QuoteModalProvider>
+            <HashScrollHandler />
+            <SkipToContent />
+            <LazyLoadingScreen />
+            <ScrollProgressBar />
+            <Navbar />
 
-          {/* z-10 keeps page content above the decorative background layers. */}
-          <main id="main-content" className="relative z-10">
-            {children}
-          </main>
+            {/* z-10 keeps page content above the decorative background layers. */}
+            <main id="main-content" className="relative z-10">
+              {children}
+            </main>
 
-          <Footer />
-          <LazyFloatingActions />
+            <Footer />
+            <LazyFloatingActions />
+          </QuoteModalProvider>
         </ColorMoodProvider>
 
         <JsonLd id="organization-jsonld" data={organizationJsonLd()} />
