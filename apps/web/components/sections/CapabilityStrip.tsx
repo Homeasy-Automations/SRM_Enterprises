@@ -39,33 +39,59 @@ const TRUST_CAPABILITIES = [
 /** 5-Pillar trust & capability bar directly following the hero. */
 export function CapabilityStrip(): JSX.Element {
   return (
-    <section className="band-sky pattern-dots section-pad-sm relative" aria-label="Core Capabilities">
+    <section className="band-sky pattern-dots py-6 sm:py-8 lg:py-10 relative overflow-hidden" aria-label="Core Capabilities">
       <div className="container-page">
-        <StaggerGroup className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5" stagger={0.08}>
-          {TRUST_CAPABILITIES.map((item) => {
+        <StaggerGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5" stagger={0.08}>
+          {TRUST_CAPABILITIES.map((item, idx) => {
             const Icon = item.icon;
+            const indexStr = String(idx + 1).padStart(2, "0");
             return (
               <StaggerItem key={item.title} variant="flip-up" className="h-full">
                 <article
-                  className="card-home-vivid group flex h-full flex-col justify-between p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                  className="card-home-vivid group relative flex h-full min-h-[260px] sm:min-h-[280px] flex-col justify-between overflow-hidden p-6 sm:p-7 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
                   style={{ ["--accent" as string]: item.color }}
                 >
+                  {/* Subtle top accent ambient glow line on hover */}
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  />
+
+                  {/* Header: Large Icon + Step Counter */}
                   <div>
-                    <span
-                      className="grid h-11 w-11 place-items-center rounded-2xl text-white shadow-xs transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6"
-                      style={{ background: item.color }}
-                    >
-                      <Icon className="h-5 w-5" aria-hidden="true" />
-                    </span>
-                    <h2 className="mt-3.5 font-display text-base font-bold text-navy transition-colors duration-300 group-hover:text-accent-deep">
+                    <div className="flex items-center justify-between">
+                      <span
+                        className="grid h-14 w-14 sm:h-16 sm:w-16 place-items-center rounded-2xl text-white shadow-md transition-all duration-500 group-hover:scale-110 group-hover:-rotate-3"
+                        style={{
+                          background: item.color,
+                          boxShadow: `0 10px 24px -4px ${item.color}50`,
+                        }}
+                      >
+                        <Icon className="h-7 w-7 sm:h-8 sm:w-8 stroke-[2.2]" aria-hidden="true" />
+                      </span>
+                      <span className="font-mono text-xs font-bold tracking-widest text-navy/25 transition-colors duration-300 group-hover:text-navy/60">
+                        {indexStr}
+                      </span>
+                    </div>
+
+                    <h2 className="mt-5 font-display text-lg sm:text-xl font-bold tracking-tight text-navy transition-colors duration-300 group-hover:text-accent-deep">
                       {item.title}
                     </h2>
-                    <p className="mt-1.5 text-xs leading-relaxed text-navy-soft">{item.description}</p>
+                    <p className="mt-2.5 text-xs sm:text-[13.5px] leading-relaxed text-navy-soft">
+                      {item.description}
+                    </p>
                   </div>
-                  <div
-                    className="mt-4 h-1 w-8 rounded-full transition-all duration-300 group-hover:w-full"
-                    style={{ background: item.color }}
-                  />
+
+                  {/* Bottom Accent Indicator Bar */}
+                  <div className="mt-6 flex items-center gap-1.5">
+                    <div
+                      className="h-1.5 w-12 rounded-full transition-all duration-500 ease-out group-hover:w-full"
+                      style={{
+                        background: item.color,
+                        boxShadow: `0 2px 8px ${item.color}40`,
+                      }}
+                    />
+                  </div>
                 </article>
               </StaggerItem>
             );

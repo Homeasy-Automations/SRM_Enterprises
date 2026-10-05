@@ -30,7 +30,7 @@ export function CaseStudiesSection(): JSX.Element {
           </Reveal>
         </div>
 
-        <StaggerGroup className="mt-12 grid gap-8 lg:grid-cols-3" stagger={0.1}>
+        <StaggerGroup className="mt-8 sm:mt-10 grid gap-8 lg:grid-cols-3" stagger={0.1}>
           {caseStudies.map((study) => (
             <StaggerItem key={study.id} variant="kinetic-pop" className="h-full">
               <article
@@ -72,7 +72,7 @@ export function CaseStudiesSection(): JSX.Element {
                     <div className="rounded-xl bg-emerald-50/70 p-3 border border-emerald-500/20">
                       <span className="font-bold text-emerald-800 flex items-center gap-1.5 mb-1">
                         <TrendingUp className="h-3.5 w-3.5 text-emerald-600" />
-                        Verified Result:
+                        Illustrative Packaging Application:
                       </span>
                       <p className="text-emerald-900 leading-relaxed font-medium">{study.result}</p>
                     </div>

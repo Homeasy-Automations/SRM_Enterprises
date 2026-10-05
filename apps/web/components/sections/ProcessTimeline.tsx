@@ -76,7 +76,7 @@ export function ProcessTimeline({
         />
 
         {/* 1. Quick Navigation Stepper Strip (Desktop / Tablet) */}
-        <div className="mt-10 hidden overflow-x-auto pb-3 pt-1 md:block">
+        <div className="mt-6 sm:mt-8 hidden overflow-x-auto pb-3 pt-1 md:block">
           <div className="mx-auto flex w-full max-w-6xl min-w-max items-center justify-between gap-1 rounded-2xl border border-navy/10 bg-slate-50/90 p-2 sm:p-2.5 backdrop-blur-md shadow-xs">
             {CUSTOM_PROCESS_STEPS.map((step, idx) => {
               const isCurrent = activeStepId === step.id;
@@ -260,7 +260,7 @@ export function ProcessTimeline({
 
         {/* 3. Reassurance & CTA Callout Banner */}
         {!compact ? (
-          <div className="mt-12 rounded-3xl border border-navy/10 bg-gradient-to-br from-white via-accent-soft/30 to-[#FFF9F0]/60 p-6 sm:p-8 shadow-soft">
+          <div className="mt-8 sm:mt-10 rounded-3xl border border-navy/10 bg-gradient-to-br from-white via-accent-soft/30 to-[#FFF9F0]/60 p-6 sm:p-8 shadow-soft">
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row text-center sm:text-left">
               <div className="max-w-xl">
                 <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-accent-deep">

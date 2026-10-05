@@ -37,7 +37,7 @@ export function QualityFocusSection(): JSX.Element {
   return (
     <section className="band-cream section-pad relative overflow-hidden" aria-labelledby="quality-focus-heading">
       <div className="container-page relative z-10">
-        <div className="grid items-center gap-12 lg:grid-cols-12">
+        <div className="grid items-center gap-8 lg:gap-10 lg:grid-cols-12">
           {/* Quality Artwork & Visual (5 cols) */}
           <div className="flex flex-col gap-6 lg:col-span-5">
             <div className="card-home-vivid overflow-hidden rounded-3xl border border-navy/10 bg-white p-6 sm:p-8 shadow-sm">
@@ -45,7 +45,7 @@ export function QualityFocusSection(): JSX.Element {
                 Inspection & Control
               </span>
               <h3 className="font-display text-2xl font-bold text-navy">
-                Zero Compromise on Tolerance
+                Strict Dimensional &amp; Specification Tolerances
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-navy-soft">
                 From incoming kraft reels and foam rolls to pre-dispatch dimensional checks, our quality control ensures seamless line packing.

@@ -43,7 +43,7 @@ export function IndustriesSection(): JSX.Element {
         </p>
       </div>
 
-      <div className="container-page mt-10 hidden lg:block">
+      <div className="container-page mt-8 hidden lg:block">
         <StaggerGroup className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" stagger={0.08}>
           {industries.map((industry) => (
             <StaggerItem key={industry.slug} variant="flip-up" className="h-full">
@@ -53,7 +53,7 @@ export function IndustriesSection(): JSX.Element {
         </StaggerGroup>
       </div>
 
-      <div className="mt-12 border-y border-navy/10 bg-gradient-to-r from-white via-accent-soft to-[#FFF9F0] py-3">
+      <div className="mt-8 border-y border-navy/10 bg-gradient-to-r from-white via-accent-soft to-[#FFF9F0] py-3">
         <Marquee items={INDUSTRY_MARQUEE} speed={30} reverse separator="◆" />
       </div>
     </section>

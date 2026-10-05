@@ -42,7 +42,7 @@ export function SolutionsHomeSection(): JSX.Element {
           </Reveal>
         </div>
 
-        <StaggerGroup className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" stagger={0.07}>
+        <StaggerGroup className="mt-8 sm:mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" stagger={0.07}>
           {solutions.map((sol) => {
             const Icon = ICON_MAP[sol.icon] ?? Shield;
             return (
@@ -105,7 +105,7 @@ export function SolutionsHomeSection(): JSX.Element {
           })}
         </StaggerGroup>
 
-        <Reveal variant="fade-up" delay={0.15} className="mt-12 text-center">
+        <Reveal variant="fade-up" delay={0.15} className="mt-8 sm:mt-10 text-center">
           <Link
             href="/contact"
             className="inline-flex items-center gap-2 rounded-full bg-navy px-8 py-3.5 text-sm font-bold text-white shadow-md transition-all duration-300 hover:bg-accent-deep hover:shadow-lg hover:scale-105"

@@ -117,7 +117,7 @@ export function CustomPackagingHomeSection(): JSX.Element {
         </div>
 
         {/* 8-Card Symmetrical Grid */}
-        <div className="mt-12">
+        <div className="mt-8 sm:mt-10">
           <StaggerGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4" stagger={0.06}>
             {CUSTOM_POINTS.map((point) => {
               const Icon = point.icon;
@@ -181,7 +181,7 @@ export function CustomPackagingHomeSection(): JSX.Element {
         </div>
 
         {/* Integrated CAD & Engineering Specification Blueprint Banner */}
-        <div className="mt-12 rounded-3xl border border-navy/10 bg-white p-6 sm:p-8 shadow-card">
+        <div className="mt-8 sm:mt-10 rounded-3xl border border-navy/10 bg-white p-6 sm:p-8 shadow-card">
           <div className="grid items-center gap-8 lg:grid-cols-12">
             {/* Visual CAD Blueprint */}
             <div className="lg:col-span-5 relative flex items-center justify-center rounded-2xl bg-gradient-to-br from-navy/[0.03] to-navy/[0.08] p-6 border border-navy/5 overflow-hidden">

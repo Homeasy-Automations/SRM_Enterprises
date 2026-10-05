@@ -20,6 +20,84 @@ export interface NavItem {
   groups?: { heading: string; items: NavChild[] }[];
 }
 
+export interface MegaCategoryColumn {
+  title: string;
+  slug: string;
+  href: string;
+  color: string;
+  icon: "box" | "foam" | "bubble" | "film" | "accessories";
+  subItems: { label: string; href: string }[];
+}
+
+export const productCategoriesMega: MegaCategoryColumn[] = [
+  {
+    title: "Corrugated",
+    slug: "corrugated-packaging",
+    href: "/products/corrugated-packaging",
+    color: "#E86620",
+    icon: "box",
+    subItems: [
+      { label: "3 Ply Boxes", href: "/products/corrugated-packaging#specifications" },
+      { label: "5 Ply Boxes", href: "/products/corrugated-packaging#specifications" },
+      { label: "7 Ply Heavy Duty", href: "/products/corrugated-packaging#specifications" },
+      { label: "Die Cut Boxes", href: "/products/corrugated-packaging#specifications" },
+      { label: "Heavy Duty Master Cartons", href: "/products/corrugated-packaging#specifications" },
+    ],
+  },
+  {
+    title: "EPE Foam",
+    slug: "epe-foam-packaging",
+    href: "/products/epe-foam-packaging",
+    color: "#19B26B",
+    icon: "foam",
+    subItems: [
+      { label: "EPE Sheets", href: "/products/epe-foam-packaging#specifications" },
+      { label: "EPE Bags & Pouches", href: "/products/epe-foam-packaging#specifications" },
+      { label: "EPE Foam Rolls", href: "/products/epe-foam-packaging#specifications" },
+      { label: "Custom Fitments & Trays", href: "/products/epe-foam-packaging#specifications" },
+    ],
+  },
+  {
+    title: "Bubble Wrap",
+    slug: "bubble-protective-packaging",
+    href: "/products/bubble-protective-packaging",
+    color: "#1E6FFF",
+    icon: "bubble",
+    subItems: [
+      { label: "Bubble Rolls", href: "/products/bubble-protective-packaging#specifications" },
+      { label: "Bubble Bags", href: "/products/bubble-protective-packaging#specifications" },
+      { label: "Protective Pouches", href: "/products/bubble-protective-packaging#specifications" },
+      { label: "Anti-Static Bubble", href: "/products/bubble-protective-packaging#specifications" },
+    ],
+  },
+  {
+    title: "Films",
+    slug: "poly-bags-films",
+    href: "/products/poly-bags-films",
+    color: "#0FA47F",
+    icon: "film",
+    subItems: [
+      { label: "LDPE Liners & Bags", href: "/products/poly-bags-films#specifications" },
+      { label: "Pallet Stretch Film", href: "/products/poly-bags-films#specifications" },
+      { label: "Shrink Films", href: "/products/poly-bags-films#specifications" },
+    ],
+  },
+  {
+    title: "Accessories",
+    slug: "packaging-accessories",
+    href: "/products/packaging-accessories",
+    color: "#8438FF",
+    icon: "accessories",
+    subItems: [
+      { label: "BOPP Packing Tapes", href: "/products/packaging-accessories#specifications" },
+      { label: "PP & PET Strapping", href: "/products/packaging-accessories#specifications" },
+      { label: "Edge Protectors", href: "/products/packaging-accessories#specifications" },
+      { label: "VCI Anti-Rust Films", href: "/products/packaging-accessories#specifications" },
+      { label: "ESD Protection", href: "/products/packaging-accessories#specifications" },
+    ],
+  },
+];
+
 export const productMegaMenu: NavChild[] = products.map((product) => ({
   label: product.name,
   href: ROUTES.product(product.slug),

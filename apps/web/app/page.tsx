@@ -6,10 +6,12 @@ import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { CustomPackagingHomeSection } from "@/components/sections/CustomPackagingHomeSection";
 import { IndustriesSection } from "@/components/sections/IndustriesSection";
 import { PackagingSolutionsSection } from "@/components/sections/PackagingSolutionsSection";
+import { PackagingFinderTool } from "@/components/sections/PackagingFinderTool";
 import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
 import { FeaturedProductsSection } from "@/components/sections/FeaturedProductsSection";
 import { SolutionsHomeSection } from "@/components/sections/SolutionsHomeSection";
 import { QualityFocusSection } from "@/components/sections/QualityFocusSection";
+import { CustomerTrustSection } from "@/components/sections/CustomerTrustSection";
 import { LocationsHomeSection } from "@/components/sections/LocationsHomeSection";
 import { CaseStudiesSection } from "@/components/sections/CaseStudiesSection";
 import { GalleryHomeSection } from "@/components/sections/GalleryHomeSection";
@@ -82,6 +84,9 @@ export default function HomePage(): JSX.Element {
       {/* 7 — Complete Packaging Solutions */}
       <PackagingSolutionsSection />
 
+      {/* 7b — Interactive Choose Your Packaging Tool */}
+      <PackagingFinderTool />
+
       {/* 8 — Our Packaging Process */}
       <ProcessTimeline />
 
@@ -93,6 +98,9 @@ export default function HomePage(): JSX.Element {
 
       {/* 11 — Quality Focus */}
       <QualityFocusSection />
+
+      {/* 11b — Customer Trust & Industrial Testimonials */}
+      <CustomerTrustSection />
 
       {/* 12 — Locations */}
       <LocationsHomeSection />

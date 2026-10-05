@@ -13,37 +13,37 @@ export interface HeroSlide {
 
 export const HERO_SLIDES: HeroSlide[] = [
   {
-    src: "/images/hero1.jpg",
+    src: "/images/hero1.png",
     alt: "Complete industrial packaging materials: corrugated cartons, EPE foam sheets, bubble wrap rolls and stretch films",
     title: "Integrated Packaging Facility",
     category: "Full Catalog Supply",
   },
   {
-    src: "/images/hero3.jpg",
+    src: "/images/hero3.png",
     alt: "Heavy-duty corrugated boxes, corrugated sheets and palletized shipping containers",
     title: "Corrugated Manufacturing & Stacking",
     category: "3, 5 & 7-Ply Cartons",
   },
   {
-    src: "/images/hero4.jpg",
+    src: "/images/hero4.png",
     alt: "Custom fabricated EPE foam profiles, cushioning fitments and air bubble protective packaging rolls",
     title: "Cushioning & Protective Materials",
     category: "EPE Foam & Bubble Wrap",
   },
   {
-    src: "/images/hero5.jpg",
+    src: "/images/hero5.png",
     alt: "High-performance pallet stretch film rolls, industrial poly bags and packaging sealing tapes",
     title: "Films & Industrial Accessories",
     category: "Stretch Wrap & Tapes",
   },
   {
-    src: "/images/hero6.jpg",
+    src: "/images/hero6.png",
     alt: "Custom packaging design, prototype cutting and tailored component protection workstation",
     title: "Custom Design & Prototyping",
     category: "Engineered to Spec",
   },
   {
-    src: "/images/hero7.jpg",
+    src: "/images/hero2.png",
     alt: "Modern industrial packaging logistics warehouse staging with bulk pallet dispatches across India",
     title: "Warehouse Staging & Pan-India Dispatch",
     category: "Bulk Supply Logistics",
@@ -115,15 +115,20 @@ export function HeroImageSlider({
               className={`absolute inset-0 h-full w-full transition-opacity duration-700 ease-in-out ${isActive ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
                 }`}
             >
-              <Image
-                src={slide.src}
-                alt={slide.alt}
-                fill
-                priority={index < 2}
-                sizes="100vw"
-                quality={82}
-                className="object-cover object-center"
-              />
+              <div
+                className={`h-full w-full transition-transform duration-[7500ms] ease-out will-change-transform ${isActive ? "scale-[1.05]" : "scale-[1.0]"
+                  }`}
+              >
+                <Image
+                  src={slide.src}
+                  alt={slide.alt}
+                  fill
+                  priority={index < 2}
+                  sizes="100vw"
+                  quality={82}
+                  className="object-cover object-center"
+                />
+              </div>
             </div>
           );
         })}
@@ -131,15 +136,15 @@ export function HeroImageSlider({
 
       {/* Ambient Gradient Overlays - drastically reduced for vivid clarity while keeping high text readability */}
       <div
-        className="pointer-events-none absolute inset-0 z-[1] bg-white/15"
+        className="pointer-events-none absolute inset-0 z-[1] bg-white/25"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-white/15 via-transparent to-white/20"
+        className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-white/25 via-transparent to-white/30"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-r from-white/20 via-transparent to-white/20"
+        className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-r from-white/30 via-transparent to-white/35"
         aria-hidden="true"
       />
 

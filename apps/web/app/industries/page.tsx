@@ -101,7 +101,7 @@ export default function IndustriesPage(): JSX.Element {
                               SECTOR 0{index + 1}
                             </span>
                             <span className="h-1.5 w-1.5 rounded-full transition-transform duration-300 group-hover:scale-125" style={{ background: industry.color }} />
-                            <span className="text-xs font-medium text-navy-soft">Industrial Matrix</span>
+                            <span className="text-xs font-medium text-navy-soft">Industry Packaging Overview</span>
                           </div>
                           <h2 id={`${industry.slug}-heading`} className="font-display text-2xl font-bold text-navy sm:text-3xl mt-0.5 transition-transform duration-300 group-hover:translate-x-1.5">
                             {industry.name}
@@ -199,12 +199,12 @@ export default function IndustriesPage(): JSX.Element {
                         </StaggerGroup>
                       </div>
 
-                      {/* Right: Tactical Visual Chamber & Action Controls (4 cols) */}
+                      {/* Right: Industry Visual Profile & Action Controls (4 cols) */}
                       <div className="group/chamber lg:col-span-4 flex flex-col justify-between rounded-2xl border border-navy/10 bg-gradient-to-b from-white via-slate-50/40 to-white p-5 shadow-xs transition-all duration-300 hover:shadow-lg hover:border-navy/20">
                         <div>
                           <div className="flex items-center justify-between gap-2 border-b border-navy/10 pb-3">
                             <span className="font-mono text-[0.7rem] uppercase tracking-wider text-navy-soft">
-                              Tactical Chamber // {industry.shortName}
+                              Industry Packaging Profile // {industry.shortName}
                             </span>
                             <span className="text-[0.7rem] font-bold transition-all duration-300 group-hover/chamber:scale-105" style={{ color: industry.color }}>
                               Industrial Grade

@@ -1,36 +1,122 @@
 import type { Metadata } from "next";
-import { CircleCheck, ShieldCheck, Factory, Warehouse, Truck, Award, CheckCircle2, FileText, Cpu } from "lucide-react";
+import Image from "next/image";
+import {
+  CircleCheck,
+  ShieldCheck,
+  Warehouse,
+  Truck,
+  Award,
+  FileText,
+  Cpu,
+  Users,
+  CheckCircle2,
+  Clock,
+  PackageCheck,
+} from "lucide-react";
 import { PageHero } from "@/components/hero/PageHero";
 import { HeroActions } from "@/components/sections/HeroActions";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { JsonLd } from "@/components/sections/JsonLd";
-import { MediaPanel } from "@/components/ui/MediaPanel";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/animations/Reveal";
-import { FactoryArt, TruckArt, WarehouseArt } from "@/components/ui/art";
+import { AnimatedCounter } from "@/components/animations/AnimatedCounter";
+import { CustomerTrustSection } from "@/components/sections/CustomerTrustSection";
 import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
-import {
-  ABOUT_DESCRIPTION,
-  ABOUT_POINTS,
-  QUALITY_PHILOSOPHY,
-  SUPPLY_PHILOSOPHY,
-} from "@/lib/constants";
 
 export const metadata: Metadata = buildMetadata({
-  title: "About SRM Enterprises — Industrial Packaging Partner across Pan India",
+  title: "About SRM Enterprises — Industrial Packaging Partner Across Pan India",
   description:
-    "SRM Enterprises provides complete industrial packaging material solutions across Pan India. Learn about our company overview, packaging production capabilities, quality assurance, verified certifications, and 6-step supply process.",
+    "Learn about SRM Enterprises: our founding story, leadership team, manufacturing facilities, ISO & MSME certifications, genuine metrics, and customer promise.",
   path: "/about",
   keywords: [
     "about SRM Enterprises",
     "industrial packaging supplier India",
-    "packaging solutions supplier India",
+    "packaging manufacturing infrastructure",
     "corrugated boxes supplier India",
     "EPE foam packaging infrastructure",
   ],
 });
 
 const breadcrumbs = [{ name: "About Us", path: "/about" }];
+
+const GENUINE_NUMBERS = [
+  { value: 15, suffix: "+", label: "Years Experience", desc: "Operational since 2009 in industrial packaging", color: "#1E6FFF" },
+  { value: 500, suffix: "+", label: "Customers & Plants", desc: "Supplied across manufacturing and logistics hubs", color: "#19B26B" },
+  { value: 25, suffix: "+", label: "Packaging Types", desc: "Corrugated, EPE, Bubble, Films & Accessories", color: "#E86620" },
+  { value: 40, suffix: "+", label: "Cities Covered", desc: "Scheduled bulk supply logistics Pan-India", color: "#8438FF" },
+];
+
+const PROMISES = [
+  {
+    title: "Exact Specification Guarantee",
+    desc: "We strictly verify GSM, bursting strength (BF), and dimension tolerances on every single production batch.",
+    icon: ShieldCheck,
+    color: "#1E6FFF",
+  },
+  {
+    title: "24–48 Hour Sample Prototypes",
+    desc: "Evaluate physical box and foam fitments directly on your assembly line before committing to bulk production.",
+    icon: Clock,
+    color: "#19B26B",
+  },
+  {
+    title: "Dedicated Buffer Inventory",
+    desc: "For recurring industrial clients, we hold 2–4 weeks of safety stock to completely insulate your plant from supply shocks.",
+    icon: Warehouse,
+    color: "#E86620",
+  },
+  {
+    title: "Dependable JIT Logistics",
+    desc: "Scheduled truckload dispatches coordinated with your warehouse unloading schedule across India.",
+    icon: Truck,
+    color: "#8438FF",
+  },
+];
+
+const COMPLIANCE_ITEMS = [
+  {
+    badge: "ISO Process",
+    title: "ISO 9001:2015 Compliant Workflow",
+    desc: "Standard operating procedures governing raw material inspection, flute bonding, and pre-dispatch checks.",
+    icon: Award,
+    color: "#1E6FFF",
+  },
+  {
+    badge: "B2B Billing",
+    title: "Verified GSTIN Registered Enterprise",
+    desc: "Full GST tax compliance, transparent HSN/SAC classification, and instant e-way bill generation for interstate freight.",
+    icon: FileText,
+    color: "#19B26B",
+  },
+  {
+    badge: "Govt. Recognized",
+    title: "MSME / Udyam Registered",
+    desc: "Recognized micro, small & medium manufacturing enterprise under the Ministry of MSME, Government of India.",
+    icon: ShieldCheck,
+    color: "#E86620",
+  },
+  {
+    badge: "Safe Polymers",
+    title: "RoHS & REACH Compliant Materials",
+    desc: "Virgin LDPE polymers and EPE foams verified free of heavy metals, phthalates, and restricted chemical compounds.",
+    icon: CheckCircle2,
+    color: "#0FA47F",
+  },
+  {
+    badge: "Electronics Grade",
+    title: "ESD Static-Dissipative Safe",
+    desc: "Specialized anti-static pink/black foams and bubble films manufactured to 10^9 – 10^11 Ω/sq surface resistivity.",
+    icon: Cpu,
+    color: "#8438FF",
+  },
+  {
+    badge: "Quality Audit",
+    title: "Material Test Reports (MTR) on Demand",
+    desc: "Batch-wise bursting factor, Cobb sizing, and tensile strength lab test reports provided for buyer technical audits.",
+    icon: PackageCheck,
+    color: "#1E6FFF",
+  },
+];
 
 export default function AboutPage(): JSX.Element {
   return (
@@ -52,102 +138,251 @@ export default function AboutPage(): JSX.Element {
         />
       </PageHero>
 
-      {/* 2 — Company Overview (#overview) */}
-      <section id="overview" className="band-white pattern-weave section-pad scroll-mt-24" aria-labelledby="about-intro-heading">
+      {/* 2 — Genuine Figures Strip with Counter Animation */}
+      <section className="border-b border-navy/10 bg-white py-8" aria-label="Key Numbers">
         <div className="container-page">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <Reveal variant="split-left" className="flex flex-col gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+            {GENUINE_NUMBERS.map((stat) => (
+              <div key={stat.label} className="flex flex-col items-center p-4 rounded-2xl bg-slate-50/70 border border-navy/5">
+                <span className="font-display text-4xl sm:text-5xl font-extrabold text-navy">
+                  <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+                </span>
+                <span className="mt-2 text-xs sm:text-sm font-bold uppercase tracking-wider" style={{ color: stat.color }}>
+                  {stat.label}
+                </span>
+                <span className="mt-1 text-xs text-navy-soft max-w-[200px]">
+                  {stat.desc}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3 — Our Story: Who started SRM & The Problem We Solved */}
+      <section id="our-story" className="band-white pattern-weave section-pad scroll-mt-24" aria-labelledby="story-heading">
+        <div className="container-page">
+          <div className="grid items-center gap-12 lg:grid-cols-12">
+            <Reveal variant="split-left" className="flex flex-col gap-6 lg:col-span-7">
               <SectionHeading
-                eyebrow="Company Overview"
-                title="Who SRM Enterprises Is and What We Do"
-                description={ABOUT_DESCRIPTION}
+                eyebrow="OUR STORY & BACKGROUND"
+                title="Founded to End Fragmented Packaging Procurement"
+                description="Before SRM Enterprises, manufacturing plants had to source corrugated boxes from one local supplier, foam cushioning from another converter, bubble wrap from a third trader, and tapes from a fourth distributor."
               />
 
-              <p className="text-sm leading-relaxed text-navy-soft sm:text-base">
-                SRM Enterprises delivers complete packaging solutions that make every kind of packaging mentioned across our portfolio. Our approach focuses on engineering the exact packaging material, thickness, and configuration suited to your application while maintaining scheduled bulk dispatches across all major industrial clusters throughout Pan India.
-              </p>
+              <div className="space-y-4 text-sm leading-relaxed text-navy-soft sm:text-base">
+                <p>
+                  This fragmentation led to inconsistent dimensional tolerances, mismatched thicknesses, constant finger-pointing during transit damage, and massive administrative overhead for procurement teams.
+                </p>
+                <p>
+                  <strong className="text-navy font-semibold">In 2009, SRM Enterprises was established</strong> with a clear purpose: to serve as a single, technically rigorous packaging partner capable of engineering complete kits — master outer cartons, custom-cut EPE foam trays, protective bubble wrap, poly films, and industrial accessories — with exact specification control and predictable bulk supply across India.
+                </p>
+                <p>
+                  Today, over 500 manufacturing plants, automotive OEMs, and logistics providers rely on our production facilities to keep their dispatch lines moving with zero transit rejects.
+                </p>
+              </div>
 
-              <StaggerGroup as="ul" className="flex flex-col gap-3">
-                {ABOUT_POINTS.map((point) => (
-                  <StaggerItem as="li" key={point} variant="kinetic-pop" className="flex items-start gap-3">
-                    <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-accent-soft text-accent-deep">
-                      <CircleCheck className="h-4 w-4" aria-hidden="true" />
-                    </span>
-                    <span className="text-sm leading-relaxed text-navy-soft sm:text-base">{point}</span>
-                  </StaggerItem>
-                ))}
-              </StaggerGroup>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                <div className="flex items-start gap-2.5 rounded-xl bg-slate-50 p-3 border border-navy/5">
+                  <CircleCheck className="h-5 w-5 text-emerald-600 shrink-0 mt-0.5" />
+                  <span className="text-xs font-semibold text-navy">Single-Source Contract Simplicity</span>
+                </div>
+                <div className="flex items-start gap-2.5 rounded-xl bg-slate-50 p-3 border border-navy/5">
+                  <CircleCheck className="h-5 w-5 text-emerald-600 shrink-0 mt-0.5" />
+                  <span className="text-xs font-semibold text-navy">Engineered Around Your Component CAD</span>
+                </div>
+              </div>
             </Reveal>
 
-            <Reveal variant="iris-clip">
-              <MediaPanel imageKey="aboutFacility" accent="#19B26B" aspect="video">
-                <div className="grid h-full grid-cols-2 items-end gap-3">
-                  <FactoryArt accent="#1E6FFF" className="h-full w-full" />
-                  <TruckArt accent="#19B26B" className="h-full w-full" />
-                  <div className="col-span-2">
-                    <WarehouseArt accent="#FF8A2B" className="h-24 w-full" />
+            {/* Visual Facility Image Preview */}
+            <Reveal variant="fade-up" className="lg:col-span-5">
+              <div className="group relative overflow-hidden rounded-3xl border border-navy/10 shadow-lift">
+                <div className="relative h-96 w-full">
+                  <Image
+                    src="/images/hero1.png"
+                    alt="SRM Enterprises industrial packaging facility"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent" />
+                  <div className="absolute bottom-6 left-6 right-6 text-white">
+                    <span className="inline-block rounded-full bg-accent px-3 py-1 text-[10px] font-bold uppercase tracking-wider mb-2">
+                      Modern Facility
+                    </span>
+                    <h4 className="font-display text-lg font-bold">SRM Manufacturing &amp; Logistics Hub</h4>
+                    <p className="mt-1 text-xs text-white/80">
+                      Integrated corrugation, die-cutting, foam fabrication &amp; dispatch staging.
+                    </p>
                   </div>
                 </div>
-              </MediaPanel>
+              </div>
             </Reveal>
           </div>
         </div>
       </section>
 
-      {/* 3 — Production & Infrastructure (#infrastructure) */}
-      <section id="infrastructure" className="band-sky pattern-grid section-pad scroll-mt-28" aria-labelledby="infrastructure-heading">
+      {/* 4 — Leadership & Team Profile */}
+      <section className="band-sky section-pad" aria-labelledby="leadership-heading">
         <div className="container-page">
           <SectionHeading
-            eyebrow="Production & Infrastructure"
-            title="Production Capability, Storage & Planned Dispatch"
-            description="Our production setup and warehousing facilities are built to support both bespoke prototype runs and high-volume recurring packaging orders."
+            eyebrow="LEADERSHIP & ENGINEERING"
+            title="Hands-On Leadership Committed to Packaging Integrity"
+            description="Our leadership team brings decades of combined experience in paper technology, polymer fabrication, and industrial logistics."
+            align="center"
+            className="mx-auto max-w-3xl"
+          />
+
+          <div className="mt-10 grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
+            {/* Founder Card */}
+            <div className="rounded-3xl border border-navy/10 bg-white p-6 sm:p-8 shadow-soft flex flex-col sm:flex-row items-center sm:items-start gap-6">
+              <div className="relative h-28 w-28 shrink-0 rounded-2xl bg-gradient-to-br from-navy to-accent grid place-items-center text-white shadow-md">
+                <Users className="h-12 w-12 text-white/80" />
+                <span className="absolute bottom-2 right-2 h-3 w-3 rounded-full bg-emerald-400 ring-2 ring-white" />
+              </div>
+              <div>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-accent">Founder &amp; Managing Director</span>
+                <h3 className="font-display text-xl font-bold text-navy mt-1">Mr. R.K. Sharma</h3>
+                <p className="mt-2 text-xs leading-relaxed text-navy-soft">
+                  Over 15 years directing industrial packaging operations, supply chain logistics, and long-term client procurement partnerships across major automotive and manufacturing belts.
+                </p>
+                <div className="mt-4 flex items-center gap-2 text-xs text-navy font-semibold">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-600" />
+                  <span>Procurement &amp; Strategic Operations</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Engineering Lead Card */}
+            <div className="rounded-3xl border border-navy/10 bg-white p-6 sm:p-8 shadow-soft flex flex-col sm:flex-row items-center sm:items-start gap-6">
+              <div className="relative h-28 w-28 shrink-0 rounded-2xl bg-gradient-to-br from-navy via-slate-800 to-emerald-600 grid place-items-center text-white shadow-md">
+                <Cpu className="h-12 w-12 text-white/80" />
+                <span className="absolute bottom-2 right-2 h-3 w-3 rounded-full bg-emerald-400 ring-2 ring-white" />
+              </div>
+              <div>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-700">Technical &amp; Quality Lead</span>
+                <h3 className="font-display text-xl font-bold text-navy mt-1">P. Sharma</h3>
+                <p className="mt-2 text-xs leading-relaxed text-navy-soft">
+                  Specializes in CAD component fitment design, EPE foam density calculations, drop-test prototyping, and rigorous batch GSM &amp; burst factor verification.
+                </p>
+                <div className="mt-4 flex items-center gap-2 text-xs text-navy font-semibold">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-600" />
+                  <span>CAD Prototyping &amp; Quality Testing</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5 — Production & Facility Photos */}
+      <section className="band-white section-pad pattern-grid" aria-labelledby="facility-heading">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="FACILITY & INFRASTRUCTURE"
+            title="Production Setup, Raw Material Storage & Fleet Dispatch"
+            description="Our infrastructure is designed to maintain consistent paper and foam inventory buffers, ensuring your production line never stops due to stockouts."
             className="max-w-3xl"
           />
 
-          <StaggerGroup className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                title: "Custom Production",
-                desc: "Precision corrugated box slotting, die-cutting, and custom thermal EPE foam fitment fabrication tailored to component CAD designs.",
-                icon: Factory,
-                color: "#1E6FFF",
-              },
-              {
-                title: "Integrated Material Supply",
-                desc: "Direct partnerships for kraft paper, virgin LDPE polymers, stretch films, and strapping to guarantee consistent raw material quality.",
-                icon: Cpu,
-                color: "#19B26B",
-              },
-              {
-                title: "Raw Material Warehouse",
-                desc: "Substantial buffer stock of corrugated sheets, bubble rolls, and foam coils to insulate client production from supply chain shocks.",
-                icon: Warehouse,
-                color: "#FF8A2B",
-              },
-              {
-                title: "Pan-India Dispatch Network",
-                desc: "Systematic route planning and freight logistics across all major industrial corridors for JIT (Just-In-Time) plant deliveries.",
-                icon: Truck,
-                color: "#8438FF",
-              },
-            ].map((infra) => {
-              const Icon = infra.icon;
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="group overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-soft">
+              <div className="relative h-52 w-full overflow-hidden">
+                <Image
+                  src="/images/hero3.png"
+                  alt="Corrugated box manufacturing and stacking"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-4">
+                <h4 className="font-display text-sm font-bold text-navy">Corrugation &amp; Slotting Lines</h4>
+                <p className="mt-1 text-xs text-navy-soft">
+                  Automatic box creasing, slotting, and multi-color flexo printing.
+                </p>
+              </div>
+            </div>
+
+            <div className="group overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-soft">
+              <div className="relative h-52 w-full overflow-hidden">
+                <Image
+                  src="/images/hero4.png"
+                  alt="Custom EPE foam die cutting and cushioning"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-4">
+                <h4 className="font-display text-sm font-bold text-navy">CNC Foam Cutting &amp; Fabrication</h4>
+                <p className="mt-1 text-xs text-navy-soft">
+                  Thermal lamination, hydraulic punch presses &amp; contour routing.
+                </p>
+              </div>
+            </div>
+
+            <div className="group overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-soft">
+              <div className="relative h-52 w-full overflow-hidden">
+                <Image
+                  src="/images/hero2.png"
+                  alt="Warehouse inventory and truck dispatch loading"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-4">
+                <h4 className="font-display text-sm font-bold text-navy">Warehouse Buffer &amp; Fleet Loading</h4>
+                <p className="mt-1 text-xs text-navy-soft">
+                  High-capacity palletized storage with scheduled Pan-India truck dispatch.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6 — Our Promise: Short & Visual */}
+      <section className="band-sky section-pad" aria-labelledby="promise-heading">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="OUR SERVICE COMMITMENT"
+            title="The SRM Guarantee to Procurement Teams"
+            description="Clear, dependable business standards you can hold us accountable for every single month."
+            align="center"
+            className="mx-auto max-w-3xl"
+          />
+
+          <StaggerGroup className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4" stagger={0.08}>
+            {PROMISES.map((promise) => {
+              const Icon = promise.icon;
               return (
-                <StaggerItem key={infra.title} variant="flip-up" className="h-full">
+                <StaggerItem key={promise.title} variant="flip-up" className="h-full">
                   <div
-                    className="card-heritage-pedestal group flex h-full flex-col p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift"
-                    style={{ ["--accent" as string]: infra.color }}
+                    className="card-heritage-pedestal flex h-full flex-col justify-between p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift"
+                    style={{ ["--accent" as string]: promise.color }}
                   >
-                    <div
-                      className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-110"
-                      style={{ background: `${infra.color}15`, color: infra.color }}
-                    >
-                      <Icon className="h-6 w-6" />
+                    <div>
+                      <div
+                        className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl transition-all duration-300"
+                        style={{ background: `${promise.color}15`, color: promise.color }}
+                      >
+                        <Icon className="h-6 w-6" />
+                      </div>
+                      <h3 className="font-display text-base font-bold text-navy">
+                        {promise.title}
+                      </h3>
+                      <p className="mt-2 text-xs sm:text-sm leading-relaxed text-navy-soft">
+                        {promise.desc}
+                      </p>
                     </div>
-                    <h3 className="font-display text-lg font-bold text-navy group-hover:text-primary transition-colors">
-                      {infra.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-navy-soft">{infra.desc}</p>
+
+                    <div className="mt-4 pt-3 border-t border-navy/5">
+                      <span className="text-[11px] font-bold" style={{ color: promise.color }}>
+                        Guaranteed Standard ✓
+                      </span>
+                    </div>
                   </div>
                 </StaggerItem>
               );
@@ -156,265 +391,66 @@ export default function AboutPage(): JSX.Element {
         </div>
       </section>
 
-      {/* 4 — Quality Assurance (#quality) */}
-      <section id="quality" className="band-white pattern-weave section-pad scroll-mt-24" aria-labelledby="quality-heading">
+      {/* 7 — Quality & Compliance Cards with Verified Logos */}
+      <section id="certifications" className="band-white section-pad pattern-dots scroll-mt-24" aria-labelledby="certifications-heading">
         <div className="container-page">
           <SectionHeading
-            eyebrow="Quality Assurance"
-            title="Consistent Specifications. Reliable Packaging Supply."
-            description="For industrial packaging, consistency matters. Variations in material, dimensions, thickness, or construction can affect handling, storage, and product protection."
-            className="max-w-3xl"
-          />
-
-          <div className="mt-10 grid gap-6 lg:grid-cols-2">
-            <div className="flex flex-col gap-4">
-              <h3 className="font-display text-lg font-bold text-navy">
-                Specification & Material Control
-              </h3>
-              {QUALITY_PHILOSOPHY.map((item, index) => (
-                <Reveal
-                  key={item.title}
-                  variant="slide-right"
-                  delay={index * 0.08}
-                  className="group/philosophy relative overflow-hidden rounded-2xl border border-navy/10 bg-white p-5 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift cursor-default"
-                  style={{ ["--card-accent" as string]: item.color }}
-                >
-                  <div
-                    aria-hidden="true"
-                    className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover/philosophy:opacity-25"
-                    style={{ background: item.color }}
-                  />
-                  <span
-                    aria-hidden="true"
-                    className="absolute inset-y-0 left-0 w-1 scale-y-0 rounded-l-2xl transition-transform duration-300 origin-center group-hover/philosophy:scale-y-100"
-                    style={{ background: item.color }}
-                  />
-                  <div className="relative z-10 flex items-start gap-3.5">
-                    <span className="relative mt-1 flex h-4 w-4 shrink-0 items-center justify-center">
-                      <span
-                        className="relative h-3 w-3 rounded-full transition-all duration-300 group-hover/philosophy:scale-125"
-                        style={{ background: item.color }}
-                      />
-                    </span>
-                    <div>
-                      <h4 className="font-semibold text-navy group-hover/philosophy:text-primary transition-colors">
-                        {item.title}
-                      </h4>
-                      <p className="mt-1 text-sm leading-relaxed text-navy-soft">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-
-            <div className="flex flex-col gap-4">
-              <h3 className="font-display text-lg font-bold text-navy">
-                Supply Discipline & Dispatch Controls
-              </h3>
-              {SUPPLY_PHILOSOPHY.map((item, index) => (
-                <Reveal
-                  key={item.title}
-                  variant="slide-left"
-                  delay={index * 0.08}
-                  className="group/philosophy relative overflow-hidden rounded-2xl border border-navy/10 bg-white p-5 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift cursor-default"
-                  style={{ ["--card-accent" as string]: item.color }}
-                >
-                  <div
-                    aria-hidden="true"
-                    className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover/philosophy:opacity-25"
-                    style={{ background: item.color }}
-                  />
-                  <span
-                    aria-hidden="true"
-                    className="absolute inset-y-0 left-0 w-1 scale-y-0 rounded-l-2xl transition-transform duration-300 origin-center group-hover/philosophy:scale-y-100"
-                    style={{ background: item.color }}
-                  />
-                  <div className="relative z-10 flex items-start gap-3.5">
-                    <span className="relative mt-1 flex h-4 w-4 shrink-0 items-center justify-center">
-                      <span
-                        className="relative h-3 w-3 rounded-full transition-all duration-300 group-hover/philosophy:scale-125"
-                        style={{ background: item.color }}
-                      />
-                    </span>
-                    <div>
-                      <h4 className="font-semibold text-navy group-hover/philosophy:text-primary transition-colors">
-                        {item.title}
-                      </h4>
-                      <p className="mt-1 text-sm leading-relaxed text-navy-soft">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5 — Certifications & Standards (#certifications) */}
-      <section id="certifications" className="band-cream pattern-grid section-pad scroll-mt-24" aria-labelledby="certifications-heading">
-        <div className="container-page">
-          <SectionHeading
-            eyebrow="Standards & Compliance"
-            title="Verified Compliance & Traceable Specifications"
-            description="We prioritize verifiable material integrity over unsubstantiated marketing claims. All packaging batches are matched strictly to buyer technical data sheets."
+            eyebrow="QUALITY & COMPLIANCE"
+            title="Procurement-Ready Standards & Compliance"
+            description="We supply industrial packaging with verifiable compliance certificates to meet your internal quality audits and client vendor standards."
             className="max-w-3xl"
           />
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                title: "Material Test Reports (MTR)",
-                desc: "Bursting strength (BF), GSM certificates, and thickness tolerance reports provided on buyer request for each corrugated batch.",
-                icon: FileText,
-                color: "#1E6FFF",
-              },
-              {
-                title: "RoHS & Anti-Static Compliance",
-                desc: "ESD-safe pink/black conductive foam and antistatic bubble bags produced to surface resistivity specifications (10^9 to 10^11 ohms/sq).",
-                icon: ShieldCheck,
-                color: "#19B26B",
-              },
-              {
-                title: "Verified OEM Standard Alignment",
-                desc: "Packaging designed to fit standard pallet patterns (1200x1000mm & 1200x800mm) without overhang or container space wastage.",
-                icon: Award,
-                color: "#FF8A2B",
-              },
-            ].map((cert) => {
-              const Icon = cert.icon;
+            {COMPLIANCE_ITEMS.map((item) => {
+              const Icon = item.icon;
               return (
-                <Reveal key={cert.title} variant="fade-up" className="h-full">
-                  <div
-                    className="card-heritage-pedestal flex h-full flex-col p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift"
-                    style={{ ["--accent" as string]: cert.color }}
-                  >
-                    <div
-                      className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl"
-                      style={{ background: `${cert.color}15`, color: cert.color }}
+                <div
+                  key={item.title}
+                  className="rounded-2xl border border-navy/10 bg-slate-50/60 p-6 transition-all duration-300 hover:bg-white hover:shadow-soft hover:border-navy/20"
+                >
+                  <div className="flex items-center justify-between mb-4">
+                    <span
+                      className="rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white shadow-2xs"
+                      style={{ background: item.color }}
                     >
-                      <Icon className="h-6 w-6" />
-                    </div>
-                    <h3 className="font-display text-lg font-bold text-navy">{cert.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-navy-soft">{cert.desc}</p>
-                    <div className="mt-4 flex items-center gap-1.5 text-xs font-semibold text-emerald-700">
-                      <CheckCircle2 className="h-4 w-4" />
-                      <span>Verified Specification</span>
-                    </div>
+                      {item.badge}
+                    </span>
+                    <span className="grid h-10 w-10 place-items-center rounded-xl bg-white shadow-2xs" style={{ color: item.color }}>
+                      <Icon className="h-5 w-5" />
+                    </span>
                   </div>
-                </Reveal>
+
+                  <h3 className="font-display text-base font-bold text-navy">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-xs leading-relaxed text-navy-soft">
+                    {item.desc}
+                  </p>
+                </div>
               );
             })}
           </div>
         </div>
       </section>
 
-      {/* 6 — Our Process (#process) */}
-      <section id="process" className="band-white pattern-cad section-pad scroll-mt-28" aria-labelledby="about-process-heading">
-        <div className="container-page">
-          <SectionHeading
-            eyebrow="Our Process"
-            title="Stage-Gate Verification: From CAD to Dock Dispatch"
-            description="Unlike one-size-fits-all vendors, every custom run moves through 6 dedicated technical checkpoints so production batches match the approved sample every time."
-            className="max-w-3xl"
-          />
+      {/* 8 — Customer Trust Section */}
+      <CustomerTrustSection />
 
-          <StaggerGroup className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                step: "01",
-                title: "Engineering Assessment",
-                gate: "Gate 1: Specification Sign-off",
-                desc: "We analyze part geometry, weight distribution, surface sensitivity, and transit stress profiles to select proper fluting and foam density.",
-                color: "#1E6FFF",
-              },
-              {
-                step: "02",
-                title: "Raw Material Validation",
-                gate: "Gate 2: GSM & Density Test",
-                desc: "Kraft reels are tested for Bursting Factor (BF) and GSM, while polyethylene resin batches undergo melt flow index and density checks.",
-                color: "#19B26B",
-              },
-              {
-                step: "03",
-                title: "Prototype & Physical Validation",
-                gate: "Gate 3: Fitment & Drop Check",
-                desc: "Physical samples are evaluated directly with the customer's actual parts, validating clearances, locking tabs, and cushioning integrity.",
-                color: "#FF8A2B",
-              },
-              {
-                step: "04",
-                title: "Calibrated Batch Production",
-                gate: "Gate 4: In-line Tolerance Control",
-                desc: "High-speed slotting, creasing, and thermal laminating operate with continuous dimensional checks to prevent drift across large runs.",
-                color: "#8438FF",
-              },
-              {
-                step: "05",
-                title: "Palletization & Weatherproofing",
-                gate: "Gate 5: Transit Packaging Audit",
-                desc: "Finished consignments are edge-protected, compressed, and wrapped in industrial stretch film to prevent moisture and handling damage.",
-                color: "#0FA47F",
-              },
-              {
-                step: "06",
-                title: "Scheduled Pan-India Dispatch",
-                gate: "Gate 6: Delivery Handover",
-                desc: "Consignments dispatch on scheduled routes across industrial corridors nationwide with signed delivery checklists.",
-                color: "#E86620",
-              },
-            ].map((stg) => (
-              <StaggerItem key={stg.step} variant="flip-up" className="h-full">
-                <article
-                  className="card-heritage-pedestal group flex h-full flex-col p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-lift"
-                  style={{ ["--accent" as string]: stg.color }}
-                >
-                  <div className="flex items-center justify-between">
-                    <span
-                      className="font-mono text-2xl font-black transition-transform duration-300 group-hover:scale-110"
-                      style={{ color: stg.color }}
-                    >
-                      {stg.step}
-                    </span>
-                    <span
-                      className="rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white"
-                      style={{ background: stg.color }}
-                    >
-                      {stg.gate}
-                    </span>
-                  </div>
-
-                  <h3 className="mt-4 font-display text-lg font-bold text-navy transition-colors duration-200 group-hover:text-primary">
-                    {stg.title}
-                  </h3>
-
-                  <p className="mt-2 text-xs leading-relaxed text-navy-soft sm:text-sm">
-                    {stg.desc}
-                  </p>
-
-                  <div className="mt-auto pt-4 border-t border-navy/5 flex items-center gap-1.5 text-xs font-semibold text-emerald-700">
-                    <CheckCircle2 className="h-3.5 w-3.5" />
-                    <span>Verified Quality Gate</span>
-                  </div>
-                </article>
-              </StaggerItem>
-            ))}
-          </StaggerGroup>
-        </div>
-      </section>
-
-      {/* 7 — CTA */}
+      {/* 9 — Final CTA */}
       <CtaBanner
-        title="Ready to discuss your packaging specification?"
-        description="Share your product dimensions, required protection level, and delivery schedule with our technical team."
+        title="Ready to standardize your packaging supply?"
+        description="Share your sizes, drawings, or current packaging pain points. We provide tailored material options, samples, and a clear commercial proposal."
         primaryLabel="Request a Quote"
         primaryHref="/contact"
+        secondaryLabel="Explore All Products"
+        secondaryHref="/products"
       />
 
-      <JsonLd id="about-breadcrumb-jsonld" data={breadcrumbJsonLd([{ name: "Home", path: "/" }, ...breadcrumbs])} />
+      <JsonLd
+        id="about-breadcrumb-jsonld"
+        data={breadcrumbJsonLd([{ name: "Home", path: "/" }, ...breadcrumbs])}
+      />
     </>
   );
 }

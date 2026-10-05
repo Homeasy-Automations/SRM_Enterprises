@@ -9,6 +9,7 @@ import { Footer } from "@/components/layout/Footer";
 import { SkipToContent } from "@/components/layout/SkipToContent";
 import { Analytics } from "@/components/layout/Analytics";
 import { LazyFloatingActions, LazyLoadingScreen } from "@/components/layout/LazyOverlays";
+// import { StickyConversionBar } from "@/components/layout/StickyConversionBar";
 import { ScrollProgressBar } from "@/components/ui/ScrollProgressBar";
 import { ColorMoodProvider } from "@/components/providers/ColorMoodProvider";
 import { HashScrollHandler } from "@/components/navigation/HashScrollHandler";
@@ -103,6 +104,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
             </main>
 
             <Footer />
+            {/* <StickyConversionBar /> */}
             <LazyFloatingActions />
           </QuoteModalProvider>
         </ColorMoodProvider>

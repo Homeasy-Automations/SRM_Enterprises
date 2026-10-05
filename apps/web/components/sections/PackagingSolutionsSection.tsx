@@ -38,7 +38,7 @@ export function PackagingSolutionsSection(): JSX.Element {
   return (
     <section className="band-cream section-pad relative overflow-hidden" aria-labelledby="capability-heading">
       <div className="container-page relative z-10">
-        <div className="grid items-center gap-12 lg:grid-cols-12">
+        <div className="grid items-center gap-8 lg:gap-10 lg:grid-cols-12">
           {/* Visual Showcase (5 cols) */}
           <div className="flex flex-col gap-6 lg:col-span-5">
             <div className="card-home-vivid overflow-hidden rounded-3xl border border-navy/10 bg-white p-6 sm:p-8 shadow-sm">

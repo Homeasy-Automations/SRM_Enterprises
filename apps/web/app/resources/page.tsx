@@ -88,7 +88,7 @@ export default function ResourcesPage(): JSX.Element {
                       <div className="rounded-xl bg-emerald-50/70 p-3 border border-emerald-500/20">
                         <span className="font-bold text-emerald-800 flex items-center gap-1.5 mb-1">
                           <TrendingUp className="h-3.5 w-3.5 text-emerald-600" />
-                          Documented Result:
+                          Illustrative Packaging Application:
                         </span>
                         <p className="text-emerald-900 leading-relaxed font-medium">{study.result}</p>
                       </div>

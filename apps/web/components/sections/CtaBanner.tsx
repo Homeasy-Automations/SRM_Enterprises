@@ -16,6 +16,8 @@ interface CtaBannerProps {
   description?: string;
   primaryLabel?: string;
   primaryHref?: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
   /** Small line under the buttons. */
   footnote?: string;
   /** Marquee ribbon above the CTA (defaults on for the homepage use). */
@@ -31,6 +33,8 @@ export function CtaBanner({
   description = "Share your size, material, quantity and application.",
   primaryLabel = "Get a Quote",
   primaryHref = "/contact",
+  secondaryLabel,
+  secondaryHref,
   footnote,
   showRibbon = true,
 }: CtaBannerProps): JSX.Element {
@@ -112,6 +116,18 @@ export function CtaBanner({
                   <ArrowRight className="h-4 w-4 icon-arrow-spring" aria-hidden="true" />
                 </MagneticButton>
               )}
+
+              {secondaryLabel && secondaryHref ? (
+                <MagneticButton
+                  href={secondaryHref}
+                  onClick={() => analytics.ctaClick(secondaryLabel, "cta-banner")}
+                  variant="glass"
+                  className="w-full sm:w-auto shadow-md"
+                >
+                  {secondaryLabel}
+                  <ArrowRight className="h-4 w-4 icon-arrow-spring" aria-hidden="true" />
+                </MagneticButton>
+              ) : null}
 
               <a
                 href={getMailtoLink("Packaging requirement — SRM Enterprises")}

@@ -132,7 +132,7 @@ export function FeaturedProductsSection(): JSX.Element {
           </Reveal>
         </div>
 
-        <StaggerGroup className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5" stagger={0.05}>
+        <StaggerGroup className="mt-8 sm:mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5" stagger={0.05}>
           {FEATURED_PRODUCTS.map((prod) => {
             const Icon = prod.icon;
             return (

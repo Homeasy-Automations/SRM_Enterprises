@@ -218,11 +218,11 @@ html[data-mood="berry"] {
   }
 
   .section-pad {
-    @apply py-14 sm:py-20 lg:py-24;
+    @apply py-8 sm:py-10 lg:py-12;
   }
 
   .section-pad-sm {
-    @apply py-10 sm:py-14 lg:py-16;
+    @apply py-4 sm:py-6 lg:py-7;
   }
 
   .eyebrow {

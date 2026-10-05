@@ -92,7 +92,7 @@ export function LocationsHomeSection(): JSX.Element {
           </Reveal>
         </div>
 
-        <StaggerGroup className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4" stagger={0.08}>
+        <StaggerGroup className="mt-8 sm:mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4" stagger={0.08}>
           {PAN_INDIA_REGIONS.map((region) => (
             <StaggerItem key={region.id} variant="flip-up" className="h-full">
               <article

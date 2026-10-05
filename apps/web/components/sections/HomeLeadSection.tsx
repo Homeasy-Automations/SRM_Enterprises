@@ -15,7 +15,7 @@ export function HomeLeadSection(): JSX.Element {
   const { openQuoteModal } = useQuoteModal();
 
   return (
-    <section id="quote-section" className="band-cream section-pad relative overflow-hidden" aria-labelledby="lead-heading">
+    <section id="quote-section" className="band-cream pt-14 sm:pt-20 lg:pt-24 pb-32 sm:pb-40 lg:pb-44 relative overflow-hidden" aria-labelledby="lead-heading">
       {/* Background ambient accents */}
       <div
         aria-hidden="true"

@@ -46,7 +46,7 @@ export function WhyChooseUs(): JSX.Element {
           className="mx-auto max-w-3xl"
         />
 
-        <StaggerGroup className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4" stagger={0.1}>
+        <StaggerGroup className="mt-8 sm:mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4" stagger={0.1}>
           {VALUE_POINTS.map((reason) => {
             const Icon = reason.icon;
             return (
@@ -79,7 +79,7 @@ export function WhyChooseUs(): JSX.Element {
           })}
         </StaggerGroup>
 
-        <Reveal variant="fade-up" delay={0.12} className="mt-12 text-center">
+        <Reveal variant="fade-up" delay={0.12} className="mt-8 sm:mt-10 text-center">
           <Link
             href="/contact"
             className="inline-flex items-center gap-2 rounded-full bg-navy px-7 py-3.5 text-sm font-bold text-white shadow-md transition-all duration-300 hover:bg-accent-deep hover:shadow-lg hover:scale-105"

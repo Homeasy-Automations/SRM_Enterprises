@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/hero/PageHero";
 import { HeroActions } from "@/components/sections/HeroActions";
 import { PackageCategorySection } from "@/components/products/PackageCategorySection";
-import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
+import { ProductCustomizationFlow } from "@/components/products/ProductCustomizationFlow";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { JsonLd } from "@/components/sections/JsonLd";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -152,8 +152,8 @@ export default function ProductsPage(): JSX.Element {
         </div>
       </section>
 
-      {/* 5 — Process */}
-      <ProcessTimeline compact />
+      {/* 5 — Customization Flow */}
+      <ProductCustomizationFlow />
 
       {/* 6 — Requirement CTA */}
       <CtaBanner
