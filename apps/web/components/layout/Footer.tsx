@@ -169,7 +169,7 @@ export function Footer(): JSX.Element {
           </StaggerGroup>
 
           <Reveal variant="fade-in" delay={0.2}>
-            <div className="mt-10 flex flex-col items-center justify-between gap-5 border-t border-white/25 pt-6 text-xs text-white/90 md:flex-row sm:text-sm">
+            <div className="mt-4 flex flex-col items-center justify-between gap-5 border-t border-white/25 pt-6 text-xs text-white/90 md:flex-row sm:text-sm">
               <p>© SRM Enterprises. All Rights Reserved.</p>
 
               <a
