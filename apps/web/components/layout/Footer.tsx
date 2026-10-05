@@ -49,7 +49,7 @@ export function Footer(): JSX.Element {
       </div>
 
       {/* Main footer body with seamless top edge matching wave (#1E6FFF) */}
-      <div className="relative overflow-hidden bg-gradient-to-b from-[#1E6FFF] via-[#1760E8] to-[#0E42A8] -mt-1 pb-10 pt-4 sm:pb-12 sm:pt-6">
+      <div className="relative overflow-hidden bg-gradient-to-b from-[#1E6FFF] via-[#1760E8] to-[#0E42A8] -mt-1 pb-3 pt-4 sm:pb-4 sm:pt-6">
         <div aria-hidden="true" className="absolute inset-0 -z-10 opacity-25">
           <span className="absolute -left-16 top-16 h-56 w-56 rounded-full bg-white/25 blur-3xl" />
           <span className="absolute right-0 top-32 h-72 w-72 rounded-full bg-[#1E9BE0]/35 blur-3xl" />
