@@ -78,26 +78,7 @@ export function HomeLeadSection(): JSX.Element {
           </p>
         </div>
 
-        {/* Section 16: B2B Quote Form Card */}
-        {/* <div id="quote-form-section" className="mx-auto mt-16 max-w-4xl scroll-mt-28">
-          <Reveal variant="depth-zoom" delay={0.1}>
-            <div className="card-home-vivid overflow-hidden rounded-3xl border border-navy/10 bg-white p-6 sm:p-10 shadow-xl">
-              <div className="border-b border-navy/10 pb-6 mb-8 text-center sm:text-left">
-                <span className="text-xs font-bold uppercase tracking-widest text-accent">
-                  B2B Requirement Specification
-                </span>
-                <h3 className="mt-1 font-display text-2xl font-bold text-navy sm:text-3xl">
-                  Request a Packaging Quote
-                </h3>
-                <p className="mt-1.5 text-sm text-navy-soft">
-                  Share your packaging requirement and our team will get back to you with material options and pricing.
-                </p>
-              </div>
 
-              <QuoteForm />
-            </div>
-          </Reveal>
-        </div> */}
       </div>
     </section>
   );

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { HomeHero } from "@/components/hero/HomeHero";
 import { CapabilityStrip } from "@/components/sections/CapabilityStrip";
-// import { ProductShowcase } from "@/components/sections/ProductShowcase";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { CustomPackagingHomeSection } from "@/components/sections/CustomPackagingHomeSection";
 import { IndustriesSection } from "@/components/sections/IndustriesSection";
@@ -68,9 +67,6 @@ export default function HomePage(): JSX.Element {
 
       {/* 2 — Trust / Capability Bar */}
       <CapabilityStrip />
-
-      {/* 3 — Packaging Categories */}
-      {/* <ProductShowcase /> */}
 
       {/* 4 — Why SRM */}
       <WhyChooseUs />

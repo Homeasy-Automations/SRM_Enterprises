@@ -8,10 +8,10 @@ import { Navbar } from "@/components/navigation/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SkipToContent } from "@/components/layout/SkipToContent";
 import { Analytics } from "@/components/layout/Analytics";
-import { LazyFloatingActions, LazyLoadingScreen } from "@/components/layout/LazyOverlays";
-// import { StickyConversionBar } from "@/components/layout/StickyConversionBar";
+import { LazyFloatingActions } from "@/components/layout/LazyOverlays";
 import { ScrollProgressBar } from "@/components/ui/ScrollProgressBar";
 import { ColorMoodProvider } from "@/components/providers/ColorMoodProvider";
+import { QuoteModalProvider } from "@/components/providers/QuoteModalProvider";
 import { HashScrollHandler } from "@/components/navigation/HashScrollHandler";
 import { JsonLd } from "@/components/sections/JsonLd";
 
@@ -84,7 +84,6 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
-import { QuoteModalProvider } from "@/components/providers/QuoteModalProvider";
 
 export default function RootLayout({ children }: { children: React.ReactNode }): JSX.Element {
   return (
@@ -94,7 +93,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
           <QuoteModalProvider>
             <HashScrollHandler />
             <SkipToContent />
-            <LazyLoadingScreen />
             <ScrollProgressBar />
             <Navbar />
 
@@ -104,7 +102,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
             </main>
 
             <Footer />
-            {/* <StickyConversionBar /> */}
             <LazyFloatingActions />
           </QuoteModalProvider>
         </ColorMoodProvider>

@@ -45,9 +45,6 @@ export function HomeHero(): JSX.Element {
       {/* Background Image Slider with packaging facility photography */}
       <HeroImageSlider />
 
-      {/* Floating illustrations hidden as requested */}
-      {/* <FloatingIllustrations /> */}
-
       <div className="container-page relative z-10 my-auto flex flex-1 flex-col items-center justify-center py-6 sm:py-8 lg:py-10">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
           <motion.span

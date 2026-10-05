@@ -15,7 +15,7 @@ const nextConfig = {
     dirs: ["app", "components", "data", "hooks", "lib"],
   },
   experimental: {
-    optimizePackageImports: ["lucide-react", "framer-motion"],
+    optimizePackageImports: ["lucide-react"],
   },
   /**
    * Optional same-origin API proxy.

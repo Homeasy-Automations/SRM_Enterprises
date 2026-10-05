@@ -1,6 +1,6 @@
 export interface GalleryItem {
   id: string;
-  category: "products" | "process" | "infrastructure" | "completed";
+  category: "packagings" | "products" | "process" | "infrastructure" | "completed";
   categoryLabel: string;
   title: string;
   subtitle: string;
@@ -14,6 +14,7 @@ export interface GalleryItem {
 
 export const galleryCategories = [
   { id: "all", label: "All Proof & Photos" },
+  { id: "packagings", label: "Packaging Types" },
   { id: "products", label: "Products" },
   { id: "process", label: "Packaging in Process" },
   { id: "infrastructure", label: "Infrastructure & Facility" },
@@ -21,6 +22,84 @@ export const galleryCategories = [
 ] as const;
 
 export const galleryItems: GalleryItem[] = [
+  {
+    id: "pkg-auto",
+    category: "packagings",
+    categoryLabel: "Packaging Types",
+    title: "Automotive Component Packaging",
+    subtitle: "Custom-profile cushioning & high-burst master cartons",
+    description: "Heavy-duty engineered packaging designed for powertrain, transmission, gears, and precision machined automotive components with zero in-transit damage.",
+    image: "/images/packagings/automotive.png",
+    aspect: "wide",
+    tags: ["Automotive", "Zero Defect", "Heavy Duty", "OEM Approved"],
+    color: "#1E6FFF",
+    icon: "box",
+  },
+  {
+    id: "pkg-cad",
+    category: "packagings",
+    categoryLabel: "Packaging Types",
+    title: "Custom CAD Engineered Packaging",
+    subtitle: "Pre-production 3D modeling & drop-tested prototyping",
+    description: "Component-calibrated packaging blueprints and CNC tooling for custom corrugated boxes and multi-density foam fitments.",
+    image: "/images/packagings/custom-cad.png",
+    aspect: "tall",
+    tags: ["CAD Blueprint", "Drop Testing", "Precision Fit", "Prototyping"],
+    color: "#E86620",
+    icon: "hammer",
+  },
+  {
+    id: "pkg-elec",
+    category: "packagings",
+    categoryLabel: "Packaging Types",
+    title: "Electronics & ESD Anti-Static Packaging",
+    subtitle: "Dissipative pink foam, shielding bubble & conductive fitments",
+    description: "Specialized anti-static packaging solutions protecting sensitive surface-mount PCBs, microcontrollers, and precision electronics from electrostatic discharge.",
+    image: "/images/packagings/electronics.png",
+    aspect: "normal",
+    tags: ["ESD Safe", "Anti-Static", "PCB Protection", "Cleanroom Safe"],
+    color: "#8438FF",
+    icon: "layers",
+  },
+  {
+    id: "pkg-eng",
+    category: "packagings",
+    categoryLabel: "Packaging Types",
+    title: "Heavy Engineering & Industrial Packaging",
+    subtitle: "Corrugated liners, VCI anti-rust barriers & heavy payload crates",
+    description: "Multi-ply structural corrugation and moisture barrier wraps engineered for cast iron equipment, pumps, industrial valves, and machinery export.",
+    image: "/images/packagings/engineering.png",
+    aspect: "wide",
+    tags: ["Industrial", "Heavy Machinery", "VCI Anti-Rust", "High Burst"],
+    color: "#0FA47F",
+    icon: "warehouse",
+  },
+  {
+    id: "pkg-ecom",
+    category: "packagings",
+    categoryLabel: "Packaging Types",
+    title: "E-Commerce & High-Volume Dispatch Packaging",
+    subtitle: "Die-cut mailers, tamper-evident security tapes & void-fill",
+    description: "Speed-pack corrugated mailer boxes, air column cushioning, and branded packaging materials tailored for rapid fulfillment and parcel transit.",
+    image: "/images/packagings/ecommerce.png",
+    aspect: "normal",
+    tags: ["E-Commerce", "Mailer Boxes", "Void Fill", "High Speed"],
+    color: "#19B26B",
+    icon: "truck",
+  },
+  {
+    id: "pkg-fmcg",
+    category: "packagings",
+    categoryLabel: "Packaging Types",
+    title: "FMCG & Consumer Goods Bulk Packaging",
+    subtitle: "Palletized secondary shipper cases & high-yield stretch wrapping",
+    description: "High-compression outer shipper cartons, shrink films, and uniform pallet stabilization for FMCG, food processing, and consumer product supply chains.",
+    image: "/images/packagings/fmcg.png",
+    aspect: "normal",
+    tags: ["FMCG", "Shipper Cartons", "Stretch Wrapping", "Food Safe"],
+    color: "#FF8A2B",
+    icon: "package",
+  },
   {
     id: "g1",
     category: "products",
