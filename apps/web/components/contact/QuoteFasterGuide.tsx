@@ -3,11 +3,8 @@
 import { Package, Ruler, Layers, Hash, Compass, Image as ImageIcon, HelpCircle, ArrowRight } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { StaggerGroup, StaggerItem, Reveal } from "@/components/animations/Reveal";
-import { useQuoteModal } from "@/hooks/use-quote-modal";
 
 export function QuoteFasterGuide(): JSX.Element {
-  const { openQuoteModal } = useQuoteModal();
-
   const cards = [
     {
       icon: Package,
@@ -107,7 +104,14 @@ export function QuoteFasterGuide(): JSX.Element {
 
             <button
               type="button"
-              onClick={() => openQuoteModal()}
+              onClick={() => {
+                const el = document.getElementById("inquiry-form-card");
+                if (el) {
+                  el.scrollIntoView({ behavior: "smooth" });
+                } else {
+                  window.location.hash = "#inquiry-form-card";
+                }
+              }}
               className="btn-primary shrink-0 py-3 px-6 text-sm flex items-center gap-2"
             >
               <span>Talk to an Engineer</span>

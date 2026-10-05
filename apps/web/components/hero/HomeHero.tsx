@@ -3,13 +3,13 @@
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { ArrowRight, MessageCircle, Package, Sparkles } from "lucide-react";
 import { getWhatsAppLink } from "@/data/company";
-import { Blobs } from "@/components/ui/Blobs";
 import { Marquee } from "@/components/animations/Marquee";
 import { MagneticButton } from "@/components/animations/MagneticButton";
-import { FloatingIllustrations } from "./FloatingIllustrations";
+import { HeroImageSlider } from "./HeroImageSlider";
 import { marqueeItems } from "@/data/navigation";
 import { analytics } from "@/lib/analytics";
 import { splitWords } from "@/lib/utils";
+import { useQuoteModal } from "@/hooks/use-quote-modal";
 
 const HEADLINE = "Industrial Packaging. Built to Your Specification.";
 
@@ -18,6 +18,7 @@ export function HomeHero(): JSX.Element {
   const reducedMotion = useReducedMotion();
   const whatsappLink = getWhatsAppLink();
   const words = splitWords(HEADLINE);
+  const { openQuoteModal } = useQuoteModal();
 
   const container: Variants = {
     hidden: {},
@@ -41,8 +42,11 @@ export function HomeHero(): JSX.Element {
       className="relative isolate flex flex-col justify-between overflow-hidden bg-white min-h-[calc(100dvh-76px)]"
       aria-labelledby="hero-heading"
     >
-      <Blobs count={5} />
-      <FloatingIllustrations />
+      {/* Background Image Slider with packaging facility photography */}
+      <HeroImageSlider />
+
+      {/* Floating illustrations hidden as requested */}
+      {/* <FloatingIllustrations /> */}
 
       <div className="container-page relative z-10 my-auto flex flex-1 flex-col items-center justify-center py-6 sm:py-8 lg:py-10">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
@@ -98,11 +102,14 @@ export function HomeHero(): JSX.Element {
             className="mt-6 flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center"
           >
             <MagneticButton
-              href="/contact"
+              type="button"
               variant="primary"
               ariaLabel="Get a custom packaging quote"
               className="w-full sm:w-auto shadow-md"
-              onClick={() => analytics.ctaClick("Get a Custom Quote", "hero")}
+              onClick={() => {
+                analytics.ctaClick("Get a Custom Quote", "hero");
+                openQuoteModal();
+              }}
             >
               Get a Custom Quote
               <ArrowRight className="h-4 w-4 icon-arrow-spring" aria-hidden="true" />

@@ -1,3 +1,5 @@
+"use client";
+
 import { ArrowRight, MapPin, Sparkles } from "lucide-react";
 import { BRAND } from "@srm/config";
 import { CONTACT, getMailtoLink } from "@/data/company";
@@ -6,6 +8,8 @@ import { Reveal } from "@/components/animations/Reveal";
 import { WavyDivider } from "@/components/animations/WavyDivider";
 import { Marquee } from "@/components/animations/Marquee";
 import { marqueeItems } from "@/data/navigation";
+import { useQuoteModal } from "@/hooks/use-quote-modal";
+import { analytics } from "@/lib/analytics";
 
 interface CtaBannerProps {
   title?: string;
@@ -30,6 +34,16 @@ export function CtaBanner({
   footnote,
   showRibbon = true,
 }: CtaBannerProps): JSX.Element {
+  const { openQuoteModal } = useQuoteModal();
+  const productMatch = (primaryHref || "").match(/product=([^&]+)/);
+  const rawSlug = productMatch?.[1];
+  const productSlug = rawSlug ? decodeURIComponent(rawSlug) : undefined;
+  const isQuote = /quote/i.test(primaryLabel) || primaryHref === "#quote" || primaryHref === "#quote-modal";
+
+  const handlePrimaryClick = () => {
+    analytics.ctaClick(primaryLabel, "cta-banner");
+    openQuoteModal({ product: productSlug });
+  };
   return (
     <section className="relative isolate overflow-hidden text-white" aria-labelledby="cta-heading">
       <div
@@ -77,10 +91,27 @@ export function CtaBanner({
 
           <Reveal variant="flip-up" delay={0.18}>
             <div className="mt-8 flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center">
-              <MagneticButton href={primaryHref} variant="white" className="w-full sm:w-auto shadow-lg hover:shadow-xl">
-                {primaryLabel}
-                <ArrowRight className="h-4 w-4 icon-arrow-spring" aria-hidden="true" />
-              </MagneticButton>
+              {isQuote ? (
+                <MagneticButton
+                  type="button"
+                  onClick={handlePrimaryClick}
+                  variant="white"
+                  className="w-full sm:w-auto shadow-lg hover:shadow-xl"
+                >
+                  {primaryLabel}
+                  <ArrowRight className="h-4 w-4 icon-arrow-spring" aria-hidden="true" />
+                </MagneticButton>
+              ) : (
+                <MagneticButton
+                  href={primaryHref}
+                  onClick={() => analytics.ctaClick(primaryLabel, "cta-banner")}
+                  variant="white"
+                  className="w-full sm:w-auto shadow-lg hover:shadow-xl"
+                >
+                  {primaryLabel}
+                  <ArrowRight className="h-4 w-4 icon-arrow-spring" aria-hidden="true" />
+                </MagneticButton>
+              )}
 
               <a
                 href={getMailtoLink("Packaging requirement — SRM Enterprises")}

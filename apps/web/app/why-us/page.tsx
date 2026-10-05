@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { BRAND } from "@srm/config";
 import { PageHero } from "@/components/hero/PageHero";
@@ -13,6 +12,7 @@ import { FactoryArt, TruckArt, WarehouseArt } from "@/components/ui/art";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/animations/Reveal";
 import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { WHY_CHOOSE_CLOSING_LINE, WHY_CHOOSE_US } from "@/lib/constants";
+import { QuoteTrigger } from "@/components/buttons/QuoteTrigger";
 
 export const metadata: Metadata = buildMetadata({
   title: "Why Choose SRM Enterprises — Quality, Customisation, Value & Supply",
@@ -248,10 +248,10 @@ export default function WhyUsPage(): JSX.Element {
               <p className="max-w-3xl text-sm font-semibold leading-relaxed text-navy sm:text-base">
                 {WHY_CHOOSE_CLOSING_LINE}
               </p>
-              <Link href="/contact" className="btn-primary w-full shrink-0 sm:w-auto">
+              <QuoteTrigger className="btn-primary w-full shrink-0 sm:w-auto" location="why-us-closing">
                 Get a Quote
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
+              </QuoteTrigger>
             </div>
           </Reveal>
         </div>

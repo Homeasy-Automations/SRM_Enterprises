@@ -7,6 +7,8 @@ import { CONTACT, getMailtoLink, getTelLink, getWhatsAppLink } from "@/data/comp
 import { footerNav } from "@/data/navigation";
 import { Logo } from "@/components/ui/Logo";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/animations/Reveal";
+import { useQuoteModal } from "@/hooks/use-quote-modal";
+import { analytics } from "@/lib/analytics";
 
 /**
  * Footer — bright vivid gradient (blue → green), white text, four columns.
@@ -14,6 +16,7 @@ import { Reveal, StaggerGroup, StaggerItem } from "@/components/animations/Revea
  * Includes the official KYNYX SOLUTIONS attribution badge.
  */
 export function Footer(): JSX.Element {
+  const { openQuoteModal } = useQuoteModal();
   const whatsappLink = getWhatsAppLink();
   const telLink = getTelLink();
 
@@ -151,14 +154,17 @@ export function Footer(): JSX.Element {
                 ) : null}
               </ul>
 
-              <Link
-                href="/contact"
-                data-open-quote-modal="true"
+              <button
+                type="button"
+                onClick={() => {
+                  analytics.ctaClick("Request a Quote", "footer");
+                  openQuoteModal();
+                }}
                 className="btn-white btn-shimmer mt-2 w-full sm:w-auto shadow-md"
-                aria-label="Go to the quote request form"
+                aria-label="Open the quote request popup"
               >
                 Request a Quote
-              </Link>
+              </button>
             </StaggerItem>
           </StaggerGroup>
 

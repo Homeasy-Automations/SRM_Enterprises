@@ -8,6 +8,7 @@ import { TiltCard } from "@/components/animations/TiltCard";
 import { ProductArt } from "@/components/ui/art";
 import { analytics } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
+import { useQuoteModal } from "@/hooks/use-quote-modal";
 
 interface ProductCardProps {
   showcase: ProductShowcase;
@@ -22,6 +23,7 @@ interface ProductCardProps {
  */
 export function ProductCard({ showcase, className, compact = false }: ProductCardProps): JSX.Element {
   const router = useRouter();
+  const { openQuoteModal } = useQuoteModal();
   const { product, items } = showcase;
 
   return (
@@ -101,16 +103,18 @@ export function ProductCard({ showcase, className, compact = false }: ProductCar
             />
           </Link>
 
-          <Link
-            href={`/contact?product=${product.slug}`}
-            data-open-quote-modal="true"
-            data-product={product.slug}
-            onClick={(event) => event.stopPropagation()}
+          <button
+            type="button"
+            onClick={(event) => {
+              event.stopPropagation();
+              analytics.ctaClick("Request Quote", "product-card");
+              openQuoteModal({ product: product.slug });
+            }}
             className="btn mt-1 w-full text-white transition-transform duration-300 hover:-translate-y-0.5"
             style={{ background: product.color }}
           >
             Request Quote
-          </Link>
+          </button>
         </div>
       </div>
     </TiltCard>

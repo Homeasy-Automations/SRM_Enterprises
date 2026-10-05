@@ -1,9 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import { ArrowRight, CheckCircle2, Clock, Globe, Truck } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/animations/Reveal";
+import { useQuoteModal } from "@/hooks/use-quote-modal";
+import { analytics } from "@/lib/analytics";
 
 const PAN_INDIA_REGIONS = [
   {
@@ -62,6 +63,8 @@ const PAN_INDIA_REGIONS = [
 
 /** Section 12: Pan-India Supply — Nationwide Industrial Packaging Supply & Dispatch. */
 export function LocationsHomeSection(): JSX.Element {
+  const { openQuoteModal } = useQuoteModal();
+
   return (
     <section className="band-white section-pad relative overflow-hidden pattern-dots" aria-labelledby="pan-india-heading">
       <div className="container-page relative z-10">
@@ -74,14 +77,18 @@ export function LocationsHomeSection(): JSX.Element {
           />
 
           <Reveal variant="fade-up" className="shrink-0">
-            <Link
-              href="/contact"
+            <button
+              type="button"
+              onClick={() => {
+                analytics.ctaClick("Get Pan-India Quote", "locations-home");
+                openQuoteModal();
+              }}
               className="inline-flex items-center gap-2 rounded-full bg-navy px-6 py-3.5 text-sm font-bold text-white shadow-md transition-all duration-300 hover:bg-navy/90 hover:shadow-lg hover:scale-105"
             >
               <Globe className="h-4 w-4 text-accent" />
               <span>Get Pan-India Quote</span>
               <ArrowRight className="h-4 w-4 icon-arrow-spring" aria-hidden="true" />
-            </Link>
+            </button>
           </Reveal>
         </div>
 

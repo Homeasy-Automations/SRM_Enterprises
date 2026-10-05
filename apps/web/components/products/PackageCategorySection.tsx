@@ -1,9 +1,13 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import type { ProductCategory } from "@/data/products";
 import { ProductArt } from "@/components/ui/art";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/animations/Reveal";
 import { MediaPanel } from "@/components/ui/MediaPanel";
+import { useQuoteModal } from "@/hooks/use-quote-modal";
+import { analytics } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 interface PackageCategorySectionProps {
@@ -17,6 +21,7 @@ interface PackageCategorySectionProps {
  * and the illustration panel is a colourful gradient rather than a photograph.
  */
 export function PackageCategorySection({ product, index }: PackageCategorySectionProps): JSX.Element {
+  const { openQuoteModal } = useQuoteModal();
   const flipped = index % 2 === 1;
 
   return (
@@ -73,15 +78,17 @@ export function PackageCategorySection({ product, index }: PackageCategorySectio
               View details
               <ArrowRight className="h-4 w-4 icon-arrow-spring" aria-hidden="true" />
             </Link>
-            <Link
-              href={`/contact?product=${product.slug}`}
-              data-open-quote-modal="true"
-              data-product={product.slug}
+            <button
+              type="button"
+              onClick={() => {
+                analytics.ctaClick("Request Quote", `category-${product.slug}`);
+                openQuoteModal({ product: product.slug });
+              }}
               className="btn-outline transition-all duration-300 hover:-translate-y-1 hover:shadow-xs hover:scale-102"
               aria-label={`Request a quote for ${product.name}`}
             >
               Request Quote
-            </Link>
+            </button>
           </div>
         </Reveal>
 

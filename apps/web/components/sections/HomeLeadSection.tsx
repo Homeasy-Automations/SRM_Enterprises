@@ -3,12 +3,16 @@
 import Link from "next/link";
 import { ArrowRight, FileText, Sparkles } from "lucide-react";
 import { Reveal } from "@/components/animations/Reveal";
+import { useQuoteModal } from "@/hooks/use-quote-modal";
+import { analytics } from "@/lib/analytics";
+
 /**
  * Sections 15 & 16: Final Lead Generation Section & B2B Quote Form.
  * Headline: "Tell Us What You're Packing. We'll Help You Find the Right Packaging."
  * Direct contact and sample request actions for instant conversion.
  */
 export function HomeLeadSection(): JSX.Element {
+  const { openQuoteModal } = useQuoteModal();
 
   return (
     <section id="quote-section" className="band-cream section-pad relative overflow-hidden" aria-labelledby="lead-heading">
@@ -47,13 +51,17 @@ export function HomeLeadSection(): JSX.Element {
 
           <Reveal variant="fade-up" delay={0.15}>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-              <Link
-                href="/contact"
+              <button
+                type="button"
+                onClick={() => {
+                  analytics.ctaClick("Get a Custom Quote", "home-lead");
+                  openQuoteModal();
+                }}
                 className="btn-primary min-h-[48px] px-8 text-sm font-bold shadow-md hover:scale-105"
               >
                 <span>Get a Custom Quote</span>
                 <ArrowRight className="h-4 w-4 icon-arrow-spring" aria-hidden="true" />
-              </Link>
+              </button>
 
               <Link
                 href="/contact?type=sample"

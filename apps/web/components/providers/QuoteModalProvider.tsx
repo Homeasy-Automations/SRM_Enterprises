@@ -33,7 +33,7 @@ export function QuoteModalProvider({ children }: { children: ReactNode }): JSX.E
 
     // Global click listener for elements with data-open-quote-modal or href="#quote"
     const handleGlobalClick = (e: MouseEvent) => {
-      const target = (e.target as HTMLElement)?.closest("[data-open-quote-modal], a[href='#quote-modal'], button[data-quote-trigger]");
+      const target = (e.target as HTMLElement)?.closest("[data-open-quote-modal], a[href='#quote'], a[href='#quote-modal'], button[data-quote-trigger]");
       if (target) {
         e.preventDefault();
         const product = target.getAttribute("data-product") || target.getAttribute("data-quote-product") || undefined;

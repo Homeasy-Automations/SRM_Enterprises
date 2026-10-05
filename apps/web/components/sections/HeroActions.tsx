@@ -30,36 +30,64 @@ export function HeroActions({
   location,
 }: HeroActionsProps): JSX.Element {
   const { openQuoteModal } = useQuoteModal();
-  const productMatch = primaryHref.match(/product=([^&]+)/);
+  const productMatch = (primaryHref || "").match(/product=([^&]+)/) || (secondaryHref || "").match(/product=([^&]+)/);
   const rawSlug = productMatch?.[1];
   const productSlug = rawSlug ? decodeURIComponent(rawSlug) : undefined;
 
-  const handlePrimaryClick = () => {
-    analytics.ctaClick(primaryLabel, location);
+  const isPrimaryQuote = /quote/i.test(primaryLabel) || primaryHref === "#quote" || primaryHref === "#quote-modal";
+  const isSecondaryQuote = secondaryLabel
+    ? /quote/i.test(secondaryLabel) || secondaryHref === "#quote" || secondaryHref === "#quote-modal"
+    : false;
+
+  const handleQuoteClick = (label: string) => {
+    analytics.ctaClick(label, location);
     openQuoteModal({ product: productSlug });
   };
 
   return (
     <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
-      <MagneticButton
-        type="button"
-        variant="primary"
-        className="w-full sm:w-auto"
-        onClick={handlePrimaryClick}
-      >
-        {primaryLabel}
-        <ArrowRight className="h-4 w-4" aria-hidden="true" />
-      </MagneticButton>
+      {isPrimaryQuote ? (
+        <MagneticButton
+          type="button"
+          variant="primary"
+          className="w-full sm:w-auto"
+          onClick={() => handleQuoteClick(primaryLabel)}
+        >
+          {primaryLabel}
+          <ArrowRight className="h-4 w-4" aria-hidden="true" />
+        </MagneticButton>
+      ) : (
+        <MagneticButton
+          href={primaryHref}
+          variant="primary"
+          className="w-full sm:w-auto"
+          onClick={() => analytics.ctaClick(primaryLabel, location)}
+        >
+          {primaryLabel}
+          <ArrowRight className="h-4 w-4" aria-hidden="true" />
+        </MagneticButton>
+      )}
 
       {secondaryLabel && secondaryHref ? (
-        <MagneticButton
-          href={secondaryHref}
-          variant="outline"
-          className="w-full sm:w-auto"
-          onClick={() => analytics.ctaClick(secondaryLabel, location)}
-        >
-          {secondaryLabel}
-        </MagneticButton>
+        isSecondaryQuote ? (
+          <MagneticButton
+            type="button"
+            variant="outline"
+            className="w-full sm:w-auto"
+            onClick={() => handleQuoteClick(secondaryLabel)}
+          >
+            {secondaryLabel}
+          </MagneticButton>
+        ) : (
+          <MagneticButton
+            href={secondaryHref}
+            variant="outline"
+            className="w-full sm:w-auto"
+            onClick={() => analytics.ctaClick(secondaryLabel, location)}
+          >
+            {secondaryLabel}
+          </MagneticButton>
+        )
       ) : null}
 
       <WhatsAppCta productName={productName} location={location} showCall={false} className="w-full sm:w-auto" />

@@ -1,10 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { ArrowRight, Eye, CheckCircle2, Box, Layers, Hammer, Warehouse, Truck, Globe, Package } from "lucide-react";
 import { galleryCategories, galleryItems, type GalleryItem } from "@/data/gallery";
 import { Reveal } from "@/components/animations/Reveal";
+import { useQuoteModal } from "@/hooks/use-quote-modal";
+import { analytics } from "@/lib/analytics";
 
 const iconMap: Record<string, typeof Box> = {
   box: Box,
@@ -18,6 +19,7 @@ const iconMap: Record<string, typeof Box> = {
 };
 
 export function GalleryInteractiveGrid(): JSX.Element {
+  const { openQuoteModal } = useQuoteModal();
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
 
@@ -210,14 +212,22 @@ export function GalleryInteractiveGrid(): JSX.Element {
             </div>
 
             <div className="mt-8 flex gap-3">
-              <Link
-                href="/contact"
+              <button
+                type="button"
                 className="flex-1 rounded-xl bg-navy py-3 text-center text-sm font-bold text-white shadow-md hover:bg-navy/90 transition-colors"
-                onClick={() => setSelectedItem(null)}
+                onClick={() => {
+                  analytics.ctaClick("Quote This Material", `gallery-${selectedItem.id}`);
+                  const item = selectedItem;
+                  setSelectedItem(null);
+                  openQuoteModal({
+                    initialMessage: `Inquiry regarding gallery item: ${item.title} (${item.category})`,
+                  });
+                }}
               >
                 Quote This Material
-              </Link>
+              </button>
               <button
+                type="button"
                 onClick={() => setSelectedItem(null)}
                 className="rounded-xl border border-navy/20 px-5 py-3 text-sm font-bold text-navy hover:bg-navy/5 transition-colors"
               >

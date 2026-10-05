@@ -9,6 +9,8 @@ import { Reveal, StaggerGroup, StaggerItem } from "@/components/animations/Revea
 import { MagneticButton } from "@/components/animations/MagneticButton";
 import { ProductArt } from "@/components/ui/art";
 import { useActiveSection } from "@/hooks/use-active-section";
+import { useQuoteModal } from "@/hooks/use-quote-modal";
+import { analytics } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 /**
@@ -19,6 +21,7 @@ import { cn } from "@/lib/utils";
  * and micro-animations.
  */
 export function ProductShowcase(): JSX.Element {
+  const { openQuoteModal } = useQuoteModal();
   const sectionIds = useMemo(() => products.map((product) => `showcase-${product.slug}`), []);
   const activeId = useActiveSection(sectionIds, 260);
   const activeSlug = activeId?.replace("showcase-", "");
@@ -185,13 +188,17 @@ export function ProductShowcase(): JSX.Element {
 
                       {/* Unified Actions */}
                       <div className="flex w-full flex-col items-center gap-3">
-                        <Link
-                          href={`/contact?product=${showcase.product.slug}`}
+                        <button
+                          type="button"
+                          onClick={() => {
+                            analytics.ctaClick("Request Quote", `showcase-${showcase.product.slug}`);
+                            openQuoteModal({ product: showcase.product.slug });
+                          }}
                           className="btn w-full justify-center text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:brightness-105"
                           style={{ background: accent }}
                         >
                           Request Quote
-                        </Link>
+                        </button>
 
                         <Link
                           href={`/products/${showcase.product.slug}`}

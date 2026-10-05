@@ -13,11 +13,12 @@ import {
   Sparkles,
   Truck,
 } from "lucide-react";
-import Link from "next/link";
 import { useState } from "react";
 import { CUSTOM_PROCESS_STEPS } from "@srm/config";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { cn } from "@/lib/utils";
+import { useQuoteModal } from "@/hooks/use-quote-modal";
+import { analytics } from "@/lib/analytics";
 
 const STEP_ICONS = [PackageSearch, Layers, PencilRuler, Hammer, PackageCheck, Truck] as const;
 
@@ -40,6 +41,7 @@ export function ProcessTimeline({
   description = "We follow a straightforward process to understand your requirement and deliver packaging material suited to your application.",
 }: ProcessTimelineProps): JSX.Element {
   const reducedMotion = useReducedMotion();
+  const { openQuoteModal } = useQuoteModal();
   const [activeStepId, setActiveStepId] = useState<string>(CUSTOM_PROCESS_STEPS[0]?.id ?? "requirement");
   const [expandedSteps, setExpandedSteps] = useState<Record<string, boolean>>({
     requirement: true,
@@ -273,13 +275,17 @@ export function ProcessTimeline({
                 </p>
               </div>
 
-              <Link
-                href="/contact"
+              <button
+                type="button"
+                onClick={() => {
+                  analytics.ctaClick("Request Custom Quote", "process-timeline");
+                  openQuoteModal();
+                }}
                 className="btn-primary shrink-0 min-h-[46px] px-6 text-sm"
               >
                 Request Custom Quote
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
+              </button>
             </div>
           </div>
         ) : null}

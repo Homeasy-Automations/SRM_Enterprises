@@ -5,6 +5,8 @@ import { ArrowRight, Layers, Palette, Ruler, Shield, Sparkles, Truck, Box, Check
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/animations/Reveal";
 import { CustomDesignArt } from "@/components/ui/art";
+import { useQuoteModal } from "@/hooks/use-quote-modal";
+import { analytics } from "@/lib/analytics";
 
 const CUSTOM_POINTS = [
   {
@@ -75,6 +77,8 @@ const CUSTOM_POINTS = [
 
 /** Section 4: Custom Packaging — Packaging Designed Around Your Requirement. */
 export function CustomPackagingHomeSection(): JSX.Element {
+  const { openQuoteModal } = useQuoteModal();
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-[#F4F9FF] via-white to-[#F8FAFC] section-pad pattern-grid" aria-labelledby="custom-packaging-heading">
       {/* Ambient background glow accents */}
@@ -228,13 +232,19 @@ export function CustomPackagingHomeSection(): JSX.Element {
               </div>
 
               <div className="mt-6 flex flex-wrap items-center gap-4">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 rounded-xl bg-navy px-6 py-3 text-xs sm:text-sm font-bold text-white shadow-sm transition-all duration-300 hover:bg-navy/90 hover:shadow-md"
+                <button
+                  type="button"
+                  onClick={() => {
+                    analytics.ctaClick("Request Custom Prototype Sample", "custom-packaging-home");
+                    openQuoteModal({
+                      initialMessage: "Inquiry for Custom Prototype Sample — please contact me regarding custom engineering and sample prototype.",
+                    });
+                  }}
+                  className="inline-flex items-center gap-2 rounded-xl bg-navy px-6 py-3 text-xs sm:text-sm font-bold text-white shadow-sm transition-all duration-300 hover:bg-navy/90 hover:shadow-md hover:scale-105"
                 >
                   <FileCheck className="h-4 w-4 text-accent" />
                   <span>Request Custom Prototype Sample</span>
-                </Link>
+                </button>
                 <Link
                   href="/contact"
                   className="text-xs sm:text-sm font-semibold text-navy-soft hover:text-accent transition-colors flex items-center gap-1"

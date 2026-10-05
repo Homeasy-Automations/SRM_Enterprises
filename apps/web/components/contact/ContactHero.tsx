@@ -3,15 +3,22 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, MessageCircle, ShieldCheck, Sparkles, Truck } from "lucide-react";
-import { useQuoteModal } from "@/hooks/use-quote-modal";
 import { getWhatsAppLink } from "@/data/company";
 import { Reveal } from "@/components/animations/Reveal";
 
 export function ContactHero(): JSX.Element {
-  const { openQuoteModal } = useQuoteModal();
   const whatsappUrl = getWhatsAppLink(
     "Hello SRM Enterprises, I have a packaging requirement and would like to discuss specifications and pricing."
   );
+
+  const scrollToInquiry = () => {
+    const el = document.getElementById("inquiry-form-card");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.location.hash = "#inquiry-form-card";
+    }
+  };
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-[#F3F9FF] via-white to-white pt-28 pb-16 sm:pt-36 sm:pb-20 lg:pt-40 lg:pb-24">
@@ -74,7 +81,7 @@ export function ContactHero(): JSX.Element {
               <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <button
                   type="button"
-                  onClick={() => openQuoteModal()}
+                  onClick={scrollToInquiry}
                   className="btn-primary flex items-center justify-center gap-2 py-4 px-8 text-base shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all"
                 >
                   <span>Start an Inquiry</span>

@@ -14,6 +14,7 @@ import { IndustryArtwork, ProductArt } from "@/components/ui/art";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/animations/Reveal";
 import { TiltCard } from "@/components/animations/TiltCard";
 import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
+import { QuoteTrigger } from "@/components/buttons/QuoteTrigger";
 
 /** One dynamic template drives all six industry pages. */
 /**
@@ -262,9 +263,9 @@ export default function IndustryDetailPage({ params }: { params: { slug: string 
                 Custom packaging process
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
-              <Link href="/contact" className="btn-outline">
+              <QuoteTrigger className="btn-outline" product={industry.slug} location={`industry-${industry.slug}-custom`}>
                 Request a Quote
-              </Link>
+              </QuoteTrigger>
             </div>
           </div>
         </div>
