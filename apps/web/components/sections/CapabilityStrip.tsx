@@ -40,7 +40,7 @@ const TRUST_CAPABILITIES = [
 export function CapabilityStrip(): JSX.Element {
   return (
     <section className="band-sky pattern-dots py-6 sm:py-8 lg:py-10 relative overflow-hidden" aria-label="Core Capabilities">
-      <div className="container-page">
+      <div className="mx-auto w-full max-w-9xl px-4 sm:px-6 lg:px-8">
         <StaggerGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5" stagger={0.08}>
           {TRUST_CAPABILITIES.map((item, idx) => {
             const Icon = item.icon;

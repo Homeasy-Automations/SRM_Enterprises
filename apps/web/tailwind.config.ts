@@ -65,6 +65,10 @@ const config: Config = {
         "3xl": "28px",
         blob: "42% 58% 63% 37% / 41% 44% 56% 59%",
       },
+      maxWidth: {
+        "8xl": "88rem",
+        "9xl": "96rem",
+      },
       boxShadow: {
         soft: "0 10px 30px -12px rgba(18, 41, 74, 0.16)",
         card: "0 18px 45px -22px rgba(18, 41, 74, 0.28)",

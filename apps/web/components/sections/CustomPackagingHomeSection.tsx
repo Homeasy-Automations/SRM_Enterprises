@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { ArrowRight, Layers, Palette, Ruler, Shield, Sparkles, Truck, Box, CheckCircle2, FileCheck, Cpu } from "lucide-react";
+import Image from "next/image";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/animations/Reveal";
-import { CustomDesignArt } from "@/components/ui/art";
 import { useQuoteModal } from "@/hooks/use-quote-modal";
 import { analytics } from "@/lib/analytics";
 
@@ -183,21 +183,23 @@ export function CustomPackagingHomeSection(): JSX.Element {
         {/* Integrated CAD & Engineering Specification Blueprint Banner */}
         <div className="mt-8 sm:mt-10 rounded-3xl border border-navy/10 bg-white p-6 sm:p-8 shadow-card">
           <div className="grid items-center gap-8 lg:grid-cols-12">
-            {/* Visual CAD Blueprint */}
-            <div className="lg:col-span-5 relative flex items-center justify-center rounded-2xl bg-gradient-to-br from-navy/[0.03] to-navy/[0.08] p-6 border border-navy/5 overflow-hidden">
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 opacity-15"
-                style={{
-                  backgroundImage: "radial-gradient(#1E6FFF 1px, transparent 1px)",
-                  backgroundSize: "16px 16px",
-                }}
-              />
-              <div className="relative z-10 w-full max-w-xs">
-                <CustomDesignArt accent="#1E6FFF" className="h-40 w-full drop-shadow-sm" title="Custom packaging engineering illustration" />
-                <div className="mt-2 flex items-center justify-between text-[11px] font-mono font-semibold text-navy/70 border-t border-navy/10 pt-2">
-                  <span>Tolerance: ±1mm</span>
-                  <span>CAD Matched</span>
+            {/* Visual CAD Blueprint & Real Custom Packaging Image */}
+            <div className="lg:col-span-5 relative overflow-hidden rounded-2xl border border-navy/10 bg-navy/5 shadow-sm group">
+              <div className="relative aspect-[4/3] w-full overflow-hidden">
+                <Image
+                  src="/images/packagings/custom-cad.png"
+                  alt="Custom CAD Engineered Packaging with Precision Die-Cut Foam Fitments"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between rounded-xl bg-white/95 backdrop-blur-md px-3.5 py-2 text-[11px] font-mono font-semibold text-navy shadow-sm border border-white/60">
+                  <span className="flex items-center gap-1.5 text-accent-deep font-sans font-bold">
+                    <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                    CAD & CNC Prototyped
+                  </span>
+                  <span className="text-navy-soft">Tolerance: ±1mm</span>
                 </div>
               </div>
             </div>

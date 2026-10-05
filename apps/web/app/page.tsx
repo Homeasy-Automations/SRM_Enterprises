@@ -13,7 +13,6 @@ import { QualityFocusSection } from "@/components/sections/QualityFocusSection";
 import { CustomerTrustSection } from "@/components/sections/CustomerTrustSection";
 import { LocationsHomeSection } from "@/components/sections/LocationsHomeSection";
 import { CaseStudiesSection } from "@/components/sections/CaseStudiesSection";
-import { GalleryHomeSection } from "@/components/sections/GalleryHomeSection";
 import { HomeLeadSection } from "@/components/sections/HomeLeadSection";
 import { JsonLd } from "@/components/sections/JsonLd";
 import { buildMetadata, itemListJsonLd } from "@/lib/seo";
@@ -105,7 +104,7 @@ export default function HomePage(): JSX.Element {
       <CaseStudiesSection />
 
       {/* 14 — Gallery Proof */}
-      <GalleryHomeSection />
+      {/* <GalleryHomeSection /> */}
 
       {/* 15 — Final Lead Generation & B2B Quote Form */}
       <HomeLeadSection />

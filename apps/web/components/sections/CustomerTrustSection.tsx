@@ -30,7 +30,8 @@ const TESTIMONIALS = [
   {
     quote:
       "SRM helped us standardize our packaging across multiple component sizes and significantly simplify procurement. Instead of juggling box makers and foam vendors, we now have a single technical partner for our entire assembly line.",
-    author: "Senior Procurement Manager",
+    name: "Sanjay Seth",
+    role: "Assistant Manager – Procurement",
     org: "Automotive OEM Tier-1 Supplier",
     location: "Gurugram / Manesar Corridor",
     industry: "Automotive",
@@ -40,7 +41,8 @@ const TESTIMONIALS = [
   {
     quote:
       "Consistently accurate 5-ply bursting factor and zero moisture sogginess during inter-state monsoon deliveries. Their scheduled buffer inventory keeps our daily dispatch line completely uninterrupted.",
-    author: "Head of Supply Chain & Logistics",
+    name: "Rajeshwar Sharma",
+    role: "Head of Supply Chain & Logistics",
     org: "Industrial Pump & Heavy Machinery OEM",
     location: "Faridabad Industrial Cluster",
     industry: "Heavy Engineering",
@@ -50,7 +52,8 @@ const TESTIMONIALS = [
   {
     quote:
       "The custom die-cut EPE foam trays fit our machined gears with zero play. Transit reject rates dropped to zero from day one, and their sample turnaround time for new part drawings is under 48 hours.",
-    author: "Quality Assurance Lead",
+    name: "Alok Mukherjee",
+    role: "Quality Assurance Lead",
     org: "Precision CNC Gear Components Hub",
     location: "NCR Industrial Belt",
     industry: "Precision Machining",
@@ -121,8 +124,9 @@ export function CustomerTrustSection(): JSX.Element {
                 <div className="mt-6 pt-4 border-t border-navy/10 flex items-center justify-between">
                   <div>
                     <h4 className="font-display text-xs sm:text-sm font-bold text-navy">
-                      {item.author}
+                      {item.name}
                     </h4>
+                    <p className="text-[11px] font-semibold text-accent-deep">{item.role}</p>
                     <p className="text-[11px] font-medium text-navy-soft">{item.org}</p>
                     <p className="text-[10px] text-navy/50">{item.location}</p>
                   </div>

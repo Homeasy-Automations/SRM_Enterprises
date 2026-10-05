@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Sliders, DollarSign, Truck } from "lucide-react";
+import { ArrowRight, CheckCircle2, Sliders, IndianRupee, Truck } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/animations/Reveal";
 import { TiltCard } from "@/components/animations/TiltCard";
@@ -22,7 +22,7 @@ const VALUE_POINTS = [
   {
     title: "Competitive Value",
     description: "Packaging solutions designed to meet operational requirements while maintaining competitive pricing.",
-    icon: DollarSign,
+    icon: IndianRupee,
     color: "#19B26B",
   },
   {

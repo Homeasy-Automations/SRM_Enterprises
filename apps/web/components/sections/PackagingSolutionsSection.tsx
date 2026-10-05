@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { ArrowRight, Factory, Repeat, Sliders, Truck } from "lucide-react";
+import Image from "next/image";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/animations/Reveal";
-import { FactoryArt } from "@/components/ui/art";
 
 const CAPABILITY_HIGHLIGHTS = [
   {
@@ -52,8 +52,24 @@ export function PackagingSolutionsSection(): JSX.Element {
                 Planned buffer stocks, automated conversion lines and coordinated dispatch lines supporting
                 industrial facilities and OEM clusters across Pan India.
               </p>
-              <div className="mt-6 rounded-2xl bg-slate-50 p-4">
-                <FactoryArt accent="#1E6FFF" className="h-32 w-full" title="Packaging facility illustration" />
+              <div className="mt-6 relative overflow-hidden rounded-2xl border border-navy/10 bg-slate-100 shadow-sm group">
+                <div className="relative aspect-[16/10] w-full overflow-hidden">
+                  <Image
+                    src="/images/integrated.png"
+                    alt="Integrated Supply Infrastructure - Automated Corrugation Lines & Dispatch Staging"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between rounded-lg bg-white/95 backdrop-blur-md px-3 py-1.5 text-[11px] font-mono font-semibold text-navy shadow-xs border border-white/60">
+                    <span className="flex items-center gap-1.5 font-sans font-bold text-accent-deep">
+                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                      Live Facility &amp; Logistics
+                    </span>
+                    <span className="text-navy-soft">Pan-India Dispatch</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

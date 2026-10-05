@@ -20,7 +20,6 @@ import { JsonLd } from "@/components/sections/JsonLd";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/animations/Reveal";
 import { AnimatedCounter } from "@/components/animations/AnimatedCounter";
-import { CustomerTrustSection } from "@/components/sections/CustomerTrustSection";
 import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
@@ -128,6 +127,7 @@ export default function AboutPage(): JSX.Element {
         description="One reliable partner for all your industrial packaging needs — so your procurement and packing teams can stop coordinating five separate vendors and rely on consistent material quality."
         breadcrumbs={breadcrumbs}
         accentColor="#1E6FFF"
+        backgroundImage="/images/About/about_hero.png"
       >
         <HeroActions
           primaryLabel="Get a Quote"
@@ -139,18 +139,18 @@ export default function AboutPage(): JSX.Element {
       </PageHero>
 
       {/* 2 — Genuine Figures Strip with Counter Animation */}
-      <section className="border-b border-navy/10 bg-white py-8" aria-label="Key Numbers">
+      <section className="border-b border-navy/10 bg-white py-2" aria-label="Key Numbers">
         <div className="container-page">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
             {GENUINE_NUMBERS.map((stat) => (
-              <div key={stat.label} className="flex flex-col items-center p-4 rounded-2xl bg-slate-50/70 border border-navy/5">
+              <div key={stat.label} className="flex flex-col items-center p-3 rounded-2xl bg-slate-50/70 border border-navy/5">
                 <span className="font-display text-4xl sm:text-5xl font-extrabold text-navy">
                   <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                 </span>
                 <span className="mt-2 text-xs sm:text-sm font-bold uppercase tracking-wider" style={{ color: stat.color }}>
                   {stat.label}
                 </span>
-                <span className="mt-1 text-xs text-navy-soft max-w-[200px]">
+                <span className="text-xs text-navy-soft max-w-[200px]">
                   {stat.desc}
                 </span>
               </div>
@@ -289,7 +289,7 @@ export default function AboutPage(): JSX.Element {
             <div className="group overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-soft">
               <div className="relative h-52 w-full overflow-hidden">
                 <Image
-                  src="/images/hero3.png"
+                  src="/images/About/corrugation.png"
                   alt="Corrugated box manufacturing and stacking"
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
@@ -307,7 +307,7 @@ export default function AboutPage(): JSX.Element {
             <div className="group overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-soft">
               <div className="relative h-52 w-full overflow-hidden">
                 <Image
-                  src="/images/hero4.png"
+                  src="/images/About/cnc_foam.png"
                   alt="Custom EPE foam die cutting and cushioning"
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
@@ -325,7 +325,7 @@ export default function AboutPage(): JSX.Element {
             <div className="group overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-soft">
               <div className="relative h-52 w-full overflow-hidden">
                 <Image
-                  src="/images/hero2.png"
+                  src="/images/About/warehouse.png"
                   alt="Warehouse inventory and truck dispatch loading"
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
@@ -435,7 +435,7 @@ export default function AboutPage(): JSX.Element {
       </section>
 
       {/* 8 — Customer Trust Section */}
-      <CustomerTrustSection />
+      {/* <CustomerTrustSection /> */}
 
       {/* 9 — Final CTA */}
       <CtaBanner

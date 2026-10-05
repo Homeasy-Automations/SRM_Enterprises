@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import { Blobs } from "@/components/ui/Blobs";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Reveal } from "@/components/animations/Reveal";
@@ -20,6 +21,10 @@ interface PageHeroProps {
   waveColor?: string;
   align?: "left" | "center";
   size?: "default" | "compact";
+  /** Optional background image with left-side readability overlay. */
+  backgroundImage?: string;
+  /** Keep the bottom edge straight instead of a wavy divider. */
+  straightBottom?: boolean;
 }
 
 /**
@@ -38,29 +43,63 @@ export function PageHero({
   waveColor = "#FFFFFF",
   align = "left",
   size = "default",
+  backgroundImage,
+  straightBottom = false,
 }: PageHeroProps): JSX.Element {
+  const isLeft = align === "left" || Boolean(backgroundImage);
+  const isStraight = straightBottom || Boolean(backgroundImage);
+
   return (
     <section
-      className="relative isolate overflow-hidden"
+      className={cn(
+        "relative isolate overflow-hidden",
+        isStraight && "border-b border-navy/10",
+      )}
       data-category={categorySlug}
       style={accentColor ? { ["--accent" as string]: accentColor } : undefined}
       aria-labelledby="page-hero-heading"
     >
-      <Blobs count={4} />
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 top-0 -z-10 h-full bg-gradient-to-b from-accent-soft/70 via-white to-white"
-      />
+      {backgroundImage ? (
+        <div className="absolute inset-0 -z-20 overflow-hidden">
+          <Image
+            src={backgroundImage}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-right"
+          />
+          {/* White overlay on left side moved further left so right side remains completely unobstructed */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-gradient-to-r from-white via-white/95 via-40% to-transparent sm:via-white/90 sm:via-35% lg:via-white/90 lg:via-32% lg:to-transparent lg:to-55%"
+          />
+        </div>
+      ) : (
+        <>
+          <Blobs count={4} />
+          <div
+            aria-hidden="true"
+            className="absolute inset-x-0 top-0 -z-10 h-full bg-gradient-to-b from-accent-soft/70 via-white to-white"
+          />
+        </>
+      )}
 
       <div
         className={cn(
-          "container-page relative z-10",
+          "mx-auto w-full max-w-9xl px-4 sm:px-6 lg:px-8 relative z-10",
           size === "compact" ? "pb-12 pt-8 sm:pb-16 sm:pt-10" : "pb-16 pt-9 sm:pb-20 sm:pt-12",
         )}
       >
         <Breadcrumbs items={breadcrumbs} accentColor={accentColor} className="mb-6" />
 
-        <div className={cn("flex max-w-4xl flex-col gap-5", align === "center" && "mx-auto items-center text-center")}>
+        <div
+          className={cn(
+            "flex flex-col gap-5 text-left items-start",
+            backgroundImage ? "max-w-xl lg:max-w-2xl" : "max-w-4xl",
+            !isLeft && "mx-auto items-center text-center",
+          )}
+        >
           {eyebrow ? (
             <Reveal variant="kinetic-pop" duration={0.45}>
               <span className="eyebrow badge-interactive cursor-default shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md">
@@ -90,7 +129,7 @@ export function PageHero({
               <div
                 className={cn(
                   "max-w-3xl text-base leading-relaxed text-navy-soft sm:text-lg",
-                  align === "center" && "mx-auto",
+                  !isLeft && "mx-auto",
                 )}
               >
                 {description}
@@ -106,7 +145,7 @@ export function PageHero({
         </div>
       </div>
 
-      <WavyDivider color={waveColor} className="relative z-0" />
+      {!isStraight && <WavyDivider color={waveColor} className="relative z-0" />}
     </section>
   );
 }
