@@ -39,6 +39,11 @@ export function MediaPanel({
 }: MediaPanelProps): JSX.Element {
   const slot = getImageSlot(imageKey);
   const hasPhoto = Boolean(slot?.src);
+  const imageSrc = slot?.src
+    ? slot.src.startsWith("/")
+      ? slot.src
+      : `/images/${slot.src}`
+    : null;
 
   return (
     <div
@@ -62,13 +67,13 @@ export function MediaPanel({
         />
       ) : null}
 
-      {hasPhoto && slot ? (
+      {hasPhoto && slot && imageSrc ? (
         <Image
-          src={`/images/${slot.src ?? ""}`}
+          src={imageSrc}
           alt={slot.alt}
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover"
+          className="object-cover transition-transform duration-700 group-hover/media:scale-105"
           priority={priority}
         />
       ) : (
@@ -79,7 +84,7 @@ export function MediaPanel({
 
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-1.5"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-1.5 z-10"
         style={{ background: `linear-gradient(90deg, ${accent}, ${accent}55, transparent)` }}
       />
     </div>

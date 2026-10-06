@@ -114,14 +114,14 @@ export default function IndustriesPage(): JSX.Element {
                           <span className="h-2 w-2 rounded-full" style={{ background: industry.color }} />
                           Pan-India Supply
                         </span>
-                        <Link
+                        {/* <Link
                           href={`/industries/${industry.slug}`}
                           className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-accent-deep hover:underline transition-all duration-300 hover:scale-105 hover:translate-x-1"
                           style={{ color: industry.color }}
                         >
                           Dedicated Page
                           <ArrowRight className="h-3.5 w-3.5 icon-arrow-spring" aria-hidden="true" />
-                        </Link>
+                        </Link> */}
                       </div>
                     </div>
 

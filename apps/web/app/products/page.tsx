@@ -40,6 +40,7 @@ export default function ProductsPage(): JSX.Element {
         description="Corrugated boxes, EPE Foam Packaging, LDPE Bubble & Protective Packaging, poly bags & films and packaging accessories — supplied as standard material or built to your specification, in trial quantities or bulk."
         breadcrumbs={breadcrumbs}
         accentColor="#1E6FFF"
+        backgroundImage="/images/Products/product_hero.png"
       >
         <HeroActions
           primaryLabel="Get a Quote"
