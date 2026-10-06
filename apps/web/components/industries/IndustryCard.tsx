@@ -1,12 +1,21 @@
 "use client";
 
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import type { Industry } from "@/data/industries";
 import { TiltCard } from "@/components/animations/TiltCard";
 import { CategoryIcon } from "@/components/ui/CategoryIcon";
-import { IndustryArtwork } from "@/components/ui/art";
 import { analytics } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
+
+const INDUSTRY_PACKAGING_IMAGES: Record<string, string> = {
+  automotive: "/images/packagings/automotive.png",
+  engineering: "/images/packagings/engineering.png",
+  electronics: "/images/packagings/electronics.png",
+  pharma: "/images/packagings/pharma.png",
+  food: "/images/packagings/fmcg.png",
+  logistics: "/images/packagings/ecommerce.png",
+};
 
 interface IndustryCardProps {
   industry: Industry;
@@ -48,12 +57,13 @@ export function IndustryCard({ industry, className, rail = false }: IndustryCard
         </h3>
         <p className="text-sm leading-relaxed text-navy-soft">{industry.tagline}</p>
 
-        <div className="mt-auto overflow-hidden rounded-2xl" style={{ background: `${industry.color}12` }}>
-          <IndustryArtwork
-            iconKey={industry.icon}
-            accent={industry.color}
-            className="media-zoom h-28 w-full transition-transform duration-700 group-hover:scale-110"
-            title={`${industry.name} illustration`}
+        <div className="mt-auto relative h-28 w-full overflow-hidden rounded-2xl" style={{ background: `${industry.color}12` }}>
+          <Image
+            src={INDUSTRY_PACKAGING_IMAGES[industry.slug] ?? "/images/packagings/automotive.png"}
+            alt={`${industry.name} packaging`}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="media-zoom object-cover transition-transform duration-700 group-hover:scale-110"
           />
         </div>
 
