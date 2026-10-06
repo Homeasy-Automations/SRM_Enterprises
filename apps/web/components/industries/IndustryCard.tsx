@@ -12,8 +12,11 @@ const INDUSTRY_PACKAGING_IMAGES: Record<string, string> = {
   automotive: "/images/packagings/automotive.png",
   engineering: "/images/packagings/engineering.png",
   electronics: "/images/packagings/electronics.png",
+  pharmaceuticals: "/images/packagings/pharma.png",
   pharma: "/images/packagings/pharma.png",
+  "food-fmcg": "/images/packagings/fmcg.png",
   food: "/images/packagings/fmcg.png",
+  "ecommerce-logistics": "/images/packagings/ecommerce.png",
   logistics: "/images/packagings/ecommerce.png",
 };
 
@@ -59,7 +62,7 @@ export function IndustryCard({ industry, className, rail = false }: IndustryCard
 
         <div className="mt-auto relative h-28 w-full overflow-hidden rounded-2xl" style={{ background: `${industry.color}12` }}>
           <Image
-            src={INDUSTRY_PACKAGING_IMAGES[industry.slug] ?? "/images/packagings/automotive.png"}
+            src={INDUSTRY_PACKAGING_IMAGES[industry.slug] ?? INDUSTRY_PACKAGING_IMAGES[industry.icon] ?? "/images/packagings/automotive.png"}
             alt={`${industry.name} packaging`}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
