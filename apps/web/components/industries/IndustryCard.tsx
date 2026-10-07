@@ -9,15 +9,15 @@ import { analytics } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 const INDUSTRY_PACKAGING_IMAGES: Record<string, string> = {
-  automotive: "/images/packagings/automotive.png",
-  engineering: "/images/packagings/engineering.png",
-  electronics: "/images/packagings/electronics.png",
-  pharmaceuticals: "/images/packagings/pharma.png",
-  pharma: "/images/packagings/pharma.png",
-  "food-fmcg": "/images/packagings/fmcg.png",
-  food: "/images/packagings/fmcg.png",
-  "ecommerce-logistics": "/images/packagings/ecommerce.png",
-  logistics: "/images/packagings/ecommerce.png",
+  automotive: "/images/Industries/industries_automotive.png",
+  engineering: "/images/Industries/industries_engineering.png",
+  electronics: "/images/Industries/industries_electrical.png",
+  pharmaceuticals: "/images/Industries/industries_pharma.png",
+  pharma: "/images/Industries/industries_pharma.png",
+  "food-fmcg": "/images/Industries/industries_fmcg.png",
+  food: "/images/Industries/industries_fmcg.png",
+  "ecommerce-logistics": "/images/Industries/industries_logistics.png",
+  logistics: "/images/Industries/industries_logistics.png",
 };
 
 interface IndustryCardProps {

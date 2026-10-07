@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { AlertTriangle, ArrowRight, ShieldCheck } from "lucide-react";
 import { industries, industryTagline } from "@/data/industries";
@@ -38,6 +39,7 @@ export default function IndustriesPage(): JSX.Element {
         description={industryTagline}
         breadcrumbs={breadcrumbs}
         accentColor="#8B5CF6"
+        backgroundImage="/images/Industries/industries_hero.png"
       >
         <HeroActions
           primaryLabel="Get a Quote"
@@ -212,15 +214,31 @@ export default function IndustriesPage(): JSX.Element {
                           </div>
 
                           <div
-                            className="mt-4 overflow-hidden rounded-xl border border-navy/10 transition-all duration-500 group-hover/chamber:scale-[1.02] group-hover/chamber:shadow-md"
+                            className="mt-4 relative h-40 w-full overflow-hidden rounded-xl border border-navy/10 transition-all duration-500 group-hover/chamber:scale-[1.02] group-hover/chamber:shadow-md"
                             style={{ background: `${industry.color}0D` }}
                           >
-                            <IndustryArtwork
-                              iconKey={industry.icon}
-                              accent={industry.color}
-                              className="media-zoom h-36 w-full object-contain p-2 transition-transform duration-700 group-hover/chamber:scale-110"
-                              title={`${industry.name} illustration`}
+                            <Image
+                              src={`/images/Industries/industries_${
+                                industry.slug === "food-fmcg"
+                                  ? "fmcg"
+                                  : industry.slug === "ecommerce-logistics"
+                                  ? "logistics"
+                                  : industry.slug === "electronics"
+                                  ? "electrical"
+                                  : industry.slug === "pharmaceuticals"
+                                  ? "pharma"
+                                  : industry.slug
+                              }.png`}
+                              alt={`${industry.name} packaging`}
+                              fill
+                              sizes="(max-width: 1024px) 100vw, 33vw"
+                              className="media-zoom object-cover transition-transform duration-700 group-hover/chamber:scale-110"
                             />
+                            <div className="absolute inset-0 bg-gradient-to-t from-navy/55 via-transparent to-transparent pointer-events-none" />
+                            <div className="absolute bottom-2 left-2.5 right-2.5 flex items-center justify-between text-[11px] font-semibold text-white/95 drop-shadow-sm">
+                              <span>{industry.shortName} Spec</span>
+                              <span className="text-white/75 font-mono text-[10px]">OEM Approved</span>
+                            </div>
                           </div>
                         </div>
 

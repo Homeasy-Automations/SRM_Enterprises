@@ -54,6 +54,7 @@ export default function SolutionsPage(): JSX.Element {
         description="Products answer what we supply. Solutions answer what problem we solve — from preventing transit vibration micro-dents and surface scratches to heavy-duty export freight and moisture-barrier preservation."
         breadcrumbs={breadcrumbs}
         accentColor="#1E6FFF"
+        backgroundImage="/images/solutions_hero.png"
       >
         <HeroActions
           primaryLabel="Discuss Your Requirement"

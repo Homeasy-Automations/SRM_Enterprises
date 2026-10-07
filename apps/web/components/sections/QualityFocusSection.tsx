@@ -1,9 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { Ruler, Sliders, Truck, ShieldCheck } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { StaggerGroup, StaggerItem } from "@/components/animations/Reveal";
-import { QualityArt } from "@/components/ui/art";
 
 const QUALITY_POINTS = [
   {
@@ -50,8 +50,22 @@ export function QualityFocusSection(): JSX.Element {
               <p className="mt-2 text-sm leading-relaxed text-navy-soft">
                 From incoming kraft reels and foam rolls to pre-dispatch dimensional checks, our quality control ensures seamless line packing.
               </p>
-              <div className="mt-6 rounded-2xl bg-slate-50 p-4">
-                <QualityArt accent="#19B26B" className="h-32 w-full" title="Quality control illustration" />
+              <div className="mt-6 relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-navy/10 bg-slate-100 shadow-sm group">
+                <Image
+                  src="/images/hero6.png"
+                  alt="Quality control, prototype inspection and dimensional tolerance verification"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between rounded-lg bg-white/95 backdrop-blur-md px-3 py-1.5 text-[11px] font-mono font-semibold text-navy shadow-xs border border-white/60">
+                  <span className="flex items-center gap-1.5 font-sans font-bold text-accent-deep">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    Zero-Play Tolerance Checks
+                  </span>
+                  <span className="text-navy-soft">Batch Verified</span>
+                </div>
               </div>
             </div>
           </div>

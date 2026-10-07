@@ -35,6 +35,7 @@ export default function GalleryPage(): JSX.Element {
         description="Take a closer look at our packaging products, customized solutions, handling processes, facility infrastructure, and completed industrial consignments."
         breadcrumbs={breadcrumbs}
         accentColor="#E86620"
+        backgroundImage="/images/integrated.png"
       >
         <HeroActions
           primaryLabel="Request a Sample"
