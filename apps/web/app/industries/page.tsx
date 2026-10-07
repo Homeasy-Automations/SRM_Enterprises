@@ -9,7 +9,7 @@ import { HeroActions } from "@/components/sections/HeroActions";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { JsonLd } from "@/components/sections/JsonLd";
 import { CategoryIcon } from "@/components/ui/CategoryIcon";
-import { IndustryArtwork } from "@/components/ui/art";
+// import { IndustryArtwork } from "@/components/ui/art";
 import { StaggerGroup, StaggerItem, Reveal } from "@/components/animations/Reveal";
 import { buildMetadata, breadcrumbJsonLd, itemListJsonLd } from "@/lib/seo";
 
@@ -218,17 +218,16 @@ export default function IndustriesPage(): JSX.Element {
                             style={{ background: `${industry.color}0D` }}
                           >
                             <Image
-                              src={`/images/Industries/industries_${
-                                industry.slug === "food-fmcg"
+                              src={`/images/Industries/industries_${industry.slug === "food-fmcg"
                                   ? "fmcg"
                                   : industry.slug === "ecommerce-logistics"
-                                  ? "logistics"
-                                  : industry.slug === "electronics"
-                                  ? "electrical"
-                                  : industry.slug === "pharmaceuticals"
-                                  ? "pharma"
-                                  : industry.slug
-                              }.png`}
+                                    ? "logistics"
+                                    : industry.slug === "electronics"
+                                      ? "electrical"
+                                      : industry.slug === "pharmaceuticals"
+                                        ? "pharma"
+                                        : industry.slug
+                                }.png`}
                               alt={`${industry.name} packaging`}
                               fill
                               sizes="(max-width: 1024px) 100vw, 33vw"
