@@ -19,13 +19,15 @@ const envSchema = z.object({
     .string()
     .min(1, "CLIENT_URL is required — comma separated list of allowed browser origins."),
 
-  RESEND_API_KEY: z.string().min(1, "RESEND_API_KEY is required."),
+  RESEND_API_KEY: z.string().optional().default(""),
   RESEND_FROM_EMAIL: z
     .string()
-    .min(3, "RESEND_FROM_EMAIL is required, e.g. SRM Enterprises <noreply@your-domain.com>."),
+    .optional()
+    .default("SRM Enterprises <noreply@example.com>"),
   CONTACT_RECEIVER_EMAIL: z
     .string()
-    .email("CONTACT_RECEIVER_EMAIL must be a valid email address."),
+    .optional()
+    .default("info@example.com"),
 
   IP_HASH_SALT: z
     .string()
