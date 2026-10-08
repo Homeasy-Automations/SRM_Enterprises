@@ -139,68 +139,41 @@ transitions with a coloured wipe panel, and `prefers-reduced-motion` support thr
 
 ```
 srm-enterprises/
-├── package.json                     # npm workspaces + root scripts
-├── tsconfig.base.json               # shared strict compiler options
-├── .prettierrc.json / .prettierignore
-├── .gitignore                       # ignores .env and .env.local
+├── package.json                     # Root scripts for running/building both
+├── .gitignore                       # Ignores .env and .env.local
 ├── README.md
-├── apps/web/                        # Next.js frontend
-│   ├── .env.example
-│   ├── next.config.mjs              # headers, image config, optional /api proxy
-│   ├── tailwind.config.ts           # palette, radii, shadows, keyframes
-│   ├── app/
-│   │   ├── layout.tsx               # fonts, metadata, providers, navbar, footer, JSON-LD
-│   │   ├── template.tsx             # route transition wrapper
-│   │   ├── globals.css              # design tokens, moods, category scopes, components
-│   │   ├── page.tsx  about/  products/  products/[slug]/
-│   │   ├── industries/  industries/[slug]/  custom-packaging/  why-us/
-│   │   ├── contact/  privacy/  terms/
-│   │   ├── loading.tsx  error.tsx  not-found.tsx
-│   │   └── sitemap.ts  robots.ts
-│   ├── components/
-│   │   ├── layout/       Site shell: Footer, SkipToContent, Analytics, LoadingScreen,
-│   │   │                 LazyOverlays (dynamic imports for heavy motion UI)
-│   │   ├── navigation/   Navbar, MegaMenu, MobileDrawer
-│   │   ├── hero/         HomeHero, PageHero, FloatingIllustrations, RotatingTagline
-│   │   ├── products/     ProductCard, PackageCategorySection, RelatedCategories
-│   │   ├── industries/   IndustryCard
-│   │   ├── forms/        QuoteForm, FormField, ContactInfoPanel, WhatsAppCta, ApiStatusBadge
-│   │   ├── sections/     CapabilityStrip, AboutPreview, ProductShowcase, WhyChooseUs,
-│   │   │                 IndustriesSection, ProcessTimeline, CtaBanner, ServiceArea,
-│   │   │                 FeatureGrid, FaqAccordion, HeroActions, JsonLd, LegalPage
-│   │   ├── ui/           SectionHeading, Blobs, MediaPanel, Accordion, Breadcrumbs, Logo,
-│   │   │                 CategoryIcon, ColorMoodSwitcher, FloatingActions, ScrollProgressBar,
-│   │   │                 art/ (BoxArt, FoamArt, BubbleArt, FilmArt, AccessoryArt, IndustryArt, SceneArt)
-│   │   ├── animations/   Reveal/StaggerGroup/StaggerItem, TiltCard, MagneticButton,
-│   │   │                 Marquee, WavyDivider, PageTransition
-│   │   └── providers/    ColorMoodProvider
-│   ├── data/             products.ts, industries.ts, company.ts, navigation.ts, faq.ts
-│   ├── hooks/            use-media-query, use-reduced-motion, use-body-scroll-lock,
-│   │                     use-scroll-progress, use-active-section, use-color-mood, use-tilt, use-magnetic
-│   ├── lib/              api.ts, constants.ts, seo.ts, utils.ts, analytics.ts, image-config.ts
-│   ├── public/           icon.svg, images/ (drop real photos here)
-│   └── styles/           README explaining where the styles actually live
-├── services/api/                    # Express API
-│   ├── .env.example
-│   ├── tsup.config.ts               # bundles @srm/* workspace packages into dist/server.js
-│   └── src/
-│       ├── app.ts                   # middleware order: helmet → cors → body → sanitize → logs → limits → routes
-│       ├── server.ts                # bootstrap, listeners, graceful shutdown
-│       ├── config/                  # env.ts (Zod-validated), db.ts, cors.ts
-│       ├── controllers/             # health.controller.ts, inquiry.controller.ts
-│       ├── services/                # inquiry.service.ts, mailer.service.ts
-│       ├── repositories/            # contact-inquiry.repository.ts (all Mongoose calls)
-│       ├── models/                  # contact-inquiry.model.ts
-│       ├── routes/                  # index.ts, health.routes.ts, inquiry.routes.ts
-│       ├── validations/             # re-exports of the shared Zod schema
-│       ├── middleware/              # async-handler, validate-request, rate-limiters, error-handler
-│       ├── utils/                   # logger, errors, sanitize-text, hash
-│       ├── emails/                  # layout, inquiry-notification, inquiry-confirmation
-│       └── types/                   # inquiry.ts, express.d.ts
-└── packages/
-    ├── shared/   # constants, domain types re-export, Zod inquiry schema (used by web + api)
-    ├── types/    # pure TypeScript domain types
-    └── config/   # brand, routes, colours, rate limits, custom-process steps
+│
+├── frontend/                        # Standalone Next.js Frontend (Vercel / Netlify)
+│   ├── package.json                 # Independent package.json (no workspace dependencies)
+│   ├── tsconfig.json                # Standalone TSConfig with local path aliases
+│   ├── .env.example / .env.local
+│   ├── next.config.mjs
+│   ├── tailwind.config.ts
+│   ├── app/                         # App router pages & layouts
+│   ├── components/                  # UI, navigation, sections, forms, art
+│   ├── config/                      # Brand, routes, colors & limit constants
+│   ├── types/                       # Shared domain types
+│   ├── shared/                      # Inquiry validation schema & constants
+│   ├── data/                        # Catalog products, industries, FAQs
+│   ├── hooks/                       # UI hooks
+│   └── public/                      # Static assets & images
+│
+└── backend/                         # Standalone Express API (Render / Railway / Docker)
+    ├── package.json                 # Independent package.json (no workspace dependencies)
+    ├── tsconfig.json                # Standalone TSConfig
+    ├── tsup.config.ts               # Bundles self-contained dist/server.js
+    ├── Dockerfile                   # Standalone container build
+    ├── .env.example / .env
+    └── src/
+        ├── app.ts                   # Express app & middleware chain
+        ├── server.ts                # Bootstrap, MongoDB connection, listeners
+        ├── config/                  # env.ts, db.ts, cors.ts
+        ├── controllers/             # health & inquiry controllers
+        ├── routes/                  # /api/health & /api/inquiries
+        ├── models/                  # Mongoose ContactInquiry model
+        ├── shared/                  # Embedded shared types, config & validation schemas
+        ├── services/                # Inquiry & mailer services (Resend)
+        └── emails/                  # Transactional email templates
 ```
 
 ---
@@ -354,87 +327,84 @@ fallback, and every user-supplied value HTML-escaped.
 
 ## 10. Development commands
 
-Run from the repository root:
-
+### Option A: Run Both Together from the Root
 ```bash
-npm install          # install all workspaces
-npm run dev          # web (3000) + api (5000) together, colour-coded logs
-npm run dev:web      # Next.js dev server only  (http://localhost:3000)
-npm run dev:api      # API dev server only      (http://localhost:5000, tsx watch)
-npm run build        # production build: API bundle, then Next.js
-npm run build:web    # Next.js build only
-npm run build:api    # API bundle only (dist/server.js)
-npm run start:api    # run the built API
-npm run start:web    # run the built web app
-npm run lint         # ESLint for api + web
-npm run typecheck    # tsc --noEmit for shared, api and web
-npm run format       # Prettier write
-npm run format:check # Prettier check
+npm install          # installs frontend & backend dependencies
+npm run dev          # starts frontend (3000) and backend (5000) concurrently
 ```
 
-Local URLs: website <http://localhost:3000> · API health <http://localhost:5000/api/health>
+### Option B: Run Frontend and Backend Independently
+
+**Frontend only:**
+```bash
+cd frontend
+npm install
+npm run dev          # runs Next.js on http://localhost:3000
+```
+
+**Backend only:**
+```bash
+cd backend
+npm install
+npm run dev          # runs Express API on http://localhost:5000
+```
+
+Local URLs:
+- Website: <http://localhost:3000>
+- Backend API Health: <http://localhost:5000/api/health>
 
 ---
 
 ## 11. Production build
 
 ```bash
-npm install
-npm run build          # → services/api/dist/server.js and apps/web/.next
-npm run start:api      # API  (health check path: /api/health)
-npm run start:web      # Next.js server
-```
+# Build both
+npm run build
 
-The API bundle is self-contained: the `@srm/shared`, `@srm/config` and `@srm/types` workspace
-packages ship TypeScript source and are compiled into `dist/server.js` by tsup, so the host only
-needs `npm install && npm run build:api && npm start`.
+# Or build individually
+npm run build:frontend     # builds frontend (.next)
+npm run build:backend      # builds backend (dist/server.js)
+```
 
 ---
 
-## 12. Deployment order and every variable
+## 12. Hosting and Deployment
 
-Deploy in this order, otherwise the first form submission will fail.
+Because the frontend and backend are completely decoupled into their own standalone folders with zero internal workspace dependencies, you can host them independently on any platform!
 
-### Step 1 — MongoDB Atlas
-Create the cluster, database user (least privilege, `readWrite` on `srm-enterprises`) and IP
-access rule. Copy the connection string.
+### 🌐 Frontend Hosting (Vercel)
+1. In Vercel, connect your repository.
+2. In **Project Settings**:
+   - **Root Directory:** `frontend`
+   - **Framework Preset:** Next.js
+   - **Build Command:** `next build`
+3. In **Environment Variables**:
+   - `NEXT_PUBLIC_API_URL` = Your deployed backend API URL (e.g. `https://srm-backend.onrender.com`)
+   - `NEXT_PUBLIC_SITE_URL` = Your production domain (e.g. `https://www.srmenterprises.com`)
+   - `NEXT_PUBLIC_WHATSAPP_NUMBER` = `919876543210`
+   - `NEXT_PUBLIC_PHONE_NUMBER` = `+91 98765 43210`
+4. Click **Deploy**.
 
-### Step 2 — Backend (Render / Railway / any Node host)
-- Root directory: repository root (monorepo) — or `services/api` if you build the workspace
-  packages separately.
-- Build command: `npm install && npm run build:api`
-- Start command: `npm run start:api`
-- Health check path: `/api/health`
-- Variables:
-  `PORT`, `NODE_ENV=production`, `MONGODB_URI`, `CLIENT_URL`,
-  `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, `CONTACT_RECEIVER_EMAIL`,
-  `IP_HASH_SALT`, `LOG_LEVEL`, `TRUST_PROXY=1`
-- `CLIENT_URL` example:
-  `https://www.your-domain.com,https://your-domain.com` (www and apex are both expanded
-  automatically, so listing one is enough — listing both is harmless).
+---
 
-### Step 3 — Frontend (Vercel)
-- **Root Directory: `apps/web`** (monorepo setting). If Vercel asks for an install command that
-  covers the workspace, `cd ../.. && npm install` or leave the default — npm workspaces are
-  detected automatically.
-- Build command: `next build` (default)
-- Variables (all without trailing slashes):
-  `NEXT_PUBLIC_API_URL` (e.g. `https://srm-api.onrender.com`),
-  `NEXT_PUBLIC_SITE_URL` (e.g. `https://www.your-domain.com`),
-  `NEXT_PUBLIC_WHATSAPP_NUMBER` (digits only), `NEXT_PUBLIC_PHONE_NUMBER`,
-  and optionally `NEXT_PUBLIC_GA_ID`, `NEXT_PUBLIC_GTM_ID`, `NEXT_PUBLIC_META_PIXEL_ID`.
-  Optionally `API_PROXY_TARGET` if you want same-origin `/api/*` proxying (set it **before**
-  building — Next bakes rewrites at build time).
-
-### Step 4 — Resend
-Verify the sending domain and set the two email variables on the API host.
-
-### Step 5 — Post-deploy checks
-1. `GET https://<api-host>/api/health` → `{ "status": "ok", "database": "connected" }`
-2. Open `/contact`, submit a test inquiry.
-3. Confirm the inquiry appears in Atlas (`status: "new"`, `emailStatus.adminSent: true`).
-4. Confirm both emails arrive; check `emailStatus` if they do not.
-5. Check canonical URLs and `sitemap.xml` on the live domain.
+### 🖥️ Backend Hosting (Render / Railway / VPS / Docker)
+1. On Render or Railway, create a new Web Service and link the repo.
+2. In **Settings**:
+   - **Root Directory:** `backend`
+   - **Environment:** Node
+   - **Build Command:** `npm install && npm run build`
+   - **Start Command:** `npm start`
+   - **Health Check Path:** `/api/health`
+3. In **Environment Variables**:
+   - `PORT` = `5000` (or host provided `$PORT`)
+   - `NODE_ENV` = `production`
+   - `MONGODB_URI` = Your MongoDB Atlas URI
+   - `CLIENT_URL` = `https://www.srmenterprises.com,https://srm-enterprises-psi.vercel.app`
+   - `RESEND_API_KEY` = Your Resend API key
+   - `RESEND_FROM_EMAIL` = `SRM Enterprises <noreply@yourdomain.com>`
+   - `CONTACT_RECEIVER_EMAIL` = `info@yourdomain.com`
+   - `IP_HASH_SALT` = Long random secret string
+4. Click **Deploy**.
 
 ---
 
