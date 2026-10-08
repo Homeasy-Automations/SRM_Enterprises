@@ -28,13 +28,13 @@ export interface ContactPlaceholders {
 }
 
 export const CONTACT_PLACEHOLDERS: ContactPlaceholders = {
-  email: "info@your-domain.com",
-  phoneDisplay: "+91 XXXXX XXXXX",
-  whatsappDisplay: "+91 XXXXX XXXXX",
+  email: "info@bharatx.vc",
+  phoneDisplay: "+91 98112 63046",
+  whatsappDisplay: "+91 98112 63046",
   addressLine: "Pan India supply & dispatch across all major industrial clusters",
 };
 
-const PHONE_PLACEHOLDER = "+91 XXXXX XXXXX";
+const PHONE_PLACEHOLDER = "+91 98112 63046";
 
 /** Raw env values (Next inlines NEXT_PUBLIC_* at build time). */
 const envPhone = (process.env.NEXT_PUBLIC_PHONE_NUMBER ?? "").trim();
