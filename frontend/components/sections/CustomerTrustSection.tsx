@@ -65,7 +65,7 @@ export function CustomerTrustSection(): JSX.Element {
 
         {/* Sector Trust Strip */}
         <div className="mt-6 sm:mt-8 rounded-2xl border border-navy/10 bg-white/80 p-5 backdrop-blur-sm">
-          <p className="text-center font-space text-[11px] font-bold uppercase tracking-widest text-navy-soft mb-4">
+          <p className="text-center font-accent text-xs uppercase tracking-wider text-navy-soft mb-4">
             Trusted by Procurement Leaders Across Critical Sectors
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
@@ -75,8 +75,8 @@ export function CustomerTrustSection(): JSX.Element {
                 className="flex flex-col items-center text-center p-3 rounded-xl border border-navy/5 bg-slate-50/70 hover:bg-white hover:shadow-xs transition-all"
               >
                 <span className="text-2xl mb-1 select-none">{sector.icon}</span>
-                <span className="font-outfit text-xs font-bold text-navy leading-tight">{sector.name}</span>
-                <span className="font-ibm text-[10px] text-navy-soft mt-0.5 leading-snug">{sector.desc}</span>
+                <span className="font-heading text-xs font-bold text-navy leading-tight">{sector.name}</span>
+                <span className="text-[10px] text-navy-soft mt-0.5 leading-snug">{sector.desc}</span>
               </div>
             ))}
           </div>
@@ -89,7 +89,7 @@ export function CustomerTrustSection(): JSX.Element {
               <article className="card-home-vivid flex h-full flex-col justify-between rounded-3xl border border-navy/10 bg-white p-6 sm:p-7 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift">
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-500/20 px-2.5 py-0.5 font-caveat text-sm font-bold text-emerald-800 tracking-wide">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-500/20 px-2.5 py-0.5 text-xs font-semibold text-emerald-800">
                       <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
                       Verified Industrial Client
                     </span>
@@ -100,11 +100,11 @@ export function CustomerTrustSection(): JSX.Element {
                     </div>
                   </div>
 
-                  <span className="inline-block rounded-lg bg-navy/5 px-2.5 py-1 font-ibm text-[11px] font-semibold text-navy mb-3">
+                  <span className="inline-block rounded-lg bg-navy/5 px-2.5 py-1 text-[11px] font-semibold text-navy mb-3">
                     Key Outcome: {item.highlight}
                   </span>
 
-                  <blockquote className="relative font-lora italic text-[13px] sm:text-[14.5px] leading-relaxed text-navy/90">
+                  <blockquote className="relative italic text-[13px] sm:text-[14.5px] leading-relaxed text-navy/90">
                     <Quote className="h-4 w-4 text-accent/30 inline-block mr-1.5 -mt-1" />
                     "{item.quote}"
                   </blockquote>
@@ -112,12 +112,12 @@ export function CustomerTrustSection(): JSX.Element {
 
                 <div className="mt-6 pt-4 border-t border-navy/10 flex items-center justify-between">
                   <div>
-                    <h4 className="font-outfit text-xs sm:text-sm font-bold text-navy">
+                    <h4 className="font-heading text-xs sm:text-sm font-bold text-navy">
                       {item.name}
                     </h4>
-                    <p className="font-ibm text-[11px] font-semibold text-accent-deep">{item.role}</p>
-                    <p className="font-ibm text-[11px] font-medium text-navy-soft">{item.org}</p>
-                    <p className="font-ibm text-[10px] text-navy/50">{item.location}</p>
+                    <p className="text-[11px] font-semibold text-accent-deep">{item.role}</p>
+                    <p className="text-[11px] font-medium text-navy-soft">{item.org}</p>
+                    <p className="text-[10px] text-navy/50">{item.location}</p>
                   </div>
                   <span className="grid h-8 w-8 place-items-center rounded-lg bg-slate-100 text-navy/60">
                     <Building2 className="h-4 w-4" />

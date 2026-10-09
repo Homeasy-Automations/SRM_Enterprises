@@ -41,10 +41,10 @@ export function QualityFocusSection(): JSX.Element {
           {/* Quality Artwork & Visual (5 cols) */}
           <div className="flex flex-col gap-6 lg:col-span-5">
             <div className="card-home-vivid overflow-hidden rounded-3xl border border-navy/10 bg-white p-6 sm:p-8 shadow-sm">
-              <span className="eyebrow badge-interactive inline-flex items-center gap-2 rounded-full px-3 py-1 font-space text-xs font-bold uppercase tracking-wider text-accent mb-4">
+              <span className="eyebrow badge-interactive inline-flex items-center gap-2 rounded-full px-3 py-1 font-accent text-xs font-normal uppercase tracking-wider text-accent mb-4">
                 Inspection & Control
               </span>
-              <h3 className="font-outfit text-2xl font-bold text-navy">
+              <h3 className="font-heading text-2xl font-bold text-navy">
                 Strict Dimensional &amp; Specification Tolerances
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-navy-soft">
@@ -59,12 +59,12 @@ export function QualityFocusSection(): JSX.Element {
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between rounded-lg bg-white/95 backdrop-blur-md px-3 py-1.5 text-[11px] text-navy shadow-xs border border-white/60">
-                  <span className="flex items-center gap-1.5 font-ibm font-bold text-accent-deep">
+                <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between rounded-lg bg-white/95 backdrop-blur-md px-3.5 py-1.5 text-[11px] text-navy shadow-xs border border-white/60">
+                  <span className="flex items-center gap-1.5 font-bold text-accent-deep">
                     <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
                     Zero-Play Tolerance Checks
                   </span>
-                  <span className="font-caveat text-sm font-bold text-emerald-800 tracking-wide">Batch Verified</span>
+                  <span className="text-xs font-semibold text-emerald-800">Batch Verified</span>
                 </div>
               </div>
             </div>
@@ -95,7 +95,7 @@ export function QualityFocusSection(): JSX.Element {
                           <Icon className="h-5 w-5" aria-hidden="true" />
                         </span>
                         <div>
-                          <h4 className="font-outfit text-base font-bold text-navy transition-colors duration-200 group-hover:text-accent">
+                          <h4 className="font-heading text-base font-bold text-navy transition-colors duration-200 group-hover:text-accent">
                             {pt.title}
                           </h4>
                           <p className="mt-1 text-xs leading-relaxed text-navy-soft">{pt.description}</p>

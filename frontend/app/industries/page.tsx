@@ -53,7 +53,7 @@ export default function IndustriesPage(): JSX.Element {
       {/* 2 — Interactive Sector Matrix Ribbon */}
       <section className="band-sky py-4 border-y border-navy/10 pattern-hex sticky top-16 z-20 backdrop-blur-md bg-white/90" aria-label="Sector quick jump">
         <div className="container-page flex items-center justify-between gap-3 overflow-x-auto no-scrollbar">
-          <span className="font-mono text-xs font-bold uppercase tracking-wider text-navy-soft shrink-0">
+          <span className="font-accent text-xs uppercase tracking-wider text-navy-soft shrink-0">
             Sector Matrix:
           </span>
           <div className="flex items-center gap-2">
@@ -61,10 +61,10 @@ export default function IndustriesPage(): JSX.Element {
               <a
                 key={ind.slug}
                 href={`#${ind.slug}`}
-                className="group inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-navy/10 bg-white px-3.5 py-1.5 font-outfit text-xs font-semibold text-navy shadow-xs transition-all duration-300 hover:scale-105 hover:shadow-md hover:-translate-y-0.5 hover:border-accent hover:text-accent-deep"
+                className="group inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-navy/10 bg-white px-3.5 py-1.5 text-xs font-semibold text-navy shadow-xs transition-all duration-300 hover:scale-105 hover:shadow-md hover:-translate-y-0.5 hover:border-accent hover:text-accent-deep"
               >
                 <span className="h-2 w-2 rounded-full transition-transform duration-300 group-hover:scale-125" style={{ background: ind.color }} />
-                <span><span className="font-bebas text-sm">0{i + 1}</span> {ind.shortName}</span>
+                <span><span className="font-accent text-sm">0{i + 1}</span> {ind.shortName}</span>
               </a>
             ))}
           </div>
@@ -97,22 +97,22 @@ export default function IndustriesPage(): JSX.Element {
                         <div>
                           <div className="flex items-center gap-2">
                             <span
-                              className="font-space text-[0.7rem] font-bold uppercase tracking-widest px-2 py-0.5 rounded-md transition-all duration-300 group-hover:scale-105"
+                              className="font-accent text-xs uppercase tracking-wider px-2 py-0.5 rounded-md transition-all duration-300 group-hover:scale-105"
                               style={{ background: `${industry.color}18`, color: industry.color }}
                             >
                               SECTOR 0{index + 1}
                             </span>
                             <span className="h-1.5 w-1.5 rounded-full transition-transform duration-300 group-hover:scale-125" style={{ background: industry.color }} />
-                            <span className="font-ibm text-xs font-medium text-navy-soft">Industry Packaging Overview</span>
+                            <span className="text-xs font-medium text-navy-soft">Industry Packaging Overview</span>
                           </div>
-                          <h2 id={`${industry.slug}-heading`} className="font-outfit text-2xl font-bold text-navy sm:text-3xl mt-0.5 transition-transform duration-300 group-hover:translate-x-1.5">
+                          <h2 id={`${industry.slug}-heading`} className="font-heading text-2xl font-bold text-navy sm:text-3xl mt-0.5 transition-transform duration-300 group-hover:translate-x-1.5">
                             {industry.name}
                           </h2>
                         </div>
                       </div>
 
                       <div className="flex flex-wrap items-center gap-3">
-                        <span className="inline-flex items-center gap-1.5 rounded-full border border-navy/10 bg-white px-3 py-1 font-ibm text-xs font-medium text-navy shadow-2xs transition-all duration-300 hover:border-navy/20 hover:scale-105">
+                        <span className="inline-flex items-center gap-1.5 rounded-full border border-navy/10 bg-white px-3 py-1 text-xs font-medium text-navy shadow-2xs transition-all duration-300 hover:border-navy/20 hover:scale-105">
                           <span className="h-2 w-2 rounded-full" style={{ background: industry.color }} />
                           Pan-India Supply
                         </span>
@@ -132,7 +132,7 @@ export default function IndustriesPage(): JSX.Element {
                         <div>
                           <div className="flex items-center gap-2 border-b border-navy/10 pb-2">
                             <AlertTriangle className="h-4 w-4 text-amber-500 shrink-0" aria-hidden="true" />
-                            <h3 className="font-space text-xs font-bold uppercase tracking-[0.14em] text-navy">
+                            <h3 className="font-heading text-xs font-bold uppercase tracking-wider text-navy">
                               Supply-Chain Handling Hazards
                             </h3>
                           </div>
@@ -142,7 +142,7 @@ export default function IndustriesPage(): JSX.Element {
                                 as="li"
                                 key={challenge}
                                 variant="slide-right"
-                                className="group/hazard rounded-xl border border-navy/5 bg-slate-50/70 p-2.5 font-ibm text-xs leading-relaxed text-navy-soft shadow-xs flex items-start gap-2 transition-all duration-300 hover:bg-white hover:-translate-y-0.5 hover:shadow-sm hover:border-amber-300/60 cursor-default"
+                                className="group/hazard rounded-xl border border-navy/5 bg-slate-50/70 p-2.5 text-xs leading-relaxed text-navy-soft shadow-xs flex items-start gap-2 transition-all duration-300 hover:bg-white hover:-translate-y-0.5 hover:shadow-sm hover:border-amber-300/60 cursor-default"
                               >
                                 <span
                                   className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full transition-transform duration-300 group-hover/hazard:scale-150"
@@ -159,7 +159,7 @@ export default function IndustriesPage(): JSX.Element {
                         <div className="mt-4 pt-3.5 border-t border-navy/10">
                           <div className="flex items-center gap-2 border-b border-navy/10 pb-2">
                             <ShieldCheck className="h-4 w-4 text-emerald-600 shrink-0" aria-hidden="true" />
-                            <h3 className="font-space text-xs font-bold uppercase tracking-[0.14em] text-navy">
+                            <h3 className="font-heading text-xs font-bold uppercase tracking-wider text-navy">
                               Targeted Material Architecture
                             </h3>
                           </div>
@@ -176,7 +176,7 @@ export default function IndustriesPage(): JSX.Element {
                                   <div className="flex items-center justify-between gap-2">
                                     <Link
                                       href={`/products/${entry.productSlug}`}
-                                      className="font-outfit text-xs font-bold text-navy hover:underline flex items-center gap-1.5 transition-colors duration-300 group-hover/sol:text-accent-deep"
+                                      className="font-heading text-xs font-bold text-navy hover:underline flex items-center gap-1.5 transition-colors duration-300 group-hover/sol:text-accent-deep"
                                     >
                                       <span
                                         className="h-2 w-2 rounded-full shrink-0 transition-transform duration-300 group-hover/sol:scale-125"
@@ -186,7 +186,7 @@ export default function IndustriesPage(): JSX.Element {
                                     </Link>
                                     <ArrowRight className="h-3 w-3 text-navy-soft shrink-0 transition-transform duration-300 group-hover/sol:translate-x-1" aria-hidden="true" />
                                   </div>
-                                  <p className="font-ibm text-[0.72rem] leading-normal text-navy-soft">
+                                  <p className="text-[0.72rem] leading-normal text-navy-soft">
                                     {entry.reason}
                                   </p>
                                 </StaggerItem>
@@ -200,10 +200,10 @@ export default function IndustriesPage(): JSX.Element {
                       <div className="group/chamber lg:col-span-4 flex flex-col justify-between rounded-2xl border border-navy/10 bg-gradient-to-b from-white via-slate-50/40 to-white p-4 sm:p-5 shadow-xs transition-all duration-300 hover:shadow-lg hover:border-navy/20">
                         <div className="flex flex-col flex-1">
                           <div className="flex items-center justify-between gap-2 border-b border-navy/10 pb-2">
-                            <span className="font-space text-[0.7rem] uppercase tracking-wider text-navy-soft">
+                            <span className="font-accent text-xs uppercase tracking-wider text-navy-soft">
                               Industry Packaging Profile // {industry.shortName}
                             </span>
-                            <span className="font-outfit text-[0.7rem] font-bold transition-all duration-300 group-hover/chamber:scale-105" style={{ color: industry.color }}>
+                            <span className="text-[0.7rem] font-bold transition-all duration-300 group-hover/chamber:scale-105" style={{ color: industry.color }}>
                               Industrial Grade
                             </span>
                           </div>
@@ -230,8 +230,8 @@ export default function IndustriesPage(): JSX.Element {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-navy/55 via-transparent to-transparent pointer-events-none" />
                             <div className="absolute bottom-2 left-2.5 right-2.5 flex items-center justify-between text-[11px] font-semibold text-white/95 drop-shadow-sm">
-                              <span className="font-ibm">{industry.shortName} Spec</span>
-                              <span className="font-caveat text-sm font-bold text-white tracking-wide">OEM Approved</span>
+                              <span>{industry.shortName} Spec</span>
+                              <span className="text-xs font-semibold text-white">OEM Approved</span>
                             </div>
                           </div>
                         </div>
@@ -301,10 +301,10 @@ export default function IndustriesPage(): JSX.Element {
                   className="card-sector-hex group flex h-full flex-col gap-3 p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:scale-[1.02] cursor-pointer"
                   style={{ ["--accent" as string]: item.color }}
                 >
-                  <span className="font-bebas text-4xl sm:text-5xl font-normal transition-all duration-300 group-hover:scale-115 group-hover:translate-x-1" style={{ color: item.color }}>
+                  <span className="font-accent text-4xl sm:text-5xl font-normal transition-all duration-300 group-hover:scale-115 group-hover:translate-x-1" style={{ color: item.color }}>
                     {String(itemIndex + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="font-outfit text-base font-bold text-navy transition-colors duration-300 group-hover:text-accent">{item.title}</h3>
+                  <h3 className="font-heading text-base font-bold text-navy transition-colors duration-300 group-hover:text-accent">{item.title}</h3>
                   <p className="text-sm leading-relaxed text-navy-soft">{item.body}</p>
                 </article>
               </StaggerItem>

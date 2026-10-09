@@ -103,7 +103,7 @@ export function Navbar(): JSX.Element {
                       aria-expanded={hasChildren ? menuOpen : undefined}
                       onClick={() => setOpenMenu(null)}
                       className={cn(
-                        "underline-grow inline-flex min-h-[42px] items-center gap-1 rounded-full px-2.5 xl:px-3 font-outfit text-xs xl:text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:bg-navy/5",
+                        "underline-grow inline-flex min-h-[42px] items-center gap-1 rounded-full px-2.5 xl:px-3 text-xs xl:text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:bg-navy/5",
                         active ? "text-navy bg-navy/5" : "text-navy-soft hover:text-navy",
                       )}
                       data-active={active}
@@ -146,7 +146,7 @@ export function Navbar(): JSX.Element {
                 rel="noopener noreferrer"
                 onClick={() => analytics.whatsappClick("navbar")}
                 aria-label="Chat with SRM Enterprises on WhatsApp"
-                className="hidden min-h-[38px] items-center gap-1.5 rounded-full border border-emerald-600/20 bg-emerald-50/80 px-3 font-outfit text-xs font-semibold text-emerald-700 transition-all duration-300 hover:-translate-y-0.5 hover:bg-emerald-100 hover:shadow-xs md:inline-flex"
+                className="hidden min-h-[38px] items-center gap-1.5 rounded-full border border-emerald-600/20 bg-emerald-50/80 px-3 text-xs font-semibold text-emerald-700 transition-all duration-300 hover:-translate-y-0.5 hover:bg-emerald-100 hover:shadow-xs md:inline-flex"
               >
                 <MessageCircle className="h-3.5 w-3.5 text-emerald-600" aria-hidden="true" />
                 <span>WhatsApp</span>
@@ -158,7 +158,7 @@ export function Navbar(): JSX.Element {
                 href={telLink}
                 onClick={() => analytics.phoneClick("navbar")}
                 aria-label={`Call SRM Enterprises on ${CONTACT.phoneDisplay}`}
-                className="hidden min-h-[38px] items-center gap-1.5 rounded-full border border-navy/10 px-3 font-outfit text-xs font-semibold text-navy-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-accent hover:text-accent-deep hover:shadow-xs hover:bg-accent-soft/30 xl:inline-flex"
+                className="hidden min-h-[38px] items-center gap-1.5 rounded-full border border-navy/10 px-3 text-xs font-semibold text-navy-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-accent hover:text-accent-deep hover:shadow-xs hover:bg-accent-soft/30 xl:inline-flex"
               >
                 <Phone className="h-3.5 w-3.5" aria-hidden="true" />
                 <span>Call</span>
@@ -171,7 +171,7 @@ export function Navbar(): JSX.Element {
                 analytics.ctaClick("Get a Quote", "navbar");
                 openQuoteModal();
               }}
-              className="btn-primary hidden min-h-[40px] px-4 font-outfit text-xs font-bold sm:inline-flex items-center"
+              className="btn-primary hidden min-h-[40px] px-4 text-xs font-bold sm:inline-flex items-center"
               style={{ ["--accent" as string]: "var(--nav-accent)" }}
             >
               Get a Quote

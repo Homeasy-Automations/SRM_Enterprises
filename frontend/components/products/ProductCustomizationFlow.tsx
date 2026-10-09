@@ -69,12 +69,12 @@ export function ProductCustomizationFlow(): JSX.Element {
                     >
                       <Icon className="h-6 w-6" />
                     </span>
-                    <span className="font-display text-2xl font-black text-navy/15">
+                    <span className="font-accent text-3xl sm:text-4xl font-normal text-navy/25 tracking-wider">
                       {item.step}
                     </span>
                   </div>
 
-                  <h3 className="mt-5 font-display text-lg font-bold text-navy group-hover:text-accent transition-colors">
+                  <h3 className="mt-5 font-heading text-lg font-bold text-navy group-hover:text-accent transition-colors">
                     {item.title}
                   </h3>
                   <p className="mt-2 text-xs sm:text-sm leading-relaxed text-navy-soft">

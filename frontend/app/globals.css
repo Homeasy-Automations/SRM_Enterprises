@@ -1,50 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Bebas+Neue&family=Caveat:wght@400;600;700&family=Clicker+Script&family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Marck+Script&family=Neonderthaw&family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+.font-accent {
+  font-family: var(--font-accent);
+  letter-spacing: 0.06em;
+}
+.font-heading {
+  font-family: var(--font-heading);
+}
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Compatibility aliases mapped to the 3-font system */
 .font-bebas {
-  font-family: 'Bebas Neue', sans-serif;
-}
-.font-ibm {
-  font-family: 'IBM Plex Sans', sans-serif;
-}
-.font-lora {
-  font-family: 'Lora', Georgia, serif;
-}
-.font-caveat {
-  font-family: 'Caveat', cursive;
-}
-.font-marck {
-  font-family: 'Marck Script', cursive;
-}
-.font-neon {
-  font-family: 'Neonderthaw', cursive;
-}
-.font-outfit {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-accent);
+  letter-spacing: 0.06em;
 }
 .font-space {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-heading);
 }
-.font-inter {
-  font-family: 'Inter', sans-serif;
+.font-inter,
+.font-ibm,
+.font-outfit,
+.font-lora,
+.font-altaca,
+.font-caveat,
+.font-marck,
+.font-neon {
+  font-family: var(--font-body);
 }
-.font-altaca {
-  font-family: 'Altaca', 'Outfit', sans-serif;
-}
-.font-alex {
-  font-family: 'Alex Brush', cursive;
-}
-.font-allura {
-  font-family: 'Allura', cursive;
-}
-.font-clicker {
-  font-family: 'Clicker Script', cursive;
-}
+.font-alex,
+.font-allura,
+.font-clicker,
 .font-script {
-  font-family: 'Alex Brush', 'Allura', 'Marck Script', cursive;
+  font-family: var(--font-alex), "Alex Brush", cursive;
 }
 
 /* ==========================================================================
@@ -55,6 +46,11 @@
    ========================================================================== */
 
 :root {
+  /* Font Stacks */
+  --font-heading: var(--font-space-grotesk), "Segoe UI", system-ui, sans-serif;
+  --font-body: var(--font-inter), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-accent: var(--font-bebas), Impact, "Arial Narrow", sans-serif;
+
   /* Brand */
   --brand-blue: #1e6fff;
   --brand-green: #19b26b;
@@ -191,6 +187,11 @@ html[data-mood="berry"] {
     border-color: rgba(18, 41, 74, 0.1);
   }
 
+  html,
+  body {
+    font-family: var(--font-body);
+  }
+
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
@@ -199,7 +200,7 @@ html[data-mood="berry"] {
   body {
     background-color: var(--surface-white);
     color: var(--navy);
-    font-family: 'Outfit', 'IBM Plex Sans', var(--font-inter), sans-serif;
+    font-family: var(--font-body);
     font-feature-settings: "cv11", "ss01";
     text-rendering: optimizeLegibility;
     /* `clip` (not `hidden`) so it never becomes a scroll container: sticky navbars and
@@ -214,14 +215,65 @@ html[data-mood="berry"] {
   h1,
   h2,
   h3,
-  h4 {
-    font-family: var(--font-space-grotesk), 'Outfit', var(--font-inter), sans-serif;
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
     letter-spacing: -0.02em;
     text-wrap: balance;
   }
 
   p {
     text-wrap: pretty;
+  }
+
+  /* Form controls do NOT inherit fonts by default — force them */
+  button, input, select, textarea, optgroup, option, label, legend, fieldset {
+    font-family: inherit;
+  }
+  input::placeholder, textarea::placeholder {
+    font-family: inherit;
+  }
+
+  /* Pseudo-elements, tables, code-like UI, SVG text */
+  *::before, *::after {
+    font-family: inherit;
+  }
+  table, th, td, caption, figcaption, blockquote, cite, q, small, strong, em, b, i, sup, sub, abbr, time, address, dl, dt, dd, li, summary, details, dialog {
+    font-family: inherit;
+  }
+  svg text, svg tspan {
+    font-family: var(--font-body);
+  }
+
+  /* Hero font lock — protects Home Hero section completely from cascade */
+  .hero-font-lock {
+    --font-heading: var(--font-space-grotesk), "Segoe UI", system-ui, sans-serif;
+    --font-body: var(--font-inter), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-family: var(--font-body);
+  }
+  .hero-font-lock h1,
+  .hero-font-lock h2,
+  .hero-font-lock h3,
+  .hero-font-lock .font-display {
+    font-family: var(--font-heading);
+  }
+  .hero-font-lock button,
+  .hero-font-lock a,
+  .hero-font-lock input,
+  .hero-font-lock select,
+  .hero-font-lock textarea,
+  .hero-font-lock span,
+  .hero-font-lock p,
+  .hero-font-lock div {
+    font-family: var(--font-body);
+  }
+  .hero-font-lock .font-alex {
+    font-family: var(--font-alex), "Alex Brush", cursive !important;
+  }
+  .hero-font-lock .eyebrow {
+    font-family: var(--font-body);
+    letter-spacing: normal;
   }
 
   /* Visible, high-contrast focus ring for keyboard users only. */
@@ -272,7 +324,8 @@ html[data-mood="berry"] {
   }
 
   .eyebrow {
-    @apply inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent-soft px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-accent-deep font-space;
+    @apply inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent-soft px-3.5 py-1.5 text-xs font-semibold uppercase text-accent-deep font-accent;
+    letter-spacing: 0.06em;
   }
 
   .surface-card {
@@ -399,7 +452,7 @@ html[data-mood="berry"] {
   }
 
   .btn {
-    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide font-outfit;
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide;
     transition:
       transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
       box-shadow 260ms ease,

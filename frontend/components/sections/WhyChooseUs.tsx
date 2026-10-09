@@ -61,7 +61,7 @@ export function WhyChooseUs(): JSX.Element {
                         <Icon className="h-6 w-6" aria-hidden="true" />
                       </span>
 
-                      <h3 className="mt-4 font-outfit text-xl font-bold text-navy transition-all duration-300 group-hover:text-accent-deep group-hover:translate-x-1">
+                      <h3 className="mt-4 font-heading text-xl font-bold text-navy transition-all duration-300 group-hover:text-accent-deep group-hover:translate-x-1">
                         {reason.title}
                       </h3>
                       <p className="mt-2 text-sm leading-relaxed text-navy-soft">{reason.description}</p>

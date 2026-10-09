@@ -69,7 +69,7 @@ export function Footer(): JSX.Element {
 
             <StaggerItem variant="flip-up">
               <nav aria-label="Products" className="flex flex-col gap-3">
-                <h2 className="font-space text-sm font-bold uppercase tracking-[0.16em] text-white">
+                <h2 className="font-heading text-sm font-bold uppercase tracking-wider text-white">
                   Products
                 </h2>
                 <ul className="flex flex-col gap-2">
@@ -77,7 +77,7 @@ export function Footer(): JSX.Element {
                     <li key={item.href}>
                       <Link
                         href={item.href}
-                        className="footer-link-interactive inline-flex min-h-[36px] items-center font-outfit text-sm text-white/90"
+                        className="footer-link-interactive inline-flex min-h-[36px] items-center text-sm text-white/90"
                       >
                         {item.label}
                       </Link>
@@ -89,7 +89,7 @@ export function Footer(): JSX.Element {
 
             <StaggerItem variant="flip-up">
               <nav aria-label="Company" className="flex flex-col gap-3">
-                <h2 className="font-space text-sm font-bold uppercase tracking-[0.16em] text-white">
+                <h2 className="font-heading text-sm font-bold uppercase tracking-wider text-white">
                   Company
                 </h2>
                 <ul className="flex flex-col gap-2">
@@ -97,7 +97,7 @@ export function Footer(): JSX.Element {
                     <li key={item.href}>
                       <Link
                         href={item.href}
-                        className="footer-link-interactive inline-flex min-h-[36px] items-center font-outfit text-sm text-white/90"
+                        className="footer-link-interactive inline-flex min-h-[36px] items-center text-sm text-white/90"
                       >
                         {item.label}
                       </Link>
@@ -108,10 +108,10 @@ export function Footer(): JSX.Element {
             </StaggerItem>
 
             <StaggerItem variant="split-right" className="flex flex-col gap-3">
-              <h2 className="font-space text-sm font-bold uppercase tracking-[0.16em] text-white">
+              <h2 className="font-heading text-sm font-bold uppercase tracking-wider text-white">
                 Contact
               </h2>
-              <ul className="flex flex-col gap-2.5 font-ibm text-sm text-white/90">
+              <ul className="flex flex-col gap-2.5 text-sm text-white/90">
                 <li className="flex items-start gap-2">
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
                   <span>{CONTACT.addressLine}</span>
@@ -156,7 +156,7 @@ export function Footer(): JSX.Element {
                   analytics.ctaClick("Request a Quote", "footer");
                   openQuoteModal();
                 }}
-                className="btn-white btn-shimmer mt-2 w-full sm:w-auto shadow-md font-outfit font-bold"
+                className="btn-white btn-shimmer mt-2 w-full sm:w-auto shadow-md font-bold"
                 aria-label="Open the quote request popup"
               >
                 Request a Quote
@@ -165,7 +165,7 @@ export function Footer(): JSX.Element {
           </StaggerGroup>
 
           <Reveal variant="fade-in" delay={0.2}>
-            <div className="mt-4 flex flex-col items-center justify-between gap-5 border-t border-white/25 pt-2 font-outfit text-xs text-white/90 md:flex-row sm:text-sm">
+            <div className="mt-4 flex flex-col items-center justify-between gap-5 border-t border-white/25 pt-2 text-xs text-white/90 md:flex-row sm:text-sm">
               <p>© SRM Enterprises. All Rights Reserved.</p>
 
               <a

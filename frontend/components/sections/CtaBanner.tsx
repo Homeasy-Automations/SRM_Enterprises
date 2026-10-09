@@ -73,7 +73,7 @@ export function CtaBanner({
       <div className="container-page relative pt-14 pb-20 sm:pt-16 sm:pb-24 lg:pt-18 lg:pb-28">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
           <Reveal variant="kinetic-pop">
-            <span className="badge-interactive cursor-default inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/15 px-4 py-1.5 font-space text-xs font-bold uppercase tracking-[0.16em] text-white shadow-sm backdrop-blur-sm transition-all duration-300 hover:bg-white/25 hover:scale-105">
+            <span className="badge-interactive cursor-default inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/15 px-4 py-1.5 font-accent text-xs font-normal uppercase tracking-wider text-white shadow-sm backdrop-blur-sm transition-all duration-300 hover:bg-white/25 hover:scale-105">
               <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
               {BRAND.tagline}
             </span>
@@ -82,7 +82,7 @@ export function CtaBanner({
           <Reveal variant="depth-zoom" delay={0.06}>
             <h2
               id="cta-heading"
-              className="mt-5 font-outfit text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl"
+              className="mt-5 font-heading text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl"
             >
               {title}
             </h2>
@@ -99,7 +99,7 @@ export function CtaBanner({
                   type="button"
                   onClick={handlePrimaryClick}
                   variant="white"
-                  className="w-full sm:w-auto shadow-lg hover:shadow-xl font-outfit font-bold"
+                  className="w-full sm:w-auto shadow-lg hover:shadow-xl font-bold"
                 >
                   {primaryLabel}
                   <ArrowRight className="h-4 w-4 icon-arrow-spring" aria-hidden="true" />
@@ -109,7 +109,7 @@ export function CtaBanner({
                   href={primaryHref}
                   onClick={() => analytics.ctaClick(primaryLabel, "cta-banner")}
                   variant="white"
-                  className="w-full sm:w-auto shadow-lg hover:shadow-xl font-outfit font-bold"
+                  className="w-full sm:w-auto shadow-lg hover:shadow-xl font-bold"
                 >
                   {primaryLabel}
                   <ArrowRight className="h-4 w-4 icon-arrow-spring" aria-hidden="true" />
@@ -121,7 +121,7 @@ export function CtaBanner({
                   href={secondaryHref}
                   onClick={() => analytics.ctaClick(secondaryLabel, "cta-banner")}
                   variant="glass"
-                  className="w-full sm:w-auto shadow-md font-outfit font-semibold"
+                  className="w-full sm:w-auto shadow-md font-semibold"
                 >
                   {secondaryLabel}
                   <ArrowRight className="h-4 w-4 icon-arrow-spring" aria-hidden="true" />
@@ -130,7 +130,7 @@ export function CtaBanner({
             </div>
           </Reveal>
           <Reveal variant="fade-in" delay={0.28}>
-            <p className="mt-3.5 font-marck text-lg sm:text-xl text-white/95 tracking-wide">
+            <p className="mt-3.5 text-xs sm:text-sm text-white/90 font-medium">
               ✦ {footnote ?? `Bulk supply ${BRAND.bulkSupplyLine}`} ✦
             </p>
           </Reveal>

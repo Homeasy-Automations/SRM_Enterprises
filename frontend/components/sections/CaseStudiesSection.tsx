@@ -40,21 +40,21 @@ export function CaseStudiesSection(): JSX.Element {
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center justify-between">
                     <span
-                      className="font-space text-[0.7rem] font-bold uppercase tracking-wider px-3 py-1 rounded-full text-white shadow-xs"
+                      className="font-accent text-xs font-normal uppercase tracking-wider px-3 py-1 rounded-full text-white shadow-xs"
                       style={{ background: study.color }}
                     >
                       {study.industry}
                     </span>
                   </div>
 
-                  <h3 className="font-outfit text-xl font-bold text-navy leading-snug transition-colors duration-200 group-hover:text-accent">
+                  <h3 className="font-heading text-xl font-bold text-navy leading-snug transition-colors duration-200 group-hover:text-accent">
                     {study.title}
                   </h3>
 
                   {/* Structured Step Flow */}
                   <div className="flex flex-col gap-3 pt-2 text-xs">
                     <div className="rounded-xl bg-slate-50 p-3 border border-navy/5">
-                      <span className="font-space font-bold text-navy flex items-center gap-1.5 mb-1 text-[11px] uppercase tracking-wider">
+                      <span className="font-accent font-normal text-navy flex items-center gap-1.5 mb-1 text-xs uppercase tracking-wider">
                         <AlertCircle className="h-3.5 w-3.5 text-amber-500" />
                         Packaging Challenge:
                       </span>
@@ -62,7 +62,7 @@ export function CaseStudiesSection(): JSX.Element {
                     </div>
 
                     <div className="rounded-xl bg-slate-50 p-3 border border-navy/5">
-                      <span className="font-space font-bold text-navy flex items-center gap-1.5 mb-1 text-[11px] uppercase tracking-wider">
+                      <span className="font-accent font-normal text-navy flex items-center gap-1.5 mb-1 text-xs uppercase tracking-wider">
                         <Sparkles className="h-3.5 w-3.5" style={{ color: study.color }} />
                         Engineered Solution:
                       </span>
@@ -70,11 +70,11 @@ export function CaseStudiesSection(): JSX.Element {
                     </div>
 
                     <div className="rounded-xl bg-emerald-50/70 p-3 border border-emerald-500/20">
-                      <span className="font-space font-bold text-emerald-800 flex items-center gap-1.5 mb-1 text-[11px] uppercase tracking-wider">
+                      <span className="font-accent font-normal text-emerald-800 flex items-center gap-1.5 mb-1 text-xs uppercase tracking-wider">
                         <TrendingUp className="h-3.5 w-3.5 text-emerald-600" />
                         Illustrative Packaging Application:
                       </span>
-                      <p className="font-ibm text-emerald-900 leading-relaxed font-semibold">{study.result}</p>
+                      <p className="text-emerald-900 leading-relaxed font-semibold">{study.result}</p>
                     </div>
                   </div>
                 </div>

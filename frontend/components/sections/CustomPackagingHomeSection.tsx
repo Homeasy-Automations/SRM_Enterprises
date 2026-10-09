@@ -131,13 +131,13 @@ export function CustomPackagingHomeSection(): JSX.Element {
                     <div>
                       <div className="flex items-center justify-between">
                         <span
-                          className="font-bebas text-xl sm:text-2xl font-normal transition-transform duration-300 group-hover:scale-110"
+                          className="font-accent text-xl sm:text-2xl font-normal transition-transform duration-300 group-hover:scale-110"
                           style={{ color: point.color }}
                         >
                           {point.step}
                         </span>
                         <span
-                          className="rounded-full px-2 py-0.5 font-space text-[10px] font-bold uppercase tracking-wider transition-colors duration-300"
+                          className="rounded-full px-2 py-0.5 font-accent text-xs font-normal uppercase tracking-wider transition-colors duration-300"
                           style={{
                             background: `${point.color}15`,
                             color: point.color,
@@ -155,7 +155,7 @@ export function CustomPackagingHomeSection(): JSX.Element {
                         >
                           <Icon className="h-5 w-5" aria-hidden="true" />
                         </span>
-                        <h3 className="font-outfit text-base font-bold text-navy transition-colors duration-200 group-hover:text-primary">
+                        <h3 className="font-heading text-base font-bold text-navy transition-colors duration-200 group-hover:text-primary">
                           {point.label}
                         </h3>
                       </div>
@@ -195,23 +195,23 @@ export function CustomPackagingHomeSection(): JSX.Element {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between rounded-xl bg-white/95 backdrop-blur-md px-3.5 py-2 text-[11px] text-navy shadow-sm border border-white/60">
-                  <span className="flex items-center gap-1.5 text-accent-deep font-outfit font-bold">
+                  <span className="flex items-center gap-1.5 text-accent-deep font-bold">
                     <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
                     CAD & CNC Prototyped
                   </span>
-                  <span className="text-navy-soft font-ibm font-semibold">Tolerance: ±1mm</span>
+                  <span className="text-navy-soft font-semibold">Tolerance: ±1mm</span>
                 </div>
               </div>
             </div>
 
             {/* Technical Highlights & Direct Action */}
             <div className="lg:col-span-7 flex flex-col justify-center">
-              <div className="inline-flex items-center gap-2 rounded-full bg-accent-soft px-3.5 py-1 font-space text-xs font-bold text-accent-deep w-fit mb-3">
+              <div className="inline-flex items-center gap-2 rounded-full bg-accent-soft px-3.5 py-1 font-accent text-xs font-normal uppercase tracking-wider text-accent-deep w-fit mb-3">
                 <Cpu className="h-3.5 w-3.5" />
                 ENGINEERED TOLERANCES & PHYSICAL SAMPLING
               </div>
 
-              <h3 className="font-outfit text-xl sm:text-2xl font-bold text-navy">
+              <h3 className="font-heading text-xl sm:text-2xl font-bold text-navy">
                 Have specific drawings, CAD files, or product dimensions?
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-navy-soft">

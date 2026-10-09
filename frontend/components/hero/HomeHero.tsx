@@ -18,7 +18,7 @@ export function HomeHero(): JSX.Element {
 
   return (
     <section
-      className="relative isolate flex flex-col justify-between overflow-hidden bg-white min-h-[calc(100dvh-76px)]"
+      className="hero-font-lock relative isolate flex flex-col justify-between overflow-hidden bg-white min-h-[calc(100dvh-76px)]"
       aria-labelledby="hero-heading"
     >
       {/* Background Image Slider with packaging facility photography */}
@@ -26,7 +26,7 @@ export function HomeHero(): JSX.Element {
 
       {/* Hero Content — Anchored further to bottom-left with wider margin and lower baseline */}
       <div className="relative z-10 flex flex-1 flex-col justify-end items-start text-left w-full px-5 sm:px-8 md:px-12 lg:px-16 pt-16 pb-4 sm:pb-6 lg:pb-8">
-        <div className="relative max-w-xl lg:max-w-3xl flex flex-col items-start text-left">
+        <div className="relative max-w-2xl lg:max-w-5xl xl:max-w-6xl flex flex-col items-start text-left">
           {/* Seamless ambient diffusion directly behind text — completely blended with zero visible edges */}
           <div
             aria-hidden="true"
@@ -38,31 +38,18 @@ export function HomeHero(): JSX.Element {
             }}
           />
 
-          {/* Kicker: Dot + Brand Name + Accent Line */}
-          <motion.div
-            initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: reducedMotion ? 0.001 : 0.6 }}
-            className="flex items-center gap-2.5 text-xs sm:text-sm font-bold uppercase tracking-[0.22em] text-accent"
-          >
-            <span className="h-2 w-2 rounded-full bg-accent" />
-            <span>SRM ENTERPRISES</span>
-            <span className="h-0.5 w-10 sm:w-14 bg-accent/80" />
-          </motion.div>
-
-          {/* Bold Headline with Script Accent */}
+          {/* Bold Headline with Script Accent in Two Lines */}
           <motion.h1
             id="hero-heading"
             initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: reducedMotion ? 0.001 : 0.7, delay: 0.1 }}
-            className="mt-2.5 font-display text-3xl sm:text-5xl lg:text-6xl xl:text-[4.2rem] font-extrabold leading-[1.08] text-navy"
+            className="font-display text-3xl sm:text-5xl md:text-6xl lg:text-[4rem] xl:text-[4.5rem] font-extrabold leading-[1.08] text-navy"
           >
-            Industrial Packaging{" "}
-            <span className="font-alex text-accent-deep text-[1.15em] font-normal block sm:inline leading-none">
-              Built to Specification
+            <span className="block">Precision Packaging.</span>
+            <span className="font-alex text-accent-deep text-[1.12em] font-normal block leading-tight mt-1 sm:mt-2">
+              Maximum Protection.
             </span>
           </motion.h1>
 
@@ -72,19 +59,8 @@ export function HomeHero(): JSX.Element {
             whileInView={{ opacity: 1, scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: reducedMotion ? 0.001 : 0.7, delay: 0.2 }}
-            className="mt-3.5 h-1 sm:h-1.5 w-24 sm:w-32 rounded-full bg-accent block origin-left"
+            className="mt-3.5 sm:mt-4 h-1 sm:h-1.5 w-24 sm:w-32 rounded-full bg-accent block origin-left"
           />
-
-          {/* Reduced Subtext */}
-          <motion.p
-            initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: reducedMotion ? 0.001 : 0.7, delay: 0.25 }}
-            className="mt-3 max-w-xl text-xs sm:text-sm lg:text-[0.95rem] leading-relaxed text-navy-soft font-medium"
-          >
-            Corrugated cartons, EPE foam cushioning, bubble rolls & protective films engineered for seamless bulk industrial supply.
-          </motion.p>
 
           {/* Streamlined Action Buttons */}
           <motion.div

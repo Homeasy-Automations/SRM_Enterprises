@@ -151,21 +151,21 @@ export function FeaturedProductsSection(): JSX.Element {
                         <Icon className="h-5 w-5" aria-hidden="true" />
                       </span>
                       <span
-                        className="font-space text-[0.65rem] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full"
+                        className="font-accent text-xs font-normal uppercase tracking-wider px-2.5 py-0.5 rounded-full"
                         style={{ background: `${prod.color}18`, color: prod.color }}
                       >
                         {prod.categoryName}
                       </span>
                     </div>
 
-                    <h3 className="font-outfit text-base font-bold text-navy transition-colors duration-200 group-hover:text-accent">
+                    <h3 className="font-heading text-base font-bold text-navy transition-colors duration-200 group-hover:text-accent">
                       {prod.name}
                     </h3>
                     <p className="text-xs leading-relaxed text-navy-soft">{prod.tagline}</p>
 
                     <ul className="flex flex-col gap-1 pt-1 border-t border-navy/5">
                       {prod.features.map((feat) => (
-                        <li key={feat} className="font-ibm text-[0.72rem] text-navy-soft/90 flex items-center gap-1.5">
+                        <li key={feat} className="text-[0.72rem] text-navy-soft/90 flex items-center gap-1.5">
                           <span className="h-1 w-1 rounded-full" style={{ background: prod.color }} />
                           <span>{feat}</span>
                         </li>
@@ -174,7 +174,7 @@ export function FeaturedProductsSection(): JSX.Element {
                   </div>
 
                   <span
-                    className="mt-4 inline-flex items-center gap-1 font-outfit text-xs font-bold transition-all duration-200 group-hover:gap-2"
+                    className="mt-4 inline-flex items-center gap-1 text-xs font-bold transition-all duration-200 group-hover:gap-2"
                     style={{ color: prod.color }}
                   >
                     <span className="underline-grow">Details</span>

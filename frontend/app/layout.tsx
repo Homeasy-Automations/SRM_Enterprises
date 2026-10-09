@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter, Space_Grotesk, Bebas_Neue, Alex_Brush } from "next/font/google";
 import "./globals.css";
 
 import { SITE } from "@/lib/constants";
@@ -16,13 +16,14 @@ import { HashScrollHandler } from "@/components/navigation/HashScrollHandler";
 import { JsonLd } from "@/components/sections/JsonLd";
 
 /**
- * next/font self-hosts the two families at build time: no runtime request to Google,
+ * next/font self-hosts all font families at build time: no runtime request to Google,
  * no render-blocking stylesheet, and no flash of unstyled text beyond the swap window.
  */
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter",
+  weight: ["400", "500", "600"],
 });
 
 const spaceGrotesk = Space_Grotesk({
@@ -30,6 +31,20 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
   variable: "--font-space-grotesk",
   weight: ["500", "600", "700"],
+});
+
+const bebasNeue = Bebas_Neue({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-bebas",
+  weight: ["400"],
+});
+
+const alexBrush = Alex_Brush({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-alex",
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -87,8 +102,12 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }): JSX.Element {
   return (
-    <html lang="en-IN" data-mood="ocean" className={`${inter.variable} ${spaceGrotesk.variable}`}>
-      <body className="font-sans antialiased">
+    <html
+      lang="en-IN"
+      data-mood="ocean"
+      className={`${inter.variable} ${spaceGrotesk.variable} ${bebasNeue.variable} ${alexBrush.variable}`}
+    >
+      <body className="font-body antialiased">
         <ColorMoodProvider>
           <QuoteModalProvider>
             <HashScrollHandler />
