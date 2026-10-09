@@ -155,7 +155,7 @@ export function ProcessTimeline({
                 tabIndex={0}
                 aria-expanded={isExpanded}
                 className={cn(
-                  "group card-interactive relative flex flex-col justify-between overflow-hidden rounded-2xl sm:rounded-3xl border bg-white cursor-pointer select-none",
+                  "group card-interactive relative flex h-full flex-col justify-between overflow-hidden rounded-2xl sm:rounded-3xl border bg-white cursor-pointer select-none",
                   "p-5 sm:p-6 lg:py-5 lg:px-6",
                   "transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50",
                   isSelected
@@ -194,7 +194,7 @@ export function ProcessTimeline({
                   0{index + 1}
                 </span>
 
-                <div>
+                <div className="flex flex-col flex-1">
                   {/* Step Header: Icon + Badge */}
                   <div className="flex items-center justify-between gap-3">
                     <span
@@ -215,20 +215,20 @@ export function ProcessTimeline({
                     </span>
                   </div>
 
-                  {/* Title & Summary */}
+                  {/* Title & Summary with coordinated min-heights for identical vertical alignment */}
                   <h3
-                    className="mt-3 sm:mt-3.5 font-display text-lg sm:text-xl font-bold text-navy transition-colors duration-300"
+                    className="mt-3 sm:mt-3.5 font-display text-lg sm:text-xl font-bold text-navy transition-colors duration-300 min-h-[1.75rem] sm:min-h-[2rem] flex items-center"
                     style={{ color: isHovered ? step.color : undefined }}
                   >
                     {step.title}
                   </h3>
 
-                  <p className="mt-1 sm:mt-1.5 text-xs sm:text-[0.875rem] leading-relaxed text-navy-soft">
+                  <p className="mt-1 sm:mt-1.5 text-xs sm:text-[0.875rem] leading-relaxed text-navy-soft min-h-[2.6rem] sm:min-h-[2.85rem] flex items-start">
                     {step.summary}
                   </p>
 
                   {/* Expandable Key Activities Section */}
-                  <div className="mt-3.5 pt-2.5 border-t border-navy/10">
+                  <div className="mt-auto pt-3.5 border-t border-navy/10">
                     <div
                       className="flex w-full items-center justify-between py-0.5 text-xs font-bold uppercase tracking-wider text-navy transition-colors duration-300"
                       style={{ color: isHovered ? step.color : undefined }}
