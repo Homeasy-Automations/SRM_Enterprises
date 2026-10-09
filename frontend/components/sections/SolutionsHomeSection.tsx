@@ -72,7 +72,7 @@ export function SolutionsHomeSection(): JSX.Element {
                         <Icon className="h-5 w-5 sm:h-5.5 sm:w-5.5" aria-hidden="true" />
                       </span>
                       <span
-                        className="text-[0.65rem] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full shadow-2xs transition-all duration-300"
+                        className="font-space text-[0.65rem] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full shadow-2xs transition-all duration-300"
                         style={{ background: `${sol.color}15`, color: sol.color }}
                       >
                         Application
@@ -81,7 +81,7 @@ export function SolutionsHomeSection(): JSX.Element {
 
                     {/* Title & Summary */}
                     <h3
-                      className="mt-3 font-display text-base sm:text-lg font-bold text-navy transition-colors duration-200 group-hover:opacity-95"
+                      className="mt-3 font-outfit text-base sm:text-lg font-bold text-navy transition-colors duration-200 group-hover:opacity-95"
                       style={{ color: "var(--card-title-color, inherit)" }}
                     >
                       {sol.name}
@@ -93,13 +93,13 @@ export function SolutionsHomeSection(): JSX.Element {
                     {/* Compact Inline Key Applications */}
                     <div className="mt-3 pt-2 border-t border-navy/5">
                       <div className="flex items-center gap-1.5 flex-wrap">
-                        <span className="text-[0.65rem] font-bold uppercase tracking-wider text-navy-soft/80 mr-0.5 shrink-0">
+                        <span className="font-space text-[0.65rem] font-bold uppercase tracking-wider text-navy-soft/80 mr-0.5 shrink-0">
                           Applications:
                         </span>
                         {sol.applications.map((app) => (
                           <span
                             key={app}
-                            className="rounded-full border border-navy/8 bg-slate-50/90 px-2 py-0.5 text-[0.68rem] font-medium text-navy transition-colors duration-200 group-hover:bg-white group-hover:border-navy/15"
+                            className="font-ibm rounded-full border border-navy/8 bg-slate-50/90 px-2 py-0.5 text-[0.68rem] font-medium text-navy transition-colors duration-200 group-hover:bg-white group-hover:border-navy/15"
                           >
                             {app}
                           </span>

@@ -26,7 +26,7 @@ export function HomeLeadSection(): JSX.Element {
         {/* Section 15: Lead Intro Banner */}
         <div className="mx-auto max-w-4xl text-center">
           <Reveal variant="kinetic-pop">
-            <span className="eyebrow badge-interactive inline-flex items-center gap-2 rounded-full border border-navy/10 bg-white/80 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-accent shadow-xs mb-4">
+            <span className="eyebrow badge-interactive inline-flex items-center gap-2 rounded-full border border-navy/10 bg-white/80 px-4 py-1.5 font-space text-xs font-bold uppercase tracking-wider text-accent shadow-xs mb-4">
               <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
               COMPLETE INDUSTRIAL PACKAGING SOLUTIONS
             </span>
@@ -35,7 +35,7 @@ export function HomeLeadSection(): JSX.Element {
           <Reveal variant="fade-up" delay={0.05}>
             <h2
               id="lead-heading"
-              className="font-display text-3xl font-extrabold leading-tight text-navy sm:text-4xl lg:text-5xl"
+              className="font-outfit text-3xl font-extrabold leading-tight text-navy sm:text-4xl lg:text-5xl"
             >
               Tell Us What You're Packing. <span className="text-gradient-animated">We'll Help You Find the Right Packaging.</span>
             </h2>
@@ -57,7 +57,7 @@ export function HomeLeadSection(): JSX.Element {
                   analytics.ctaClick("Get a Custom Quote", "home-lead");
                   openQuoteModal();
                 }}
-                className="btn-primary min-h-[48px] px-8 text-sm font-bold shadow-md hover:scale-105"
+                className="btn-primary min-h-[48px] px-8 font-outfit text-sm font-bold shadow-md hover:scale-105"
               >
                 <span>Get a Custom Quote</span>
                 <ArrowRight className="h-4 w-4 icon-arrow-spring" aria-hidden="true" />
@@ -65,7 +65,7 @@ export function HomeLeadSection(): JSX.Element {
 
               <Link
                 href="/contact?type=sample"
-                className="inline-flex min-h-[48px] items-center gap-2 rounded-full border border-navy/15 bg-white px-7 py-3 text-sm font-bold text-navy shadow-xs transition-all duration-300 hover:border-accent hover:text-accent hover:shadow-md hover:scale-105"
+                className="inline-flex min-h-[48px] items-center gap-2 rounded-full border border-navy/15 bg-white px-7 py-3 font-outfit text-sm font-bold text-navy shadow-xs transition-all duration-300 hover:border-accent hover:text-accent hover:shadow-md hover:scale-105"
               >
                 <FileText className="h-4 w-4 text-accent" aria-hidden="true" />
                 <span>Request a Sample</span>
@@ -73,7 +73,7 @@ export function HomeLeadSection(): JSX.Element {
             </div>
           </Reveal>
 
-          <p className="mt-6 text-xs font-semibold uppercase tracking-wider text-navy-soft/80 sm:text-sm">
+          <p className="mt-6 font-ibm text-xs font-semibold uppercase tracking-wider text-navy-soft/80 sm:text-sm">
             Corrugated • EPE • Bubble • Poly Bags • Films • Accessories
           </p>
         </div>

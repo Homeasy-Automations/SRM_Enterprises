@@ -69,12 +69,12 @@ export function CapabilityStrip(): JSX.Element {
                       >
                         <Icon className="h-7 w-7 sm:h-8 sm:w-8 stroke-[2.2]" aria-hidden="true" />
                       </span>
-                      <span className="font-mono text-xs font-bold tracking-widest text-navy/25 transition-colors duration-300 group-hover:text-navy/60">
+                      <span className="font-bebas text-2xl sm:text-3xl tracking-widest text-navy/35 transition-colors duration-300 group-hover:text-navy/70">
                         {indexStr}
                       </span>
                     </div>
 
-                    <h2 className="mt-5 font-display text-lg sm:text-xl font-bold tracking-tight text-navy transition-colors duration-300 group-hover:text-accent-deep">
+                    <h2 className="mt-5 font-outfit text-lg sm:text-xl font-bold tracking-tight text-navy transition-colors duration-300 group-hover:text-accent-deep">
                       {item.title}
                     </h2>
                     <p className="mt-2.5 text-xs sm:text-[13.5px] leading-relaxed text-navy-soft">

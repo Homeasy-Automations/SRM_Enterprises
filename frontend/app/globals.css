@@ -1,9 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Clicker+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Bebas+Neue&family=Caveat:wght@400;600;700&family=Clicker+Script&family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Marck+Script&family=Neonderthaw&family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+.font-bebas {
+  font-family: 'Bebas Neue', sans-serif;
+}
+.font-ibm {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+.font-lora {
+  font-family: 'Lora', Georgia, serif;
+}
+.font-caveat {
+  font-family: 'Caveat', cursive;
+}
+.font-marck {
+  font-family: 'Marck Script', cursive;
+}
+.font-neon {
+  font-family: 'Neonderthaw', cursive;
+}
+.font-outfit {
+  font-family: 'Outfit', sans-serif;
+}
+.font-space {
+  font-family: 'Space Grotesk', sans-serif;
+}
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+.font-altaca {
+  font-family: 'Altaca', 'Outfit', sans-serif;
+}
 .font-alex {
   font-family: 'Alex Brush', cursive;
 }
@@ -14,7 +44,7 @@
   font-family: 'Clicker Script', cursive;
 }
 .font-script {
-  font-family: 'Alex Brush', 'Allura', cursive;
+  font-family: 'Alex Brush', 'Allura', 'Marck Script', cursive;
 }
 
 /* ==========================================================================
@@ -169,6 +199,7 @@ html[data-mood="berry"] {
   body {
     background-color: var(--surface-white);
     color: var(--navy);
+    font-family: 'Outfit', 'IBM Plex Sans', var(--font-inter), sans-serif;
     font-feature-settings: "cv11", "ss01";
     text-rendering: optimizeLegibility;
     /* `clip` (not `hidden`) so it never becomes a scroll container: sticky navbars and
@@ -184,7 +215,7 @@ html[data-mood="berry"] {
   h2,
   h3,
   h4 {
-    font-family: var(--font-space-grotesk), var(--font-inter), sans-serif;
+    font-family: var(--font-space-grotesk), 'Outfit', var(--font-inter), sans-serif;
     letter-spacing: -0.02em;
     text-wrap: balance;
   }
@@ -241,7 +272,7 @@ html[data-mood="berry"] {
   }
 
   .eyebrow {
-    @apply inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent-soft px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-accent-deep;
+    @apply inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent-soft px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-accent-deep font-space;
   }
 
   .surface-card {
@@ -368,7 +399,7 @@ html[data-mood="berry"] {
   }
 
   .btn {
-    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide;
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide font-outfit;
     transition:
       transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
       box-shadow 260ms ease,

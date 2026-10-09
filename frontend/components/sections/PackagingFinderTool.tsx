@@ -240,10 +240,10 @@ export function PackagingFinderTool(): JSX.Element {
                     >
                       <Icon className="h-5 w-5" />
                     </span>
-                    <span className="mt-2.5 font-display text-xs font-bold text-navy line-clamp-1">
+                    <span className="mt-2.5 font-outfit text-xs font-bold text-navy line-clamp-1">
                       {item.label}
                     </span>
-                    <span className="mt-0.5 text-[10px] text-navy-soft line-clamp-1">
+                    <span className="mt-0.5 font-ibm text-[10px] text-navy-soft line-clamp-1">
                       {item.subtitle}
                     </span>
                   </button>
@@ -255,11 +255,11 @@ export function PackagingFinderTool(): JSX.Element {
           {/* STEP 2: What protection do you need? */}
           <div className="mt-8 pt-8 border-t border-navy/10">
             <div className="flex items-center justify-between gap-4 mb-4">
-              <span className="text-xs font-bold uppercase tracking-wider text-accent flex items-center gap-1.5">
-                <span className="h-5 w-5 rounded-full bg-accent text-white grid place-items-center text-[11px] font-bold">2</span>
+              <span className="font-space text-xs font-bold uppercase tracking-wider text-accent flex items-center gap-1.5">
+                <span className="h-5 w-5 rounded-full bg-accent text-white grid place-items-center font-bebas text-xs">2</span>
                 What protection do you need?
               </span>
-              <span className="text-xs text-navy-soft font-medium">Select one or more requirements</span>
+              <span className="font-ibm text-xs text-navy-soft font-medium">Select one or more requirements</span>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
@@ -287,8 +287,8 @@ export function PackagingFinderTool(): JSX.Element {
                       <Icon className="h-4 w-4" />
                     </span>
                     <div className="min-w-0">
-                      <p className="text-xs font-bold text-navy leading-tight truncate">{opt.label}</p>
-                      <p className="text-[10px] text-navy-soft leading-tight truncate">{opt.desc}</p>
+                      <p className="font-outfit text-xs font-bold text-navy leading-tight truncate">{opt.label}</p>
+                      <p className="font-ibm text-[10px] text-navy-soft leading-tight truncate">{opt.desc}</p>
                     </div>
                   </button>
                 );
@@ -301,11 +301,11 @@ export function PackagingFinderTool(): JSX.Element {
             <div className="rounded-2xl border border-navy/15 bg-gradient-to-br from-slate-50 via-white to-accent-soft/20 p-5 sm:p-7">
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
                 <div>
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-100 text-emerald-800 px-3 py-1 text-xs font-bold uppercase tracking-wider mb-2">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-100 text-emerald-800 px-3 py-1 font-space text-xs font-bold uppercase tracking-wider mb-2">
                     <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600" />
                     Recommended Packaging Specification
                   </span>
-                  <h4 className="font-display text-xl sm:text-2xl font-bold text-navy">
+                  <h4 className="font-outfit text-xl sm:text-2xl font-bold text-navy">
                     Engineered Kit for {activeItem.label}
                   </h4>
                   <p className="mt-1 text-xs sm:text-sm text-navy-soft max-w-2xl leading-relaxed">
@@ -320,7 +320,7 @@ export function PackagingFinderTool(): JSX.Element {
                       setSelectedItem("automotive");
                       setSelectedProtections(["impact", "corrosion"]);
                     }}
-                    className="inline-flex items-center justify-center gap-1.5 rounded-full border border-navy/15 bg-white px-4 py-2.5 text-xs font-bold text-navy hover:bg-slate-50 transition-colors"
+                    className="inline-flex items-center justify-center gap-1.5 rounded-full border border-navy/15 bg-white px-4 py-2.5 font-outfit text-xs font-bold text-navy hover:bg-slate-50 transition-colors"
                   >
                     <RotateCcw className="h-3.5 w-3.5" />
                     Reset
@@ -329,7 +329,7 @@ export function PackagingFinderTool(): JSX.Element {
                   <button
                     type="button"
                     onClick={handleRequestQuote}
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-navy px-6 py-2.5 text-xs font-bold text-white shadow-md hover:bg-navy/90 hover:scale-[1.02] transition-all"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-navy px-6 py-2.5 font-outfit text-xs font-bold text-white shadow-md hover:bg-navy/90 hover:scale-[1.02] transition-all"
                   >
                     <span>Request Recommended Packaging</span>
                     <ArrowRight className="h-4 w-4" />
@@ -340,38 +340,38 @@ export function PackagingFinderTool(): JSX.Element {
               {/* 3 Material Pillars */}
               <div className="mt-6 grid gap-4 sm:grid-cols-3 pt-6 border-t border-navy/10">
                 <div className="rounded-xl bg-white p-4 border border-navy/10 shadow-2xs">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-accent block mb-1 flex items-center gap-1">
+                  <span className="font-space text-[10px] font-bold uppercase tracking-wider text-accent block mb-1 flex items-center gap-1">
                     <Box className="h-3.5 w-3.5 text-accent" />
                     Outer Container
                   </span>
-                  <p className="text-xs sm:text-sm font-bold text-navy leading-snug">
+                  <p className="font-ibm text-xs sm:text-sm font-semibold text-navy leading-snug">
                     {recommendation.box}
                   </p>
                 </div>
 
                 <div className="rounded-xl bg-white p-4 border border-navy/10 shadow-2xs">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-600 block mb-1 flex items-center gap-1">
+                  <span className="font-space text-[10px] font-bold uppercase tracking-wider text-emerald-600 block mb-1 flex items-center gap-1">
                     <Layers className="h-3.5 w-3.5 text-emerald-600" />
                     Internal Cushioning
                   </span>
-                  <p className="text-xs sm:text-sm font-bold text-navy leading-snug">
+                  <p className="font-ibm text-xs sm:text-sm font-semibold text-navy leading-snug">
                     {recommendation.cushion}
                   </p>
                 </div>
 
                 <div className="rounded-xl bg-white p-4 border border-navy/10 shadow-2xs">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#8438FF] block mb-1 flex items-center gap-1">
+                  <span className="font-space text-[10px] font-bold uppercase tracking-wider text-[#8438FF] block mb-1 flex items-center gap-1">
                     <Shield className="h-3.5 w-3.5 text-[#8438FF]" />
                     Securing &amp; Preservation
                   </span>
-                  <p className="text-xs sm:text-sm font-bold text-navy leading-snug">
+                  <p className="font-ibm text-xs sm:text-sm font-semibold text-navy leading-snug">
                     {recommendation.wrapOrSecuring}
                   </p>
                 </div>
               </div>
 
               <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-navy-soft">
-                <span className="flex items-center gap-1.5 font-medium">
+                <span className="flex items-center gap-1.5 font-caveat text-sm font-bold text-amber-700 tracking-wide">
                   <Sparkles className="h-3.5 w-3.5 text-amber-500" />
                   {recommendation.leadTime}
                 </span>
