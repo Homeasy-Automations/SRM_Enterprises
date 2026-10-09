@@ -52,7 +52,7 @@ export function QualityFocusSection(): JSX.Element {
               </p>
               <div className="mt-6 relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-navy/10 bg-slate-100 shadow-sm group">
                 <Image
-                  src="/images/hero6.png"
+                  src="/images/home.png"
                   alt="Quality control, prototype inspection and dimensional tolerance verification"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"

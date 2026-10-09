@@ -1,6 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allura&family=Clicker+Script&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.font-alex {
+  font-family: 'Alex Brush', cursive;
+}
+.font-allura {
+  font-family: 'Allura', cursive;
+}
+.font-clicker {
+  font-family: 'Clicker Script', cursive;
+}
+.font-script {
+  font-family: 'Alex Brush', 'Allura', cursive;
+}
 
 /* ==========================================================================
    SRM Enterprises — design tokens

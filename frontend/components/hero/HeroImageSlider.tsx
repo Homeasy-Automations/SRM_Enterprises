@@ -169,17 +169,17 @@ export function HeroImageSlider({
         </button>
       </div>
 
-      {/* Bottom Status Ribbon: Active Caption & Pagination Indicators */}
-      <div className="absolute bottom-4 left-0 right-0 z-20 flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-3 px-6 max-w-7xl mx-auto pointer-events-none">
+      {/* Bottom Status Ribbon: Active Caption & Pagination Indicators (aligned right to leave bottom-left clear) */}
+      <div className="absolute bottom-3 right-4 sm:bottom-4 sm:right-6 z-20 flex items-center justify-end gap-3 pointer-events-none">
         {/* Current slide caption pill */}
-        <div className="pointer-events-auto hidden sm:flex items-center gap-2 rounded-full border border-navy/10 bg-white/85 px-3.5 py-1 text-xs font-semibold text-navy backdrop-blur-md shadow-xs">
+        <div className="pointer-events-auto hidden md:flex items-center gap-2 rounded-full border border-navy/10 bg-white/90 px-3.5 py-1 text-xs font-semibold text-navy backdrop-blur-md shadow-xs">
           <span className="h-2 w-2 rounded-full bg-accent animate-pulse" />
           <span className="font-bold text-accent">{activeSlide.category}:</span>
           <span className="text-navy-soft">{activeSlide.title}</span>
         </div>
 
         {/* Indicator dots with active fill & auto-play pause toggle */}
-        <div className="pointer-events-auto flex items-center gap-2 rounded-full border border-navy/10 bg-white/85 px-3 py-1.5 backdrop-blur-md shadow-xs">
+        <div className="pointer-events-auto flex items-center gap-2 rounded-full border border-navy/10 bg-white/90 px-3 py-1.5 backdrop-blur-md shadow-xs">
           {HERO_SLIDES.map((slide, index) => {
             const isActive = index === currentIndex;
             return (

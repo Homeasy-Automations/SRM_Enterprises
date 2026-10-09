@@ -58,6 +58,10 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-inter)", "ui-sans-serif", "system-ui", "sans-serif"],
         display: ["var(--font-space-grotesk)", "var(--font-inter)", "sans-serif"],
+        script: ["'Alex Brush'", "'Allura'", "cursive"],
+        alex: ["'Alex Brush'", "cursive"],
+        allura: ["'Allura'", "cursive"],
+        clicker: ["'Clicker Script'", "cursive"],
       },
       borderRadius: {
         xl2: "20px",

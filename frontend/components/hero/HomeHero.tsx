@@ -1,41 +1,20 @@
 "use client";
 
-import { motion, useReducedMotion, type Variants } from "framer-motion";
-import { ArrowRight, MessageCircle, Package, Sparkles } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
+import { ArrowRight, MessageCircle, Package } from "lucide-react";
 import { getWhatsAppLink } from "@/data/company";
 import { Marquee } from "@/components/animations/Marquee";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 import { HeroImageSlider } from "./HeroImageSlider";
 import { clienteleItems } from "@/data/navigation";
 import { analytics } from "@/lib/analytics";
-import { splitWords } from "@/lib/utils";
 import { useQuoteModal } from "@/hooks/use-quote-modal";
 
-const HEADLINE = "Industrial Packaging. Built to Your Specification.";
-
-/** Homepage hero: staggered headline, floating packaging art, primary B2B sales CTA. */
+/** Homepage hero: bottom-left anchored reduced content with script typography & photographic slider. */
 export function HomeHero(): JSX.Element {
   const reducedMotion = useReducedMotion();
   const whatsappLink = getWhatsAppLink();
-  const words = splitWords(HEADLINE);
   const { openQuoteModal } = useQuoteModal();
-
-  const container: Variants = {
-    hidden: {},
-    visible: {
-      transition: { staggerChildren: reducedMotion ? 0 : 0.1, delayChildren: 0.15 },
-    },
-  };
-
-  const word: Variants = {
-    hidden: reducedMotion ? { opacity: 1 } : { opacity: 0, y: "0.45em", rotateX: -35 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      rotateX: 0,
-      transition: { duration: reducedMotion ? 0.001 : 0.85, ease: [0.16, 1, 0.3, 1] },
-    },
-  };
 
   return (
     <section
@@ -45,64 +24,81 @@ export function HomeHero(): JSX.Element {
       {/* Background Image Slider with packaging facility photography */}
       <HeroImageSlider />
 
-      <div className="container-page relative z-10 my-auto flex flex-1 flex-col items-center justify-center py-6 sm:py-8 lg:py-10">
-        <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-          <motion.span
-            initial={reducedMotion ? { opacity: 1 } : { opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: false, amount: 0.1, margin: "0px 0px -40px 0px" }}
-            transition={{ duration: reducedMotion ? 0.001 : 0.7 }}
-            className="eyebrow badge-interactive cursor-default shadow-xs transition-all duration-300 hover:scale-105"
-          >
-            <Sparkles className="h-3.5 w-3.5 text-accent" aria-hidden="true" />
-            COMPLETE PACKAGING MATERIAL SOLUTIONS
-          </motion.span>
+      {/* Hero Content — Anchored further to bottom-left with wider margin and lower baseline */}
+      <div className="relative z-10 flex flex-1 flex-col justify-end items-start text-left w-full px-5 sm:px-8 md:px-12 lg:px-16 pt-16 pb-4 sm:pb-6 lg:pb-8">
+        <div className="relative max-w-xl lg:max-w-3xl flex flex-col items-start text-left">
+          {/* Seamless ambient diffusion directly behind text — completely blended with zero visible edges */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -inset-10 sm:-inset-16 -z-10"
+            style={{
+              background:
+                "radial-gradient(ellipse 95% 85% at 25% 60%, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.35) 45%, rgba(255, 255, 255, 0) 80%)",
+              filter: "blur(24px)",
+            }}
+          />
 
+          {/* Kicker: Dot + Brand Name + Accent Line */}
+          <motion.div
+            initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: reducedMotion ? 0.001 : 0.6 }}
+            className="flex items-center gap-2.5 text-xs sm:text-sm font-bold uppercase tracking-[0.22em] text-accent"
+          >
+            <span className="h-2 w-2 rounded-full bg-accent" />
+            <span>SRM ENTERPRISES</span>
+            <span className="h-0.5 w-10 sm:w-14 bg-accent/80" />
+          </motion.div>
+
+          {/* Bold Headline with Script Accent */}
           <motion.h1
             id="hero-heading"
-            variants={container}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.1, margin: "0px 0px -40px 0px" }}
-            className="mt-3 sm:mt-4 font-display text-[2rem] font-extrabold leading-[1.12] text-navy sm:text-5xl lg:text-6xl xl:text-[4.1rem]"
+            initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: reducedMotion ? 0.001 : 0.7, delay: 0.1 }}
+            className="mt-2.5 font-display text-3xl sm:text-5xl lg:text-6xl xl:text-[4.2rem] font-extrabold leading-[1.08] text-navy"
           >
-            {words.map((item, index) => (
-              <motion.span
-                key={`${item}-${index}`}
-                variants={word}
-                className="inline-block will-transform"
-                style={{ transformOrigin: "50% 100%" }}
-              >
-                <span className={index >= 2 ? "text-gradient-animated" : undefined}>
-                  {item}
-                </span>
-                {index < words.length - 1 ? <span>&nbsp;</span> : null}
-              </motion.span>
-            ))}
+            Industrial Packaging{" "}
+            <span className="font-alex text-accent-deep text-[1.15em] font-normal block sm:inline leading-none">
+              Built to Specification
+            </span>
           </motion.h1>
 
+          {/* Prominent Accent Underline Bar */}
+          <motion.span
+            initial={reducedMotion ? { opacity: 1 } : { opacity: 0, scaleX: 0 }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: reducedMotion ? 0.001 : 0.7, delay: 0.2 }}
+            className="mt-3.5 h-1 sm:h-1.5 w-24 sm:w-32 rounded-full bg-accent block origin-left"
+          />
+
+          {/* Reduced Subtext */}
           <motion.p
-            initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+            initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.1, margin: "0px 0px -40px 0px" }}
-            transition={{ duration: reducedMotion ? 0.001 : 0.85, delay: 0.35 }}
-            className="mt-3 sm:mt-4 max-w-2xl text-sm leading-relaxed text-navy-soft sm:text-base lg:text-lg"
+            viewport={{ once: true }}
+            transition={{ duration: reducedMotion ? 0.001 : 0.7, delay: 0.25 }}
+            className="mt-3 max-w-xl text-xs sm:text-sm lg:text-[0.95rem] leading-relaxed text-navy-soft font-medium"
           >
-            Corrugated boxes, EPE foam, bubble packaging, films and accessories engineered to your exact size, material, and bulk supply specifications.
+            Corrugated cartons, EPE foam cushioning, bubble rolls & protective films engineered for seamless bulk industrial supply.
           </motion.p>
 
+          {/* Streamlined Action Buttons */}
           <motion.div
-            initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 18 }}
+            initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.1, margin: "0px 0px -40px 0px" }}
-            transition={{ duration: reducedMotion ? 0.001 : 0.85, delay: 0.5 }}
-            className="mt-6 flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center"
+            viewport={{ once: true }}
+            transition={{ duration: reducedMotion ? 0.001 : 0.7, delay: 0.35 }}
+            className="mt-5 sm:mt-6 flex flex-wrap items-center gap-3"
           >
             <MagneticButton
               type="button"
               variant="primary"
               ariaLabel="Get a custom packaging quote"
-              className="w-full sm:w-auto shadow-md"
+              className="shadow-md text-xs sm:text-sm py-2.5 px-5"
               onClick={() => {
                 analytics.ctaClick("Get a Custom Quote", "hero");
                 openQuoteModal();
@@ -115,10 +111,10 @@ export function HomeHero(): JSX.Element {
             <MagneticButton
               href="/products"
               variant="outline"
-              className="w-full sm:w-auto"
+              className="bg-white/90 backdrop-blur-xs text-xs sm:text-sm py-2.5 px-5 border-navy/20 hover:border-accent"
               onClick={() => analytics.ctaClick("Explore Products", "hero")}
             >
-              <Package className="h-4 w-4 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6" aria-hidden="true" />
+              <Package className="h-4 w-4" aria-hidden="true" />
               Explore Products
             </MagneticButton>
 
@@ -127,24 +123,14 @@ export function HomeHero(): JSX.Element {
                 href={whatsappLink}
                 external
                 variant="ghost"
-                className="w-full border border-navy/10 sm:w-auto"
+                className="border border-navy/20 bg-white/80 backdrop-blur-xs text-xs sm:text-sm py-2.5 px-4 hover:border-emerald-500"
                 onClick={() => analytics.whatsappClick("hero")}
               >
-                <MessageCircle className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" aria-hidden="true" />
-                WhatsApp Us
+                <MessageCircle className="h-4 w-4 text-emerald-600" aria-hidden="true" />
+                WhatsApp
               </MagneticButton>
             ) : null}
           </motion.div>
-
-          <p className="mt-4 sm:mt-5 inline-flex flex-wrap items-center justify-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-navy-soft/90 sm:text-sm">
-            <span>Custom Specifications</span>
-            <span className="text-accent">•</span>
-            <span>Bulk Supply</span>
-            <span className="text-accent">•</span>
-            <span>Quality Focus</span>
-            <span className="text-accent">•</span>
-            <span>Reliable Dispatch</span>
-          </p>
         </div>
       </div>
 
