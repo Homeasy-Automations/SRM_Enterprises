@@ -36,12 +36,12 @@ export const HERO_SLIDES: HeroSlide[] = [
     title: "Films & Industrial Accessories",
     category: "Stretch Wrap & Tapes",
   },
-  {
-    src: "/images/hero6.png",
-    alt: "Custom packaging design, prototype cutting and tailored component protection workstation",
-    title: "Custom Design & Prototyping",
-    category: "Engineered to Spec",
-  },
+  // {
+  //   src: "/images/hero6.png",
+  //   alt: "Custom packaging design, prototype cutting and tailored component protection workstation",
+  //   title: "Custom Design & Prototyping",
+  //   category: "Engineered to Spec",
+  // },
   {
     src: "/images/hero2.png",
     alt: "Modern industrial packaging logistics warehouse staging with bulk pallet dispatches across India",
