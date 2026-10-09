@@ -134,77 +134,80 @@ export default function IndustriesPage(): JSX.Element {
 
                     {/* Asymmetric 3-Column Bento Deck */}
                     <div className="mt-8 grid gap-6 lg:grid-cols-12 items-stretch">
-                      {/* Left: Supply Chain Hazards (4 cols) */}
-                      <div className="lg:col-span-4 flex flex-col rounded-2xl border border-navy/10 bg-white/80 p-5 shadow-xs transition-all duration-300 hover:border-amber-400/50 hover:shadow-md">
-                        <div className="flex items-center gap-2 border-b border-navy/10 pb-3">
-                          <AlertTriangle className="h-4 w-4 text-amber-500 shrink-0" aria-hidden="true" />
-                          <h3 className="font-display text-xs font-bold uppercase tracking-[0.14em] text-navy">
-                            Supply-Chain Handling Hazards
-                          </h3>
-                        </div>
-                        <StaggerGroup as="ul" className="mt-4 flex flex-col gap-2.5 flex-1">
-                          {industry.challenges.slice(0, 4).map((challenge) => (
-                            <StaggerItem
-                              as="li"
-                              key={challenge}
-                              variant="slide-right"
-                              className="group/hazard rounded-xl border border-navy/5 bg-slate-50/70 p-3 text-xs leading-relaxed text-navy-soft shadow-xs flex items-start gap-2.5 transition-all duration-300 hover:bg-white hover:-translate-y-1 hover:shadow-md hover:border-amber-300/60 cursor-default"
-                            >
-                              <span
-                                className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full transition-transform duration-300 group-hover/hazard:scale-150"
-                                style={{ background: industry.color }}
-                                aria-hidden="true"
-                              />
-                              <span className="transition-colors duration-300 group-hover/hazard:text-navy">{challenge}</span>
-                            </StaggerItem>
-                          ))}
-                        </StaggerGroup>
-                      </div>
-
-                      {/* Middle: Targeted Material Architecture (4 cols) */}
-                      <div className="lg:col-span-4 flex flex-col rounded-2xl border border-navy/10 bg-white/80 p-5 shadow-xs transition-all duration-300 hover:border-emerald-400/50 hover:shadow-md">
-                        <div className="flex items-center gap-2 border-b border-navy/10 pb-3">
-                          <ShieldCheck className="h-4 w-4 text-emerald-600 shrink-0" aria-hidden="true" />
-                          <h3 className="font-display text-xs font-bold uppercase tracking-[0.14em] text-navy">
-                            Targeted Material Architecture
-                          </h3>
-                        </div>
-                        <StaggerGroup as="ul" className="mt-4 flex flex-col gap-2.5 flex-1">
-                          {industry.recommendedPackaging.slice(0, 4).map((entry) => {
-                            const product = getProductBySlug(entry.productSlug);
-                            return (
+                      {/* Combined Left Card: Supply-Chain Hazards (Upper) & Targeted Material Architecture (Lower 2x2 Matrix) (8 cols) */}
+                      <div className="lg:col-span-8 flex flex-col justify-between rounded-2xl border border-navy/10 bg-white/80 p-4 sm:p-5 shadow-xs transition-all duration-300 hover:border-navy/20 hover:shadow-md">
+                        {/* Upper Horizontal Space: Supply-Chain Handling Hazards */}
+                        <div>
+                          <div className="flex items-center gap-2 border-b border-navy/10 pb-2">
+                            <AlertTriangle className="h-4 w-4 text-amber-500 shrink-0" aria-hidden="true" />
+                            <h3 className="font-display text-xs font-bold uppercase tracking-[0.14em] text-navy">
+                              Supply-Chain Handling Hazards
+                            </h3>
+                          </div>
+                          <StaggerGroup as="ul" className="mt-3 grid gap-2 sm:grid-cols-2">
+                            {industry.challenges.slice(0, 4).map((challenge) => (
                               <StaggerItem
                                 as="li"
-                                key={entry.productSlug}
-                                variant="slide-left"
-                                className="group/sol rounded-xl border border-navy/5 bg-slate-50/70 p-3 shadow-xs hover:border-accent/40 hover:bg-white hover:-translate-y-1.5 hover:shadow-md transition-all duration-300 flex flex-col gap-1 cursor-pointer"
+                                key={challenge}
+                                variant="slide-right"
+                                className="group/hazard rounded-xl border border-navy/5 bg-slate-50/70 p-2.5 text-xs leading-relaxed text-navy-soft shadow-xs flex items-start gap-2 transition-all duration-300 hover:bg-white hover:-translate-y-0.5 hover:shadow-sm hover:border-amber-300/60 cursor-default"
                               >
-                                <div className="flex items-center justify-between gap-2">
-                                  <Link
-                                    href={`/products/${entry.productSlug}`}
-                                    className="text-xs font-bold text-navy hover:underline flex items-center gap-1.5 transition-colors duration-300 group-hover/sol:text-accent-deep"
-                                  >
-                                    <span
-                                      className="h-2 w-2 rounded-full shrink-0 transition-transform duration-300 group-hover/sol:scale-125"
-                                      style={{ background: product?.color ?? industry.color }}
-                                    />
-                                    {product?.name ?? entry.productSlug}
-                                  </Link>
-                                  <ArrowRight className="h-3 w-3 text-navy-soft shrink-0 transition-transform duration-300 group-hover/sol:translate-x-1" aria-hidden="true" />
-                                </div>
-                                <p className="text-[0.75rem] leading-normal text-navy-soft line-clamp-2">
-                                  {entry.reason}
-                                </p>
+                                <span
+                                  className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full transition-transform duration-300 group-hover/hazard:scale-150"
+                                  style={{ background: industry.color }}
+                                  aria-hidden="true"
+                                />
+                                <span className="transition-colors duration-300 group-hover/hazard:text-navy">{challenge}</span>
                               </StaggerItem>
-                            );
-                          })}
-                        </StaggerGroup>
+                            ))}
+                          </StaggerGroup>
+                        </div>
+
+                        {/* Lower Horizontal Space: Targeted Material Architecture (2*2 Matrix) */}
+                        <div className="mt-4 pt-3.5 border-t border-navy/10">
+                          <div className="flex items-center gap-2 border-b border-navy/10 pb-2">
+                            <ShieldCheck className="h-4 w-4 text-emerald-600 shrink-0" aria-hidden="true" />
+                            <h3 className="font-display text-xs font-bold uppercase tracking-[0.14em] text-navy">
+                              Targeted Material Architecture
+                            </h3>
+                          </div>
+                          <StaggerGroup as="ul" className="mt-3 grid gap-2 sm:grid-cols-2">
+                            {industry.recommendedPackaging.slice(0, 4).map((entry) => {
+                              const product = getProductBySlug(entry.productSlug);
+                              return (
+                                <StaggerItem
+                                  as="li"
+                                  key={entry.productSlug}
+                                  variant="slide-left"
+                                  className="group/sol rounded-xl border border-navy/5 bg-slate-50/70 p-2.5 shadow-xs hover:border-accent/40 hover:bg-white hover:-translate-y-0.5 hover:shadow-sm transition-all duration-300 flex flex-col justify-between gap-1 cursor-pointer"
+                                >
+                                  <div className="flex items-center justify-between gap-2">
+                                    <Link
+                                      href={`/products/${entry.productSlug}`}
+                                      className="text-xs font-bold text-navy hover:underline flex items-center gap-1.5 transition-colors duration-300 group-hover/sol:text-accent-deep"
+                                    >
+                                      <span
+                                        className="h-2 w-2 rounded-full shrink-0 transition-transform duration-300 group-hover/sol:scale-125"
+                                        style={{ background: product?.color ?? industry.color }}
+                                      />
+                                      {product?.name ?? entry.productSlug}
+                                    </Link>
+                                    <ArrowRight className="h-3 w-3 text-navy-soft shrink-0 transition-transform duration-300 group-hover/sol:translate-x-1" aria-hidden="true" />
+                                  </div>
+                                  <p className="text-[0.72rem] leading-normal text-navy-soft">
+                                    {entry.reason}
+                                  </p>
+                                </StaggerItem>
+                              );
+                            })}
+                          </StaggerGroup>
+                        </div>
                       </div>
 
                       {/* Right: Industry Visual Profile & Action Controls (4 cols) */}
-                      <div className="group/chamber lg:col-span-4 flex flex-col justify-between rounded-2xl border border-navy/10 bg-gradient-to-b from-white via-slate-50/40 to-white p-5 shadow-xs transition-all duration-300 hover:shadow-lg hover:border-navy/20">
-                        <div>
-                          <div className="flex items-center justify-between gap-2 border-b border-navy/10 pb-3">
+                      <div className="group/chamber lg:col-span-4 flex flex-col justify-between rounded-2xl border border-navy/10 bg-gradient-to-b from-white via-slate-50/40 to-white p-4 sm:p-5 shadow-xs transition-all duration-300 hover:shadow-lg hover:border-navy/20">
+                        <div className="flex flex-col flex-1">
+                          <div className="flex items-center justify-between gap-2 border-b border-navy/10 pb-2">
                             <span className="font-mono text-[0.7rem] uppercase tracking-wider text-navy-soft">
                               Industry Packaging Profile // {industry.shortName}
                             </span>
@@ -214,7 +217,7 @@ export default function IndustriesPage(): JSX.Element {
                           </div>
 
                           <div
-                            className="mt-4 relative h-40 w-full overflow-hidden rounded-xl border border-navy/10 transition-all duration-500 group-hover/chamber:scale-[1.02] group-hover/chamber:shadow-md"
+                            className="mt-3 relative min-h-[150px] sm:min-h-[175px] w-full flex-1 overflow-hidden rounded-xl border border-navy/10 transition-all duration-500 group-hover/chamber:scale-[1.01] group-hover/chamber:shadow-md"
                             style={{ background: `${industry.color}0D` }}
                           >
                             <Image
@@ -241,10 +244,10 @@ export default function IndustriesPage(): JSX.Element {
                           </div>
                         </div>
 
-                        <div className="mt-6 flex flex-col gap-2.5">
+                        <div className="mt-4 flex flex-col gap-2">
                           <Link
                             href={`/industries/${industry.slug}`}
-                            className="btn text-white text-center justify-center text-xs font-bold shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:scale-102"
+                            className="btn text-white text-center justify-center text-xs font-bold shadow-sm py-2 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:scale-101"
                             style={{ background: industry.color }}
                           >
                             Full {industry.shortName} Blueprint
@@ -252,7 +255,7 @@ export default function IndustriesPage(): JSX.Element {
                           </Link>
                           <Link
                             href="/contact"
-                            className="btn-outline text-center justify-center text-xs font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-xs hover:scale-102"
+                            className="btn-outline text-center justify-center text-xs font-semibold py-2 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xs hover:scale-101"
                           >
                             Discuss Requirement
                           </Link>
