@@ -1,8 +1,7 @@
 "use client";
 
-import { ArrowRight, MapPin, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { BRAND } from "@srm/config";
-import { CONTACT, getMailtoLink } from "@/data/company";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 import { Reveal } from "@/components/animations/Reveal";
 import { WavyDivider } from "@/components/animations/WavyDivider";
@@ -71,7 +70,7 @@ export function CtaBanner({
         </div>
       ) : null}
 
-      <div className="container-page relative pt-14 pb-28 sm:pt-16 sm:pb-36 lg:pt-20 lg:pb-44">
+      <div className="container-page relative pt-14 pb-20 sm:pt-16 sm:pb-24 lg:pt-18 lg:pb-28">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
           <Reveal variant="kinetic-pop">
             <span className="badge-interactive cursor-default inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/15 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-white shadow-sm backdrop-blur-sm transition-all duration-300 hover:bg-white/25 hover:scale-105">
@@ -94,7 +93,7 @@ export function CtaBanner({
           </Reveal>
 
           <Reveal variant="flip-up" delay={0.18}>
-            <div className="mt-8 flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center">
+            <div className="mt-8 flex w-full flex-col items-stretch justify-center gap-3 sm:w-auto sm:flex-row sm:items-center">
               {isQuote ? (
                 <MagneticButton
                   type="button"
@@ -128,23 +127,8 @@ export function CtaBanner({
                   <ArrowRight className="h-4 w-4 icon-arrow-spring" aria-hidden="true" />
                 </MagneticButton>
               ) : null}
-
-              <a
-                href={getMailtoLink("Packaging requirement — SRM Enterprises")}
-                className="btn-glass w-full sm:w-auto shadow-md"
-              >
-                {CONTACT.email}
-              </a>
             </div>
           </Reveal>
-
-          <Reveal variant="split-right" delay={0.24}>
-            <p className="badge-interactive cursor-default mt-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-semibold text-white/95 backdrop-blur-sm transition-all duration-300 hover:bg-white/20">
-              <MapPin className="h-4 w-4" aria-hidden="true" />
-              {BRAND.locations.join(" • ")}
-            </p>
-          </Reveal>
-
           <Reveal variant="fade-in" delay={0.28}>
             <p className="mt-2 text-xs text-white/85 sm:text-sm">
               {footnote ?? `Bulk supply ${BRAND.bulkSupplyLine}.`}

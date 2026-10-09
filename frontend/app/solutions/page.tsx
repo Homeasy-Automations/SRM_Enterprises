@@ -77,113 +77,126 @@ export default function SolutionsPage(): JSX.Element {
             className="max-w-3xl"
           />
 
-          <StaggerGroup className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3" stagger={0.07}>
+          <StaggerGroup className="mt-8 sm:mt-10 grid gap-5 sm:grid-cols-2" stagger={0.06}>
             {solutions.map((sol) => {
               const Icon = ICON_MAP[sol.icon] ?? Shield;
               return (
                 <StaggerItem key={sol.id} variant="kinetic-pop" className="h-full">
                   <article
-                    className="card-home-vivid group flex h-full flex-col justify-between rounded-3xl border border-navy/10 bg-white p-6 sm:p-7 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl"
-                    style={{ ["--accent" as string]: sol.color }}
+                    className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl sm:rounded-3xl border border-navy/10 bg-white p-5 sm:p-5.5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                    style={{
+                      borderTopColor: sol.color,
+                      borderTopWidth: 3.5,
+                      ["--accent" as string]: sol.color,
+                    }}
                   >
-                    <div className="flex flex-col gap-4">
+                    {/* Dynamic Ambient Hover Glow */}
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full blur-2xl opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-20"
+                      style={{ background: sol.color }}
+                    />
+
+                    <div className="flex flex-col gap-3">
                       {/* Top Header */}
                       <div className="flex items-center justify-between">
                         <span
-                          className="grid h-13 w-13 place-items-center rounded-2xl text-white shadow-xs transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6"
+                          className="grid h-10 w-10 sm:h-11 sm:w-11 place-items-center rounded-xl text-white shadow-2xs transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-3"
                           style={{ background: sol.color }}
                         >
-                          <Icon className="h-6 w-6" aria-hidden="true" />
+                          <Icon className="h-5 w-5 sm:h-5.5 sm:w-5.5" aria-hidden="true" />
                         </span>
                         <span
-                          className="rounded-full px-3 py-1 text-[0.68rem] font-bold uppercase tracking-wider"
+                          className="rounded-full px-2.5 py-0.5 text-[0.65rem] font-bold uppercase tracking-wider shadow-2xs"
                           style={{ background: `${sol.color}15`, color: sol.color }}
                         >
                           Problem Solver
                         </span>
                       </div>
 
+                      {/* Title & Tagline with exact uniform heights and no truncation */}
                       <div>
-                        <h2 className="font-display text-xl font-bold text-navy transition-colors duration-200 group-hover:text-accent">
+                        <h2 className="font-display text-lg sm:text-xl font-bold text-navy transition-colors duration-200 group-hover:text-accent min-h-[1.75rem] flex items-center">
                           {sol.name}
                         </h2>
-                        <p className="mt-1 text-xs font-semibold" style={{ color: sol.color }}>
+                        <p
+                          className="mt-0.5 text-xs font-semibold min-h-[2.25rem] flex items-center leading-relaxed"
+                          style={{ color: sol.color }}
+                        >
                           {sol.tagline}
                         </p>
                       </div>
 
-                      {/* PROBLEM → APPROACH → RESULT STORYTELLING BOX */}
-                      <div className="flex flex-col gap-3 rounded-2xl bg-slate-50/90 p-4 border border-navy/10">
+                      {/* PROBLEM → APPROACH → RESULT STORYTELLING BOX (Uniform heights with 100% full text visibility) */}
+                      <div className="flex flex-col gap-1.5 rounded-2xl bg-slate-50/90 p-3 border border-navy/10">
                         {/* The Problem */}
-                        <div>
-                          <span className="text-[10px] font-extrabold uppercase tracking-widest text-rose-600 flex items-center gap-1 mb-1">
+                        <div className="min-h-[3.75rem] flex flex-col justify-start">
+                          <span className="text-[10px] font-extrabold uppercase tracking-widest text-rose-600 flex items-center gap-1 mb-0.5">
                             <AlertTriangle className="h-3 w-3 text-rose-500 shrink-0" />
                             THE PROBLEM
                           </span>
-                          <p className="text-xs leading-relaxed text-navy font-medium">
+                          <p className="text-[0.73rem] sm:text-xs leading-relaxed text-navy font-medium">
                             {sol.problem}
                           </p>
                         </div>
 
                         {/* Transition indicator */}
-                        <div className="flex items-center justify-center text-navy/30 -my-1">
-                          <ArrowDown className="h-3.5 w-3.5" />
+                        <div className="flex items-center justify-center text-navy/20 h-3 -my-0.5">
+                          <ArrowDown className="h-3 w-3" />
                         </div>
 
                         {/* Our Approach */}
-                        <div>
-                          <span className="text-[10px] font-extrabold uppercase tracking-widest text-accent-deep block mb-1">
+                        <div className="min-h-[3.75rem] flex flex-col justify-start">
+                          <span className="text-[10px] font-extrabold uppercase tracking-widest text-accent-deep block mb-0.5">
                             OUR APPROACH
                           </span>
-                          <p className="text-xs leading-relaxed text-navy-soft">
+                          <p className="text-[0.73rem] sm:text-xs leading-relaxed text-navy-soft">
                             {sol.approach}
                           </p>
                         </div>
 
                         {/* Transition indicator */}
-                        <div className="flex items-center justify-center text-navy/30 -my-1">
-                          <ArrowDown className="h-3.5 w-3.5" />
+                        <div className="flex items-center justify-center text-navy/20 h-3 -my-0.5">
+                          <ArrowDown className="h-3 w-3" />
                         </div>
 
                         {/* The Result */}
-                        <div className="rounded-xl bg-emerald-50 border border-emerald-500/25 p-2.5">
+                        <div className="rounded-xl bg-emerald-50/90 border border-emerald-500/20 px-2.5 py-1.5 min-h-[3.25rem] flex flex-col justify-center">
                           <span className="text-[10px] font-extrabold uppercase tracking-widest text-emerald-800 flex items-center gap-1 mb-0.5">
-                            <CheckCircle className="h-3.5 w-3.5 text-emerald-600 shrink-0" />
+                            <CheckCircle className="h-3 w-3 text-emerald-600 shrink-0" />
                             RESULT
                           </span>
-                          <p className="text-xs leading-relaxed text-emerald-950 font-semibold">
+                          <p className="text-[0.73rem] sm:text-xs leading-snug text-emerald-950 font-semibold">
                             {sol.result}
                           </p>
                         </div>
                       </div>
 
-                      {/* Materials Used */}
-                      <div className="pt-2">
-                        <span className="text-[0.68rem] font-bold uppercase tracking-wider text-navy-soft/80 block mb-1.5">
+                      {/* Materials Used (No pills hidden) */}
+                      <div className="min-h-[2.5rem] flex items-center gap-1.5 flex-wrap">
+                        <span className="text-[0.68rem] font-bold uppercase tracking-wider text-navy-soft/80 shrink-0 mr-1">
                           Core Materials:
                         </span>
-                        <div className="flex flex-wrap gap-1.5">
-                          {sol.materialsUsed.map((mat) => (
-                            <span
-                              key={mat}
-                              className="rounded-full border border-navy/10 bg-white px-2.5 py-0.5 text-[0.7rem] font-medium text-navy"
-                            >
-                              {mat}
-                            </span>
-                          ))}
-                        </div>
+                        {sol.materialsUsed.map((mat) => (
+                          <span
+                            key={mat}
+                            className="rounded-full border border-navy/8 bg-slate-50/90 px-2.5 py-0.5 text-[0.68rem] font-medium text-navy shadow-2xs transition-colors duration-200 group-hover:bg-white group-hover:border-navy/15"
+                          >
+                            {mat}
+                          </span>
+                        ))}
                       </div>
                     </div>
 
-                    {/* Bottom CTA */}
-                    <div className="mt-6 pt-4 border-t border-navy/5">
+                    {/* Bottom CTA (Exact uniform placement) */}
+                    <div className="mt-3.5 pt-3 border-t border-navy/5">
                       <Link
                         href={`/contact?material=${encodeURIComponent(sol.name)}`}
-                        className="inline-flex w-full items-center justify-center gap-2 rounded-full py-2.5 text-xs font-bold text-white shadow-xs transition-all duration-300 hover:shadow-md hover:brightness-105"
+                        className="inline-flex w-full items-center justify-center gap-2 rounded-full py-2 text-xs font-bold text-white shadow-xs transition-all duration-300 hover:shadow-md hover:brightness-105"
                         style={{ background: sol.color }}
                       >
                         <span>Request Similar Packaging</span>
-                        <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                        <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
                       </Link>
                     </div>
                   </article>

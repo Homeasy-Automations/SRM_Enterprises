@@ -42,45 +42,64 @@ export function SolutionsHomeSection(): JSX.Element {
           </Reveal>
         </div>
 
-        <StaggerGroup className="mt-8 sm:mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" stagger={0.07}>
+        <StaggerGroup className="mt-8 sm:mt-10 grid gap-5 sm:grid-cols-2" stagger={0.06}>
           {solutions.map((sol) => {
             const Icon = ICON_MAP[sol.icon] ?? Shield;
             return (
               <StaggerItem key={sol.id} variant="kinetic-pop" className="h-full">
                 <article
-                  className="card-home-vivid group flex h-full flex-col justify-between p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl"
-                  style={{ ["--accent" as string]: sol.color }}
+                  className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl sm:rounded-3xl border border-navy/10 bg-white p-5 sm:p-5.5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                  style={{
+                    borderTopColor: sol.color,
+                    borderTopWidth: 3.5,
+                    ["--sol-accent" as string]: sol.color,
+                  }}
                 >
-                  <div className="flex flex-col gap-3.5">
+                  {/* Dynamic Ambient Hover Glow */}
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute -right-12 -top-12 h-36 w-36 rounded-full blur-2xl opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-20"
+                    style={{ background: sol.color }}
+                  />
+
+                  <div>
+                    {/* Header: Icon + Badge */}
                     <div className="flex items-center justify-between">
                       <span
-                        className="grid h-12 w-12 place-items-center rounded-2xl text-white shadow-xs transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6"
+                        className="grid h-10 w-10 sm:h-11 sm:w-11 place-items-center rounded-xl text-white shadow-2xs transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-3"
                         style={{ background: sol.color }}
                       >
-                        <Icon className="h-6 w-6" aria-hidden="true" />
+                        <Icon className="h-5 w-5 sm:h-5.5 sm:w-5.5" aria-hidden="true" />
                       </span>
                       <span
-                        className="text-[0.65rem] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full"
-                        style={{ background: `${sol.color}18`, color: sol.color }}
+                        className="text-[0.65rem] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full shadow-2xs transition-all duration-300"
+                        style={{ background: `${sol.color}15`, color: sol.color }}
                       >
                         Application
                       </span>
                     </div>
 
-                    <h3 className="font-display text-lg font-bold text-navy transition-colors duration-200 group-hover:text-accent">
+                    {/* Title & Summary */}
+                    <h3
+                      className="mt-3 font-display text-base sm:text-lg font-bold text-navy transition-colors duration-200 group-hover:opacity-95"
+                      style={{ color: "var(--card-title-color, inherit)" }}
+                    >
                       {sol.name}
                     </h3>
-                    <p className="text-xs leading-relaxed text-navy-soft">{sol.description}</p>
+                    <p className="mt-1 text-xs leading-relaxed text-navy-soft">
+                      {sol.description}
+                    </p>
 
-                    <div className="pt-2 border-t border-navy/5">
-                      <span className="text-[0.68rem] font-bold uppercase tracking-wider text-navy-soft/80 block mb-1.5">
-                        Key Applications:
-                      </span>
-                      <div className="flex flex-wrap gap-1.5">
+                    {/* Compact Inline Key Applications */}
+                    <div className="mt-3 pt-2 border-t border-navy/5">
+                      <div className="flex items-center gap-1.5 flex-wrap">
+                        <span className="text-[0.65rem] font-bold uppercase tracking-wider text-navy-soft/80 mr-0.5 shrink-0">
+                          Applications:
+                        </span>
                         {sol.applications.map((app) => (
                           <span
                             key={app}
-                            className="rounded-full border border-navy/10 bg-slate-50 px-2.5 py-0.5 text-[0.7rem] font-medium text-navy"
+                            className="rounded-full border border-navy/8 bg-slate-50/90 px-2 py-0.5 text-[0.68rem] font-medium text-navy transition-colors duration-200 group-hover:bg-white group-hover:border-navy/15"
                           >
                             {app}
                           </span>
@@ -89,15 +108,22 @@ export function SolutionsHomeSection(): JSX.Element {
                     </div>
                   </div>
 
-                  <div className="mt-5 flex items-center justify-between pt-2">
+                  {/* Footer */}
+                  <div className="mt-3.5 flex items-center justify-between pt-2 border-t border-navy/5">
                     <Link
                       href="/contact"
-                      className="inline-flex items-center gap-1.5 text-xs font-bold transition-all duration-200 group-hover:gap-2"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold transition-all duration-200 group-hover:gap-2.5"
                       style={{ color: sol.color }}
                     >
                       <span className="underline-grow">Inquire Solution</span>
-                      <ArrowRight className="h-3.5 w-3.5 icon-arrow-spring" aria-hidden="true" />
+                      <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true" />
                     </Link>
+
+                    <span
+                      className="h-2 w-2 rounded-full transition-all duration-300 group-hover:scale-125"
+                      style={{ background: sol.color }}
+                      aria-hidden="true"
+                    />
                   </div>
                 </article>
               </StaggerItem>

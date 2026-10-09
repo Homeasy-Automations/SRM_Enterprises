@@ -6,7 +6,7 @@ import { getWhatsAppLink } from "@/data/company";
 import { Marquee } from "@/components/animations/Marquee";
 import { MagneticButton } from "@/components/animations/MagneticButton";
 import { HeroImageSlider } from "./HeroImageSlider";
-import { marqueeItems } from "@/data/navigation";
+import { clienteleItems } from "@/data/navigation";
 import { analytics } from "@/lib/analytics";
 import { splitWords } from "@/lib/utils";
 import { useQuoteModal } from "@/hooks/use-quote-modal";
@@ -148,9 +148,23 @@ export function HomeHero(): JSX.Element {
         </div>
       </div>
 
-      {/* Product-name ribbon */}
+      {/* Clientele Marquee Strip */}
       <div className="relative z-10 shrink-0 border-y border-navy/10 bg-gradient-to-r from-accent-soft via-white to-[#FFF9F0] py-2.5 sm:py-3">
-        <Marquee items={marqueeItems} speed={38} />
+        <div className="flex items-center">
+          <div className="flex items-center shrink-0 pl-4 sm:pl-8 pr-3 sm:pr-6 border-r border-navy/10">
+            <span className="eyebrow text-[10px] sm:text-xs font-bold uppercase tracking-wider py-1 px-3">
+              Clientele:
+            </span>
+          </div>
+          <div className="flex-1 overflow-hidden min-w-0">
+            <Marquee
+              items={clienteleItems}
+              speed={28}
+              separator="•"
+              itemClassName="text-xs sm:text-sm font-bold text-navy"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

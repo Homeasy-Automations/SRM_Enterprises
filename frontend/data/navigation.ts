@@ -272,6 +272,18 @@ export const footerNav = {
   ],
 } as const;
 
+/** Clientele brand names used by the marquee ribbon. */
+export const clienteleItems: string[] = [
+  "Ecotwist",
+  "Castors Global",
+  "Sumedha Agro",
+  "BharatX Agro",
+  "Ecotwist",
+  "Castors Global",
+  "Sumedha Agro",
+  "BharatX Agro",
+];
+
 /** Product names used by the infinite marquee ribbon. */
 export const marqueeItems: string[] = [
   "Corrugated Boxes",
@@ -291,3 +303,4 @@ export const marqueeItems: string[] = [
   "ESD Packaging",
   "Heat-Sealing Bags",
 ];
+

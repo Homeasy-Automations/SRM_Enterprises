@@ -65,10 +65,6 @@ export function Footer(): JSX.Element {
                 Complete packaging solutions for industrial buyers — corrugated boxes, EPE
                 Foam Packaging, LDPE Bubble & Protective Packaging, poly bags & films and packaging accessories.
               </p>
-              <p className="inline-flex items-center gap-2 text-sm font-semibold text-white">
-                <MapPin className="h-4 w-4" aria-hidden="true" />
-                {BRAND.locations.join(" • ")}
-              </p>
             </StaggerItem>
 
             <StaggerItem variant="flip-up">

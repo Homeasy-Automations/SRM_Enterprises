@@ -4,18 +4,7 @@ import { Building2, Quote, Star, ShieldCheck } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { StaggerGroup, StaggerItem } from "@/components/animations/Reveal";
 import { Marquee } from "@/components/animations/Marquee";
-
-const CLIENTELE = [
-  "Ecotwist",
-  "Castors Global",
-  "Sumedha Agro",
-  "BharatX Agro",
-  "Ecotwist",
-  "Castors Global",
-  "Sumedha Agro",
-  "BharatX Agro",
-  "And Many More",
-] as const;
+import { marqueeItems } from "@/data/navigation";
 
 const TRUSTED_SECTORS = [
   { name: "Automotive Tier-1 OEMs", desc: "Transmission, chassis & powertrain parts", icon: "🚗" },
@@ -140,23 +129,9 @@ export function CustomerTrustSection(): JSX.Element {
         </StaggerGroup>
       </div>
 
-      {/* Clientele Marquee Strip */}
-      <div className="mt-8 sm:mt-10 border-y border-navy/10 bg-gradient-to-r from-white via-accent-soft/40 to-[#FFF9F0] py-3 sm:py-3.5">
-        <div className="flex items-center">
-          <div className="flex items-center shrink-0 pl-4 sm:pl-8 pr-3 sm:pr-6 border-r border-navy/10">
-            <span className="eyebrow text-[10px] sm:text-xs font-bold uppercase tracking-wider py-1 px-3">
-              Clientele:
-            </span>
-          </div>
-          <div className="flex-1 overflow-hidden min-w-0">
-            <Marquee
-              items={CLIENTELE}
-              speed={28}
-              separator="•"
-              itemClassName="text-xs sm:text-sm font-bold text-navy"
-            />
-          </div>
-        </div>
+      {/* Product-name ribbon */}
+      <div className="mt-8 sm:mt-10 border-y border-navy/10 bg-gradient-to-r from-white via-accent-soft/40 to-[#FFF9F0] py-2.5 sm:py-3">
+        <Marquee items={marqueeItems} speed={38} />
       </div>
     </section>
   );
