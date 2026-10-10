@@ -8,6 +8,7 @@ interface LogoProps {
   tone?: "dark" | "light";
   showTagline?: boolean;
   href?: string | null;
+  size?: "default" | "sm" | "xs";
 }
 
 /**
@@ -19,11 +20,28 @@ export function Logo({
   tone = "dark",
   showTagline = true,
   href = "/",
+  size = "default",
 }: LogoProps): JSX.Element {
+  const isSm = size === "sm";
+  const isXs = size === "xs";
+
+  const markSizeClass = isXs ? "h-7 w-7" : isSm ? "h-8 w-8" : "h-11 w-11";
+  const gapClass = isXs ? "gap-2" : isSm ? "gap-2.5" : "gap-3";
+  const titleClass = isXs
+    ? "text-xs font-bold tracking-tight"
+    : isSm
+      ? "text-[0.9rem] font-bold tracking-[0.02em] sm:text-base sm:font-bold sm:tracking-[0.03em]"
+      : "text-[1.05rem] font-bold tracking-[0.02em] sm:text-xl sm:font-extrabold sm:tracking-[0.08em]";
+  const taglineClass = isXs
+    ? "mt-0.5 text-[0.48rem] font-semibold uppercase tracking-[0.1em]"
+    : isSm
+      ? "mt-0.5 text-[0.52rem] font-semibold uppercase tracking-[0.14em] sm:text-[0.56rem]"
+      : "mt-1 font-semibold uppercase text-[0.6rem] tracking-[0.18em] sm:text-[0.65rem]";
+
   const content = (
-    <span className={cn("group inline-flex items-center gap-3", className)}>
-      <span className="relative inline-flex h-11 w-11 shrink-0 items-center justify-center">
-        <svg viewBox="0 0 44 44" className="h-11 w-11" role="img" aria-label="SRM Enterprises logo">
+    <span className={cn("group inline-flex items-center", gapClass, className)}>
+      <span className={cn("relative inline-flex shrink-0 items-center justify-center", markSizeClass)}>
+        <svg viewBox="0 0 44 44" className={markSizeClass} role="img" aria-label="SRM Enterprises logo">
           <title>SRM Enterprises</title>
           <defs>
             <linearGradient id="logo-top" x1="0" y1="0" x2="1" y2="1">
@@ -52,7 +70,8 @@ export function Logo({
       <span className="flex flex-col leading-none">
         <span
           className={cn(
-            "whitespace-nowrap font-ui text-[1.05rem] font-bold tracking-[0.02em] sm:text-xl sm:font-extrabold sm:tracking-[0.08em]",
+            "whitespace-nowrap font-ui",
+            titleClass,
             tone === "light" ? "text-white" : "text-navy",
           )}
         >
@@ -61,7 +80,8 @@ export function Logo({
         {showTagline ? (
           <span
             className={cn(
-              "mt-1 font-ui text-[0.6rem] font-semibold uppercase tracking-[0.18em] sm:text-[0.65rem]",
+              "font-ui",
+              taglineClass,
               tone === "light" ? "text-white/85" : "text-navy-soft",
             )}
           >
@@ -78,7 +98,7 @@ export function Logo({
     <Link
       href={href}
       aria-label="SRM Enterprises — home"
-      className="rounded-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-accent/40"
+      className="inline-block rounded-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-accent/40"
     >
       {content}
     </Link>

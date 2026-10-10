@@ -59,7 +59,7 @@ export function Footer(): JSX.Element {
         <div className="container-wide relative">
           <StaggerGroup once={false} stagger={0.09} className="grid gap-10 lg:grid-cols-4">
             <StaggerItem variant="split-left" className="flex flex-col gap-4">
-              <Logo tone="light" />
+              <Logo tone="light" size="sm" />
               <p className="text-sm leading-relaxed text-white/90">{BRAND.footerLine}.</p>
               <p className="text-sm leading-relaxed text-white/80">
                 Complete packaging solutions for industrial buyers — corrugated boxes, EPE
