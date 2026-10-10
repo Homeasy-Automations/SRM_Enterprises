@@ -35,7 +35,7 @@ export function MegaMenu({ onSelect, onHoverColor }: MegaMenuProps): JSX.Element
         <div
           role="menu"
           aria-label="Products Mega Menu"
-          className="rounded-3xl border border-navy/10 bg-white/98 p-6 shadow-2xl backdrop-blur-md"
+          className="rounded-3xl border border-navy/10 bg-white p-6 shadow-2xl"
         >
           {/* Top 5-Column Grid */}
           <div className="grid grid-cols-5 gap-5 pb-6 border-b border-navy/10">
