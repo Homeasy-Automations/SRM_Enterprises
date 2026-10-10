@@ -148,7 +148,7 @@ export function HeroImageSlider({
         aria-hidden="true"
       />
 
-      {/* Prev / Next Navigation Arrows (Accessible & Styled with Frosted Glass) */}
+      {/* Prev / Next Navigation Arrows (Accessible & Styled with Frosted Glass) 
       <div className="absolute inset-y-0 left-3 right-3 sm:left-6 sm:right-6 z-20 flex items-center justify-between pointer-events-none">
         <button
           type="button"
@@ -167,7 +167,7 @@ export function HeroImageSlider({
         >
           <ChevronRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-0.5" />
         </button>
-      </div>
+      </div>*/}
 
       {/* Bottom Status Ribbon: Active Caption & Pagination Indicators (aligned right to leave bottom-left clear) */}
       <div className="absolute bottom-3 right-4 sm:bottom-4 sm:right-6 z-20 flex items-center justify-end gap-3 pointer-events-none">
