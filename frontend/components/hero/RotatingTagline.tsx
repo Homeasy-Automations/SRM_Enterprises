@@ -36,7 +36,7 @@ export function RotatingTagline({ className }: { className?: string }): JSX.Elem
           animate={{ opacity: 1, y: 0, rotateX: 0 }}
           exit={reducedMotion ? { opacity: 0 } : { opacity: 0, y: -14, rotateX: 25 }}
           transition={{ duration: reducedMotion ? 0.001 : 0.42, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display font-extrabold text-accent-deep"
+          className="font-display font-bold text-accent-deep"
         >
           {current}
         </motion.span>

@@ -108,7 +108,7 @@ export function LocationsHomeSection(): JSX.Element {
                       <Truck className="h-6 w-6" aria-hidden="true" />
                     </span>
                     <span
-                      className="rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider"
+                      className="font-ui rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em]"
                       style={{ background: `${region.color}15`, color: region.color }}
                     >
                       Pan-India Corridor
@@ -116,7 +116,7 @@ export function LocationsHomeSection(): JSX.Element {
                   </div>
 
                   <div>
-                    <h3 className="font-display text-lg font-bold text-navy transition-colors duration-200 group-hover:text-primary">
+                    <h3 className="font-ui text-lg font-bold text-navy transition-colors duration-200 group-hover:text-primary">
                       {region.name}
                     </h3>
                     <p className="mt-1 text-xs font-semibold" style={{ color: region.color }}>
@@ -128,7 +128,7 @@ export function LocationsHomeSection(): JSX.Element {
                   </div>
 
                   <div className="pt-3 border-t border-navy/5">
-                    <span className="text-[0.68rem] font-bold uppercase tracking-wider text-navy-soft block mb-2">
+                    <span className="font-ui text-[0.68rem] font-bold uppercase tracking-[0.12em] text-navy-soft block mb-2">
                       Logistics Highlights:
                     </span>
                     <ul className="flex flex-col gap-1.5">

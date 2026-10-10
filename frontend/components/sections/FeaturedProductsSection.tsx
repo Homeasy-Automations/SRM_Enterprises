@@ -151,14 +151,14 @@ export function FeaturedProductsSection(): JSX.Element {
                         <Icon className="h-5 w-5" aria-hidden="true" />
                       </span>
                       <span
-                        className="font-accent text-xs font-normal uppercase tracking-wider px-2.5 py-0.5 rounded-full"
+                        className="font-ui text-xs font-semibold uppercase tracking-[0.12em] px-2.5 py-0.5 rounded-full"
                         style={{ background: `${prod.color}18`, color: prod.color }}
                       >
                         {prod.categoryName}
                       </span>
                     </div>
 
-                    <h3 className="font-heading text-base font-bold text-navy transition-colors duration-200 group-hover:text-accent">
+                    <h3 className="font-ui text-base font-bold text-navy transition-colors duration-200 group-hover:text-accent">
                       {prod.name}
                     </h3>
                     <p className="text-xs leading-relaxed text-navy-soft">{prod.tagline}</p>

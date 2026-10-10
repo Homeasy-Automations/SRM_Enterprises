@@ -46,7 +46,7 @@ export function Marquee({
           <span
             key={`${item}-${index}`}
             className={cn(
-              "flex shrink-0 items-center gap-6 text-sm font-semibold tracking-wide text-navy sm:gap-10 sm:text-base",
+              "flex shrink-0 items-center gap-6 font-ui text-sm font-semibold tracking-wide text-navy sm:gap-10 sm:text-base",
               itemClassName,
             )}
           >

@@ -45,7 +45,7 @@ export function PackagingSolutionsSection(): JSX.Element {
               <span className="eyebrow badge-interactive inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent mb-4">
                 Industrial Footprint
               </span>
-              <h3 className="font-display text-2xl font-bold text-navy">
+              <h3 className="font-ui text-2xl font-bold text-navy">
                 Integrated Supply Infrastructure
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-navy-soft">
@@ -62,8 +62,8 @@ export function PackagingSolutionsSection(): JSX.Element {
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent pointer-events-none" />
-                  <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between rounded-lg bg-white/95 backdrop-blur-md px-3 py-1.5 text-[11px] font-mono font-semibold text-navy shadow-xs border border-white/60">
-                    <span className="flex items-center gap-1.5 font-sans font-bold text-accent-deep">
+                  <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between rounded-lg bg-white/95 backdrop-blur-md px-3 py-1.5 text-[11px] font-ui font-semibold text-navy shadow-xs border border-white/60">
+                    <span className="flex items-center gap-1.5 font-ui font-bold text-accent-deep">
                       <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
                       Live Facility &amp; Logistics
                     </span>
@@ -99,7 +99,7 @@ export function PackagingSolutionsSection(): JSX.Element {
                           <Icon className="h-5 w-5" aria-hidden="true" />
                         </span>
                         <div>
-                          <h4 className="font-display text-base font-bold text-navy transition-colors duration-200 group-hover:text-accent">
+                          <h4 className="font-ui text-base font-bold text-navy transition-colors duration-200 group-hover:text-accent">
                             {cap.title}
                           </h4>
                           <p className="mt-1 text-xs leading-relaxed text-navy-soft">{cap.description}</p>

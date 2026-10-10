@@ -253,7 +253,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
                       >
                         <ShieldCheck className="h-5 w-5" aria-hidden="true" />
                       </span>
-                      <h3 className="font-display text-base font-bold text-navy">{industry.name}</h3>
+                      <h3 className="font-ui text-base font-bold text-navy">{industry.name}</h3>
                     </div>
                     <p className="text-xs leading-relaxed text-navy-soft">{industry.tagline}</p>
                     <div className="mt-auto overflow-hidden rounded-2xl" style={{ background: `${industry.color}12` }}>

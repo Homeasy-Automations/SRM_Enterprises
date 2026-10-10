@@ -213,7 +213,7 @@ export function QuoteModal({ isOpen, onClose, initialProduct, source = "modal" }
         {/* LEFT COLUMN: Brand & Assurance */}
         <div className="w-full md:w-5/12 bg-gradient-to-br from-navy via-[#102340] to-[#0A1629] text-white p-6 sm:p-7 flex flex-col justify-between shrink-0 overflow-y-auto h-full [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-white/20 [&::-webkit-scrollbar-track]:bg-transparent">
           <div>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-accent/20 border border-accent/40 px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-contrast">
+            <span className="font-ui inline-flex items-center gap-1.5 rounded-full bg-accent/20 border border-accent/40 px-3 py-1 text-xs font-bold uppercase tracking-[0.12em] text-accent-contrast">
               <Box className="h-3.5 w-3.5 text-accent-highlight" />
               Request a Quote
             </span>
@@ -248,7 +248,7 @@ export function QuoteModal({ isOpen, onClose, initialProduct, source = "modal" }
             </ul>
 
             <div className="mt-5 pt-4 border-t border-white/10">
-              <p className="text-[11px] uppercase tracking-wider text-white/60 font-semibold">Usually helpful:</p>
+              <p className="font-ui text-[11px] uppercase tracking-[0.12em] text-white/60 font-semibold">Usually helpful:</p>
               <div className="mt-2 grid grid-cols-2 gap-1.5 text-xs text-white/80">
                 <div className="rounded-lg bg-white/5 px-2.5 py-1.5">✓ Dimensions</div>
                 <div className="rounded-lg bg-white/5 px-2.5 py-1.5">✓ Material / Grade</div>
@@ -277,7 +277,7 @@ export function QuoteModal({ isOpen, onClose, initialProduct, source = "modal" }
           {/* Header Row: Title & Non-overlapping Desktop Close Button */}
           <div className="flex items-start justify-between gap-4 px-6 sm:px-8 pt-5 pb-3.5 border-b border-navy/10 shrink-0">
             <div>
-              <h3 id="quote-modal-title" className="font-display text-xl sm:text-2xl font-bold text-navy leading-snug">
+              <h3 id="quote-modal-title" className="font-ui text-xl sm:text-2xl font-bold text-navy leading-snug">
                 Tell Us About Your Requirement
               </h3>
               <p className="text-xs text-navy-soft mt-0.5">
@@ -318,7 +318,7 @@ export function QuoteModal({ isOpen, onClose, initialProduct, source = "modal" }
               <form onSubmit={handleSubmit} className="space-y-3.5 text-left">
                 {/* Product Category */}
                 <div>
-                  <label className="block text-xs font-bold text-navy uppercase tracking-wider mb-1">
+                  <label className="font-ui block text-xs font-bold text-navy uppercase tracking-[0.12em] mb-1">
                     Product Category <span className="text-rose-500">*</span>
                   </label>
                   <select

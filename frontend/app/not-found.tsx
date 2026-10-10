@@ -33,7 +33,7 @@ export default function NotFound(): JSX.Element {
           </Reveal>
 
           <Reveal variant="fade-up" delay={0.1}>
-            <h1 id="not-found-heading" className="font-display text-3xl font-extrabold text-navy sm:text-4xl">
+            <h1 id="not-found-heading" className="font-display text-3xl font-bold text-navy sm:text-4xl leading-[1.1] sm:leading-[1.1]">
               This page has been shipped elsewhere
             </h1>
           </Reveal>
@@ -64,7 +64,7 @@ export default function NotFound(): JSX.Element {
 
           <div className="mt-4 grid w-full gap-6 text-left sm:grid-cols-2">
             <Reveal variant="slide-right" className="rounded-[24px] border border-navy/10 bg-white p-5 shadow-soft">
-              <h2 className="font-display text-base font-bold text-navy">Product categories</h2>
+              <h2 className="font-ui text-base font-bold text-navy">Product categories</h2>
               <ul className="mt-3 flex flex-col gap-2">
                 {products.map((product) => (
                   <li key={product.slug}>
@@ -81,7 +81,7 @@ export default function NotFound(): JSX.Element {
             </Reveal>
 
             <Reveal variant="slide-left" className="rounded-[24px] border border-navy/10 bg-white p-5 shadow-soft">
-              <h2 className="font-display text-base font-bold text-navy">Industries</h2>
+              <h2 className="font-ui text-base font-bold text-navy">Industries</h2>
               <ul className="mt-3 flex flex-col gap-2">
                 {industries.map((industry) => (
                   <li key={industry.slug}>

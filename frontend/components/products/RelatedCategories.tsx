@@ -46,10 +46,10 @@ export function RelatedCategories({
                     title={`${product.name} illustration`}
                   />
                 </span>
-                <h3 className="font-display text-base font-bold text-navy">{product.name}</h3>
+                <h3 className="font-ui text-base font-bold text-navy">{product.name}</h3>
                 <p className="text-xs leading-relaxed text-navy-soft">{product.tagline}</p>
                 <span
-                  className="mt-auto inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide"
+                  className="font-ui mt-auto inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.12em]"
                   style={{ color: product.color }}
                 >
                   Open

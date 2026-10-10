@@ -106,7 +106,7 @@ export default function GalleryPage(): JSX.Element {
                     >
                       <Icon className="h-6 w-6" />
                     </div>
-                    <h3 className="font-display text-lg font-bold text-navy group-hover:text-primary transition-colors">
+                    <h3 className="font-ui text-lg font-bold text-navy group-hover:text-primary transition-colors">
                       {pillar.title}
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-navy-soft">{pillar.desc}</p>

@@ -9,6 +9,7 @@ import { HeroImageSlider } from "./HeroImageSlider";
 import { clienteleItems } from "@/data/navigation";
 import { analytics } from "@/lib/analytics";
 import { useQuoteModal } from "@/hooks/use-quote-modal";
+import { heroFontVariables } from "./hero-fonts";
 
 /** Homepage hero: bottom-left anchored reduced content with script typography & photographic slider. */
 export function HomeHero(): JSX.Element {
@@ -18,7 +19,7 @@ export function HomeHero(): JSX.Element {
 
   return (
     <section
-      className="hero-font-lock relative isolate flex flex-col justify-between overflow-hidden bg-white min-h-[calc(100dvh-76px)]"
+      className={`hero-font-lock ${heroFontVariables} relative isolate flex flex-col justify-between overflow-hidden bg-white min-h-[calc(100dvh-76px)]`}
       aria-labelledby="hero-heading"
     >
       {/* Background Image Slider with packaging facility photography */}

@@ -107,7 +107,7 @@ export default function SolutionsPage(): JSX.Element {
                           <Icon className="h-5 w-5 sm:h-5.5 sm:w-5.5" aria-hidden="true" />
                         </span>
                         <span
-                          className="rounded-full px-2.5 py-0.5 text-[0.65rem] font-bold uppercase tracking-wider shadow-2xs"
+                          className="font-ui rounded-full px-2.5 py-0.5 text-[0.65rem] font-bold uppercase tracking-[0.12em] shadow-2xs"
                           style={{ background: `${sol.color}15`, color: sol.color }}
                         >
                           Problem Solver
@@ -116,7 +116,7 @@ export default function SolutionsPage(): JSX.Element {
 
                       {/* Title & Tagline with exact uniform heights and no truncation */}
                       <div>
-                        <h2 className="font-display text-lg sm:text-xl font-bold text-navy transition-colors duration-200 group-hover:text-accent min-h-[1.75rem] flex items-center">
+                        <h2 className="font-ui text-lg sm:text-xl font-bold text-navy transition-colors duration-200 group-hover:text-accent min-h-[1.75rem] flex items-center">
                           {sol.name}
                         </h2>
                         <p
@@ -131,7 +131,7 @@ export default function SolutionsPage(): JSX.Element {
                       <div className="flex flex-col gap-1.5 rounded-2xl bg-slate-50/90 p-3 border border-navy/10">
                         {/* The Problem */}
                         <div className="min-h-[3.75rem] flex flex-col justify-start">
-                          <span className="text-[10px] font-extrabold uppercase tracking-widest text-rose-600 flex items-center gap-1 mb-0.5">
+                          <span className="font-ui text-[10px] font-extrabold uppercase tracking-[0.12em] text-rose-600 flex items-center gap-1 mb-0.5">
                             <AlertTriangle className="h-3 w-3 text-rose-500 shrink-0" />
                             THE PROBLEM
                           </span>
@@ -147,7 +147,7 @@ export default function SolutionsPage(): JSX.Element {
 
                         {/* Our Approach */}
                         <div className="min-h-[3.75rem] flex flex-col justify-start">
-                          <span className="text-[10px] font-extrabold uppercase tracking-widest text-accent-deep block mb-0.5">
+                          <span className="font-ui text-[10px] font-extrabold uppercase tracking-[0.12em] text-accent-deep block mb-0.5">
                             OUR APPROACH
                           </span>
                           <p className="text-[0.73rem] sm:text-xs leading-relaxed text-navy-soft">
@@ -162,7 +162,7 @@ export default function SolutionsPage(): JSX.Element {
 
                         {/* The Result */}
                         <div className="rounded-xl bg-emerald-50/90 border border-emerald-500/20 px-2.5 py-1.5 min-h-[3.25rem] flex flex-col justify-center">
-                          <span className="text-[10px] font-extrabold uppercase tracking-widest text-emerald-800 flex items-center gap-1 mb-0.5">
+                          <span className="font-ui text-[10px] font-extrabold uppercase tracking-[0.12em] text-emerald-800 flex items-center gap-1 mb-0.5">
                             <CheckCircle className="h-3 w-3 text-emerald-600 shrink-0" />
                             RESULT
                           </span>
@@ -174,7 +174,7 @@ export default function SolutionsPage(): JSX.Element {
 
                       {/* Materials Used (No pills hidden) */}
                       <div className="min-h-[2.5rem] flex items-center gap-1.5 flex-wrap">
-                        <span className="text-[0.68rem] font-bold uppercase tracking-wider text-navy-soft/80 shrink-0 mr-1">
+                        <span className="font-ui text-[0.68rem] font-bold uppercase tracking-[0.12em] text-navy-soft/80 shrink-0 mr-1">
                           Core Materials:
                         </span>
                         {sol.materialsUsed.map((mat) => (

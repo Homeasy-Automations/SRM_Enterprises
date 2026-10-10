@@ -211,11 +211,11 @@ export function MainInquirySection(): JSX.Element {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-14 items-start">
           {/* LEFT: Information & Guidance */}
           <div className="lg:col-span-5 lg:sticky lg:top-28">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-accent/10 border border-accent/25 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-accent">
+            <span className="font-ui inline-flex items-center gap-1.5 rounded-full bg-accent/10 border border-accent/25 px-3.5 py-1 text-xs font-bold uppercase tracking-[0.12em] text-accent">
               03 • Tell Us About Your Requirement
             </span>
 
-            <h2 className="mt-4 font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-navy leading-tight">
+            <h2 className="mt-4 font-display text-3xl sm:text-4xl sm:leading-[1.1] font-bold tracking-tight text-navy leading-[1.1]">
               Tell us what you&apos;re packing.
             </h2>
 
@@ -226,7 +226,7 @@ export function MainInquirySection(): JSX.Element {
 
             {/* Checklist */}
             <div className="mt-8 rounded-2xl border border-navy/10 bg-slate-50/70 p-6">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-navy/70 mb-4">
+              <h3 className="font-ui text-xs font-bold uppercase tracking-[0.12em] text-navy/70 mb-4">
                 What Helps Us Engineer Your Solution:
               </h3>
               <ul className="space-y-3 text-sm text-navy">
@@ -276,7 +276,7 @@ export function MainInquirySection(): JSX.Element {
                   <MessageCircle className="h-5 w-5" />
                 </span>
                 <div>
-                  <h4 className="font-display text-sm font-bold text-navy">Have drawings or product photos?</h4>
+                  <h4 className="font-ui text-sm font-bold text-navy">Have drawings or product photos?</h4>
                   <p className="mt-1 text-xs text-navy-soft leading-relaxed">
                     You can share component blueprints, CAD drawings, or sample photographs directly with our engineers on WhatsApp.
                   </p>
@@ -303,7 +303,7 @@ export function MainInquirySection(): JSX.Element {
               <div className="pb-6 border-b border-navy/10">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <div>
-                    <h3 className="font-display text-2xl font-bold text-navy">Send an Inquiry</h3>
+                    <h3 className="font-ui text-2xl font-bold text-navy">Send an Inquiry</h3>
                     <p className="text-xs text-navy-soft mt-0.5">
                       Direct engineering review with zero sales middlemen.
                     </p>
@@ -344,7 +344,7 @@ export function MainInquirySection(): JSX.Element {
                   <div className="mx-auto grid h-20 w-20 place-items-center rounded-full bg-emerald-100 text-emerald-600 mb-6">
                     <CheckCircle2 className="h-12 w-12" />
                   </div>
-                  <h4 className="font-display text-3xl font-extrabold text-navy">Inquiry Sent Successfully ✓</h4>
+                  <h4 className="font-display text-3xl font-bold text-navy">Inquiry Sent Successfully ✓</h4>
                   <p className="mt-3 text-sm text-navy-soft max-w-md mx-auto leading-relaxed">
                     Thank you, <span className="font-bold text-navy">{name}</span>. Your requirement has been routed directly to our packaging technical team. A confirmation email has also been sent to{" "}
                     <span className="font-bold text-navy">{email}</span>.
@@ -380,7 +380,7 @@ export function MainInquirySection(): JSX.Element {
                     <div className="space-y-6 animate-in fade-in duration-200">
                       {/* Product Category Selectable Visual Chips */}
                       <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-navy mb-2.5">
+                        <label className="font-ui block text-xs font-bold uppercase tracking-[0.12em] text-navy mb-2.5">
                           Product Category <span className="text-rose-500">*</span>
                         </label>
                         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2.5">
@@ -424,7 +424,7 @@ export function MainInquirySection(): JSX.Element {
 
                       {/* Requirement Type Segmented Control */}
                       <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-navy mb-2">
+                        <label className="font-ui block text-xs font-bold uppercase tracking-[0.12em] text-navy mb-2">
                           Requirement Type
                         </label>
                         <div className="grid grid-cols-3 gap-2 rounded-2xl border border-navy/15 bg-slate-50/70 p-1.5">
@@ -449,7 +449,7 @@ export function MainInquirySection(): JSX.Element {
                       {/* Quantity & Unit */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                          <label className="block text-xs font-bold uppercase tracking-wider text-navy mb-1.5">
+                          <label className="font-ui block text-xs font-bold uppercase tracking-[0.12em] text-navy mb-1.5">
                             Quantity
                           </label>
                           <div
@@ -497,7 +497,7 @@ export function MainInquirySection(): JSX.Element {
                         {/* Dimensions L × W × H */}
                         <div>
                           <div className="flex items-center justify-between mb-1.5">
-                            <label className="text-xs font-bold uppercase tracking-wider text-navy">
+                            <label className="font-ui text-xs font-bold uppercase tracking-[0.12em] text-navy">
                               Dimensions (L × W × H)
                             </label>
                             <div className="flex items-center gap-1 text-[11px] font-semibold text-accent">
@@ -543,7 +543,7 @@ export function MainInquirySection(): JSX.Element {
                       {/* Dynamic Material / Specification Options */}
                       <div className="rounded-2xl border border-navy/15 bg-slate-50/70 p-4 space-y-3">
                         <div className="flex items-center justify-between">
-                          <span className="text-xs font-bold uppercase tracking-wider text-navy">
+                          <span className="font-ui text-xs font-bold uppercase tracking-[0.12em] text-navy">
                             {activeChip.name} Specifications:
                           </span>
                           <span className="text-[11px] text-accent font-semibold">Dynamic Smart Fields</span>
@@ -744,7 +744,7 @@ export function MainInquirySection(): JSX.Element {
                         {/* Full Name */}
                         <div>
                           <div className="flex items-center justify-between mb-1.5">
-                            <label className="text-xs font-bold uppercase tracking-wider text-navy">
+                            <label className="font-ui text-xs font-bold uppercase tracking-[0.12em] text-navy">
                               Full Name <span className="text-rose-500">*</span>
                             </label>
                             {touched.name && isNameValid && (
@@ -784,7 +784,7 @@ export function MainInquirySection(): JSX.Element {
                         {/* Company Name */}
                         <div>
                           <div className="flex items-center justify-between mb-1.5">
-                            <label className="text-xs font-bold uppercase tracking-wider text-navy">
+                            <label className="font-ui text-xs font-bold uppercase tracking-[0.12em] text-navy">
                               Company Name <span className="text-rose-500">*</span>
                             </label>
                             {touched.companyName && isCompanyValid && (
@@ -822,7 +822,7 @@ export function MainInquirySection(): JSX.Element {
                         {/* Business Email */}
                         <div>
                           <div className="flex items-center justify-between mb-1.5">
-                            <label className="text-xs font-bold uppercase tracking-wider text-navy">
+                            <label className="font-ui text-xs font-bold uppercase tracking-[0.12em] text-navy">
                               Business Email <span className="text-rose-500">*</span>
                             </label>
                             {touched.email && isEmailValid && (
@@ -860,7 +860,7 @@ export function MainInquirySection(): JSX.Element {
                         {/* Phone / WhatsApp */}
                         <div>
                           <div className="flex items-center justify-between mb-1.5">
-                            <label className="text-xs font-bold uppercase tracking-wider text-navy">
+                            <label className="font-ui text-xs font-bold uppercase tracking-[0.12em] text-navy">
                               Phone / WhatsApp <span className="text-rose-500">*</span>
                             </label>
                             {touched.phone && isPhoneValid && (
@@ -899,7 +899,7 @@ export function MainInquirySection(): JSX.Element {
                       {/* City / Location */}
                       <div>
                         <div className="flex items-center justify-between mb-1.5">
-                          <label className="text-xs font-bold uppercase tracking-wider text-navy">
+                          <label className="font-ui text-xs font-bold uppercase tracking-[0.12em] text-navy">
                             City / Delivery Location <span className="text-rose-500">*</span>
                           </label>
                           {touched.city && isCityValid && (
@@ -936,7 +936,7 @@ export function MainInquirySection(): JSX.Element {
 
                       {/* Application / Use Case */}
                       <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-navy mb-1.5">
+                        <label className="font-ui block text-xs font-bold uppercase tracking-[0.12em] text-navy mb-1.5">
                           Application / Use Case
                         </label>
                         <input
@@ -950,7 +950,7 @@ export function MainInquirySection(): JSX.Element {
 
                       {/* Additional Requirements / Message */}
                       <div>
-                        <label className="block text-xs font-bold uppercase tracking-wider text-navy mb-1.5">
+                        <label className="font-ui block text-xs font-bold uppercase tracking-[0.12em] text-navy mb-1.5">
                           Additional Requirements / Technical Notes
                         </label>
                         <textarea

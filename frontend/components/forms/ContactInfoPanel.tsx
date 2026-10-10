@@ -54,7 +54,7 @@ export function ContactInfoPanel(): JSX.Element {
     <div className="flex flex-col gap-4">
       <Reveal variant="split-left">
         <div className="card-portal-glass p-6 sm:p-8">
-          <h2 className="font-display text-xl font-bold text-navy">Contact Details</h2>
+          <h2 className="font-ui text-xl font-bold text-navy">Contact Details</h2>
           <p className="mt-2 text-sm leading-relaxed text-navy-soft">
             Replace the placeholder email, phone and WhatsApp values in{" "}
             <code className="rounded bg-navy/5 px-1.5 py-0.5 text-xs">apps/web/data/company.ts</code> and the
@@ -68,7 +68,7 @@ export function ContactInfoPanel(): JSX.Element {
                   {row.icon}
                 </span>
                 <div className="min-w-0">
-                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-navy-soft">{row.label}</p>
+                  <p className="font-ui text-xs font-bold uppercase tracking-[0.12em] text-navy-soft">{row.label}</p>
                   {row.href ? (
                     <a
                       href={row.href}
@@ -83,7 +83,7 @@ export function ContactInfoPanel(): JSX.Element {
                     <p className="break-words text-sm font-semibold text-navy">
                       {row.value}
                       {/XXXXX|your-domain/i.test(row.value) ? (
-                        <span className="ml-2 rounded-full bg-[#FFF1E3] px-2 py-0.5 text-[0.65rem] font-bold uppercase tracking-wide text-[#C2620F]">
+                        <span className="font-ui ml-2 rounded-full bg-[#FFF1E3] px-2 py-0.5 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-[#C2620F]">
                           placeholder
                         </span>
                       ) : null}
@@ -98,7 +98,7 @@ export function ContactInfoPanel(): JSX.Element {
 
       <Reveal variant="fade-up" delay={0.08}>
         <div className="card-portal-glass bg-gradient-to-br from-accent-soft/40 via-white/80 to-[#FFF9F0]/70 p-6 sm:p-7">
-          <h3 className="font-display text-lg font-bold text-navy">What to include in your inquiry</h3>
+          <h3 className="font-ui text-lg font-bold text-navy">What to include in your inquiry</h3>
           <ul className="mt-3 flex flex-col gap-2 text-sm text-navy-soft">
             {[
               "Product category (corrugated, foam, bubble, films, accessories)",

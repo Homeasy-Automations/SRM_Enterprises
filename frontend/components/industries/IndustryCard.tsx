@@ -55,7 +55,7 @@ export function IndustryCard({ industry, className, rail = false }: IndustryCard
           />
         </div>
 
-        <h3 className="font-display text-lg font-bold text-navy transition-all duration-300 group-hover:text-accent group-hover:translate-x-1">
+        <h3 className="font-ui text-lg font-bold text-navy transition-all duration-300 group-hover:text-accent group-hover:translate-x-1">
           {industry.name}
         </h3>
         <p className="text-sm leading-relaxed text-navy-soft">{industry.tagline}</p>
@@ -70,7 +70,7 @@ export function IndustryCard({ industry, className, rail = false }: IndustryCard
           />
         </div>
 
-        <span className="text-xs font-bold uppercase tracking-wide underline-grow transition-all duration-300 group-hover:translate-x-1" style={{ color: industry.color }}>
+        <span className="font-ui text-xs font-bold uppercase tracking-[0.12em] underline-grow transition-all duration-300 group-hover:translate-x-1" style={{ color: industry.color }}>
           View packaging approach
         </span>
       </div>

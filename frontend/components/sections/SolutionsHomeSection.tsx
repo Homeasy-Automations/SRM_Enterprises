@@ -72,7 +72,7 @@ export function SolutionsHomeSection(): JSX.Element {
                         <Icon className="h-5 w-5 sm:h-5.5 sm:w-5.5" aria-hidden="true" />
                       </span>
                       <span
-                        className="font-accent text-xs font-normal uppercase tracking-wider px-2.5 py-0.5 rounded-full shadow-2xs transition-all duration-300"
+                        className="font-ui text-xs font-semibold uppercase tracking-[0.12em] px-2.5 py-0.5 rounded-full shadow-2xs transition-all duration-300"
                         style={{ background: `${sol.color}15`, color: sol.color }}
                       >
                         Application
@@ -81,7 +81,7 @@ export function SolutionsHomeSection(): JSX.Element {
 
                     {/* Title & Summary */}
                     <h3
-                      className="mt-3 font-heading text-base sm:text-lg font-bold text-navy transition-colors duration-200 group-hover:opacity-95"
+                      className="mt-3 font-ui text-base sm:text-lg font-bold text-navy transition-colors duration-200 group-hover:opacity-95"
                       style={{ color: "var(--card-title-color, inherit)" }}
                     >
                       {sol.name}
@@ -93,7 +93,7 @@ export function SolutionsHomeSection(): JSX.Element {
                     {/* Compact Inline Key Applications */}
                     <div className="mt-3 pt-2 border-t border-navy/5">
                       <div className="flex items-center gap-1.5 flex-wrap">
-                        <span className="font-accent text-xs font-normal uppercase tracking-wider text-navy-soft/80 mr-0.5 shrink-0">
+                        <span className="font-ui text-xs font-semibold uppercase tracking-[0.12em] text-navy-soft/80 mr-0.5 shrink-0">
                           Applications:
                         </span>
                         {sol.applications.map((app) => (

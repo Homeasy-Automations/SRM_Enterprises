@@ -46,7 +46,7 @@ export function ProductCustomizationFlow(): JSX.Element {
 
           <Link
             href="/custom-packaging"
-            className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-accent-deep hover:underline self-start lg:self-auto shrink-0"
+            className="font-ui inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.12em] text-accent-deep hover:underline self-start lg:self-auto shrink-0"
           >
             <span>Read Complete Engineering Process</span>
             <ArrowRight className="h-4 w-4" />
@@ -69,12 +69,12 @@ export function ProductCustomizationFlow(): JSX.Element {
                     >
                       <Icon className="h-6 w-6" />
                     </span>
-                    <span className="font-accent text-3xl sm:text-4xl font-normal text-navy/25 tracking-wider">
+                    <span className="font-ui text-3xl sm:text-4xl font-bold text-navy/25 tracking-wider">
                       {item.step}
                     </span>
                   </div>
 
-                  <h3 className="mt-5 font-heading text-lg font-bold text-navy group-hover:text-accent transition-colors">
+                  <h3 className="mt-5 font-ui text-lg font-bold text-navy group-hover:text-accent transition-colors">
                     {item.title}
                   </h3>
                   <p className="mt-2 text-xs sm:text-sm leading-relaxed text-navy-soft">
@@ -83,7 +83,7 @@ export function ProductCustomizationFlow(): JSX.Element {
                 </div>
 
                 <div className="mt-6 pt-3 border-t border-navy/5 flex items-center justify-between text-xs text-navy-soft">
-                  <span className="font-semibold text-navy">Step {item.step} of 03</span>
+                  <span className="font-ui font-semibold text-navy">Step {item.step} of 03</span>
                   <span className="h-2 w-2 rounded-full" style={{ background: item.color }} />
                 </div>
               </div>

@@ -87,13 +87,13 @@ export function FeatureGrid({
                       <CategoryIcon name={item.icon ?? "box"} className="h-6 w-6" color="#FFFFFF" />
                     </span>
 
-                    <h3 className="font-display text-lg font-bold text-navy">{item.title}</h3>
+                    <h3 className="font-ui text-lg font-bold text-navy">{item.title}</h3>
                     <p className="text-sm leading-relaxed text-navy-soft">{item.description}</p>
 
                     {item.detail ? (
                       <details className="group/detail mt-auto">
                         <summary
-                          className="cursor-pointer list-none text-xs font-bold uppercase tracking-wide"
+                          className="font-ui cursor-pointer list-none text-xs font-bold uppercase tracking-[0.12em]"
                           style={{ color }}
                         >
                           <span className="group-open/detail:hidden">Read more</span>
@@ -105,7 +105,7 @@ export function FeatureGrid({
 
                     {item.tag ? (
                       <span
-                        className="mt-auto text-xs font-semibold uppercase tracking-wide"
+                        className="font-ui mt-auto text-xs font-semibold uppercase tracking-[0.12em]"
                         style={{ color }}
                       >
                         {item.tag}

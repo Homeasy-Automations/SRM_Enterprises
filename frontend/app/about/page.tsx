@@ -144,10 +144,10 @@ export default function AboutPage(): JSX.Element {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
             {GENUINE_NUMBERS.map((stat) => (
               <div key={stat.label} className="flex flex-col items-center p-3 rounded-2xl bg-slate-50/70 border border-navy/5">
-                <span className="font-display text-4xl sm:text-5xl font-extrabold text-navy">
+                <span className="font-display text-4xl sm:text-5xl font-bold text-navy">
                   <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                 </span>
-                <span className="mt-2 text-xs sm:text-sm font-bold uppercase tracking-wider" style={{ color: stat.color }}>
+                <span className="font-ui mt-2 text-xs sm:text-sm font-bold uppercase tracking-[0.12em]" style={{ color: stat.color }}>
                   {stat.label}
                 </span>
                 <span className="text-xs text-navy-soft max-w-[200px]">
@@ -207,10 +207,10 @@ export default function AboutPage(): JSX.Element {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent" />
                   <div className="absolute bottom-6 left-6 right-6 text-white">
-                    <span className="inline-block rounded-full bg-accent px-3 py-1 text-[10px] font-bold uppercase tracking-wider mb-2">
+                    <span className="font-ui inline-block rounded-full bg-accent px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] mb-2">
                       Modern Facility
                     </span>
-                    <h4 className="font-display text-lg font-bold">SRM Manufacturing &amp; Logistics Hub</h4>
+                    <h4 className="font-ui text-lg font-bold">SRM Manufacturing &amp; Logistics Hub</h4>
                     <p className="mt-1 text-xs text-white/80">
                       Integrated corrugation, die-cutting, foam fabrication &amp; dispatch staging.
                     </p>
@@ -241,8 +241,8 @@ export default function AboutPage(): JSX.Element {
                 <span className="absolute bottom-2 right-2 h-3 w-3 rounded-full bg-emerald-400 ring-2 ring-white" />
               </div>
               <div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-accent">Founder &amp; Managing Director</span>
-                <h3 className="font-display text-xl font-bold text-navy mt-1">Mr. R.K. Sharma</h3>
+                <span className="font-ui text-[11px] font-bold uppercase tracking-[0.12em] text-accent">Founder &amp; Managing Director</span>
+                <h3 className="font-ui text-xl font-bold text-navy mt-1">Mr. R.K. Sharma</h3>
                 <p className="mt-2 text-xs leading-relaxed text-navy-soft">
                   Over 15 years directing industrial packaging operations, supply chain logistics, and long-term client procurement partnerships across major automotive and manufacturing belts.
                 </p>
@@ -260,8 +260,8 @@ export default function AboutPage(): JSX.Element {
                 <span className="absolute bottom-2 right-2 h-3 w-3 rounded-full bg-emerald-400 ring-2 ring-white" />
               </div>
               <div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-700">Technical &amp; Quality Lead</span>
-                <h3 className="font-display text-xl font-bold text-navy mt-1">P. Sharma</h3>
+                <span className="font-ui text-[11px] font-bold uppercase tracking-[0.12em] text-emerald-700">Technical &amp; Quality Lead</span>
+                <h3 className="font-ui text-xl font-bold text-navy mt-1">P. Sharma</h3>
                 <p className="mt-2 text-xs leading-relaxed text-navy-soft">
                   Specializes in CAD component fitment design, EPE foam density calculations, drop-test prototyping, and rigorous batch GSM &amp; burst factor verification.
                 </p>
@@ -297,7 +297,7 @@ export default function AboutPage(): JSX.Element {
                 />
               </div>
               <div className="p-4">
-                <h4 className="font-display text-sm font-bold text-navy">Corrugation &amp; Slotting Lines</h4>
+                <h4 className="font-ui text-sm font-bold text-navy">Corrugation &amp; Slotting Lines</h4>
                 <p className="mt-1 text-xs text-navy-soft">
                   Automatic box creasing, slotting, and multi-color flexo printing.
                 </p>
@@ -315,7 +315,7 @@ export default function AboutPage(): JSX.Element {
                 />
               </div>
               <div className="p-4">
-                <h4 className="font-display text-sm font-bold text-navy">CNC Foam Cutting &amp; Fabrication</h4>
+                <h4 className="font-ui text-sm font-bold text-navy">CNC Foam Cutting &amp; Fabrication</h4>
                 <p className="mt-1 text-xs text-navy-soft">
                   Thermal lamination, hydraulic punch presses &amp; contour routing.
                 </p>
@@ -333,7 +333,7 @@ export default function AboutPage(): JSX.Element {
                 />
               </div>
               <div className="p-4">
-                <h4 className="font-display text-sm font-bold text-navy">Warehouse Buffer &amp; Fleet Loading</h4>
+                <h4 className="font-ui text-sm font-bold text-navy">Warehouse Buffer &amp; Fleet Loading</h4>
                 <p className="mt-1 text-xs text-navy-soft">
                   High-capacity palletized storage with scheduled Pan-India truck dispatch.
                 </p>
@@ -370,7 +370,7 @@ export default function AboutPage(): JSX.Element {
                       >
                         <Icon className="h-6 w-6" />
                       </div>
-                      <h3 className="font-display text-base font-bold text-navy">
+                      <h3 className="font-ui text-base font-bold text-navy">
                         {promise.title}
                       </h3>
                       <p className="mt-2 text-xs sm:text-sm leading-relaxed text-navy-soft">
@@ -411,7 +411,7 @@ export default function AboutPage(): JSX.Element {
                 >
                   <div className="flex items-center justify-between mb-4">
                     <span
-                      className="rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white shadow-2xs"
+                      className="font-ui rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-white shadow-2xs"
                       style={{ background: item.color }}
                     >
                       {item.badge}
@@ -421,7 +421,7 @@ export default function AboutPage(): JSX.Element {
                     </span>
                   </div>
 
-                  <h3 className="font-display text-base font-bold text-navy">
+                  <h3 className="font-ui text-base font-bold text-navy">
                     {item.title}
                   </h3>
                   <p className="mt-2 text-xs leading-relaxed text-navy-soft">

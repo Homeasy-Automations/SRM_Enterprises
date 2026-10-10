@@ -26,7 +26,7 @@ export function HomeLeadSection(): JSX.Element {
         {/* Section 15: Lead Intro Banner */}
         <div className="mx-auto max-w-4xl text-center">
           <Reveal variant="kinetic-pop">
-            <span className="eyebrow badge-interactive inline-flex items-center gap-2 rounded-full border border-navy/10 bg-white/80 px-4 py-1.5 font-accent text-xs font-normal uppercase tracking-wider text-accent shadow-xs mb-4">
+            <span className="eyebrow badge-interactive inline-flex items-center gap-2 rounded-full border border-navy/10 bg-white/80 px-4 py-1.5 font-ui text-xs font-semibold uppercase tracking-[0.12em] text-accent shadow-xs mb-4">
               <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
               COMPLETE INDUSTRIAL PACKAGING SOLUTIONS
             </span>
@@ -35,7 +35,7 @@ export function HomeLeadSection(): JSX.Element {
           <Reveal variant="fade-up" delay={0.05}>
             <h2
               id="lead-heading"
-              className="font-heading text-3xl font-extrabold leading-tight text-navy sm:text-4xl lg:text-5xl"
+              className="font-display text-3xl font-bold leading-[1.1] text-navy sm:text-4xl lg:text-5xl sm:leading-[1.1] lg:leading-[1.1]"
             >
               Tell Us What You're Packing. <span className="text-gradient-animated">We'll Help You Find the Right Packaging.</span>
             </h2>
@@ -73,7 +73,7 @@ export function HomeLeadSection(): JSX.Element {
             </div>
           </Reveal>
 
-          <p className="mt-6 font-accent text-xs sm:text-sm font-normal uppercase tracking-wider text-navy-soft/80">
+          <p className="mt-6 font-ui text-xs sm:text-sm font-semibold uppercase tracking-[0.12em] text-navy-soft/80">
             Corrugated • EPE • Bubble • Poly Bags • Films • Accessories
           </p>
         </div>

@@ -80,7 +80,7 @@ export function GalleryHomeSection(): JSX.Element {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
 
-                    <span className="absolute top-3 left-3 text-[0.65rem] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-white/95 text-navy shadow-xs">
+                    <span className="font-ui absolute top-3 left-3 text-[0.65rem] font-bold uppercase tracking-[0.12em] px-2.5 py-0.5 rounded-full bg-white/95 text-navy shadow-xs">
                       {item.categoryLabel}
                     </span>
 
@@ -90,7 +90,7 @@ export function GalleryHomeSection(): JSX.Element {
                   </div>
 
                   <div className="flex flex-col gap-1">
-                    <h3 className="font-display text-base font-bold text-navy transition-colors duration-200 group-hover:text-accent">
+                    <h3 className="font-ui text-base font-bold text-navy transition-colors duration-200 group-hover:text-accent">
                       {item.title}
                     </h3>
                     <p className="text-xs font-semibold" style={{ color: item.color }}>

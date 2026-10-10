@@ -40,14 +40,14 @@ export function ContactHero(): JSX.Element {
           {/* Left Column: Heading and CTAs */}
           <div className="lg:col-span-7">
             <Reveal variant="fade-up">
-              <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/10 px-4 py-1.5 text-xs font-bold text-accent tracking-wide uppercase">
+              <div className="font-ui inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/10 px-4 py-1.5 text-xs font-bold text-accent tracking-[0.12em] uppercase">
                 <Sparkles className="h-3.5 w-3.5 text-accent" />
                 <span>B2B Packaging Inquiry Hub</span>
               </div>
             </Reveal>
 
             <Reveal variant="fade-up" delay={0.06}>
-              <h1 className="mt-4 font-display text-4xl font-extrabold tracking-tight text-navy sm:text-5xl lg:text-6xl">
+              <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-navy sm:text-5xl lg:text-6xl leading-[1.1] sm:leading-[1.1] lg:leading-[1.1]">
                 Let&apos;s Talk Packaging.
               </h1>
             </Reveal>

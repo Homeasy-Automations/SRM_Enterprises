@@ -42,7 +42,7 @@ export function ProductCard({ showcase, className, compact = false }: ProductCar
           <div className="flex items-start justify-between gap-4">
             <div className="flex flex-col gap-2">
               <span
-                className="badge-interactive inline-flex w-fit items-center gap-2 rounded-full px-3 py-1 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-white shadow-sm"
+                className="font-ui badge-interactive inline-flex w-fit items-center gap-2 rounded-full px-3 py-1 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-white shadow-sm"
                 style={{ background: product.color }}
               >
                 {product.badge}
@@ -52,7 +52,7 @@ export function ProductCard({ showcase, className, compact = false }: ProductCar
                 onClick={(event) => event.stopPropagation()}
                 className="focus-visible:outline-none"
               >
-                <h3 className="font-display text-xl font-bold text-navy transition-all duration-300 group-hover:text-accent group-hover:translate-x-1 sm:text-2xl">
+                <h3 className="font-ui text-xl font-bold text-navy transition-all duration-300 group-hover:text-accent group-hover:translate-x-1 sm:text-2xl">
                   {product.name}
                 </h3>
               </Link>
@@ -83,7 +83,7 @@ export function ProductCard({ showcase, className, compact = false }: ProductCar
         <div className="mt-auto flex flex-col gap-3 pt-2">
           {product.note ? (
             <p
-              className="text-xs font-semibold uppercase tracking-wide"
+              className="font-ui text-xs font-semibold uppercase tracking-[0.12em]"
               style={{ color: product.color }}
             >
               {product.note}

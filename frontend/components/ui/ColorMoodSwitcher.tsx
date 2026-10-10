@@ -68,7 +68,7 @@ export function ColorMoodSwitcher(): JSX.Element {
             aria-label="Colour mood options"
             className="absolute bottom-14 right-0 z-50 w-64 rounded-2xl border border-navy/10 bg-white p-3 shadow-lift"
           >
-            <p className="px-2 pb-2 text-xs font-semibold uppercase tracking-[0.14em] text-navy-soft">
+            <p className="font-ui px-2 pb-2 text-xs font-semibold uppercase tracking-[0.12em] text-navy-soft">
               Colour Mood
             </p>
             <ul className="flex flex-col gap-1.5">

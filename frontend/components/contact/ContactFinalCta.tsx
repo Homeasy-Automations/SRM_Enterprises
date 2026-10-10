@@ -19,14 +19,14 @@ export function ContactFinalCta(): JSX.Element {
 
       <div className="container-page relative z-10 text-center">
         <Reveal variant="fade-up">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-bold text-white uppercase tracking-wider">
+          <div className="font-ui inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-bold text-white uppercase tracking-[0.12em]">
             <Sparkles className="h-3.5 w-3.5 text-accent-highlight" />
             <span>Industrial Packaging Partner</span>
           </div>
         </Reveal>
 
         <Reveal variant="fade-up" delay={0.08}>
-          <h2 className="mt-5 font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white max-w-2xl mx-auto leading-tight">
+          <h2 className="mt-5 font-display text-3xl sm:text-4xl lg:text-5xl sm:leading-[1.1] lg:leading-[1.1] font-bold tracking-tight text-white max-w-2xl mx-auto leading-[1.1]">
             Have a Packaging Requirement?
           </h2>
         </Reveal>

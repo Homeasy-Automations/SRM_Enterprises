@@ -48,7 +48,7 @@ export function SectionHeading({
       <Reveal variant="fade-up" delay={0.05}>
         <Tag
           className={cn(
-            "text-3xl font-bold leading-[1.15] sm:text-4xl lg:text-[2.6rem]",
+            "text-3xl font-bold leading-[1.1] sm:text-4xl lg:text-[2.6rem] sm:leading-[1.1]",
             gradient ? "text-gradient-animated" : "text-navy",
           )}
         >

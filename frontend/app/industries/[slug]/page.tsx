@@ -148,11 +148,11 @@ export default function IndustryDetailPage({ params }: { params: { slug: string 
                           title={`${product.name} illustration`}
                         />
                       </span>
-                      <h3 className="font-display text-base font-bold text-navy sm:text-lg">{product.name}</h3>
+                      <h3 className="font-ui text-base font-bold text-navy sm:text-lg">{product.name}</h3>
                     </div>
                     <p className="text-sm leading-relaxed text-navy-soft">{entry.reason}</p>
                     <span
-                      className="mt-auto inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide"
+                      className="font-ui mt-auto inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.12em]"
                       style={{ color: product.color }}
                     >
                       Open category
@@ -180,7 +180,7 @@ export default function IndustryDetailPage({ params }: { params: { slug: string 
       {/* 4 — Product categories strip */}
       <section className="band-white section-pad-sm" aria-labelledby="categories-heading">
         <div className="container-page">
-          <h2 id="categories-heading" className="font-display text-xl font-bold text-navy sm:text-2xl">
+          <h2 id="categories-heading" className="font-display text-xl font-bold text-navy sm:text-2xl leading-[1.1] sm:leading-[1.1]">
             Product categories used in {industry.shortName.toLowerCase()}
           </h2>
           <ul className="mt-5 flex flex-wrap gap-3">

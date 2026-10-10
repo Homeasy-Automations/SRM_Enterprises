@@ -20,14 +20,14 @@ export function WhatsAppQuickInquiry(): JSX.Element {
           {/* Left Column: Heading and High-Conversion WhatsApp CTA */}
           <div className="lg:col-span-7">
             <Reveal variant="fade-up">
-              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/15 px-3.5 py-1.5 text-xs font-bold text-emerald-300 uppercase tracking-wider">
+              <div className="font-ui inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/15 px-3.5 py-1.5 text-xs font-bold text-emerald-300 uppercase tracking-[0.12em]">
                 <MessageCircle className="h-4 w-4" />
                 <span>Instant Mobile Engineering Desk</span>
               </div>
             </Reveal>
 
             <Reveal variant="fade-up" delay={0.08}>
-              <h2 className="mt-5 font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
+              <h2 className="mt-5 font-display text-3xl sm:text-4xl lg:text-5xl sm:leading-[1.1] lg:leading-[1.1] font-bold tracking-tight leading-[1.1]">
                 Have Photos or Drawings? <br />
                 <span className="text-emerald-400">Send Them on WhatsApp.</span>
               </h2>

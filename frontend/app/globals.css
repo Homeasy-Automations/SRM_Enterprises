@@ -2,40 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-.font-accent {
-  font-family: var(--font-accent);
-  letter-spacing: 0.06em;
+/* Role utilities for the 3-font system (display / ui / body). */
+.font-display {
+  font-family: var(--font-display);
 }
-.font-heading {
-  font-family: var(--font-heading);
+.font-ui {
+  font-family: var(--font-ui);
 }
 .font-body {
   font-family: var(--font-body);
-}
-
-/* Compatibility aliases mapped to the 3-font system */
-.font-bebas {
-  font-family: var(--font-accent);
-  letter-spacing: 0.06em;
-}
-.font-space {
-  font-family: var(--font-heading);
-}
-.font-inter,
-.font-ibm,
-.font-outfit,
-.font-lora,
-.font-altaca,
-.font-caveat,
-.font-marck,
-.font-neon {
-  font-family: var(--font-body);
-}
-.font-alex,
-.font-allura,
-.font-clicker,
-.font-script {
-  font-family: var(--font-alex), "Alex Brush", cursive;
 }
 
 /* ==========================================================================
@@ -47,9 +22,9 @@
 
 :root {
   /* Font Stacks */
-  --font-heading: var(--font-space-grotesk), "Segoe UI", system-ui, sans-serif;
-  --font-body: var(--font-inter), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-accent: var(--font-bebas), Impact, "Arial Narrow", sans-serif;
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-ui: var(--font-syne), "Segoe UI", system-ui, sans-serif;
+  --font-body: var(--font-merriweather), Georgia, "Times New Roman", serif;
 
   /* Brand */
   --brand-blue: #1e6fff;
@@ -201,7 +176,7 @@ html[data-mood="berry"] {
     background-color: var(--surface-white);
     color: var(--navy);
     font-family: var(--font-body);
-    font-feature-settings: "cv11", "ss01";
+    line-height: 1.7;
     text-rendering: optimizeLegibility;
     /* `clip` (not `hidden`) so it never becomes a scroll container: sticky navbars and
        scroll-driven accents keep working, while 3D-tilt overflow still cannot create a
@@ -213,13 +188,20 @@ html[data-mood="berry"] {
   }
 
   h1,
-  h2,
+  h2 {
+    font-family: var(--font-display);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    font-variation-settings: "opsz" 72;
+    text-wrap: balance;
+  }
+
   h3,
   h4,
   h5,
   h6 {
-    font-family: var(--font-heading);
-    letter-spacing: -0.02em;
+    font-family: var(--font-ui);
+    letter-spacing: -0.01em;
     text-wrap: balance;
   }
 
@@ -227,52 +209,126 @@ html[data-mood="berry"] {
     text-wrap: pretty;
   }
 
+  /* UI chrome: navigation, buttons, labels, table headers. */
+  nav,
+  nav a,
+  button,
+  [role="button"],
+  label,
+  legend,
+  th {
+    font-family: var(--font-ui);
+  }
+  button,
+  [role="button"] {
+    letter-spacing: 0.01em;
+  }
+
+  blockquote,
+  q {
+    font-family: var(--font-display);
+    font-style: italic;
+  }
+
+  /* Body copy is set explicitly (not inherited) so descriptions inside UI wrappers such as
+     <button> option cards or <nav> panels still read in the body face. */
+  p,
+  li,
+  dd,
+  td,
+  figcaption,
+  address {
+    font-family: var(--font-body);
+  }
+  blockquote p,
+  q p,
+  nav li {
+    font-family: inherit;
+  }
+
   /* Form controls do NOT inherit fonts by default — force them */
-  button, input, select, textarea, optgroup, option, label, legend, fieldset {
-    font-family: inherit;
-  }
-  input::placeholder, textarea::placeholder {
-    font-family: inherit;
-  }
-
-  /* Pseudo-elements, tables, code-like UI, SVG text */
-  *::before, *::after {
-    font-family: inherit;
-  }
-  table, th, td, caption, figcaption, blockquote, cite, q, small, strong, em, b, i, sup, sub, abbr, time, address, dl, dt, dd, li, summary, details, dialog {
-    font-family: inherit;
-  }
-  svg text, svg tspan {
+  input,
+  select,
+  textarea,
+  optgroup,
+  option {
     font-family: var(--font-body);
   }
+  input::placeholder,
+  textarea::placeholder {
+    font-family: inherit;
+  }
 
-  /* Hero font lock — protects Home Hero section completely from cascade */
+  /* Everything else inherits — nothing slips through */
+  *::before,
+  *::after {
+    font-family: inherit;
+  }
+  span, caption, cite, small, strong, em, b, i, sup, sub, abbr, time, dl, dt, summary, details, dialog {
+    font-family: inherit;
+  }
+  svg text,
+  svg tspan {
+    font-family: var(--font-ui);
+  }
+
+  /* --------------------------------------------------------------------------
+     Home hero font lock — the hero keeps its ORIGINAL typography, untouched by the
+     site-wide font system above. Values recorded from the live hero before the switch:
+       • all text (headline line 1, buttons, slider caption, clientele label + marquee): Inter
+       • script line "Maximum Protection.": Alex Brush
+       • <h1> element itself: Space Grotesk stack, letter-spacing -0.02em
+       • inherited line-height 1.5, Inter features "cv11", "ss01"
+     Fonts come from components/hero/hero-fonts.ts (loaded on the Home route only).
+     Selectors are element+class (0,1,1) / class+class (0,2,0) so they outrank both the
+     base element rules and single-class utilities such as .font-display / .font-ui.
+     -------------------------------------------------------------------------- */
   .hero-font-lock {
-    --font-heading: var(--font-space-grotesk), "Segoe UI", system-ui, sans-serif;
-    --font-body: var(--font-inter), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    font-family: var(--font-body);
+    --hero-font-sans: var(--font-hero-inter), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --hero-font-heading: var(--font-hero-space-grotesk), "Segoe UI", system-ui, sans-serif;
+    --hero-font-script: var(--font-hero-alex), "Alex Brush", cursive;
+    font-family: var(--hero-font-sans);
+    font-feature-settings: "cv11", "ss01";
+    font-variation-settings: normal;
+    line-height: 1.5;
   }
   .hero-font-lock h1,
   .hero-font-lock h2,
   .hero-font-lock h3,
   .hero-font-lock .font-display {
-    font-family: var(--font-heading);
+    font-family: var(--hero-font-heading);
+    font-variation-settings: normal;
+    letter-spacing: -0.02em;
   }
   .hero-font-lock button,
+  .hero-font-lock [role="button"],
   .hero-font-lock a,
+  .hero-font-lock nav,
+  .hero-font-lock label,
   .hero-font-lock input,
   .hero-font-lock select,
   .hero-font-lock textarea,
   .hero-font-lock span,
   .hero-font-lock p,
-  .hero-font-lock div {
-    font-family: var(--font-body);
+  .hero-font-lock li,
+  .hero-font-lock div,
+  .hero-font-lock .font-ui,
+  .hero-font-lock .font-body {
+    font-family: var(--hero-font-sans);
+  }
+  /* Plain hero buttons (slider arrows) keep UA letter-spacing; .btn keeps its original 0.025em. */
+  :where(.hero-font-lock) button,
+  :where(.hero-font-lock) [role="button"] {
+    letter-spacing: normal;
+  }
+  .hero-font-lock .btn {
+    letter-spacing: 0.025em;
   }
   .hero-font-lock .font-alex {
-    font-family: var(--font-alex), "Alex Brush", cursive !important;
+    font-family: var(--hero-font-script) !important;
   }
   .hero-font-lock .eyebrow {
-    font-family: var(--font-body);
+    font-family: var(--hero-font-sans);
     letter-spacing: normal;
   }
 
@@ -324,8 +380,9 @@ html[data-mood="berry"] {
   }
 
   .eyebrow {
-    @apply inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent-soft px-3.5 py-1.5 text-xs font-semibold uppercase text-accent-deep font-accent;
-    letter-spacing: 0.06em;
+    @apply inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent-soft px-3.5 py-1.5 text-xs font-semibold uppercase text-accent-deep;
+    font-family: var(--font-ui);
+    letter-spacing: 0.12em;
   }
 
   .surface-card {
@@ -452,7 +509,9 @@ html[data-mood="berry"] {
   }
 
   .btn {
-    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide;
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold;
+    font-family: var(--font-ui);
+    letter-spacing: 0.01em;
     transition:
       transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
       box-shadow 260ms ease,

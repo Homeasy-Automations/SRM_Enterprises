@@ -170,7 +170,7 @@ export default function WhyUsPage(): JSX.Element {
                     style={{ ["--accent" as string]: item.color }}
                   >
                     <span className="block h-1.5 w-10 rounded-full" style={{ background: item.color }} aria-hidden="true" />
-                    <h3 className="mt-3 font-display text-base font-bold text-navy">{item.title}</h3>
+                    <h3 className="mt-3 font-ui text-base font-bold text-navy">{item.title}</h3>
                     <p className="mt-1 text-sm leading-relaxed text-navy-soft">{item.body}</p>
                   </Reveal>
                 ))}
@@ -232,7 +232,7 @@ export default function WhyUsPage(): JSX.Element {
                   className="card-benchmark-trust group flex h-full flex-col gap-2 p-6 transition-all duration-300"
                   style={{ ["--accent" as string]: reason.color }}
                 >
-                  <h3 className="font-display text-lg font-bold text-navy">{reason.title}</h3>
+                  <h3 className="font-ui text-lg font-bold text-navy">{reason.title}</h3>
                   <p className="text-sm leading-relaxed text-navy-soft">{reason.description}</p>
                   <span
                     aria-hidden="true"

@@ -28,7 +28,7 @@ export default function GlobalError({
             <AlertTriangle className="h-8 w-8" aria-hidden="true" />
           </span>
 
-          <h1 id="error-heading" className="font-display text-3xl font-extrabold text-navy sm:text-4xl">
+          <h1 id="error-heading" className="font-display text-3xl font-bold text-navy sm:text-4xl leading-[1.1] sm:leading-[1.1]">
             Something went wrong on our side
           </h1>
           <p className="text-base leading-relaxed text-navy-soft">
@@ -50,7 +50,7 @@ export default function GlobalError({
 
           {error.digest ? (
             <p className="text-xs text-navy-soft">
-              Reference for support: <span className="font-mono">{error.digest}</span>
+              Reference for support: <span className="font-body">{error.digest}</span>
             </p>
           ) : null}
         </div>

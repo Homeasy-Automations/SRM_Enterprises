@@ -186,7 +186,7 @@ export function ProcessTimeline({
                 <span
                   aria-hidden="true"
                   className={cn(
-                    "pointer-events-none absolute right-3.5 top-1.5 select-none font-accent text-6xl sm:text-7xl font-normal transition-all duration-300 ease-out",
+                    "pointer-events-none absolute right-3.5 top-1.5 select-none font-ui text-6xl sm:text-7xl font-bold transition-all duration-300 ease-out",
                     isHovered ? "scale-105 opacity-25" : "opacity-[0.08]",
                   )}
                   style={{ color: step.color }}
@@ -205,7 +205,7 @@ export function ProcessTimeline({
                     </span>
 
                     <span
-                      className="badge-interactive inline-flex items-center gap-1.5 rounded-full px-2.5 sm:px-3 py-0.5 sm:py-1 font-accent text-xs font-normal uppercase tracking-wider shadow-2xs transition-all duration-300"
+                      className="badge-interactive inline-flex items-center gap-1.5 rounded-full px-2.5 sm:px-3 py-0.5 sm:py-1 font-ui text-xs font-semibold uppercase tracking-[0.12em] shadow-2xs transition-all duration-300"
                       style={{
                         background: isHovered ? `${step.color}25` : `${step.color}15`,
                         color: step.color,
@@ -217,7 +217,7 @@ export function ProcessTimeline({
 
                   {/* Title & Summary with coordinated min-heights for identical vertical alignment */}
                   <h3
-                    className="mt-3 sm:mt-3.5 font-heading text-lg sm:text-xl font-bold text-navy transition-colors duration-300 min-h-[1.75rem] sm:min-h-[2rem] flex items-center"
+                    className="mt-3 sm:mt-3.5 font-ui text-lg sm:text-xl font-bold text-navy transition-colors duration-300 min-h-[1.75rem] sm:min-h-[2rem] flex items-center"
                     style={{ color: isHovered ? step.color : undefined }}
                   >
                     {step.title}
@@ -230,7 +230,7 @@ export function ProcessTimeline({
                   {/* Expandable Key Activities Section */}
                   <div className="mt-auto pt-3.5 border-t border-navy/10">
                     <div
-                      className="flex w-full items-center justify-between py-0.5 text-xs font-bold uppercase tracking-wider text-navy transition-colors duration-300"
+                      className="font-ui flex w-full items-center justify-between py-0.5 text-xs font-bold uppercase tracking-[0.12em] text-navy transition-colors duration-300"
                       style={{ color: isHovered ? step.color : undefined }}
                     >
                       <span className="flex items-center gap-1.5">
@@ -269,7 +269,7 @@ export function ProcessTimeline({
                 {/* Card Footer: Next Step Link or Complete badge */}
                 <div className="mt-3.5 sm:mt-4 flex items-center justify-between pt-2.5 border-t border-navy/5 text-xs text-navy-soft">
                   {nextStep ? (
-                    <span className="flex items-center gap-1 font-medium">
+                    <span className="flex items-center gap-1 font-ui font-medium">
                       Next: <strong className="text-navy font-semibold">{nextStep.title}</strong>
                       <ArrowRight
                         className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"
@@ -303,11 +303,11 @@ export function ProcessTimeline({
           <div className="mx-auto mt-8 max-w-5xl sm:mt-10 rounded-3xl border border-navy/10 bg-gradient-to-br from-white via-accent-soft/30 to-[#FFF9F0]/60 p-6 sm:p-8 shadow-soft">
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row text-center sm:text-left">
               <div className="max-w-xl">
-                <span className="inline-flex items-center gap-1.5 font-accent text-xs font-normal uppercase tracking-wider text-accent-deep">
+                <span className="inline-flex items-center gap-1.5 font-ui text-xs font-semibold uppercase tracking-[0.12em] text-accent-deep">
                   <Sparkles className="h-4 w-4" aria-hidden="true" />
                   No Guesswork • Complete Clarity
                 </span>
-                <h4 className="mt-1.5 font-heading text-lg font-bold text-navy sm:text-xl">
+                <h4 className="mt-1.5 font-ui text-lg font-bold text-navy sm:text-xl">
                   Ready to discuss your packaging requirements?
                 </h4>
                 <p className="mt-1 text-sm text-navy-soft">

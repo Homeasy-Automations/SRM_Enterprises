@@ -58,13 +58,13 @@ export default function ResourcesPage(): JSX.Element {
                 >
                   <div className="flex flex-col gap-4">
                     <span
-                      className="w-fit text-[0.7rem] font-bold uppercase tracking-wider px-3 py-1 rounded-full text-white shadow-xs"
+                      className="font-ui w-fit text-[0.7rem] font-bold uppercase tracking-[0.12em] px-3 py-1 rounded-full text-white shadow-xs"
                       style={{ background: study.color }}
                     >
                       {study.industry}
                     </span>
 
-                    <h3 className="font-display text-xl font-bold text-navy leading-snug transition-colors duration-200 group-hover:text-accent">
+                    <h3 className="font-ui text-xl font-bold text-navy leading-snug transition-colors duration-200 group-hover:text-accent">
                       {study.title}
                     </h3>
 
@@ -138,13 +138,13 @@ export default function ResourcesPage(): JSX.Element {
                       <span>{guide.readingTime}</span>
                     </div>
 
-                    <h3 className="font-display text-lg font-bold text-navy transition-colors duration-200 group-hover:text-accent">
+                    <h3 className="font-ui text-lg font-bold text-navy transition-colors duration-200 group-hover:text-accent">
                       {guide.title}
                     </h3>
                     <p className="text-xs leading-relaxed text-navy-soft">{guide.summary}</p>
 
                     <div className="pt-2 border-t border-navy/5">
-                      <span className="text-[0.68rem] font-bold uppercase tracking-wider text-navy-soft block mb-1.5">
+                      <span className="font-ui text-[0.68rem] font-bold uppercase tracking-[0.12em] text-navy-soft block mb-1.5">
                         Key Rules of Thumb:
                       </span>
                       <ul className="flex flex-col gap-1.5">
@@ -196,7 +196,7 @@ export default function ResourcesPage(): JSX.Element {
                     <span className="font-semibold text-accent">{post.category}</span>
                     <span>{post.date}</span>
                   </div>
-                  <h3 className="font-display text-base font-bold text-navy transition-colors duration-200 group-hover:text-accent">
+                  <h3 className="font-ui text-base font-bold text-navy transition-colors duration-200 group-hover:text-accent">
                     {post.title}
                   </h3>
                   <p className="mt-2 text-xs leading-relaxed text-navy-soft">{post.excerpt}</p>

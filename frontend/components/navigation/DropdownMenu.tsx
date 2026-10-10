@@ -34,7 +34,7 @@ export function DropdownMenu({ item, onSelect, onHoverColor }: DropdownMenuProps
         className="w-[320px] sm:w-[360px] rounded-3xl border border-navy/10 bg-white/95 p-3 shadow-2xl backdrop-blur-md"
       >
         <div className="mb-2 flex items-center justify-between border-b border-navy/5 px-3 pb-2 pt-1">
-          <span className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-navy-soft">
+          <span className="font-ui text-[0.68rem] font-bold uppercase tracking-[0.12em] text-navy-soft">
             {item.label}
           </span>
           <Link

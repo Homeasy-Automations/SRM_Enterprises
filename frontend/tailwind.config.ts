@@ -55,18 +55,16 @@ const config: Config = {
           logistics: "#19C3E6",
         },
       },
+      // Three roles: display (Fraunces), ui (Syne), body (Merriweather). sans/serif/mono all
+      // resolve to body so any stray generic font utility still lands in the new system.
       fontFamily: {
         sans: ["var(--font-body)"],
-        body: ["var(--font-body)"],
-        heading: ["var(--font-heading)"],
-        display: ["var(--font-heading)"],
-        accent: ["var(--font-accent)"],
-        bebas: ["var(--font-accent)"],
         serif: ["var(--font-body)"],
         mono: ["var(--font-body)"],
-        space: ["var(--font-heading)"],
-        inter: ["var(--font-body)"],
-        alex: ["var(--font-alex)", "'Alex Brush'", "cursive"],
+        body: ["var(--font-body)"],
+        display: ["var(--font-display)"],
+        heading: ["var(--font-display)"],
+        ui: ["var(--font-ui)"],
       },
       borderRadius: {
         xl2: "20px",

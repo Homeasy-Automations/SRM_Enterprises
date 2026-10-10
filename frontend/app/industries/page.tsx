@@ -53,7 +53,7 @@ export default function IndustriesPage(): JSX.Element {
       {/* 2 — Interactive Sector Matrix Ribbon */}
       <section className="band-sky py-4 border-y border-navy/10 pattern-hex sticky top-16 z-20 backdrop-blur-md bg-white/90" aria-label="Sector quick jump">
         <div className="container-page flex items-center justify-between gap-3 overflow-x-auto no-scrollbar">
-          <span className="font-accent text-xs uppercase tracking-wider text-navy-soft shrink-0">
+          <span className="font-ui font-semibold text-xs uppercase tracking-[0.12em] text-navy-soft shrink-0">
             Sector Matrix:
           </span>
           <div className="flex items-center gap-2">
@@ -64,7 +64,7 @@ export default function IndustriesPage(): JSX.Element {
                 className="group inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border border-navy/10 bg-white px-3.5 py-1.5 text-xs font-semibold text-navy shadow-xs transition-all duration-300 hover:scale-105 hover:shadow-md hover:-translate-y-0.5 hover:border-accent hover:text-accent-deep"
               >
                 <span className="h-2 w-2 rounded-full transition-transform duration-300 group-hover:scale-125" style={{ background: ind.color }} />
-                <span><span className="font-accent text-sm">0{i + 1}</span> {ind.shortName}</span>
+                <span><span className="font-ui text-sm">0{i + 1}</span> {ind.shortName}</span>
               </a>
             ))}
           </div>
@@ -97,7 +97,7 @@ export default function IndustriesPage(): JSX.Element {
                         <div>
                           <div className="flex items-center gap-2">
                             <span
-                              className="font-accent text-xs uppercase tracking-wider px-2 py-0.5 rounded-md transition-all duration-300 group-hover:scale-105"
+                              className="font-ui font-semibold text-xs uppercase tracking-[0.12em] px-2 py-0.5 rounded-md transition-all duration-300 group-hover:scale-105"
                               style={{ background: `${industry.color}18`, color: industry.color }}
                             >
                               SECTOR 0{index + 1}
@@ -105,7 +105,7 @@ export default function IndustriesPage(): JSX.Element {
                             <span className="h-1.5 w-1.5 rounded-full transition-transform duration-300 group-hover:scale-125" style={{ background: industry.color }} />
                             <span className="text-xs font-medium text-navy-soft">Industry Packaging Overview</span>
                           </div>
-                          <h2 id={`${industry.slug}-heading`} className="font-heading text-2xl font-bold text-navy sm:text-3xl mt-0.5 transition-transform duration-300 group-hover:translate-x-1.5">
+                          <h2 id={`${industry.slug}-heading`} className="font-display text-2xl font-bold text-navy sm:text-3xl leading-[1.1] sm:leading-[1.1] mt-0.5 transition-transform duration-300 group-hover:translate-x-1.5">
                             {industry.name}
                           </h2>
                         </div>
@@ -132,7 +132,7 @@ export default function IndustriesPage(): JSX.Element {
                         <div>
                           <div className="flex items-center gap-2 border-b border-navy/10 pb-2">
                             <AlertTriangle className="h-4 w-4 text-amber-500 shrink-0" aria-hidden="true" />
-                            <h3 className="font-heading text-xs font-bold uppercase tracking-wider text-navy">
+                            <h3 className="font-ui text-xs font-bold uppercase tracking-[0.12em] text-navy">
                               Supply-Chain Handling Hazards
                             </h3>
                           </div>
@@ -159,7 +159,7 @@ export default function IndustriesPage(): JSX.Element {
                         <div className="mt-4 pt-3.5 border-t border-navy/10">
                           <div className="flex items-center gap-2 border-b border-navy/10 pb-2">
                             <ShieldCheck className="h-4 w-4 text-emerald-600 shrink-0" aria-hidden="true" />
-                            <h3 className="font-heading text-xs font-bold uppercase tracking-wider text-navy">
+                            <h3 className="font-ui text-xs font-bold uppercase tracking-[0.12em] text-navy">
                               Targeted Material Architecture
                             </h3>
                           </div>
@@ -176,7 +176,7 @@ export default function IndustriesPage(): JSX.Element {
                                   <div className="flex items-center justify-between gap-2">
                                     <Link
                                       href={`/products/${entry.productSlug}`}
-                                      className="font-heading text-xs font-bold text-navy hover:underline flex items-center gap-1.5 transition-colors duration-300 group-hover/sol:text-accent-deep"
+                                      className="font-ui text-xs font-bold text-navy hover:underline flex items-center gap-1.5 transition-colors duration-300 group-hover/sol:text-accent-deep"
                                     >
                                       <span
                                         className="h-2 w-2 rounded-full shrink-0 transition-transform duration-300 group-hover/sol:scale-125"
@@ -200,7 +200,7 @@ export default function IndustriesPage(): JSX.Element {
                       <div className="group/chamber lg:col-span-4 flex flex-col justify-between rounded-2xl border border-navy/10 bg-gradient-to-b from-white via-slate-50/40 to-white p-4 sm:p-5 shadow-xs transition-all duration-300 hover:shadow-lg hover:border-navy/20">
                         <div className="flex flex-col flex-1">
                           <div className="flex items-center justify-between gap-2 border-b border-navy/10 pb-2">
-                            <span className="font-accent text-xs uppercase tracking-wider text-navy-soft">
+                            <span className="font-ui font-semibold text-xs uppercase tracking-[0.12em] text-navy-soft">
                               Industry Packaging Profile // {industry.shortName}
                             </span>
                             <span className="text-[0.7rem] font-bold transition-all duration-300 group-hover/chamber:scale-105" style={{ color: industry.color }}>
@@ -265,7 +265,7 @@ export default function IndustriesPage(): JSX.Element {
       {/* 4 — Industry-specific packaging approach */}
       <section className="band-sky section-pad pattern-hex" aria-labelledby="approach-heading">
         <div className="container-page">
-          <h2 id="approach-heading" className="font-display text-2xl font-bold text-navy sm:text-3xl">
+          <h2 id="approach-heading" className="font-display text-2xl font-bold text-navy sm:text-3xl leading-[1.1] sm:leading-[1.1]">
             How we approach an industry-specific requirement
           </h2>
           <p className="mt-3 max-w-3xl text-base leading-relaxed text-navy-soft">
@@ -301,10 +301,10 @@ export default function IndustriesPage(): JSX.Element {
                   className="card-sector-hex group flex h-full flex-col gap-3 p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:scale-[1.02] cursor-pointer"
                   style={{ ["--accent" as string]: item.color }}
                 >
-                  <span className="font-accent text-4xl sm:text-5xl font-normal transition-all duration-300 group-hover:scale-115 group-hover:translate-x-1" style={{ color: item.color }}>
+                  <span className="font-ui text-4xl sm:text-5xl font-bold transition-all duration-300 group-hover:scale-115 group-hover:translate-x-1" style={{ color: item.color }}>
                     {String(itemIndex + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="font-heading text-base font-bold text-navy transition-colors duration-300 group-hover:text-accent">{item.title}</h3>
+                  <h3 className="font-ui text-base font-bold text-navy transition-colors duration-300 group-hover:text-accent">{item.title}</h3>
                   <p className="text-sm leading-relaxed text-navy-soft">{item.body}</p>
                 </article>
               </StaggerItem>

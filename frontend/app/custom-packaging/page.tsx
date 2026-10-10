@@ -146,7 +146,7 @@ export default function CustomPackagingPage(): JSX.Element {
                   style={{ ["--accent" as string]: item.color }}
                 >
                   <span className="h-2 w-10 rounded-full transition-all duration-500 group-hover:w-full" style={{ background: item.color }} aria-hidden="true" />
-                  <h3 className="font-display text-base font-bold text-navy">{item.name}</h3>
+                  <h3 className="font-ui text-base font-bold text-navy">{item.name}</h3>
                   <p className="text-sm leading-relaxed text-navy-soft">{item.body}</p>
                 </article>
               </StaggerItem>
@@ -189,7 +189,7 @@ export default function CustomPackagingPage(): JSX.Element {
         <div className="container-page">
           <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.1fr]">
             <Reveal variant="slide-right" className="card-cad-studio p-7">
-              <h3 className="font-display text-xl font-bold text-navy">Printing options we work with</h3>
+              <h3 className="font-ui text-xl font-bold text-navy">Printing options we work with</h3>
               <ul className="mt-4 grid gap-3 sm:grid-cols-2">
                 {[
                   "Product and part numbers",

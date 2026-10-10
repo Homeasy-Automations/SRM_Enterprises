@@ -75,7 +75,7 @@ export function QuoteFasterGuide(): JSX.Element {
                       <Icon className="h-6 w-6" />
                     </div>
 
-                    <h3 className="mt-4 font-display text-lg font-bold text-navy">{c.title}</h3>
+                    <h3 className="mt-4 font-ui text-lg font-bold text-navy">{c.title}</h3>
                     <p className="mt-1 text-sm font-semibold text-accent">{c.question}</p>
                     <p className="mt-2 text-xs leading-relaxed text-navy-soft">{c.details}</p>
                   </div>
@@ -93,7 +93,7 @@ export function QuoteFasterGuide(): JSX.Element {
                 <HelpCircle className="h-6 w-6" />
               </span>
               <div>
-                <h4 className="font-display text-base sm:text-lg font-bold text-navy">
+                <h4 className="font-ui text-base sm:text-lg font-bold text-navy">
                   Don&apos;t have all the technical details? That&apos;s totally okay.
                 </h4>
                 <p className="mt-1 text-xs sm:text-sm text-navy-soft leading-relaxed max-w-2xl">

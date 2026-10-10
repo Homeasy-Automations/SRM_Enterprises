@@ -69,7 +69,7 @@ export function Footer(): JSX.Element {
 
             <StaggerItem variant="flip-up">
               <nav aria-label="Products" className="flex flex-col gap-3">
-                <h2 className="font-heading text-sm font-bold uppercase tracking-wider text-white">
+                <h2 className="font-ui text-sm font-bold uppercase tracking-[0.12em] text-white">
                   Products
                 </h2>
                 <ul className="flex flex-col gap-2">
@@ -89,7 +89,7 @@ export function Footer(): JSX.Element {
 
             <StaggerItem variant="flip-up">
               <nav aria-label="Company" className="flex flex-col gap-3">
-                <h2 className="font-heading text-sm font-bold uppercase tracking-wider text-white">
+                <h2 className="font-ui text-sm font-bold uppercase tracking-[0.12em] text-white">
                   Company
                 </h2>
                 <ul className="flex flex-col gap-2">
@@ -108,7 +108,7 @@ export function Footer(): JSX.Element {
             </StaggerItem>
 
             <StaggerItem variant="split-right" className="flex flex-col gap-3">
-              <h2 className="font-heading text-sm font-bold uppercase tracking-wider text-white">
+              <h2 className="font-ui text-sm font-bold uppercase tracking-[0.12em] text-white">
                 Contact
               </h2>
               <ul className="flex flex-col gap-2.5 text-sm text-white/90">

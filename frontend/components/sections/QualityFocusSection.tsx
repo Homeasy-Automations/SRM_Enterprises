@@ -41,10 +41,10 @@ export function QualityFocusSection(): JSX.Element {
           {/* Quality Artwork & Visual (5 cols) */}
           <div className="flex flex-col gap-6 lg:col-span-5">
             <div className="card-home-vivid overflow-hidden rounded-3xl border border-navy/10 bg-white p-6 sm:p-8 shadow-sm">
-              <span className="eyebrow badge-interactive inline-flex items-center gap-2 rounded-full px-3 py-1 font-accent text-xs font-normal uppercase tracking-wider text-accent mb-4">
+              <span className="eyebrow badge-interactive inline-flex items-center gap-2 rounded-full px-3 py-1 font-ui text-xs font-semibold uppercase tracking-[0.12em] text-accent mb-4">
                 Inspection & Control
               </span>
-              <h3 className="font-heading text-2xl font-bold text-navy">
+              <h3 className="font-ui text-2xl font-bold text-navy">
                 Strict Dimensional &amp; Specification Tolerances
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-navy-soft">
@@ -95,7 +95,7 @@ export function QualityFocusSection(): JSX.Element {
                           <Icon className="h-5 w-5" aria-hidden="true" />
                         </span>
                         <div>
-                          <h4 className="font-heading text-base font-bold text-navy transition-colors duration-200 group-hover:text-accent">
+                          <h4 className="font-ui text-base font-bold text-navy transition-colors duration-200 group-hover:text-accent">
                             {pt.title}
                           </h4>
                           <p className="mt-1 text-xs leading-relaxed text-navy-soft">{pt.description}</p>

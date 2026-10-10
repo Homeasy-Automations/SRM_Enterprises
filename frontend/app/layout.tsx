@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Space_Grotesk, Bebas_Neue, Alex_Brush } from "next/font/google";
+import { Fraunces, Syne, Merriweather } from "next/font/google";
 import "./globals.css";
 
 import { SITE } from "@/lib/constants";
@@ -19,32 +19,29 @@ import { JsonLd } from "@/components/sections/JsonLd";
  * next/font self-hosts all font families at build time: no runtime request to Google,
  * no render-blocking stylesheet, and no flash of unstyled text beyond the swap window.
  */
-const inter = Inter({
+// Display: h1/h2, hero-scale titles, quotes, big stat callouts. Variable, with the optical-size axis.
+const fraunces = Fraunces({
   subsets: ["latin"],
+  axes: ["opsz"],
+  style: ["normal", "italic"],
   display: "swap",
-  variable: "--font-inter",
-  weight: ["400", "500", "600"],
+  variable: "--font-fraunces",
 });
 
-const spaceGrotesk = Space_Grotesk({
+// UI: h3–h6, card titles, nav, buttons, eyebrows, badges, number markers, form labels.
+const syne = Syne({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-space-grotesk",
-  weight: ["500", "600", "700"],
+  variable: "--font-syne",
 });
 
-const bebasNeue = Bebas_Neue({
+// Body: paragraphs, inputs, footer text, legal pages — everything else.
+const merriweather = Merriweather({
   subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
   display: "swap",
-  variable: "--font-bebas",
-  weight: ["400"],
-});
-
-const alexBrush = Alex_Brush({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-alex",
-  weight: ["400"],
+  variable: "--font-merriweather",
 });
 
 export const metadata: Metadata = {
@@ -105,7 +102,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
     <html
       lang="en-IN"
       data-mood="ocean"
-      className={`${inter.variable} ${spaceGrotesk.variable} ${bebasNeue.variable} ${alexBrush.variable}`}
+      className={`${fraunces.variable} ${syne.variable} ${merriweather.variable}`}
     >
       <body className="font-body antialiased">
         <ColorMoodProvider>

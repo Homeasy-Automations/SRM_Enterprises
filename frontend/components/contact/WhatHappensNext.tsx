@@ -71,7 +71,7 @@ export function WhatHappensNext(): JSX.Element {
                   <div>
                     <div className="flex items-center justify-between">
                       <span
-                        className="text-xs font-mono font-bold tracking-wider px-2.5 py-1 rounded-lg border text-white shadow-xs"
+                        className="text-xs font-ui font-bold tracking-wider px-2.5 py-1 rounded-lg border text-white shadow-xs"
                         style={{ backgroundColor: st.color, borderColor: st.color }}
                       >
                         STEP {st.num}
@@ -88,7 +88,7 @@ export function WhatHappensNext(): JSX.Element {
                       <Icon className="h-6 w-6" />
                     </div>
 
-                    <h3 className="mt-4 font-display text-lg font-bold text-navy">{st.title}</h3>
+                    <h3 className="mt-4 font-ui text-lg font-bold text-navy">{st.title}</h3>
                     <p className="mt-2 text-xs leading-relaxed text-navy-soft">{st.description}</p>
                   </div>
 
@@ -105,7 +105,7 @@ export function WhatHappensNext(): JSX.Element {
         {/* Animated Workflow Ribbon */}
         <Reveal variant="fade-up" delay={0.2} className="mt-14">
           <div className="rounded-2xl border border-navy/10 bg-white p-6 sm:p-8 shadow-sm">
-            <p className="text-center text-xs font-bold uppercase tracking-wider text-navy/70 mb-5">
+            <p className="font-ui text-center text-xs font-bold uppercase tracking-[0.12em] text-navy/70 mb-5">
               Full Industrial Workflow Sequence:
             </p>
 

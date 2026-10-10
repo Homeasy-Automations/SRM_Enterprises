@@ -89,7 +89,7 @@ export function ContactOptions(): JSX.Element {
                       <Icon className="h-5 w-5" />
                     </div>
 
-                    <h3 className="mt-4 font-display text-lg font-bold text-navy">{opt.title}</h3>
+                    <h3 className="mt-4 font-ui text-lg font-bold text-navy">{opt.title}</h3>
 
                     <p className="mt-2 text-xs leading-relaxed text-navy-soft">{opt.description}</p>
                   </div>

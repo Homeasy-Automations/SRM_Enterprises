@@ -73,7 +73,7 @@ export function CtaBanner({
       <div className="container-page relative pt-14 pb-20 sm:pt-16 sm:pb-24 lg:pt-18 lg:pb-28">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
           <Reveal variant="kinetic-pop">
-            <span className="badge-interactive cursor-default inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/15 px-4 py-1.5 font-accent text-xs font-normal uppercase tracking-wider text-white shadow-sm backdrop-blur-sm transition-all duration-300 hover:bg-white/25 hover:scale-105">
+            <span className="badge-interactive cursor-default inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/15 px-4 py-1.5 font-ui text-xs font-semibold uppercase tracking-[0.12em] text-white shadow-sm backdrop-blur-sm transition-all duration-300 hover:bg-white/25 hover:scale-105">
               <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
               {BRAND.tagline}
             </span>
@@ -82,7 +82,7 @@ export function CtaBanner({
           <Reveal variant="depth-zoom" delay={0.06}>
             <h2
               id="cta-heading"
-              className="mt-5 font-heading text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl"
+              className="mt-5 font-display text-3xl font-bold leading-[1.1] text-white sm:text-4xl lg:text-5xl sm:leading-[1.1] lg:leading-[1.1]"
             >
               {title}
             </h2>

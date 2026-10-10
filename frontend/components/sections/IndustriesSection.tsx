@@ -38,7 +38,7 @@ export function IndustriesSection(): JSX.Element {
           ))}
           <span className="w-2 shrink-0" aria-hidden="true" />
         </div>
-        <p className="container-page mt-1 text-xs font-medium text-navy-soft">
+        <p className="container-page mt-1 font-ui text-xs font-medium text-navy-soft">
           Swipe to see all six industries →
         </p>
       </div>

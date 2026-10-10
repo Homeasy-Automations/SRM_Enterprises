@@ -62,12 +62,12 @@ export function PanIndiaServiceArea(): JSX.Element {
 
                 {/* Big Center Badge */}
                 <div className="relative z-10">
-                  <div className="inline-flex items-center gap-2 rounded-full bg-emerald-500/20 border border-emerald-400/40 px-3.5 py-1 text-xs font-bold text-emerald-300 uppercase tracking-widest">
+                  <div className="font-ui inline-flex items-center gap-2 rounded-full bg-emerald-500/20 border border-emerald-400/40 px-3.5 py-1 text-xs font-bold text-emerald-300 uppercase tracking-[0.12em]">
                     <Globe className="h-3.5 w-3.5" />
                     Nationwide Dispatch Logistics
                   </div>
 
-                  <h3 className="mt-5 font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
+                  <h3 className="mt-5 font-display text-3xl sm:text-4xl sm:leading-[1.1] font-bold tracking-tight text-white leading-[1.1]">
                     PAN INDIA <br />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-emerald-400">
                       SUPPLY &amp; DISPATCH
@@ -109,7 +109,7 @@ export function PanIndiaServiceArea(): JSX.Element {
 
           {/* Right: Key Industry Sectors Served */}
           <div className="lg:col-span-6">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-navy-soft mb-4">
+            <h3 className="font-ui text-xs font-bold uppercase tracking-[0.12em] text-navy-soft mb-4">
               Industries Relying On Our Supply Network:
             </h3>
 

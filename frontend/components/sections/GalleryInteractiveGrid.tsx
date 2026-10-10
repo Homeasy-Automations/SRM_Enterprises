@@ -135,7 +135,7 @@ export function GalleryInteractiveGrid(): JSX.Element {
                 {/* Top Badge: Category & View Indicator */}
                 <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
                   <span
-                    className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-white shadow-md backdrop-blur-sm"
+                    className="font-ui inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-[0.12em] text-white shadow-md backdrop-blur-sm"
                     style={{ background: `${item.color}D9` }}
                   >
                     <Icon className="h-3.5 w-3.5" />
@@ -149,7 +149,7 @@ export function GalleryInteractiveGrid(): JSX.Element {
 
                 {/* Bottom on-image label */}
                 <div className="absolute bottom-4 left-4 right-4 z-10 text-white">
-                  <h3 className="font-display text-lg sm:text-xl font-bold leading-tight drop-shadow-sm group-hover:text-accent-highlight transition-colors">
+                  <h3 className="font-ui text-lg sm:text-xl font-bold leading-tight drop-shadow-sm group-hover:text-accent-highlight transition-colors">
                     {item.title}
                   </h3>
                   <p className="mt-1 text-xs text-white/85 line-clamp-1">
@@ -246,17 +246,17 @@ export function GalleryInteractiveGrid(): JSX.Element {
               <div>
                 <div className="flex items-center gap-2 mb-3">
                   <span
-                    className="rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider text-white"
+                    className="font-ui rounded-full px-3 py-1 text-xs font-bold uppercase tracking-[0.12em] text-white"
                     style={{ background: selectedItem.color }}
                   >
                     {selectedItem.categoryLabel}
                   </span>
-                  <span className="text-xs text-navy-soft font-mono">
+                  <span className="text-xs text-navy-soft font-ui">
                     {lightboxIndex !== null ? `${lightboxIndex + 1} of ${filteredItems.length}` : ""}
                   </span>
                 </div>
 
-                <h3 className="font-display text-2xl font-bold text-navy leading-tight">
+                <h3 className="font-ui text-2xl font-bold text-navy leading-tight">
                   {selectedItem.title}
                 </h3>
                 <p className="mt-1.5 text-xs font-semibold" style={{ color: selectedItem.color }}>
@@ -269,7 +269,7 @@ export function GalleryInteractiveGrid(): JSX.Element {
 
                 {/* Technical Verification Points */}
                 <div className="mt-6 rounded-2xl bg-slate-50 p-4 border border-navy/5">
-                  <h4 className="text-[11px] font-bold uppercase tracking-wider text-navy/70 mb-2.5">
+                  <h4 className="font-ui text-[11px] font-bold uppercase tracking-[0.12em] text-navy/70 mb-2.5">
                     Production &amp; Supply Verification
                   </h4>
                   <ul className="space-y-2 text-xs text-navy-soft">

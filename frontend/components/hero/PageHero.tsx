@@ -111,7 +111,7 @@ export function PageHero({
           <Reveal variant="depth-zoom" delay={0.05}>
             <h1
               id="page-hero-heading"
-              className="heading-shimmer-hover font-display text-[1.9rem] font-extrabold leading-[1.12] text-navy transition-all duration-300 sm:text-4xl lg:text-[3.1rem]"
+              className="heading-shimmer-hover font-display text-[1.9rem] font-bold leading-[1.1] text-navy transition-all duration-300 sm:text-4xl lg:text-[3.1rem] sm:leading-[1.1]"
             >
               {title}
             </h1>

@@ -39,7 +39,7 @@ export function PackageCategorySection({ product, index }: PackageCategorySectio
             </span>
           </div>
 
-          <h2 id={`${product.slug}-heading`} className="font-display text-2xl font-bold text-navy sm:text-3xl">
+          <h2 id={`${product.slug}-heading`} className="font-display text-2xl font-bold text-navy sm:text-3xl leading-[1.1] sm:leading-[1.1]">
             {product.tagline}
           </h2>
 
@@ -64,7 +64,7 @@ export function PackageCategorySection({ product, index }: PackageCategorySectio
           </StaggerGroup>
 
           {product.note ? (
-            <p className="rounded-2xl border border-navy/10 bg-white px-4 py-3 text-xs font-semibold uppercase tracking-wide text-navy-soft shadow-xs transition-all duration-300 hover:border-accent hover:shadow-md hover:-translate-y-0.5">
+            <p className="font-ui rounded-2xl border border-navy/10 bg-white px-4 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-navy-soft shadow-xs transition-all duration-300 hover:border-accent hover:shadow-md hover:-translate-y-0.5">
               {product.note}
             </p>
           ) : null}

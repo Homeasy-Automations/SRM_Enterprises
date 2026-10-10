@@ -56,7 +56,7 @@ export function MegaMenu({ onSelect, onHoverColor }: MegaMenuProps): JSX.Element
                     <CategoryIcon name={category.icon} className="h-4 w-4" />
                   </span>
                   <div className="flex items-center gap-1">
-                    <span className="font-display text-sm font-bold text-navy group-hover/cat:text-accent transition-colors">
+                    <span className="font-ui text-sm font-bold text-navy group-hover/cat:text-accent transition-colors">
                       {category.title}
                     </span>
                     <ChevronRight className="h-3 w-3 text-navy/30 group-hover/cat:text-accent group-hover/cat:translate-x-0.5 transition-all" />

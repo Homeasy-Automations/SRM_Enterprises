@@ -82,13 +82,13 @@ export default function ProductsPage(): JSX.Element {
                         title={`${product.name} illustration`}
                       />
                     </span>
-                    <h3 className="font-display text-base font-bold text-navy transition-colors duration-300 group-hover:text-accent">
+                    <h3 className="font-ui text-base font-bold text-navy transition-colors duration-300 group-hover:text-accent">
                       {product.name}
                     </h3>
                     <p className="text-xs leading-relaxed text-navy-soft">{product.tagline}</p>
                   </div>
                   <span
-                    className="mt-auto inline-flex items-center gap-1.5 font-mono text-xs font-bold uppercase tracking-wider transition-all duration-300 group-hover:translate-x-1.5"
+                    className="mt-auto inline-flex items-center gap-1.5 font-ui text-xs font-bold uppercase tracking-[0.12em] transition-all duration-300 group-hover:translate-x-1.5"
                     style={{ color: product.color }}
                   >
                     Details

@@ -71,7 +71,7 @@ export function LegalPageContent({
             <nav aria-label="On this page" className="lg:sticky lg:top-24 lg:self-start">
               <h2
                 id="legal-content-heading"
-                className="font-display text-sm font-bold uppercase tracking-[0.14em] text-navy-soft"
+                className="font-ui text-sm font-bold uppercase tracking-[0.14em] text-navy-soft"
               >
                 On this page
               </h2>
@@ -105,7 +105,7 @@ export function LegalPageContent({
                       <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-accent-soft text-accent-deep">
                         <FileText className="h-4 w-4" aria-hidden="true" />
                       </span>
-                      <h3 className="font-display text-lg font-bold text-navy sm:text-xl">{section.heading}</h3>
+                      <h3 className="font-ui text-lg font-bold text-navy sm:text-xl">{section.heading}</h3>
                     </div>
 
                     <div className="mt-4 flex flex-col gap-3">
