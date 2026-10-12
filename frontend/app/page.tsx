@@ -73,6 +73,9 @@ export default function HomePage(): JSX.Element {
       {/* 5 — Custom Packaging */}
       <CustomPackagingHomeSection />
 
+      {/* 9 — Featured Products */}
+      <FeaturedProductsSection />
+
       {/* 6 — Industries We Serve */}
       <IndustriesSection />
 
