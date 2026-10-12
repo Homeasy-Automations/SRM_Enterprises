@@ -29,7 +29,7 @@ const SHOWCASE_SECTION_IDS: readonly string[] = products.map(
  *
  * Desktop Header:
  * SRM ENTERPRISES Logo
- * Home | About ▾ | Products ▾ | Industries ▾ | Solutions ▾ | Locations ▾ | Resources ▾ | Gallery
+ * Home | About | Products ▾ | Industries ▾ | Solutions ▾ | Locations ▾ | Resources ▾ | Gallery
  * Secondary Utility:
  * WhatsApp | Call | Get a Quote
  */

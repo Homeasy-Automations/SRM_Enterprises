@@ -180,7 +180,6 @@ export const primaryNav: NavItem[] = [
     label: "About",
     href: ROUTES.about,
     ariaLabel: "About SRM Enterprises",
-    children: aboutMenu,
   },
   {
     label: "Products",

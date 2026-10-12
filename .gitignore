@@ -13,6 +13,7 @@ node_modules/
 
 # builds
 .next/
+.next-build/
 out/
 dist/
 build/
@@ -41,10 +42,3 @@ coverage/
 .turbo/
 .eslintcache
 .cache/
-
-# builds
-.next/
-.next-build/
-out/
-dist/
-build/
