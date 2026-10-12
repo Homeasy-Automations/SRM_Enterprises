@@ -1,1 +1,0 @@
-self.__REACT_LOADABLE_MANIFEST='{"components\\\\layout\\\\LazyOverlays.tsx -> @/components/ui/FloatingActions":{"id":2830,"files":["static/chunks/704.0bba264c70e04727.js"]}}';
