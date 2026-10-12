@@ -83,11 +83,13 @@ export default function SolutionsPage(): JSX.Element {
               return (
                 <StaggerItem key={sol.id} variant="kinetic-pop" className="h-full">
                   <article
-                    className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl sm:rounded-3xl border border-navy/10 bg-white p-5 sm:p-5.5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                    id={sol.slug}
+                    className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl sm:rounded-3xl border border-navy/10 bg-white p-5 sm:p-5.5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl scroll-mt-28 target:ring-2 target:ring-offset-2 target:shadow-xl"
                     style={{
                       borderTopColor: sol.color,
                       borderTopWidth: 3.5,
                       ["--accent" as string]: sol.color,
+                      ["--tw-ring-color" as string]: sol.color,
                     }}
                   >
                     {/* Dynamic Ambient Hover Glow */}

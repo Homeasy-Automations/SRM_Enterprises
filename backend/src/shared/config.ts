@@ -23,7 +23,7 @@ export const ROUTES = {
   industries: "/industries",
   industry: (slug: string) => `/industries/${slug}`,
   solutions: "/solutions",
-  solution: (slug: string) => `/solutions/${slug}`,
+  solution: (slug: string) => `/solutions#${slug}`,
   resources: "/resources",
   resource: (slug: string) => `/resources/${slug}`,
   gallery: "/gallery",

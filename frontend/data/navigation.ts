@@ -114,7 +114,7 @@ export const industryMenu: NavChild[] = industries.map((industry) => ({
 
 export const solutionMenu: NavChild[] = solutions.slice(0, 8).map((sol) => ({
   label: sol.name,
-  href: ROUTES.solutions,
+  href: `${ROUTES.solutions}#${sol.slug}`,
   description: sol.tagline,
   color: sol.color,
 }));
@@ -136,7 +136,7 @@ export const resourcesMenu: NavChild[] = [
   },
   {
     label: "FAQs",
-    href: `${ROUTES.home}#faq`,
+    href: `${ROUTES.resources}#faq`,
     description: "Common commercial, MOQ, lead-time & sample questions",
     color: "#19B26B",
   },
@@ -238,7 +238,7 @@ export const footerNav = {
   })),
   solutions: solutions.slice(0, 8).map((sol) => ({
     label: sol.name,
-    href: ROUTES.solutions,
+    href: `${ROUTES.solutions}#${sol.slug}`,
   })),
   panIndia: [
     { label: "Northern Industrial Corridor", href: ROUTES.contact },
