@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Syne, Merriweather } from "next/font/google";
+import { Fraunces, Lato, Merriweather } from "next/font/google";
 import "./globals.css";
 
 import { SITE } from "@/lib/constants";
@@ -29,10 +29,11 @@ const fraunces = Fraunces({
 });
 
 // UI: h3–h6, card titles, nav, buttons, eyebrows, badges, number markers, form labels.
-const syne = Syne({
+const lato = Lato({
   subsets: ["latin"],
+  weight: ["300", "400", "700", "900"],
   display: "swap",
-  variable: "--font-syne",
+  variable: "--font-lato",
 });
 
 // Body: paragraphs, inputs, footer text, legal pages — everything else.
@@ -102,7 +103,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
     <html
       lang="en-IN"
       data-mood="ocean"
-      className={`${fraunces.variable} ${syne.variable} ${merriweather.variable}`}
+      className={`${fraunces.variable} ${lato.variable} ${merriweather.variable}`}
     >
       <body className="font-body antialiased">
         <ColorMoodProvider>

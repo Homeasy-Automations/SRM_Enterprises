@@ -2,7 +2,7 @@ import { Inter, Space_Grotesk, Alex_Brush } from "next/font/google";
 
 /**
  * Legacy fonts kept ONLY for the Home hero (`.hero-font-lock`). The rest of the site uses
- * Fraunces / Syne / Merriweather (see app/layout.tsx). Options mirror the hero's original
+ * Fraunces / Lato / Merriweather (see app/layout.tsx). Options mirror the hero's original
  * setup exactly so its rendering is unchanged. Because this module is imported only by
  * HomeHero, Next preloads these files on the Home route alone.
  *
