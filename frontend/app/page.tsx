@@ -88,9 +88,6 @@ export default function HomePage(): JSX.Element {
       {/* 8 — Our Packaging Process */}
       <ProcessTimeline />
 
-      {/* 9 — Featured Products */}
-      <FeaturedProductsSection />
-
       {/* 10 — Packaging Applications & Solutions */}
       <SolutionsHomeSection />
 
