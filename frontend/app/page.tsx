@@ -64,11 +64,11 @@ export default function HomePage(): JSX.Element {
       {/* 1 — Hero */}
       <HomeHero />
 
-      {/* 2 — Trust / Capability Bar */}
-      <CapabilityStrip />
-
       {/* 4 — Why SRM */}
       <WhyChooseUs />
+
+      {/* 2 — Trust / Capability Bar */}
+      <CapabilityStrip />
 
       {/* 5 — Custom Packaging */}
       <CustomPackagingHomeSection />
