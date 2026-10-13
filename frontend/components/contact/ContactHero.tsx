@@ -8,7 +8,7 @@ import { Reveal } from "@/components/animations/Reveal";
 
 export function ContactHero(): JSX.Element {
   const whatsappUrl = getWhatsAppLink(
-    "Hello SRM Enterprises, I have a packaging requirement and would like to discuss specifications and pricing."
+    "Hello BharatX Enterprises, I have a packaging requirement and would like to discuss specifications and pricing."
   );
 
   const scrollToInquiry = () => {
@@ -129,7 +129,7 @@ export function ContactHero(): JSX.Element {
                 <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl border-2 border-white/80 bg-slate-100 shadow-2xl ring-1 ring-navy/10">
                   <Image
                     src="/images/contacts_hero.png"
-                    alt="SRM Enterprises industrial packaging logistics warehouse with corrugated cartons, foam rolls, bubble packaging, and stretch film"
+                    alt="BharatX Enterprises industrial packaging logistics warehouse with corrugated cartons, foam rolls, bubble packaging, and stretch film"
                     fill
                     priority
                     sizes="(min-width: 1024px) 42vw, 92vw"

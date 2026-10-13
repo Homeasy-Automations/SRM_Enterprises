@@ -25,7 +25,7 @@ import { buildMetadata } from "@/lib/seo";
 import { solutions } from "@/data/solutions";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Industrial Packaging Solutions & Applications | SRM Enterprises",
+  title: "Industrial Packaging Solutions & Applications | BharatX Enterprises",
   description:
     "Tailored industrial packaging solutions: custom dimensions, transit packaging, component protection, surface guarding, heavy-duty boxes, export packaging, anti-static and corrosion protection.",
   path: "/solutions",

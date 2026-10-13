@@ -72,7 +72,7 @@ export function LocationsHomeSection(): JSX.Element {
           <SectionHeading
             eyebrow="PAN-INDIA SUPPLY NETWORK"
             title="Nationwide Industrial Packaging Supply & Dispatch"
-            description="SRM Enterprises supports industrial supply chains, OEM assembly plants, and commercial distribution operations across Pan India with planned bulk dispatches."
+            description="BharatX Enterprises supports industrial supply chains, OEM assembly plants, and commercial distribution operations across Pan India with planned bulk dispatches."
             className="max-w-3xl"
           />
 

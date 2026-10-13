@@ -5,7 +5,7 @@
  */
 
 export const EMAIL_BRAND = {
-  name: "SRM ENTERPRISES",
+  name: "BHARATX ENTERPRISES",
   tagline: "Complete Packaging Solutions",
   footerLine: "Your Complete Packaging Material Partner",
   locations: "Pan India",
@@ -37,7 +37,7 @@ export function renderEmailLayout(options: EmailLayoutOptions): string {
     intro,
     bodyHtml,
     afterHtml = "",
-    footerNote = "This is an automated message from the SRM Enterprises website.",
+    footerNote = "This is an automated message from the BharatX Enterprises website.",
   } = options;
 
   return `<!DOCTYPE html>
@@ -98,7 +98,7 @@ export function renderEmailLayout(options: EmailLayoutOptions): string {
           </tr>
 
         </table>
-        <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6B7C93;padding:14px 8px 0 8px;">&copy; SRM Enterprises. All Rights Reserved.</div>
+        <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#6B7C93;padding:14px 8px 0 8px;">&copy; BharatX Enterprises. All Rights Reserved.</div>
       </td>
     </tr>
   </table>

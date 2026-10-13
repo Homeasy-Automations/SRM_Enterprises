@@ -72,7 +72,7 @@ export const CONTACT = {
 
 /** Default message pre-filled in the WhatsApp chat. */
 export const WHATSAPP_DEFAULT_MESSAGE =
-  "Hello SRM Enterprises, I would like to enquire about packaging material.";
+  "Hello BharatX Enterprises, I would like to enquire about packaging material.";
 
 /**
  * Builds a wa.me link. Returns `null` when no usable number is configured so callers
@@ -97,14 +97,14 @@ export function getMailtoLink(subject?: string): string {
 
 /** Message tailored to a specific product category, used by product page CTAs. */
 export function getProductWhatsAppMessage(productName: string): string {
-  return `Hello SRM Enterprises, I would like a quote for ${productName}. Please share material options and pricing.`;
+  return `Hello BharatX Enterprises, I would like a quote for ${productName}. Please share material options and pricing.`;
 }
 
 /** Structured data uses this — placeholders only, no invented address or registration numbers. */
 export const ORGANISATION_PROFILE = {
   legalName: BRAND.name,
   description:
-    "SRM Enterprises is an industrial packaging material supplier offering complete packaging solutions — corrugated boxes, EPE Foam Packaging, LDPE Bubble & Protective Packaging, poly bags & films and packaging accessories with Pan India supply.",
+    "BharatX Enterprises is an industrial packaging material supplier offering complete packaging solutions — corrugated boxes, EPE Foam Packaging, LDPE Bubble & Protective Packaging, poly bags & films and packaging accessories with Pan India supply.",
   areaServed: ["Pan India"],
   contactEmail: CONTACT_PLACEHOLDERS.email,
   contactPhone: PHONE_PLACEHOLDER,

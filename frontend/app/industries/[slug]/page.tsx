@@ -33,7 +33,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (!industry) {
     return buildMetadata({
       title: "Industry Not Found",
-      description: "This industry page does not exist. Browse the SRM Enterprises industry solutions instead.",
+      description: "This industry page does not exist. Browse the BharatX Enterprises industry solutions instead.",
       path: `/industries/${params.slug}`,
       noIndex: true,
     });

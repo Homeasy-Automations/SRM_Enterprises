@@ -3,9 +3,9 @@ import { LegalPageContent, type LegalSection } from "@/components/sections/Legal
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Privacy Policy — How SRM Enterprises Handles Your Inquiry Data",
+  title: "Privacy Policy — How BharatX Enterprises Handles Your Inquiry Data",
   description:
-    "How SRM Enterprises collects, uses, stores and protects the information you submit through the quote and contact form, including your rights and how to request changes or deletion.",
+    "How BharatX Enterprises collects, uses, stores and protects the information you submit through the quote and contact form, including your rights and how to request changes or deletion.",
   path: "/privacy",
 });
 
@@ -14,7 +14,7 @@ const sections: LegalSection[] = [
     id: "overview",
     heading: "1. Overview",
     paragraphs: [
-      "This Privacy Policy explains how SRM Enterprises (\"we\", \"us\") handles information submitted through this website. It is a template prepared for the SRM Enterprises website and must be reviewed by a qualified legal professional, who should confirm it against the laws that apply to your business before it goes live.",
+      "This Privacy Policy explains how BharatX Enterprises (\"we\", \"us\") handles information submitted through this website. It is a template prepared for the BharatX Enterprises website and must be reviewed by a qualified legal professional, who should confirm it against the laws that apply to your business before it goes live.",
       "The website is a business-to-business brochure site with one interactive feature: the quote / contact form. There is no customer account system, no newsletter subscription, no comment feature and no advertising profile building on this site.",
     ],
   },
@@ -56,7 +56,7 @@ const sections: LegalSection[] = [
     id: "storage-security",
     heading: "5. Storage, retention and security",
     paragraphs: [
-      "Submitted inquiries are stored in a managed MongoDB Atlas database and are accessible only to authorised SRM Enterprises personnel through the database console. There are no public read, list, update or delete endpoints for inquiry data on this website — the API accepts submissions only.",
+      "Submitted inquiries are stored in a managed MongoDB Atlas database and are accessible only to authorised BharatX Enterprises personnel through the database console. There are no public read, list, update or delete endpoints for inquiry data on this website — the API accepts submissions only.",
     ],
     bullets: [
       "Form traffic is transmitted over HTTPS and rate limited to prevent abuse",
@@ -112,7 +112,7 @@ export default function PrivacyPolicyPage(): JSX.Element {
       sections={sections}
       breadcrumbs={[{ name: "Privacy Policy", path: "/privacy" }]}
       metaTitle="Privacy Policy"
-      metaDescription="How SRM Enterprises collects, uses, stores and protects the information you submit through the quote and contact form, including your rights and how to request changes or deletion."
+      metaDescription="How BharatX Enterprises collects, uses, stores and protects the information you submit through the quote and contact form, including your rights and how to request changes or deletion."
       path="/privacy"
     />
   );

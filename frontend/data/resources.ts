@@ -42,7 +42,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "Vibration during inter-facility freight caused parts to collide inside standard boxes, leading to micro-dents on gear teeth and reject rates of over 3.2%.",
     solution:
-      "SRM engineered custom 10mm high-density EPE foam interlocking matrix trays housed inside heavy-duty 5-ply corrugated outer boxes with reinforced corner posts.",
+      "BharatX engineered custom 10mm high-density EPE foam interlocking matrix trays housed inside heavy-duty 5-ply corrugated outer boxes with reinforced corner posts.",
     specification:
       "5-ply 250 GSM kraft corrugated master box + multi-pocket 28 kg/m³ CNC-cut EPE foam separators + VCI anti-rust liner film.",
     result:
@@ -59,7 +59,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "Conventional packaging suffered box bulging, bottom tear-out, and humidity damage during prolonged monsoon transit in standard trucks.",
     solution:
-      "SRM designed a 7-ply heavy-duty container with a heavy bottom deck, reinforced corrugated edge protectors, and high-tensile PET strapping.",
+      "BharatX designed a 7-ply heavy-duty container with a heavy bottom deck, reinforced corrugated edge protectors, and high-tensile PET strapping.",
     specification:
       "7-ply 300 GSM virgin kraft box with water-repellent coating + 19mm high-tensile PET strap + 50mm heavy-duty edge board + silica desiccants.",
     result:
@@ -76,7 +76,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "Coordinating six different suppliers caused tape shortages, box dimension mismatches, and bottleneck delays during peak sale dispatches.",
     solution:
-      "SRM established a single-source supply agreement with weekly scheduled replenishment of 12 standard die-cut box sizes, pre-printed BOPP tapes, and air bubble rolls.",
+      "BharatX established a single-source supply agreement with weekly scheduled replenishment of 12 standard die-cut box sizes, pre-printed BOPP tapes, and air bubble rolls.",
     specification:
       "Die-cut 3-ply tuck-in self-locking boxes (12 sizes) + 48mm 45-micron high-tack BOPP tape + 10mm double-layer bubble wrap rolls.",
     result:

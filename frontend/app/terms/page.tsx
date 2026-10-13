@@ -3,9 +3,9 @@ import { LegalPageContent, type LegalSection } from "@/components/sections/Legal
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Terms & Conditions — SRM Enterprises Website and Supply",
+  title: "Terms & Conditions — BharatX Enterprises Website and Supply",
   description:
-    "Terms and conditions for using the SRM Enterprises website and for submitting packaging inquiries, including quoting, orders, pricing, dispatch and limitation of liability.",
+    "Terms and conditions for using the BharatX Enterprises website and for submitting packaging inquiries, including quoting, orders, pricing, dispatch and limitation of liability.",
   path: "/terms",
 });
 
@@ -14,7 +14,7 @@ const sections: LegalSection[] = [
     id: "acceptance",
     heading: "1. Acceptance of terms",
     paragraphs: [
-      "By using this website or submitting an inquiry through it, you agree to these terms. This document is a template prepared for the SRM Enterprises website and must be reviewed by a qualified legal professional, who should confirm it against the laws that apply to your business before publication.",
+      "By using this website or submitting an inquiry through it, you agree to these terms. This document is a template prepared for the BharatX Enterprises website and must be reviewed by a qualified legal professional, who should confirm it against the laws that apply to your business before publication.",
       "If you do not agree with these terms, please do not use the website or submit an inquiry.",
     ],
   },
@@ -80,7 +80,7 @@ const sections: LegalSection[] = [
     id: "intellectual-property",
     heading: "9. Intellectual property",
     paragraphs: [
-      "The SRM Enterprises name, the content, layout, illustrations and code of this website belong to SRM Enterprises unless otherwise stated. You may not reproduce, republish or redistribute substantial parts of this website without written permission, other than normal browser caching and short quotations with attribution.",
+      "The BharatX Enterprises name, the content, layout, illustrations and code of this website belong to BharatX Enterprises unless otherwise stated. You may not reproduce, republish or redistribute substantial parts of this website without written permission, other than normal browser caching and short quotations with attribution.",
     ],
   },
   {
@@ -98,12 +98,12 @@ export default function TermsPage(): JSX.Element {
     <LegalPageContent
       title="Terms & Conditions"
       description="Terms for using this website and submitting inquiries."
-      intro="The ground rules for using this website, submitting a packaging inquiry and receiving a quotation from SRM Enterprises."
+      intro="The ground rules for using this website, submitting a packaging inquiry and receiving a quotation from BharatX Enterprises."
       lastUpdated="1 October 2026"
       sections={sections}
       breadcrumbs={[{ name: "Terms & Conditions", path: "/terms" }]}
       metaTitle="Terms & Conditions"
-      metaDescription="Terms and conditions for using the SRM Enterprises website and for submitting packaging inquiries, including quoting, orders, pricing, dispatch and limitation of liability."
+      metaDescription="Terms and conditions for using the BharatX Enterprises website and for submitting packaging inquiries, including quoting, orders, pricing, dispatch and limitation of liability."
       path="/terms"
     />
   );

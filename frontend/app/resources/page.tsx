@@ -12,7 +12,7 @@ import { caseStudies, packagingGuides, blogPosts } from "@/data/resources";
 import { homepageFaq } from "@/data/faq";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Packaging Resources, Case Studies & Technical Guides | SRM Enterprises",
+  title: "Packaging Resources, Case Studies & Technical Guides | BharatX Enterprises",
   description:
     "Explore B2B packaging case studies, technical guides (3-ply vs 5-ply, EPE thickness calculations), FAQs and industrial packaging best practices.",
   path: "/resources",
@@ -45,7 +45,7 @@ export default function ResourcesPage(): JSX.Element {
           <SectionHeading
             eyebrow="CASE STUDIES"
             title="Packaging in Practice: Real Industrial Challenges Solved"
-            description="How SRM Enterprises engineered custom fitments, heavy-duty boxes, and rapid fulfilment packs for automotive, industrial, and logistics leaders."
+            description="How BharatX Enterprises engineered custom fitments, heavy-duty boxes, and rapid fulfilment packs for automotive, industrial, and logistics leaders."
             className="max-w-3xl"
           />
 
@@ -181,7 +181,7 @@ export default function ResourcesPage(): JSX.Element {
           <SectionHeading
             eyebrow="PACKAGING BLOG"
             title="Industry Insights, Monsoon Protection &amp; Supply Trends"
-            description="Articles and operational updates from SRM Enterprises' packaging specialists."
+            description="Articles and operational updates from BharatX Enterprises' packaging specialists."
             className="max-w-3xl"
           />
 

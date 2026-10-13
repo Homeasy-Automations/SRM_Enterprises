@@ -6,7 +6,7 @@ import { Reveal } from "@/components/animations/Reveal";
 
 export function WhatsAppQuickInquiry(): JSX.Element {
   const whatsappUrl = getWhatsAppLink(
-    `Hello SRM Enterprises,\nI need packaging for:\nProduct: \nSize: \nQuantity: \nApplication: `
+    `Hello BharatX Enterprises,\nI need packaging for:\nProduct: \nSize: \nQuantity: \nApplication: `
   );
 
   return (
@@ -77,10 +77,10 @@ export function WhatsAppQuickInquiry(): JSX.Element {
                   <div className="flex items-center justify-between bg-[#075E54] px-4 py-3 text-white">
                     <div className="flex items-center gap-2.5">
                       <div className="grid h-9 w-9 place-items-center rounded-full bg-white/20 text-xs font-bold">
-                        SRM
+                        BX
                       </div>
                       <div>
-                        <p className="text-xs font-bold leading-tight">SRM Enterprises</p>
+                        <p className="text-xs font-bold leading-tight">BharatX Enterprises</p>
                         <p className="text-[10px] text-emerald-200">Packaging Engineering Desk • Online</p>
                       </div>
                     </div>
@@ -97,7 +97,7 @@ export function WhatsAppQuickInquiry(): JSX.Element {
 
                     {/* Customer Message Bubble */}
                     <div className="ml-auto max-w-[85%] rounded-2xl rounded-tr-none bg-[#DCF8C6] p-3 text-slate-800 shadow-xs">
-                      <p className="font-semibold text-slate-900 mb-1">Hello SRM Enterprises,</p>
+                      <p className="font-semibold text-slate-900 mb-1">Hello BharatX Enterprises,</p>
                       <p className="text-[11px] leading-relaxed text-slate-700 mb-2">
                         I need packaging for: <br />
                         • Product: Automotive transmission gear <br />
@@ -124,7 +124,7 @@ export function WhatsAppQuickInquiry(): JSX.Element {
                       </div>
                     </div>
 
-                    {/* SRM Reply Bubble */}
+                    {/* BharatX Reply Bubble */}
                     <div className="mr-auto max-w-[85%] rounded-2xl rounded-tl-none bg-white p-3 text-slate-800 shadow-xs">
                       <p className="text-[11px] leading-relaxed text-slate-700">
                         Hello! We have reviewed the gear specs. We recommend a <strong>5-ply heavy duty box</strong> with a <strong>custom-cut 25mm EPE foam insert</strong> and VCI poly liner for corrosion prevention.

@@ -35,7 +35,7 @@ export function FloatingActions(): JSX.Element {
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Chat with SRM Enterprises on WhatsApp"
+            aria-label="Chat with BharatX Enterprises on WhatsApp"
             onClick={() => analytics.whatsappClick("floating-button")}
             className="group relative grid h-14 w-14 place-items-center rounded-full bg-[#25D366] text-white shadow-card transition-transform duration-300 hover:-translate-y-1 hover:shadow-lift"
           >
@@ -50,7 +50,7 @@ export function FloatingActions(): JSX.Element {
         {telLink ? (
           <a
             href={telLink}
-            aria-label={`Call SRM Enterprises on ${CONTACT.phoneDisplay}`}
+            aria-label={`Call BharatX Enterprises on ${CONTACT.phoneDisplay}`}
             onClick={() => analytics.phoneClick("floating-button")}
             className="grid h-12 w-12 place-items-center rounded-full border border-navy/10 bg-white text-accent shadow-card transition-transform duration-300 hover:-translate-y-1 hover:shadow-lift"
           >

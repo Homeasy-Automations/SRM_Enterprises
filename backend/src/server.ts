@@ -18,7 +18,7 @@ async function bootstrap(): Promise<void> {
   const server = app.listen(env.PORT, "0.0.0.0", () => {
     logger.info(
       { port: env.PORT, env: env.NODE_ENV },
-      `SRM Enterprises API listening on http://0.0.0.0:${env.PORT}`,
+      `BharatX Enterprises API listening on http://0.0.0.0:${env.PORT}`,
     );
   });
 

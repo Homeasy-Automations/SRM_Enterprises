@@ -17,7 +17,7 @@ export default function GlobalError({
 }): JSX.Element {
   useEffect(() => {
     // Logged for the browser console/observability only; never rendered to the visitor.
-    console.error("[SRM] Unhandled UI error:", error.digest ?? error.name);
+    console.error("[BharatX] Unhandled UI error:", error.digest ?? error.name);
   }, [error]);
 
   return (

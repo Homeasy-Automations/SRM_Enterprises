@@ -6,13 +6,13 @@ export { BRAND, ROUTES };
 export const SITE = {
   /** Canonical site URL without a trailing slash (NEXT_PUBLIC_SITE_URL). */
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000").replace(/\/+$/, ""),
-  name: "SRM Enterprises",
-  legalName: "SRM Enterprises",
+  name: "BharatX Enterprises",
+  legalName: "BharatX Enterprises",
   locale: "en_IN",
   defaultTitle:
-    "SRM Enterprises — Complete Packaging Solutions Under One Roof | Industrial Packaging Supplier",
+    "BharatX Enterprises — Complete Packaging Solutions Under One Roof | Industrial Packaging Supplier",
   defaultDescription:
-    "SRM Enterprises supplies industrial packaging material — corrugated boxes, EPE Foam Packaging, LDPE Bubble & Protective Packaging, poly bags & films and packaging accessories. Complete packaging solutions with Pan India supply & dispatch.",
+    "BharatX Enterprises supplies industrial packaging material — corrugated boxes, EPE Foam Packaging, LDPE Bubble & Protective Packaging, poly bags & films and packaging accessories. Complete packaging solutions with Pan India supply & dispatch.",
   themeColor: "#1E6FFF",
   twitterCard: "summary_large_image" as const,
 } as const;
@@ -89,7 +89,7 @@ export const WHY_CHOOSE_US = [
 ] as const;
 
 export const WHY_CHOOSE_CLOSING_LINE =
-  "From standard packaging to customized industrial solutions — SRM Enterprises can support your complete requirement.";
+  "From standard packaging to customized industrial solutions — BharatX Enterprises can support your complete requirement.";
 
 export const ABOUT_POINTS = [
   "Complete end-to-end industrial packaging solutions",
@@ -103,7 +103,7 @@ export const ABOUT_INTRO =
   "One Partner. Multiple Packaging Solutions.";
 
 export const ABOUT_DESCRIPTION =
-  "SRM Enterprises works with industrial buyers who would rather deal with one dependable packaging partner than juggle five suppliers. Corrugated, foam, bubble, films and accessories are engineered and delivered under a single roof, in standard formats or custom-built to your exact specification.";
+  "BharatX Enterprises works with industrial buyers who would rather deal with one dependable packaging partner than juggle five suppliers. Corrugated, foam, bubble, films and accessories are engineered and delivered under a single roof, in standard formats or custom-built to your exact specification.";
 
 export const WHAT_WE_PROVIDE = [
   {

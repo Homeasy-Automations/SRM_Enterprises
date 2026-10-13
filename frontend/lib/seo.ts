@@ -150,8 +150,8 @@ export function productCategoryJsonLd(input: {
     description: input.description,
     category: input.category,
     url: absoluteUrl(input.path),
-    brand: { "@type": "Brand", name: "SRM Enterprises" },
-    manufacturer: { "@type": "Organization", name: "SRM Enterprises", url: SITE.url },
+    brand: { "@type": "Brand", name: "BharatX Enterprises" },
+    manufacturer: { "@type": "Organization", name: "BharatX Enterprises", url: SITE.url },
     // Offers are intentionally omitted: pricing is quoted per requirement.
   };
 }

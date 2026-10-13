@@ -202,7 +202,7 @@ export function MainInquirySection(): JSX.Element {
   };
 
   const whatsappHref = getWhatsAppLink(
-    `Hello SRM Enterprises, I am inquiring about ${activeChip.name} packaging. Please share available specifications and bulk quotation.`
+    `Hello BharatX Enterprises, I am inquiring about ${activeChip.name} packaging. Please share available specifications and bulk quotation.`
   );
 
   return (

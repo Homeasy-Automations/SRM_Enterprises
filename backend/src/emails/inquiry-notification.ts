@@ -28,7 +28,7 @@ export function inquiryNotificationSubject(data: InquiryNotificationData): strin
   return `New Packaging Inquiry — ${product} — ${name}`;
 }
 
-/** Internal notification sent to the SRM sales inbox. Reply-To is the customer. */
+/** Internal notification sent to the BharatX sales inbox. Reply-To is the customer. */
 export function buildInquiryNotificationEmail(data: InquiryNotificationData): {
   subject: string;
   html: string;

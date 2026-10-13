@@ -1,5 +1,5 @@
 /**
- * Typed fetch helper for the SRM Enterprises API.
+ * Typed fetch helper for the BharatX Enterprises API.
  * - base URL from NEXT_PUBLIC_API_URL with trailing slashes stripped
  * - request timeout via AbortController
  * - every failure normalised to { ok: false, message, errors }

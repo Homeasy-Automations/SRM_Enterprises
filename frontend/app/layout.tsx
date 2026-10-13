@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
     default: SITE.defaultTitle,
-    template: "%s | SRM Enterprises",
+    template: "%s | BharatX Enterprises",
   },
   description: SITE.defaultDescription,
   applicationName: SITE.name,

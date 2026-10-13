@@ -75,7 +75,7 @@ export function QualityFocusSection(): JSX.Element {
             <SectionHeading
               eyebrow="QUALITY FOCUS"
               title="Consistent Specifications. Reliable Packaging Supply."
-              description="For industrial packaging, consistency matters. Variations in material, dimensions, thickness or construction can affect handling, storage and product protection. SRM Enterprises focuses on maintaining consistency across packaging specifications while supplying materials according to the requirements agreed with each customer."
+              description="For industrial packaging, consistency matters. Variations in material, dimensions, thickness or construction can affect handling, storage and product protection. BharatX Enterprises focuses on maintaining consistency across packaging specifications while supplying materials according to the requirements agreed with each customer."
             />
 
             <StaggerGroup className="grid gap-4 sm:grid-cols-2 pt-2" stagger={0.08}>

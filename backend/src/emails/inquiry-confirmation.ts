@@ -4,7 +4,7 @@ import { EMAIL_BRAND, renderDetailRow, renderDetailsTable, renderEmailLayout, re
 import type { InquiryNotificationData } from "./inquiry-notification";
 
 export const CONFIRMATION_SUBJECT =
-  "Your Packaging Inquiry Has Been Received — SRM Enterprises";
+  "Your Packaging Inquiry Has Been Received — BharatX Enterprises";
 
 /** Acknowledgement sent to the customer who submitted the inquiry. */
 export function buildInquiryConfirmationEmail(data: InquiryNotificationData): {

@@ -8,7 +8,7 @@ import { Reveal } from "@/components/animations/Reveal";
 export function ContactFinalCta(): JSX.Element {
   const { openQuoteModal } = useQuoteModal();
   const whatsappUrl = getWhatsAppLink(
-    "Hello SRM Enterprises, I have a packaging requirement and would like to get a quote."
+    "Hello BharatX Enterprises, I have a packaging requirement and would like to get a quote."
   );
 
   return (

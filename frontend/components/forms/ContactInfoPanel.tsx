@@ -19,7 +19,7 @@ export function ContactInfoPanel(): JSX.Element {
       icon: <Mail className="h-5 w-5" aria-hidden="true" />,
       label: "Email",
       value: CONTACT.email,
-      href: getMailtoLink("Packaging requirement — SRM Enterprises"),
+      href: getMailtoLink("Packaging requirement — BharatX Enterprises"),
     },
     {
       icon: <Phone className="h-5 w-5" aria-hidden="true" />,

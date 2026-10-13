@@ -23,7 +23,7 @@ const envSchema = z.object({
   RESEND_FROM_EMAIL: z
     .string()
     .optional()
-    .default("SRM Enterprises <noreply@example.com>"),
+    .default("BharatX Enterprises <noreply@example.com>"),
   CONTACT_RECEIVER_EMAIL: z
     .string()
     .optional()
@@ -50,7 +50,7 @@ function parseEnv(): Env {
   if (!parsed.success) {
     // Fail fast, loudly, and with an actionable message.
     console.error(
-      "\n[SRM API] Invalid or missing environment variables:\n" +
+      "\n[BharatX API] Invalid or missing environment variables:\n" +
         formatIssues(parsed.error) +
         "\n\nCopy services/api/.env.example to services/api/.env and fill in the values.\n",
     );

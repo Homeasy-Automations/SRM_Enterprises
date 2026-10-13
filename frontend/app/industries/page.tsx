@@ -331,7 +331,7 @@ export default function IndustriesPage(): JSX.Element {
               path: `/industries/${industry.slug}`,
               description: industry.tagline,
             })),
-            "Industries supported by SRM Enterprises",
+            "Industries supported by BharatX Enterprises",
           ),
         ]}
       />

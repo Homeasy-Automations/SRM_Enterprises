@@ -72,7 +72,7 @@ async function sendEmail(params: {
   }
 }
 
-/** 1/2 — internal notification to the SRM inbox, with the customer's address as Reply-To. */
+/** 1/2 — internal notification to the BharatX inbox, with the customer's address as Reply-To. */
 export async function sendInquiryNotification(data: InquiryNotificationData): Promise<SendResult> {
   const { subject, html, text } = buildInquiryNotificationEmail(data);
   return sendEmail({

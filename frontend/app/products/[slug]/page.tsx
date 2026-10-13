@@ -34,7 +34,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (!product) {
     return buildMetadata({
       title: "Product Category Not Found",
-      description: "This packaging category does not exist. Browse the SRM Enterprises product range instead.",
+      description: "This packaging category does not exist. Browse the BharatX Enterprises product range instead.",
       path: `/products/${params.slug}`,
       noIndex: true,
     });
@@ -42,7 +42,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 
   return buildMetadata({
     title: `${product.name} — ${product.tagline}`,
-    description: `${product.description}${product.note ? ` ${product.note}.` : ""} Custom sizes, thicknesses and bulk quantities from SRM Enterprises — bulk supply across Pan India.`,
+    description: `${product.description}${product.note ? ` ${product.note}.` : ""} Custom sizes, thicknesses and bulk quantities from BharatX Enterprises — bulk supply across Pan India.`,
     path: `/products/${product.slug}`,
     keywords: [product.name, ...product.items.slice(0, 3)],
   });

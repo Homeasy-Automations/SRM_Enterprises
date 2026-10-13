@@ -261,7 +261,7 @@ export function QuoteModal({ isOpen, onClose, initialProduct, source = "modal" }
           <div className="mt-5 pt-3.5 border-t border-white/10 flex items-center justify-between text-xs text-white/70">
             <span>Quick response?</span>
             <a
-              href={getWhatsAppLink("Hello SRM Enterprises, I need a quick quote on packaging material.") ?? "#"}
+              href={getWhatsAppLink("Hello BharatX Enterprises, I need a quick quote on packaging material.") ?? "#"}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 font-semibold text-emerald-400 hover:text-emerald-300"

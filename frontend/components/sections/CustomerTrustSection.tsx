@@ -18,7 +18,7 @@ const TRUSTED_SECTORS = [
 const TESTIMONIALS = [
   {
     quote:
-      "SRM helped us standardize our packaging across multiple component sizes and significantly simplify procurement. Instead of juggling box makers and foam vendors, we now have a single technical partner for our entire assembly line.",
+      "BharatX helped us standardize our packaging across multiple component sizes and significantly simplify procurement. Instead of juggling box makers and foam vendors, we now have a single technical partner for our entire assembly line.",
     name: "Sanjay Seth",
     role: "Assistant Manager – Procurement",
     org: "Automotive OEM Tier-1 Supplier",
@@ -58,7 +58,7 @@ export function CustomerTrustSection(): JSX.Element {
         <SectionHeading
           eyebrow="CLIENT TRUST & REPUTATION"
           title="What Procurement & Packaging Teams Say"
-          description="Industrial buyers rely on SRM Enterprises for consistent specifications, predictable pricing, and dependable scheduled deliveries."
+          description="Industrial buyers rely on BharatX Enterprises for consistent specifications, predictable pricing, and dependable scheduled deliveries."
           align="center"
           className="mx-auto max-w-3xl"
         />

@@ -79,7 +79,7 @@ export function PackagingSolutionsSection(): JSX.Element {
             <SectionHeading
               eyebrow="CAPABILITY"
               title="Complete Packaging Solutions for Every Requirement"
-              description="SRM Enterprises delivers comprehensive packaging solutions across every category in our catalog — from engineered corrugated boxes and fabricated EPE foam to bubble rolls, poly films, and specialized industrial accessories. Built to your exact specifications with planned supply across Pan India."
+              description="BharatX Enterprises delivers comprehensive packaging solutions across every category in our catalog — from engineered corrugated boxes and fabricated EPE foam to bubble rolls, poly films, and specialized industrial accessories. Built to your exact specifications with planned supply across Pan India."
             />
 
             <StaggerGroup className="grid gap-4 sm:grid-cols-2 pt-2" stagger={0.08}>

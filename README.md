@@ -1,4 +1,4 @@
-# SRM ENTERPRISES — Industrial Packaging Materials Website
+# BHARATX ENTERPRISES — Industrial Packaging Materials Website
 
 **Complete Packaging Solutions Under One Roof**
 *Your Complete Packaging Material Partner*
@@ -38,7 +38,7 @@ reviewed directly in MongoDB Atlas.
 
 ## 1. Overview
 
-SRM Enterprises provides complete industrial packaging solutions and supplies them
+BharatX Enterprises provides complete industrial packaging solutions and supplies them
 across **Pan India**. This project is the public website plus the small
 backend it genuinely needs:
 
@@ -47,7 +47,7 @@ backend it genuinely needs:
 - **Six industries** — Automotive & Auto Components, Engineering & Industrial, Electrical &
   Electronics, Pharmaceuticals, Food & FMCG, E-Commerce & Logistics.
 - **One real, working quote pipeline** — the website form posts to the Express API, the inquiry
-  is saved to MongoDB Atlas, then two emails are sent through Resend (notification to SRM,
+  is saved to MongoDB Atlas, then two emails are sent through Resend (notification to BharatX,
   confirmation to the customer).
 
 The copy is intentionally factual: no certifications, awards, client names, years of experience,
@@ -63,7 +63,7 @@ be used for decoration, this site uses illustration and layout instead.
 | Route | Notes |
 | --- | --- |
 | `/` | Hero, capability strip, about preview, 5-category showcase, why-us, industries, process timeline, gradient CTA |
-| `/about` | Hero ("Packaging Supply Built Around Your Business"), what we provide, capabilities, industries, quality & supply philosophy, why businesses choose SRM, CTA |
+| `/about` | Hero ("Packaging Supply Built Around Your Business"), what we provide, capabilities, industries, quality & supply philosophy, why businesses choose BharatX, CTA |
 | `/products` | Category overview grid, one full section per category, custom packaging, process, requirement CTA |
 | `/products/[slug]` | One template for all five categories: range, customisation, protection/quality, applications, industries, related categories, `Request Quote → /contact?product=<slug>` |
 | `/industries` | Industry grid + one section per industry (challenges, solutions, links to categories) + approach + CTA |
@@ -224,7 +224,7 @@ Fill in `apps/web/.env.local` (site URL, API URL, WhatsApp/phone) and `services/
 | `MONGODB_URI` | yes | MongoDB Atlas connection string. Must start with `mongodb://` or `mongodb+srv://`. |
 | `CLIENT_URL` | yes | Comma-separated list of allowed browser origins. Trailing slashes are stripped and **www/apex variants are added automatically**. |
 | `RESEND_API_KEY` | yes | Resend API key (`re_...`). The only email transport used. |
-| `RESEND_FROM_EMAIL` | yes | From address on a **verified Resend domain**, e.g. `SRM Enterprises <noreply@your-domain.com>`. |
+| `RESEND_FROM_EMAIL` | yes | From address on a **verified Resend domain**, e.g. `BharatX Enterprises <noreply@your-domain.com>`. |
 | `CONTACT_RECEIVER_EMAIL` | yes | Sales inbox that receives inquiry notifications. |
 | `IP_HASH_SALT` | yes | Long random string used to hash visitor IPs (raw IPs are never stored). |
 | `LOG_LEVEL` | no | pino level (`info` default). |
@@ -307,17 +307,17 @@ mongoexport \
 2. **Domains** → add your domain (e.g. `your-domain.com`) and add the DNS records it shows
    (SPF/DKIM, and DMARC if you want stronger deliverability). Wait for verification.
 3. Set `RESEND_FROM_EMAIL` to an address **on that verified domain**, e.g.
-   `SRM Enterprises <noreply@your-domain.com>`.
+   `BharatX Enterprises <noreply@your-domain.com>`.
 4. Set `CONTACT_RECEIVER_EMAIL` to the inbox that should receive inquiry notifications.
 5. ⚠️ **Until your domain is verified, Resend only delivers to the email address you signed up
    with.** Test with that address; customer confirmations to other addresses will fail until the
    domain is verified. Email failures never lose an inquiry — they are recorded in
    `emailStatus.lastError` and visible in the API logs.
 6. Two emails are sent per submission:
-   - **Notification to SRM** — subject `New Packaging Inquiry — <Product> — <Name>`, with
+   - **Notification to BharatX** — subject `New Packaging Inquiry — <Product> — <Name>`, with
      Reply-To set to the customer, so replying straight from the inbox answers the customer.
    - **Confirmation to the customer** — subject
-     `Your Packaging Inquiry Has Been Received — SRM Enterprises`, with a summary of what they
+     `Your Packaging Inquiry Has Been Received — BharatX Enterprises`, with a summary of what they
      submitted.
 
 Both templates are table-based HTML with inline CSS, a light colourful brand header, a plain-text
@@ -401,7 +401,7 @@ Because the frontend and backend are completely decoupled into their own standal
    - `MONGODB_URI` = Your MongoDB Atlas URI
    - `CLIENT_URL` = `https://www.srmenterprises.com,https://srm-enterprises-psi.vercel.app`
    - `RESEND_API_KEY` = Your Resend API key
-   - `RESEND_FROM_EMAIL` = `SRM Enterprises <noreply@yourdomain.com>`
+   - `RESEND_FROM_EMAIL` = `BharatX Enterprises <noreply@yourdomain.com>`
    - `CONTACT_RECEIVER_EMAIL` = `info@yourdomain.com`
    - `IP_HASH_SALT` = Long random secret string
 4. Click **Deploy**.
@@ -650,4 +650,4 @@ See the project checklist in the delivery notes. Summary of current status:
 
 ---
 
-© SRM Enterprises. All Rights Reserved. · [Privacy Policy](/privacy) · [Terms](/terms)
+© BharatX Enterprises. All Rights Reserved. · [Privacy Policy](/privacy) · [Terms](/terms)

@@ -60,7 +60,7 @@ export function WhatsAppCta({
           href={telLink}
           onClick={() => analytics.phoneClick(location)}
           className="btn-outline w-full sm:w-auto"
-          aria-label={`Call SRM Enterprises on ${CONTACT.phoneDisplay}`}
+          aria-label={`Call BharatX Enterprises on ${CONTACT.phoneDisplay}`}
         >
           <Phone className="h-4 w-4" aria-hidden="true" />
           {CONTACT.phoneDisplay}

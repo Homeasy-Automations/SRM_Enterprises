@@ -17,7 +17,7 @@ import { BRAND } from "@srm/config";
 export const metadata: Metadata = buildMetadata({
   title: "Packaging Products — Corrugated, EPE Foam, Bubble, Poly Films & Accessories",
   description:
-    "Browse the full SRM Enterprises packaging range: corrugated boxes and sheets, EPE foam bags and fitments, LDPE bubble and protective packaging, poly bags and films, and packaging accessories. Custom sizes, thicknesses and bulk quantities.",
+    "Browse the full BharatX Enterprises packaging range: corrugated boxes and sheets, EPE foam bags and fitments, LDPE bubble and protective packaging, poly bags and films, and packaging accessories. Custom sizes, thicknesses and bulk quantities.",
   path: "/products",
   keywords: [
     "corrugated packaging supplier",
@@ -175,7 +175,7 @@ export default function ProductsPage(): JSX.Element {
               path: `/products/${product.slug}`,
               description: product.tagline,
             })),
-            "Packaging product categories — SRM Enterprises",
+            "Packaging product categories — BharatX Enterprises",
           ),
         ]}
       />

@@ -1,6 +1,6 @@
-# SRM Enterprises — Frontend (Next.js)
+# BharatX Enterprises — Frontend (Next.js)
 
-Standalone Next.js App Router frontend for the SRM Enterprises website.
+Standalone Next.js App Router frontend for the BharatX Enterprises website.
 
 ## 🚀 Running Locally
 

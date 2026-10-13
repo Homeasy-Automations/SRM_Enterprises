@@ -1,5 +1,5 @@
 /**
- * Domain types for SRM Enterprises frontend.
+ * Domain types for BharatX Enterprises frontend.
  * Pure types only — no runtime code, no dependencies.
  */
 

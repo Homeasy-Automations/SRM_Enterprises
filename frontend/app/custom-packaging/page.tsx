@@ -15,7 +15,7 @@ import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Custom Packaging — Packaging Designed for Your Product",
   description:
-    "Custom packaging from SRM Enterprises: requirement assessment, material selection, dimensions and thickness, printing and branding, prototype or sample approval, then production and bulk supply. Corrugated, foam, bubble, films and accessories.",
+    "Custom packaging from BharatX Enterprises: requirement assessment, material selection, dimensions and thickness, printing and branding, prototype or sample approval, then production and bulk supply. Corrugated, foam, bubble, films and accessories.",
   path: "/custom-packaging",
   keywords: [
     "custom packaging supplier",

@@ -1,5 +1,5 @@
 /**
- * Product catalogue — the exact, final product names supplied by SRM Enterprises.
+ * Product catalogue — the exact, final product names supplied by BharatX Enterprises.
  * No claims, statistics or specifications beyond what was provided are added here.
  *
  * Each category owns a colour (see CATEGORY_COLORS in @srm/config) which drives the

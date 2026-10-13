@@ -4,9 +4,9 @@ import type { AccordionItemData } from "@/components/ui/Accordion";
 export const homepageFaq: AccordionItemData[] = [
   {
     id: "materials-supplied",
-    question: "What packaging materials does SRM Enterprises supply?",
+    question: "What packaging materials does BharatX Enterprises supply?",
     answer:
-      "SRM Enterprises supplies corrugated boxes, EPE foam packaging, LDPE bubble packaging, poly bags, stretch film, shrink film and various packaging accessories under one roof.",
+      "BharatX Enterprises supplies corrugated boxes, EPE foam packaging, LDPE bubble packaging, poly bags, stretch film, shrink film and various packaging accessories under one roof.",
   },
   {
     id: "customized-packaging",
@@ -18,13 +18,13 @@ export const homepageFaq: AccordionItemData[] = [
     id: "bulk-supply",
     question: "Do you supply packaging materials in bulk?",
     answer:
-      "Yes. SRM Enterprises specializes in high-volume, bulk industrial packaging supplies with scheduled deliveries for industrial assembly plants and logistics hubs across Pan India.",
+      "Yes. BharatX Enterprises specializes in high-volume, bulk industrial packaging supplies with scheduled deliveries for industrial assembly plants and logistics hubs across Pan India.",
   },
   {
     id: "industries-served",
     question: "What industries do you serve?",
     answer:
-      "SRM Enterprises serves automotive and auto components, engineering and industrial, electrical and electronics, pharmaceuticals, food and FMCG, and e-commerce and logistics sectors.",
+      "BharatX Enterprises serves automotive and auto components, engineering and industrial, electrical and electronics, pharmaceuticals, food and FMCG, and e-commerce and logistics sectors.",
   },
   {
     id: "sample-request",
@@ -36,7 +36,7 @@ export const homepageFaq: AccordionItemData[] = [
     id: "locations-served",
     question: "Which locations do you serve?",
     answer:
-      "SRM Enterprises provides nationwide packaging supply across Pan India, including Northern, Western, Southern, and Eastern industrial corridors with scheduled bulk dispatches.",
+      "BharatX Enterprises provides nationwide packaging supply across Pan India, including Northern, Western, Southern, and Eastern industrial corridors with scheduled bulk dispatches.",
   },
   {
     id: "get-quote",
@@ -75,7 +75,7 @@ export const contactFaq: AccordionItemData[] = [
     id: "pan-india-supply",
     question: "Do you supply across India?",
     answer:
-      "Yes. SRM Enterprises provides scheduled supply and dispatch across all major industrial clusters and corridors in India, including Northern, Western, Southern, and Eastern industrial belts. We handle dedicated Full Truckload (FTL) as well as scheduled Part Truckload (PTL) dispatches to keep your assembly lines supplied without downtime.",
+      "Yes. BharatX Enterprises provides scheduled supply and dispatch across all major industrial clusters and corridors in India, including Northern, Western, Southern, and Eastern industrial belts. We handle dedicated Full Truckload (FTL) as well as scheduled Part Truckload (PTL) dispatches to keep your assembly lines supplied without downtime.",
   },
   {
     id: "sample-request",
@@ -87,7 +87,7 @@ export const contactFaq: AccordionItemData[] = [
     id: "multiple-products",
     question: "Can I order multiple packaging products together?",
     answer:
-      "Yes, absolutely. One of SRM Enterprises' key strengths is serving as a complete packaging material partner under one roof. You can consolidate corrugated boxes, EPE foam sheets, air bubble rolls, poly bags, stretch film, and box strapping under a single purchase order and single scheduled delivery.",
+      "Yes, absolutely. One of BharatX Enterprises' key strengths is serving as a complete packaging material partner under one roof. You can consolidate corrugated boxes, EPE foam sheets, air bubble rolls, poly bags, stretch film, and box strapping under a single purchase order and single scheduled delivery.",
   },
   {
     id: "data-handling",

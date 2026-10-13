@@ -10,7 +10,7 @@ import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { GalleryInteractiveGrid } from "@/components/sections/GalleryInteractiveGrid";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Packaging Gallery & Production Proof | SRM Enterprises",
+  title: "Packaging Gallery & Production Proof | BharatX Enterprises",
   description:
     "Explore our visual proof of custom packaging solutions, fabricated EPE foam fitments, heavy-duty corrugated cartons, infrastructure, and finished client consignments.",
   path: "/gallery",

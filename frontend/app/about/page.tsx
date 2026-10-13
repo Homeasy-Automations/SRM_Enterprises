@@ -23,12 +23,12 @@ import { AnimatedCounter } from "@/components/animations/AnimatedCounter";
 import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "About SRM Enterprises — Industrial Packaging Partner Across Pan India",
+  title: "About BharatX Enterprises — Industrial Packaging Partner Across Pan India",
   description:
-    "Learn about SRM Enterprises: our founding story, leadership team, manufacturing facilities, ISO & MSME certifications, genuine metrics, and customer promise.",
+    "Learn about BharatX Enterprises: our founding story, leadership team, manufacturing facilities, ISO & MSME certifications, genuine metrics, and customer promise.",
   path: "/about",
   keywords: [
-    "about SRM Enterprises",
+    "about BharatX Enterprises",
     "industrial packaging supplier India",
     "packaging manufacturing infrastructure",
     "corrugated boxes supplier India",
@@ -122,7 +122,7 @@ export default function AboutPage(): JSX.Element {
     <>
       {/* 1 — Hero */}
       <PageHero
-        eyebrow="ABOUT SRM ENTERPRISES"
+        eyebrow="ABOUT BHARATX ENTERPRISES"
         title="Industrial Packaging. Built to Your Specification."
         description="One reliable partner for all your industrial packaging needs — so your procurement and packing teams can stop coordinating five separate vendors and rely on consistent material quality."
         breadcrumbs={breadcrumbs}
@@ -159,7 +159,7 @@ export default function AboutPage(): JSX.Element {
         </div>
       </section>
 
-      {/* 3 — Our Story: Who started SRM & The Problem We Solved */}
+      {/* 3 — Our Story: Who started BharatX & The Problem We Solved */}
       <section id="our-story" className="band-white pattern-weave section-pad scroll-mt-24" aria-labelledby="story-heading">
         <div className="container-page">
           <div className="grid items-center gap-12 lg:grid-cols-12">
@@ -167,7 +167,7 @@ export default function AboutPage(): JSX.Element {
               <SectionHeading
                 eyebrow="OUR STORY & BACKGROUND"
                 title="Founded to End Fragmented Packaging Procurement"
-                description="Before SRM Enterprises, manufacturing plants had to source corrugated boxes from one local supplier, foam cushioning from another converter, bubble wrap from a third trader, and tapes from a fourth distributor."
+                description="Before BharatX Enterprises, manufacturing plants had to source corrugated boxes from one local supplier, foam cushioning from another converter, bubble wrap from a third trader, and tapes from a fourth distributor."
               />
 
               <div className="space-y-4 text-sm leading-relaxed text-navy-soft sm:text-base">
@@ -175,7 +175,7 @@ export default function AboutPage(): JSX.Element {
                   This fragmentation led to inconsistent dimensional tolerances, mismatched thicknesses, constant finger-pointing during transit damage, and massive administrative overhead for procurement teams.
                 </p>
                 <p>
-                  <strong className="text-navy font-semibold">In 2009, SRM Enterprises was established</strong> with a clear purpose: to serve as a single, technically rigorous packaging partner capable of engineering complete kits — master outer cartons, custom-cut EPE foam trays, protective bubble wrap, poly films, and industrial accessories — with exact specification control and predictable bulk supply across India.
+                  <strong className="text-navy font-semibold">In 2009, BharatX Enterprises was established</strong> with a clear purpose: to serve as a single, technically rigorous packaging partner capable of engineering complete kits — master outer cartons, custom-cut EPE foam trays, protective bubble wrap, poly films, and industrial accessories — with exact specification control and predictable bulk supply across India.
                 </p>
                 <p>
                   Today, over 500 manufacturing plants, automotive OEMs, and logistics providers rely on our production facilities to keep their dispatch lines moving with zero transit rejects.
@@ -200,7 +200,7 @@ export default function AboutPage(): JSX.Element {
                 <div className="relative h-96 w-full">
                   <Image
                     src="/images/hero1.png"
-                    alt="SRM Enterprises industrial packaging facility"
+                    alt="BharatX Enterprises industrial packaging facility"
                     fill
                     sizes="(max-width: 1024px) 100vw, 40vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -210,7 +210,7 @@ export default function AboutPage(): JSX.Element {
                     <span className="font-ui inline-block rounded-full bg-accent px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] mb-2">
                       Modern Facility
                     </span>
-                    <h4 className="font-ui text-lg font-bold">SRM Manufacturing &amp; Logistics Hub</h4>
+                    <h4 className="font-ui text-lg font-bold">BharatX Manufacturing &amp; Logistics Hub</h4>
                     <p className="mt-1 text-xs text-white/80">
                       Integrated corrugation, die-cutting, foam fabrication &amp; dispatch staging.
                     </p>
@@ -348,7 +348,7 @@ export default function AboutPage(): JSX.Element {
         <div className="container-page">
           <SectionHeading
             eyebrow="OUR SERVICE COMMITMENT"
-            title="The SRM Guarantee to Procurement Teams"
+            title="The BharatX Guarantee to Procurement Teams"
             description="Clear, dependable business standards you can hold us accountable for every single month."
             align="center"
             className="mx-auto max-w-3xl"

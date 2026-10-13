@@ -9,7 +9,7 @@ export function ContactOptions(): JSX.Element {
   const mailtoHref = getMailtoLink("Business Inquiry — Packaging Requirements");
   const telHref = getTelLink();
   const whatsappHref = getWhatsAppLink(
-    "Hello SRM Enterprises, I am reaching out to discuss packaging materials for our business."
+    "Hello BharatX Enterprises, I am reaching out to discuss packaging materials for our business."
   );
 
   const options = [

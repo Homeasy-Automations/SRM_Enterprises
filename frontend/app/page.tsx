@@ -21,9 +21,9 @@ import { industries } from "@/data/industries";
 import { solutions } from "@/data/solutions";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Industrial Packaging Material Supplier India | SRM Enterprises",
+  title: "Industrial Packaging Material Supplier India | BharatX Enterprises",
   description:
-    "SRM Enterprises supplies corrugated boxes, EPE foam, bubble packaging, poly bags, films and packaging accessories with reliable bulk supply across Pan India.",
+    "BharatX Enterprises supplies corrugated boxes, EPE foam, bubble packaging, poly bags, films and packaging accessories with reliable bulk supply across Pan India.",
   path: "/",
   keywords: [
     "industrial packaging material supplier India",
@@ -41,11 +41,11 @@ export const metadata: Metadata = buildMetadata({
 });
 
 /**
- * SRM Enterprises Primary Sales Homepage:
+ * BharatX Enterprises Primary Sales Homepage:
  * 1. Hero
  * 2. Trust/Capability Bar
  * 3. Packaging Categories
- * 4. Why SRM
+ * 4. Why BharatX
  * 5. Custom Packaging
  * 6. Industries We Serve
  * 7. Complete Packaging Solutions
@@ -64,7 +64,7 @@ export default function HomePage(): JSX.Element {
       {/* 1 — Hero */}
       <HomeHero />
 
-      {/* 4 — Why SRM */}
+      {/* 4 — Why BharatX */}
       <WhyChooseUs />
 
       {/* 2 — Trust / Capability Bar */}
@@ -119,7 +119,7 @@ export default function HomePage(): JSX.Element {
               path: `/products/${product.slug}`,
               description: product.tagline,
             })),
-            "Packaging categories supplied by SRM Enterprises",
+            "Packaging categories supplied by BharatX Enterprises",
           ),
           itemListJsonLd(
             industries.map((industry) => ({
@@ -127,7 +127,7 @@ export default function HomePage(): JSX.Element {
               path: `/industries/${industry.slug}`,
               description: industry.tagline,
             })),
-            "Industries supported by SRM Enterprises",
+            "Industries supported by BharatX Enterprises",
           ),
           itemListJsonLd(
             solutions.map((sol) => ({
@@ -135,7 +135,7 @@ export default function HomePage(): JSX.Element {
               path: "/solutions",
               description: sol.description,
             })),
-            "Packaging solutions and applications by SRM Enterprises",
+            "Packaging solutions and applications by BharatX Enterprises",
           ),
         ]}
       />

@@ -10,7 +10,7 @@ import { BoxArt } from "@/components/ui/art";
 export const metadata: Metadata = buildMetadata({
   title: "Page Not Found",
   description:
-    "The page you are looking for does not exist. Browse SRM Enterprises packaging categories, industries and contact options instead.",
+    "The page you are looking for does not exist. Browse BharatX Enterprises packaging categories, industries and contact options instead.",
   path: "/404",
   noIndex: true,
 });
@@ -40,7 +40,7 @@ export default function NotFound(): JSX.Element {
 
           <Reveal variant="fade-up" delay={0.15}>
             <p className="max-w-xl text-base leading-relaxed text-navy-soft">
-              The link you followed does not exist on this site. Everything SRM Enterprises offers is
+              The link you followed does not exist on this site. Everything BharatX Enterprises offers is
               one click away below.
             </p>
           </Reveal>

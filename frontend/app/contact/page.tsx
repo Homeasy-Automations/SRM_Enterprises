@@ -13,7 +13,7 @@ import { JsonLd } from "@/components/sections/JsonLd";
 import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Contact & Packaging Inquiries — SRM Enterprises B2B Hub",
+  title: "Contact & Packaging Inquiries — BharatX Enterprises B2B Hub",
   description:
     "Let's talk packaging. Share your requirement, get custom specifications, or arrange scheduled bulk supply for corrugated boxes, EPE foam, bubble wrap, poly films and accessories across India.",
   path: "/contact",

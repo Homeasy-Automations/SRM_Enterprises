@@ -152,7 +152,7 @@ export const aboutMenu: NavChild[] = [
   {
     label: "Company Overview",
     href: `${ROUTES.about}#overview`,
-    description: "Who SRM Enterprises is and what we do",
+    description: "Who BharatX Enterprises is and what we do",
     color: "#1E6FFF",
   },
   {
@@ -179,7 +179,7 @@ export const primaryNav: NavItem[] = [
   {
     label: "About",
     href: ROUTES.about,
-    ariaLabel: "About SRM Enterprises",
+    ariaLabel: "About BharatX Enterprises",
   },
   {
     label: "Products",
@@ -227,7 +227,7 @@ export const primaryNav: NavItem[] = [
   {
     label: "Contact",
     href: ROUTES.contact,
-    ariaLabel: "Contact SRM Enterprises and B2B Inquiries",
+    ariaLabel: "Contact BharatX Enterprises and B2B Inquiries",
   },
 ];
 

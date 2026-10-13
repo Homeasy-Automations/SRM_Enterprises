@@ -44,7 +44,7 @@ export function HomeLeadSection(): JSX.Element {
           <Reveal variant="fade-up" delay={0.1}>
             <p className="mt-4 text-base leading-relaxed text-navy-soft sm:text-lg">
               Share your product, packaging requirements, dimensions, quantity and application with our team.
-              Whether you need standard packaging materials or customized solutions, SRM Enterprises can help
+              Whether you need standard packaging materials or customized solutions, BharatX Enterprises can help
               you identify the appropriate packaging option for your requirement.
             </p>
           </Reveal>

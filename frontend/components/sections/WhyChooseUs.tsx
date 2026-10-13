@@ -33,15 +33,15 @@ const VALUE_POINTS = [
   },
 ];
 
-/** Section 3: Why SRM Enterprises — One Packaging Partner. Multiple Requirements. */
+/** Section 3: Why BharatX Enterprises — One Packaging Partner. Multiple Requirements. */
 export function WhyChooseUs(): JSX.Element {
   return (
     <section className="band-sky section-pad relative pattern-dots" aria-labelledby="why-srm-heading">
       <div className="container-page">
         <SectionHeading
-          eyebrow="WHY SRM"
+          eyebrow="WHY BHARATX"
           title="One Packaging Partner. Multiple Requirements."
-          description="Packaging requirements can vary by product, application, handling conditions and supply volume. SRM Enterprises works with businesses to provide packaging materials according to their specific requirements while supporting consistent quality and dependable bulk supply."
+          description="Packaging requirements can vary by product, application, handling conditions and supply volume. BharatX Enterprises works with businesses to provide packaging materials according to their specific requirements while supporting consistent quality and dependable bulk supply."
           align="center"
           className="mx-auto max-w-3xl"
         />

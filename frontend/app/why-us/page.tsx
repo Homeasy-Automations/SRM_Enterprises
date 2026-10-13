@@ -15,9 +15,9 @@ import { WHY_CHOOSE_CLOSING_LINE, WHY_CHOOSE_US } from "@/lib/constants";
 import { QuoteTrigger } from "@/components/buttons/QuoteTrigger";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Why Choose SRM Enterprises — Quality, Customisation, Value & Supply",
+  title: "Why Choose BharatX Enterprises — Quality, Customisation, Value & Supply",
   description:
-    "Why businesses choose SRM Enterprises: consistent material and dimensional control, customisation across size, thickness, printing and packing, competitive pricing for regular and bulk requirements, and reliable dispatch planning for industrial customers.",
+    "Why businesses choose BharatX Enterprises: consistent material and dimensional control, customisation across size, thickness, printing and packing, competitive pricing for regular and bulk requirements, and reliable dispatch planning for industrial customers.",
   path: "/why-us",
   keywords: ["packaging supplier quality", "custom packaging value", "reliable packaging supply Pan India"],
 });
@@ -191,7 +191,7 @@ export default function WhyUsPage(): JSX.Element {
         band="white"
         eyebrow="Complete Packaging Solutions"
         title="One source for every type of packaging"
-        description="SRM Enterprises delivers comprehensive packaging solutions that make every kind of packaging required by modern industry — from custom-engineered cartons and tailored foam fitments to protective films and accessories. Together they mean one inquiry instead of five."
+        description="BharatX Enterprises delivers comprehensive packaging solutions that make every kind of packaging required by modern industry — from custom-engineered cartons and tailored foam fitments to protective films and accessories. Together they mean one inquiry instead of five."
         columns={2}
         items={[
           {

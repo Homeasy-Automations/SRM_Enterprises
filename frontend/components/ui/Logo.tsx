@@ -41,8 +41,8 @@ export function Logo({
   const content = (
     <span className={cn("group inline-flex items-center", gapClass, className)}>
       <span className={cn("relative inline-flex shrink-0 items-center justify-center", markSizeClass)}>
-        <svg viewBox="0 0 44 44" className={markSizeClass} role="img" aria-label="SRM Enterprises logo">
-          <title>SRM Enterprises</title>
+        <svg viewBox="0 0 44 44" className={markSizeClass} role="img" aria-label="BharatX Enterprises logo">
+          <title>BharatX Enterprises</title>
           <defs>
             <linearGradient id="logo-top" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0%" stopColor="#FFFFFF" />
@@ -75,7 +75,7 @@ export function Logo({
             tone === "light" ? "text-white" : "text-navy",
           )}
         >
-          SRM ENTERPRISES
+          BHARATX ENTERPRISES
         </span>
         {showTagline ? (
           <span
@@ -97,7 +97,7 @@ export function Logo({
   return (
     <Link
       href={href}
-      aria-label="SRM Enterprises — home"
+      aria-label="BharatX Enterprises — home"
       className="inline-block rounded-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-accent/40"
     >
       {content}

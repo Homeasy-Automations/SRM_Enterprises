@@ -2,7 +2,7 @@
   "name": "srm-enterprises",
   "version": "1.0.0",
   "private": true,
-  "description": "SRM Enterprises — Separated Frontend (Next.js) & Backend (Express API).",
+  "description": "BharatX Enterprises — Separated Frontend (Next.js) & Backend (Express API).",
   "workspaces": [
     "frontend",
     "backend"

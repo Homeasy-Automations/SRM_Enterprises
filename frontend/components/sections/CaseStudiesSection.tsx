@@ -15,7 +15,7 @@ export function CaseStudiesSection(): JSX.Element {
           <SectionHeading
             eyebrow="PACKAGING IN PRACTICE"
             title="Built Around Real Packaging Requirements"
-            description="Different products require different levels of protection, handling and packaging performance. Explore how SRM Enterprises approaches packaging requirements based on product characteristics, application and supply needs."
+            description="Different products require different levels of protection, handling and packaging performance. Explore how BharatX Enterprises approaches packaging requirements based on product characteristics, application and supply needs."
             className="max-w-3xl"
           />
 

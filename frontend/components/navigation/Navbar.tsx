@@ -28,7 +28,7 @@ const SHOWCASE_SECTION_IDS: readonly string[] = products.map(
  * Site navigation.
  *
  * Desktop Header:
- * SRM ENTERPRISES Logo
+ * BHARATX ENTERPRISES Logo
  * Home | About | Products ▾ | Industries ▾ | Solutions ▾ | Locations ▾ | Resources ▾ | Gallery
  * Secondary Utility:
  * WhatsApp | Call | Get a Quote
@@ -145,7 +145,7 @@ export function Navbar(): JSX.Element {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => analytics.whatsappClick("navbar")}
-                aria-label="Chat with SRM Enterprises on WhatsApp"
+                aria-label="Chat with BharatX Enterprises on WhatsApp"
                 className="hidden min-h-[38px] items-center gap-1.5 rounded-full border border-emerald-600/20 bg-emerald-50/80 px-3 text-xs font-semibold text-emerald-700 transition-all duration-300 hover:-translate-y-0.5 hover:bg-emerald-100 hover:shadow-xs md:inline-flex"
               >
                 <MessageCircle className="h-3.5 w-3.5 text-emerald-600" aria-hidden="true" />
@@ -157,7 +157,7 @@ export function Navbar(): JSX.Element {
               <a
                 href={telLink}
                 onClick={() => analytics.phoneClick("navbar")}
-                aria-label={`Call SRM Enterprises on ${CONTACT.phoneDisplay}`}
+                aria-label={`Call BharatX Enterprises on ${CONTACT.phoneDisplay}`}
                 className="hidden min-h-[38px] items-center gap-1.5 rounded-full border border-navy/10 px-3 text-xs font-semibold text-navy-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-accent hover:text-accent-deep hover:shadow-xs hover:bg-accent-soft/30 xl:inline-flex"
               >
                 <Phone className="h-3.5 w-3.5" aria-hidden="true" />

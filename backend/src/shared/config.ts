@@ -4,8 +4,8 @@
 import type { ColorMoodId, IndustrySlug, ProductCategorySlug } from "./types";
 
 export const BRAND = {
-  name: "SRM ENTERPRISES",
-  nameShort: "SRM",
+  name: "BHARATX ENTERPRISES",
+  nameShort: "BharatX",
   tagline: "Complete Packaging Solutions",
   heroHeadline: "Complete Packaging Solutions Under One Roof",
   footerLine: "Your Complete Packaging Material Partner",

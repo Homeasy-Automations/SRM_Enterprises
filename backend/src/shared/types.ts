@@ -1,5 +1,5 @@
 /**
- * Domain types for SRM Enterprises API.
+ * Domain types for BharatX Enterprises API.
  * Pure types only — no runtime code, no dependencies.
  */
 
