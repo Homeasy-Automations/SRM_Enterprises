@@ -92,15 +92,17 @@ export function PackageCategorySection({ product, index }: PackageCategorySectio
           </div>
         </Reveal>
 
-        <Reveal variant="iris-clip" delay={0.06} className={cn("group/media overflow-hidden transition-all duration-500 hover:shadow-2xl hover:scale-[1.015] rounded-3xl", flipped && "lg:order-1")}>
-          <MediaPanel imageKey={product.imageKey} accent={product.color} aspect="video">
-            <ProductArt
-              iconKey={product.icon}
-              accent={product.color}
-              className="media-zoom h-full w-full transition-transform duration-700 group-hover/media:scale-110"
-              title={`${product.name} illustration`}
-            />
-          </MediaPanel>
+        <Reveal variant="fade-up" once delay={0.06} className={cn(flipped && "lg:order-1")}>
+          <div className="group/media overflow-hidden rounded-3xl transition-shadow duration-500 hover:shadow-2xl">
+            <MediaPanel imageKey={product.imageKey} accent={product.color} aspect="video">
+              <ProductArt
+                iconKey={product.icon}
+                accent={product.color}
+                className="h-full w-full transition-transform duration-700 group-hover/media:scale-105"
+                title={`${product.name} illustration`}
+              />
+            </MediaPanel>
+          </div>
         </Reveal>
       </div>
     </section>
