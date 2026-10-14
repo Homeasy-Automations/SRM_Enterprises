@@ -110,7 +110,7 @@ export default function CustomPackagingPage(): JSX.Element {
               </StaggerGroup>
             </div>
 
-            <Reveal variant="clip">
+            <Reveal variant="sweep">
               <MediaPanel imageKey="customPackaging" accent="#8B5CF6" aspect="video">
                 <div className="grid h-full grid-cols-2 items-center gap-4">
                   <BoxArt accent="#8B5CF6" className="h-full w-full" title="Custom corrugated box illustration" />
@@ -188,26 +188,28 @@ export default function CustomPackagingPage(): JSX.Element {
       <section className="band-white pattern-cad section-pad" aria-labelledby="printing-heading">
         <div className="container-page">
           <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.1fr]">
-            <Reveal variant="slide-right" className="card-cad-studio p-7">
-              <h3 className="font-ui text-xl font-bold text-navy">Printing options we work with</h3>
-              <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-                {[
-                  "Product and part numbers",
-                  "Brand and logo printing",
-                  "Handling and warning marks",
-                  "Batch or size identification",
-                  "Single or multi-colour print",
-                  "Plain (unprinted) packing",
-                ].map((item, index) => (
-                  <li
-                    key={item}
-                    className="rounded-2xl px-4 py-3 text-sm font-semibold text-navy"
-                    style={{ background: ["#E8F1FF", "#EAFBF4", "#FFF1E3", "#F3ECFF", "#FDF3D8", "#E6F8FB"][index] ?? "#E8F1FF" }}
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
+            <Reveal variant="slide-right">
+              <div className="card-cad-studio p-7">
+                <h3 className="font-ui text-xl font-bold text-navy">Printing options we work with</h3>
+                <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+                  {[
+                    "Product and part numbers",
+                    "Brand and logo printing",
+                    "Handling and warning marks",
+                    "Batch or size identification",
+                    "Single or multi-colour print",
+                    "Plain (unprinted) packing",
+                  ].map((item, index) => (
+                    <li
+                      key={item}
+                      className="rounded-2xl px-4 py-3 text-sm font-semibold text-navy"
+                      style={{ background: ["#E8F1FF", "#EAFBF4", "#FFF1E3", "#F3ECFF", "#FDF3D8", "#E6F8FB"][index] ?? "#E8F1FF" }}
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </Reveal>
 
             <div className="flex flex-col gap-5">

@@ -142,7 +142,7 @@ export default function IndustriesPage(): JSX.Element {
                                 as="li"
                                 key={challenge}
                                 variant="slide-right"
-                                className="group/hazard rounded-xl border border-navy/5 bg-slate-50/70 p-2.5 text-xs leading-relaxed text-navy-soft shadow-xs flex items-start gap-2 transition-all duration-300 hover:bg-white hover:-translate-y-0.5 hover:shadow-sm hover:border-amber-300/60 cursor-default"
+                                className="group/hazard rounded-xl border border-navy/5 bg-slate-50/70 p-2.5 text-xs leading-relaxed text-navy-soft shadow-xs flex items-start gap-2 transition-[background-color,border-color,box-shadow] duration-300 hover:bg-white hover:shadow-sm hover:border-amber-300/60 cursor-default"
                               >
                                 <span
                                   className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full transition-transform duration-300 group-hover/hazard:scale-150"
@@ -171,7 +171,7 @@ export default function IndustriesPage(): JSX.Element {
                                   as="li"
                                   key={entry.productSlug}
                                   variant="slide-left"
-                                  className="group/sol rounded-xl border border-navy/5 bg-slate-50/70 p-2.5 shadow-xs hover:border-accent/40 hover:bg-white hover:-translate-y-0.5 hover:shadow-sm transition-all duration-300 flex flex-col justify-between gap-1 cursor-pointer"
+                                  className="group/sol rounded-xl border border-navy/5 bg-slate-50/70 p-2.5 shadow-xs hover:border-accent/40 hover:bg-white hover:shadow-sm transition-[background-color,border-color,box-shadow] duration-300 flex flex-col justify-between gap-1 cursor-pointer"
                                 >
                                   <div className="flex items-center justify-between gap-2">
                                     <Link

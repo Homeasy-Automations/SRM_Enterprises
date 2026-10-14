@@ -51,14 +51,14 @@ export function PackageCategorySection({ product, index }: PackageCategorySectio
 
           <StaggerGroup as="ul" className="grid gap-2 sm:grid-cols-2">
             {product.items.map((item) => (
-              <StaggerItem as="li" key={item} variant="kinetic-pop" className="group flex items-start gap-2 rounded-xl p-1.5 transition-all duration-300 hover:bg-slate-50 hover:translate-x-1.5 cursor-default">
+              <StaggerItem as="li" key={item} variant="kinetic-pop" className="group flex items-start gap-2 rounded-xl p-1.5 transition-colors duration-300 hover:bg-slate-50 cursor-default">
                 <span
                   className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-white transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 shadow-xs"
                   style={{ background: product.color }}
                 >
                   <Check className="h-3 w-3" aria-hidden="true" />
                 </span>
-                <span className="text-sm text-navy-soft transition-colors duration-300 group-hover:text-navy group-hover:font-medium">{item}</span>
+                <span className="text-sm text-navy-soft transition-[color,transform] duration-300 group-hover:translate-x-1 group-hover:text-navy group-hover:font-medium">{item}</span>
               </StaggerItem>
             ))}
           </StaggerGroup>
@@ -92,7 +92,7 @@ export function PackageCategorySection({ product, index }: PackageCategorySectio
           </div>
         </Reveal>
 
-        <Reveal variant="fade-up" once delay={0.06} className={cn(flipped && "lg:order-1")}>
+        <Reveal variant="sweep" delay={0.06} className={cn(flipped && "lg:order-1")}>
           <div className="group/media overflow-hidden rounded-3xl transition-shadow duration-500 hover:shadow-2xl">
             <MediaPanel imageKey={product.imageKey} accent={product.color} aspect="video">
               <ProductArt

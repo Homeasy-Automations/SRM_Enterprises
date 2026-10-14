@@ -134,7 +134,7 @@ export default function ProductsPage(): JSX.Element {
               </Reveal>
             </div>
 
-            <Reveal variant="iris-clip" className="rounded-[26px] border border-navy/10 bg-white p-6 shadow-soft transition-all duration-500 hover:shadow-xl hover:border-accent/40">
+            <Reveal variant="sweep" className="rounded-[26px] border border-navy/10 bg-white p-6 shadow-soft transition-[box-shadow,border-color] duration-500 hover:shadow-xl hover:border-accent/40">
               <ul className="grid gap-3 sm:grid-cols-2">
                 {["Dimensions", "Ply", "Thickness", "Material", "Printing", "Packing format"].map((item, index) => (
                   <li

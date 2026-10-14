@@ -89,7 +89,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
       <section className="band-white section-pad" aria-labelledby="range-heading">
         <div className="container-page">
           <div className="grid items-center gap-12 lg:grid-cols-2">
-            <Reveal variant="clip">
+            <Reveal variant="sweep">
               <MediaPanel imageKey={product.imageKey} accent={product.color} aspect="video" priority>
                 <ProductArt
                   iconKey={product.icon}

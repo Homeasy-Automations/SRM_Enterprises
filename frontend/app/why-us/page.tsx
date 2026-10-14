@@ -71,7 +71,7 @@ export default function WhyUsPage(): JSX.Element {
               </StaggerGroup>
             </Reveal>
 
-            <Reveal variant="iris-clip">
+            <Reveal variant="sweep">
               <MediaPanel imageKey="aboutFacility" accent="#1E6FFF" aspect="video">
                 <WarehouseArt accent="#1E6FFF" className="h-full w-full" title="Warehouse and dispatch illustration" />
               </MediaPanel>
@@ -113,7 +113,7 @@ export default function WhyUsPage(): JSX.Element {
       <section className="band-white pattern-circuit section-pad" aria-labelledby="why-value-heading">
         <div className="container-page">
           <div className="grid items-center gap-12 lg:grid-cols-2">
-            <Reveal variant="clip" className="lg:order-2">
+            <Reveal variant="sweep" className="lg:order-2">
               <MediaPanel imageKey="customPackaging" accent="#19B26B" aspect="video">
                 <FactoryArt accent="#19B26B" className="h-full w-full" title="Packaging solutions illustration" />
               </MediaPanel>
@@ -162,22 +162,18 @@ export default function WhyUsPage(): JSX.Element {
                   { title: "Mixed sourcing", body: "Primary packaging and accessories supplied from one place.", color: "#19B26B" },
                   { title: "Honest communication", body: "Lead times and constraints shared up front — no surprises at the gate.", color: "#FF8A2B" },
                 ].map((item, index) => (
-                  <Reveal
-                    key={item.title}
-                    variant="depth-zoom"
-                    delay={index * 0.06}
-                    className="card-benchmark-trust group p-5 transition-all duration-300"
-                    style={{ ["--accent" as string]: item.color }}
-                  >
-                    <span className="block h-1.5 w-10 rounded-full" style={{ background: item.color }} aria-hidden="true" />
-                    <h3 className="mt-3 font-ui text-base font-bold text-navy">{item.title}</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-navy-soft">{item.body}</p>
+                  <Reveal key={item.title} variant="depth-zoom" delay={index * 0.06} className="h-full">
+                    <div className="card-benchmark-trust group h-full p-5" style={{ ["--accent" as string]: item.color }}>
+                      <span className="block h-1.5 w-10 rounded-full" style={{ background: item.color }} aria-hidden="true" />
+                      <h3 className="mt-3 font-ui text-base font-bold text-navy">{item.title}</h3>
+                      <p className="mt-1 text-sm leading-relaxed text-navy-soft">{item.body}</p>
+                    </div>
                   </Reveal>
                 ))}
               </div>
             </Reveal>
 
-            <Reveal variant="iris-clip" className="lg:order-2">
+            <Reveal variant="sweep" className="lg:order-2">
               <MediaPanel imageKey="industryLogistics" accent="#FF8A2B" aspect="video">
                 <TruckArt accent="#FF8A2B" className="h-full w-full" title="Dispatch and supply illustration" />
               </MediaPanel>

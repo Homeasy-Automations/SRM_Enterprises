@@ -15,8 +15,7 @@ export type RevealVariant =
   | "kinetic-pop"
   | "depth-zoom"
   | "scale-in"
-  | "clip"
-  | "iris-clip"
+  | "sweep"
   | "blur-up";
 
 interface RevealProps {
@@ -28,7 +27,7 @@ interface RevealProps {
   style?: CSSProperties;
   /** How much of the element must be visible before animating. */
   amount?: number;
-  /** Whether the animation should only play once. Defaults to false for recurring scroll animations. */
+  /** Whether the animation should only play once. Defaults to true so content never re-animates (flickers) while scrolling. */
   once?: boolean;
   margin?: string;
   as?: "div" | "section" | "li" | "article" | "span";
@@ -80,11 +79,11 @@ function buildVariants(variant: RevealVariant): Variants {
         hidden: { opacity: 0, scale: 0.94 },
         visible: { opacity: 1, scale: 1 },
       };
-    case "clip":
-    case "iris-clip":
+    case "sweep":
+      // The content only rises gently; the reveal itself is the accent panel in <SweepCover>.
       return {
-        hidden: { opacity: 0, clipPath: "inset(12% 6% 12% 6% round 24px)", scale: 1.03 },
-        visible: { opacity: 1, clipPath: "inset(0% 0% 0% 0% round 24px)", scale: 1 },
+        hidden: { opacity: 0, y: 18 },
+        visible: { opacity: 1, y: 0 },
       };
     case "blur-up":
       return {
@@ -100,6 +99,22 @@ function buildVariants(variant: RevealVariant): Variants {
   }
 }
 
+/**
+ * Accent-coloured panel that sits over a "sweep" reveal and slides off to the right,
+ * uncovering the content. Only transform is animated, so it stays smooth on large images.
+ */
+function SweepCover({ delay }: { delay: number }): JSX.Element {
+  return (
+    <motion.span
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-0 z-20 origin-right rounded-[28px]"
+      style={{ background: "linear-gradient(110deg, var(--accent), var(--accent-secondary))" }}
+      variants={{ hidden: { scaleX: 1 }, visible: { scaleX: 0 } }}
+      transition={{ duration: 0.85, delay: delay + 0.3, ease: [0.65, 0, 0.35, 1] }}
+    />
+  );
+}
+
 const MOTION_TAGS = {
   div: motion.div,
   section: motion.section,
@@ -109,7 +124,7 @@ const MOTION_TAGS = {
 } as const;
 
 /**
- * Scroll reveal wrapper with recurring scroll-triggered animations (once=false).
+ * Scroll reveal wrapper that animates content the first time it scrolls into view.
  * Paced for clear visibility and elegance, triggering when well inside the viewport.
  */
 export function Reveal({
@@ -120,7 +135,7 @@ export function Reveal({
   className,
   style,
   amount = 0.15,
-  once = false,
+  once = true,
   margin = "0px 0px -50px 0px",
   as = "div",
 }: RevealProps): JSX.Element {
@@ -128,12 +143,12 @@ export function Reveal({
   const Component = MOTION_TAGS[as];
 
   const variants = buildVariants(reducedMotion ? "fade-in" : variant);
-  const resolvedDuration =
-    duration ?? (variant === "flip-up" || variant === "iris-clip" ? 1.05 : 0.9);
+  const resolvedDuration = duration ?? (variant === "flip-up" ? 1.05 : 0.9);
+  const sweep = variant === "sweep" && !reducedMotion;
 
   return (
     <Component
-      className={cn(className)}
+      className={cn(sweep && "relative", className)}
       style={style}
       variants={variants}
       initial="hidden"
@@ -146,6 +161,7 @@ export function Reveal({
       }}
     >
       {children}
+      {sweep ? <SweepCover delay={delay} /> : null}
     </Component>
   );
 }
@@ -162,7 +178,7 @@ interface StaggerGroupProps {
   as?: "div" | "ul" | "section";
 }
 
-/** Container that staggers its <StaggerItem> children as they scroll into view, re-animating on scroll. */
+/** Container that staggers its <StaggerItem> children the first time they scroll into view. */
 export function StaggerGroup({
   children,
   className,
@@ -170,7 +186,7 @@ export function StaggerGroup({
   stagger = 0.16,
   delayChildren = 0.15,
   amount = 0.15,
-  once = false,
+  once = true,
   margin = "0px 0px -50px 0px",
   as = "div",
 }: StaggerGroupProps): JSX.Element {

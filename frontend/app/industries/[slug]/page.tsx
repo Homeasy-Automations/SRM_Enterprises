@@ -107,7 +107,7 @@ export default function IndustryDetailPage({ params }: { params: { slug: string 
               </StaggerGroup>
             </div>
 
-            <Reveal variant="clip">
+            <Reveal variant="sweep">
               <MediaPanel imageKey={industry.imageKey} accent={industry.color} aspect="video" priority>
                 <IndustryArtwork
                   iconKey={industry.icon}
